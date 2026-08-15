@@ -9,14 +9,12 @@
 
     <title>HOLINESS — Glory</title>
 
-    <!-- FONTE ANTON -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link
-        href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-        rel="stylesheet"
-    >
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
 
     <style>
 
@@ -87,19 +85,14 @@
         .brand-logo {
             width: 65px;
             height: 65px;
-
             object-fit: contain;
-
             display: block;
         }
 
         .logo {
             font-family: "Anton", sans-serif;
-
             font-weight: 400;
-
             letter-spacing: 1px;
-
             font-size: 30px;
         }
 
@@ -445,8 +438,6 @@
             width: 55px;
             height: 48px;
 
-            position: relative;
-
             background: #fff;
 
             border: 1px solid #aaa;
@@ -462,6 +453,8 @@
             cursor: pointer;
 
             transition: .2s;
+
+            position: relative;
         }
 
         .size:hover {
@@ -478,49 +471,57 @@
             border-color: #000;
         }
 
-        /* TAMANHO ESGOTADO */
-
-        .size.sold-out {
-            background: #e5e5e5;
+        .size.esgotado {
+            background: #eee;
 
             color: #999;
 
             border-color: #ccc;
 
             cursor: not-allowed;
+
+            text-decoration: line-through;
         }
 
-        .size.sold-out:hover {
-            background: #e5e5e5;
-
-            border-color: #ccc;
-        }
-
-        .size.sold-out::after {
-            content: "×";
+        .size.esgotado::after {
+            content: "✕";
 
             position: absolute;
 
-            top: 50%;
-            left: 50%;
+            top: -8px;
+            right: -8px;
 
-            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
 
-            font-family: Arial, Helvetica, sans-serif;
+            border-radius: 50%;
 
-            font-size: 38px;
+            background: #000;
 
-            font-weight: 300;
+            color: #fff;
 
-            color: #b00000;
+            font-family: Arial, sans-serif;
 
-            line-height: 1;
+            font-size: 11px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-decoration: none;
         }
+
+
+        /* =========================
+           ÁREA DE QUANTIDADES
+        ========================= */
 
         .selected-text {
             min-height: 25px;
 
-            margin-bottom: 18px;
+            margin-bottom: 12px;
 
             font-size: 11px;
 
@@ -531,61 +532,99 @@
             color: #111;
         }
 
-
-        /* =========================
-           RESUMO DOS TAMANHOS
-        ========================= */
-
-        .selected-sizes {
+        .quantity-area {
             max-width: 450px;
 
-            margin-bottom: 20px;
+            margin-bottom: 18px;
+        }
 
-            padding: 12px;
+        .quantity-item {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
 
             background: #fff;
 
             border: 1px solid #ddd;
 
-            display: none;
-        }
-
-        .selected-sizes-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 11px;
-
-            letter-spacing: 1px;
+            padding: 10px 12px;
 
             margin-bottom: 8px;
         }
 
-        .selected-size-item {
+        .quantity-info {
             display: flex;
 
-            justify-content: space-between;
+            flex-direction: column;
+
+            gap: 3px;
+        }
+
+        .quantity-size {
+            font-family: "Anton", sans-serif;
+
+            font-size: 14px;
+        }
+
+        .quantity-stock {
+            font-size: 10px;
+
+            color: #777;
+        }
+
+        .quantity-controls {
+            display: flex;
 
             align-items: center;
 
-            padding: 6px 0;
+            gap: 8px;
+        }
 
-            border-top: 1px solid #eee;
+        .quantity-button {
+            width: 30px;
+            height: 30px;
 
-            font-size: 11px;
+            border: 1px solid #aaa;
+
+            background: #fff;
+
+            cursor: pointer;
+
+            font-size: 16px;
+        }
+
+        .quantity-button:hover {
+            background: #eee;
+        }
+
+        .quantity-number {
+            min-width: 25px;
+
+            text-align: center;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 14px;
         }
 
         .remove-size {
             border: none;
 
-            background: transparent;
+            background: none;
 
-            color: #b00000;
+            color: #999;
+
+            font-size: 10px;
 
             cursor: pointer;
 
-            font-size: 14px;
+            margin-left: 10px;
+        }
 
-            padding: 2px 5px;
+        .remove-size:hover {
+            color: #000;
         }
 
 
@@ -889,10 +928,7 @@
         PRIMEIRA COMPRA?
         &nbsp;
         USE O CUPOM
-
-        <strong>
-            GLORY10
-        </strong>
+        <strong>GLORY10</strong>
 
     </div>
 
@@ -927,9 +963,7 @@
     <section class="product">
 
 
-        <!-- =========================
-             GALERIA
-        ========================= -->
+        <!-- GALERIA -->
 
         <div class="product-gallery">
 
@@ -949,9 +983,6 @@
 
             <div class="thumbnails">
 
-
-                <!-- FRENTE -->
-
                 <div
                     class="thumbnail active"
                     onclick="trocarFoto('Frente.png', this)"
@@ -964,8 +995,6 @@
 
                 </div>
 
-
-                <!-- COSTA -->
 
                 <div
                     class="thumbnail"
@@ -980,8 +1009,6 @@
                 </div>
 
 
-                <!-- CHUVA -->
-
                 <div
                     class="thumbnail"
                     onclick="trocarFoto('Chuva.png', this)"
@@ -993,7 +1020,6 @@
                     >
 
                 </div>
-
 
             </div>
 
@@ -1033,9 +1059,7 @@
             </p>
 
 
-            <!-- =========================
-                 PREÇO
-            ========================= -->
+            <!-- PREÇO -->
 
             <div
                 class="price"
@@ -1050,7 +1074,9 @@
             <div
                 id="discountText"
                 class="price-discount"
-            ></div>
+            >
+
+            </div>
 
 
             <div
@@ -1069,7 +1095,6 @@
 
             <div class="coupon-area">
 
-
                 <div class="coupon-title">
 
                     CUPOM DE DESCONTO
@@ -1084,6 +1109,7 @@
                         id="couponInput"
                         placeholder="DIGITE SEU CUPOM"
                     >
+
 
                     <button
                         type="button"
@@ -1100,8 +1126,9 @@
                 <div
                     id="couponMessage"
                     class="coupon-message"
-                ></div>
+                >
 
+                </div>
 
             </div>
 
@@ -1124,9 +1151,23 @@
                     type="button"
                     class="size"
                     data-size="PP"
-                    data-quantity="3"
+                    data-stock="3"
                 >
+
                     PP
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size"
+                    data-size="P"
+                    data-stock="3"
+                >
+
+                    P
+
                 </button>
 
 
@@ -1134,9 +1175,11 @@
                     type="button"
                     class="size"
                     data-size="M"
-                    data-quantity="4"
+                    data-stock="4"
                 >
+
                     M
+
                 </button>
 
 
@@ -1144,9 +1187,11 @@
                     type="button"
                     class="size"
                     data-size="G"
-                    data-quantity="4"
+                    data-stock="4"
                 >
+
                     G
+
                 </button>
 
 
@@ -1154,9 +1199,11 @@
                     type="button"
                     class="size"
                     data-size="GG"
-                    data-quantity="2"
+                    data-stock="2"
                 >
+
                     GG
+
                 </button>
 
 
@@ -1164,11 +1211,12 @@
                     type="button"
                     class="size"
                     data-size="XG"
-                    data-quantity="1"
+                    data-stock="1"
                 >
-                    XG
-                </button>
 
+                    XG
+
+                </button>
 
             </div>
 
@@ -1178,27 +1226,19 @@
                 id="selectedText"
             >
 
-                Selecione um ou mais tamanhos
+                Clique em um tamanho para adicionar ao pedido.
 
             </div>
 
 
             <!-- =========================
-                 RESUMO DOS TAMANHOS
+                 QUANTIDADES ESCOLHIDAS
             ========================= -->
 
             <div
-                class="selected-sizes"
-                id="selectedSizes"
+                class="quantity-area"
+                id="quantityArea"
             >
-
-                <div class="selected-sizes-title">
-
-                    SEU PEDIDO
-
-                </div>
-
-                <div id="selectedSizesList"></div>
 
             </div>
 
@@ -1248,7 +1288,6 @@
                     DINHEIRO
 
                 </button>
-
 
             </div>
 
@@ -1379,10 +1418,7 @@
         <p>
 
             “Ao contemplarmos a presença de Deus,<br>
-
-            somos transformados progressivamente
-            à imagem de Cristo<br>
-
+            somos transformados progressivamente à imagem de Cristo<br>
             pelo Espírito Santo.”
 
         </p>
@@ -1406,7 +1442,6 @@
 
         const precoComCupomGLORY10 = 89.90;
 
-
         let pagamentoEscolhido = "";
 
         let cupomAplicado = "";
@@ -1415,12 +1450,14 @@
 
 
         /*
-         * Estoque dos tamanhos
+         * ESTOQUE
          */
 
         const estoque = {
 
             PP: 3,
+
+            P: 3,
 
             M: 4,
 
@@ -1434,20 +1471,25 @@
 
 
         /*
-         * Tamanhos escolhidos
+         * TAMANHOS ESCOLHIDOS
+         *
+         * Exemplo:
+         *
+         * {
+         *    P: 2,
+         *    M: 1,
+         *    XG: 1
+         * }
          */
 
-        let tamanhosEscolhidos = {};
+        const tamanhosEscolhidos = {};
 
 
         /* =========================
            TROCAR FOTOS
         ========================= */
 
-        function trocarFoto(
-            foto,
-            elemento
-        ) {
+        function trocarFoto(foto, elemento) {
 
             document.getElementById(
                 "mainImage"
@@ -1473,10 +1515,10 @@
 
 
         /* =========================
-           ELEMENTOS DOS TAMANHOS
+           ELEMENTOS
         ========================= */
 
-        const botoes =
+        const botoesTamanho =
             document.querySelectorAll(
                 ".size"
             );
@@ -1488,205 +1530,22 @@
             );
 
 
-        const selectedSizes =
+        const quantityArea =
             document.getElementById(
-                "selectedSizes"
-            );
-
-
-        const selectedSizesList =
-            document.getElementById(
-                "selectedSizesList"
+                "quantityArea"
             );
 
 
         /* =========================
-           ATUALIZAR RESUMO
+           CLICAR NO TAMANHO
         ========================= */
 
-        function atualizarResumoTamanhos() {
-
-
-            selectedSizesList.innerHTML = "";
-
-
-            const tamanhos =
-                Object.keys(
-                    tamanhosEscolhidos
-                );
-
-
-            if (
-                tamanhos.length === 0
-            ) {
-
-                selectedSizes.style.display =
-                    "none";
-
-                return;
-
-            }
-
-
-            selectedSizes.style.display =
-                "block";
-
-
-            tamanhos.forEach(
-                function(tamanho) {
-
-
-                    const quantidade =
-                        tamanhosEscolhidos[
-                            tamanho
-                        ];
-
-
-                    const item =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    item.className =
-                        "selected-size-item";
-
-
-                    item.innerHTML =
-
-                        "<span>" +
-
-                        "<strong>" +
-
-                        tamanho +
-
-                        "</strong>" +
-
-                        " — " +
-
-                        quantidade +
-
-                        " unidade(s)" +
-
-                        "</span>" +
-
-                        "<button " +
-
-                        'type="button" ' +
-
-                        'class="remove-size" ' +
-
-                        'data-size="' +
-
-                        tamanho +
-
-                        '">' +
-
-                        "×" +
-
-                        "</button>";
-
-
-                    selectedSizesList.appendChild(
-                        item
-                    );
-
-                }
-            );
-
-
-            /*
-             * Botão para remover tamanho
-             */
-
-            document
-                .querySelectorAll(
-                    ".remove-size"
-                )
-                .forEach(
-                    function(botao) {
-
-                        botao.addEventListener(
-                            "click",
-                            function() {
-
-
-                                const tamanho =
-                                    botao.getAttribute(
-                                        "data-size"
-                                    );
-
-
-                                delete
-                                    tamanhosEscolhidos[
-                                        tamanho
-                                    ];
-
-
-                                const botaoTamanho =
-                                    document.querySelector(
-                                        '.size[data-size="' +
-                                        tamanho +
-                                        '"]'
-                                    );
-
-
-                                if (
-                                    botaoTamanho
-                                ) {
-
-                                    botaoTamanho.classList.remove(
-                                        "selected"
-                                    );
-
-
-                                    botaoTamanho.classList.remove(
-                                        "sold-out"
-                                    );
-
-                                }
-
-
-                                atualizarResumoTamanhos();
-
-
-                                texto.innerHTML =
-                                    "Tamanho removido. Selecione outro.";
-
-                                texto.style.color =
-                                    "#777";
-
-                            }
-                        );
-
-                    }
-                );
-
-        }
-
-
-        /* =========================
-           SELECIONAR TAMANHOS
-        ========================= */
-
-        botoes.forEach(
+        botoesTamanho.forEach(
             function(botao) {
-
 
                 botao.addEventListener(
                     "click",
                     function() {
-
-
-                        if (
-                            botao.classList.contains(
-                                "sold-out"
-                            )
-                        ) {
-
-                            return;
-
-                        }
 
 
                         const tamanho =
@@ -1700,62 +1559,16 @@
 
 
                         /*
-                         * Primeira seleção
+                         * SE ESGOTADO
                          */
 
                         if (
-                            !tamanhosEscolhidos[
-                                tamanho
-                            ]
-                        ) {
-
-                            tamanhosEscolhidos[
-                                tamanho
-                            ] = 1;
-
-                        }
-
-                        /*
-                         * Aumenta quantidade
-                         */
-
-                        else {
-
-                            if (
-                                tamanhosEscolhidos[
-                                    tamanho
-                                ] < disponivel
-                            ) {
-
-                                tamanhosEscolhidos[
-                                    tamanho
-                                ]++;
-
-                            }
-
-                        }
-
-
-                        const quantidadeSelecionada =
-                            tamanhosEscolhidos[
-                                tamanho
-                            ];
-
-
-                        const restante =
-                            disponivel -
-                            quantidadeSelecionada;
-
-
-                        /*
-                         * Texto de disponibilidade
-                         */
-
-                        if (
-                            restante > 0
+                            disponivel <= 0
                         ) {
 
                             texto.innerHTML =
+
+                                "✕ " +
 
                                 "<strong>" +
 
@@ -1763,40 +1576,31 @@
 
                                 "</strong>" +
 
-                                " — " +
+                                " — ESGOTADO";
 
-                                quantidadeSelecionada +
 
-                                " selecionada(s). " +
+                            texto.style.color =
+                                "#b00000";
 
-                                restante +
 
-                                " disponível(is).";
-
-                        }
-
-                        else {
-
-                            texto.innerHTML =
-
-                                "<strong>" +
-
-                                tamanho +
-
-                                "</strong>" +
-
-                                " — estoque esgotado.";
+                            return;
 
                         }
-
-
-                        texto.style.color =
-                            "#777";
 
 
                         /*
-                         * Marca selecionado
+                         * ADICIONA TAMANHO
                          */
+
+                        if (
+                            !tamanhosEscolhidos
+                                .hasOwnProperty(tamanho)
+                        ) {
+
+                            tamanhosEscolhidos[tamanho] = 1;
+
+                        }
+
 
                         botao.classList.add(
                             "selected"
@@ -1804,31 +1608,253 @@
 
 
                         /*
-                         * Estoque acabou
+                         * MOSTRA DISPONIBILIDADE
                          */
 
-                        if (
-                            restante <= 0
-                        ) {
+                        texto.innerHTML =
 
-                            botao.classList.add(
-                                "sold-out"
-                            );
+                            "Tamanho " +
 
-                            botao.classList.remove(
-                                "selected"
-                            );
+                            "<strong>" +
 
-                        }
+                            tamanho +
+
+                            "</strong>" +
+
+                            " — " +
+
+                            disponivel +
+
+                            " disponíveis";
 
 
-                        atualizarResumoTamanhos();
+                        texto.style.color =
+                            "#777";
+
+
+                        atualizarQuantidades();
 
                     }
                 );
 
             }
         );
+
+
+        /* =========================
+           ATUALIZAR QUANTIDADES
+        ========================= */
+
+        function atualizarQuantidades() {
+
+
+            quantityArea.innerHTML = "";
+
+
+            const tamanhos =
+                Object.keys(
+                    tamanhosEscolhidos
+                );
+
+
+            tamanhos.forEach(
+                function(tamanho) {
+
+
+                    const quantidade =
+                        tamanhosEscolhidos[
+                            tamanho
+                        ];
+
+
+                    const maximo =
+                        estoque[tamanho];
+
+
+                    const item =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    item.className =
+                        "quantity-item";
+
+
+                    item.innerHTML =
+
+                        '<div class="quantity-info">' +
+
+                            '<div class="quantity-size">' +
+
+                                tamanho +
+
+                            '</div>' +
+
+                            '<div class="quantity-stock">' +
+
+                                maximo +
+
+                                " disponíveis" +
+
+                            '</div>' +
+
+                        '</div>' +
+
+
+                        '<div class="quantity-controls">' +
+
+                            '<button type="button" class="quantity-button minus">' +
+
+                                "−" +
+
+                            '</button>' +
+
+
+                            '<span class="quantity-number">' +
+
+                                quantidade +
+
+                            '</span>' +
+
+
+                            '<button type="button" class="quantity-button plus">' +
+
+                                "+" +
+
+                            '</button>' +
+
+
+                            '<button type="button" class="remove-size">' +
+
+                                "REMOVER" +
+
+                            '</button>' +
+
+                        '</div>';
+
+
+                    /*
+                     * BOTÃO MENOS
+                     */
+
+                    item
+                        .querySelector(".minus")
+                        .addEventListener(
+                            "click",
+                            function() {
+
+
+                                if (
+                                    tamanhosEscolhidos[
+                                        tamanho
+                                    ] > 1
+                                ) {
+
+                                    tamanhosEscolhidos[
+                                        tamanho
+                                    ]--;
+
+                                }
+
+
+                                atualizarQuantidades();
+
+                            }
+                        );
+
+
+                    /*
+                     * BOTÃO MAIS
+                     */
+
+                    item
+                        .querySelector(".plus")
+                        .addEventListener(
+                            "click",
+                            function() {
+
+
+                                if (
+                                    tamanhosEscolhidos[
+                                        tamanho
+                                    ] < maximo
+                                ) {
+
+                                    tamanhosEscolhidos[
+                                        tamanho
+                                    ]++;
+
+                                }
+
+                                else {
+
+                                    alert(
+                                        "Não há mais unidades disponíveis deste tamanho."
+                                    );
+
+                                }
+
+
+                                atualizarQuantidades();
+
+                            }
+                        );
+
+
+                    /*
+                     * REMOVER
+                     */
+
+                    item
+                        .querySelector(".remove-size")
+                        .addEventListener(
+                            "click",
+                            function() {
+
+
+                                delete tamanhosEscolhidos[
+                                    tamanho
+                                ];
+
+
+                                /*
+                                 * TIRA A SELEÇÃO
+                                 */
+
+                                botoesTamanho.forEach(
+                                    function(botao) {
+
+                                        if (
+                                            botao.getAttribute(
+                                                "data-size"
+                                            ) === tamanho
+                                        ) {
+
+                                            botao.classList.remove(
+                                                "selected"
+                                            );
+
+                                        }
+
+                                    }
+                                );
+
+
+                                atualizarQuantidades();
+
+                            }
+                        );
+
+
+                    quantityArea.appendChild(
+                        item
+                    );
+
+                }
+            );
+
+        }
 
 
         /* =========================
@@ -1849,7 +1875,6 @@
 
         pagamentos.forEach(
             function(botao) {
-
 
                 botao.addEventListener(
                     "click",
@@ -1883,13 +1908,32 @@
                             "Cartão"
                         ) {
 
+                            const precoAtual =
+                                obterPrecoAtual();
+
+
+                            const parcela =
+                                precoAtual / 2;
+
+
                             paymentText.innerHTML =
 
                                 "Pagamento: " +
 
                                 "<strong>Cartão</strong>" +
 
-                                " — 2x sem juros";
+                                " — 2x de " +
+
+                                "<strong>R$ " +
+
+                                parcela
+                                    .toFixed(2)
+                                    .replace(
+                                        ".",
+                                        ","
+                                    ) +
+
+                                "</strong> sem juros";
 
                         }
 
@@ -1966,6 +2010,10 @@
                 "installments"
             );
 
+
+        /* =========================
+           APLICAR CUPOM
+        ========================= */
 
         couponButton.addEventListener(
             "click",
@@ -2067,39 +2115,27 @@
 
 
         /* =========================
-           ATUALIZAR PREÇO
+           OBTER PREÇO
         ========================= */
 
-        function atualizarPreco() {
+        function obterPrecoAtual() {
 
-
-            let novoPreco;
-
-
-            /*
-             * CUPOM GLORY10
-             */
 
             if (
                 cupomAplicado ===
                 "GLORY10"
             ) {
 
-                novoPreco =
-                    precoComCupomGLORY10;
+                return precoComCupomGLORY10;
 
             }
 
 
-            /*
-             * OUTROS CUPONS
-             */
-
-            else if (
+            if (
                 desconto > 0
             ) {
 
-                novoPreco =
+                return (
 
                     precoOriginal -
 
@@ -2107,26 +2143,28 @@
                         precoOriginal *
                         desconto /
                         100
-                    );
+                    )
+
+                );
 
             }
 
 
-            /*
-             * SEM CUPOM
-             */
+            return precoOriginal;
 
-            else {
-
-                novoPreco =
-                    precoOriginal;
-
-            }
+        }
 
 
-            /*
-             * MOSTRAR PREÇO
-             */
+        /* =========================
+           ATUALIZAR PREÇO
+        ========================= */
+
+        function atualizarPreco() {
+
+
+            const novoPreco =
+                obterPrecoAtual();
+
 
             if (
                 desconto > 0
@@ -2144,9 +2182,7 @@
                         .replace(
                             ".",
                             ","
-                        )
-
-                    +
+                        ) +
 
                     "</span>" +
 
@@ -2180,12 +2216,15 @@
 
                     "% OFF)";
 
+
             }
 
             else {
 
+
                 priceElement.innerHTML =
                     "R$ 98,89";
+
 
                 discountText.innerHTML =
                     "";
@@ -2197,24 +2236,93 @@
              * PARCELAMENTO
              */
 
+            const parcela =
+                novoPreco / 2;
+
+
+            installmentsElement.innerHTML =
+
+                "ou 2x de R$ " +
+
+                parcela
+                    .toFixed(2)
+                    .replace(
+                        ".",
+                        ","
+                    ) +
+
+                " sem juros";
+
+
+            /*
+             * ATUALIZA TEXTO DO CARTÃO
+             */
+
             if (
-                cupomAplicado ===
-                "GLORY10"
+                pagamentoEscolhido ===
+                "Cartão"
             ) {
 
-                installmentsElement.innerHTML =
+                paymentText.innerHTML =
 
-                    "ou 2x de R$ 44,95 sem juros";
+                    "Pagamento: " +
+
+                    "<strong>Cartão</strong>" +
+
+                    " — 2x de " +
+
+                    "<strong>R$ " +
+
+                    parcela
+                        .toFixed(2)
+                        .replace(
+                            ".",
+                            ","
+                        ) +
+
+                    "</strong> sem juros";
 
             }
 
-            else {
+        }
 
-                installmentsElement.innerHTML =
 
-                    "ou 2x de R$ 49,45 sem juros";
+        /* =========================
+           MARCAR ESGOTADOS
+        ========================= */
 
-            }
+        function atualizarEstoqueVisual() {
+
+
+            botoesTamanho.forEach(
+                function(botao) {
+
+
+                    const tamanho =
+                        botao.getAttribute(
+                            "data-size"
+                        );
+
+
+                    const disponivel =
+                        estoque[tamanho];
+
+
+                    if (
+                        disponivel <= 0
+                    ) {
+
+                        botao.classList.add(
+                            "esgotado"
+                        );
+
+                        botao.disabled =
+                            true;
+
+                    }
+
+                }
+            );
 
         }
 
@@ -2232,14 +2340,18 @@
                 function() {
 
 
-                    /* =========================
-                       VERIFICA TAMANHO
-                    ========================= */
+                    /*
+                     * VERIFICA TAMANHOS
+                     */
 
-                    if (
+                    const tamanhos =
                         Object.keys(
                             tamanhosEscolhidos
-                        ).length === 0
+                        );
+
+
+                    if (
+                        tamanhos.length === 0
                     ) {
 
 
@@ -2265,9 +2377,9 @@
                     }
 
 
-                    /* =========================
-                       VERIFICA PAGAMENTO
-                    ========================= */
+                    /*
+                     * VERIFICA PAGAMENTO
+                     */
 
                     if (
                         pagamentoEscolhido === ""
@@ -2304,55 +2416,25 @@
                         "5533998019698";
 
 
-                    /* =========================
-                       PREÇO POR CAMISA
-                    ========================= */
+                    /*
+                     * PREÇO
+                     */
 
-                    let precoUnitario =
-                        precoOriginal;
-
-
-                    if (
-                        cupomAplicado ===
-                        "GLORY10"
-                    ) {
-
-                        precoUnitario =
-                            precoComCupomGLORY10;
-
-                    }
-
-                    else if (
-                        desconto > 0
-                    ) {
-
-                        precoUnitario =
-
-                            precoOriginal -
-
-                            (
-                                precoOriginal *
-                                desconto /
-                                100
-                            );
-
-                    }
+                    const precoFinal =
+                        obterPrecoAtual();
 
 
-                    /* =========================
-                       QUANTIDADE TOTAL
-                    ========================= */
+                    /*
+                     * QUANTIDADE TOTAL
+                     */
 
                     let quantidadeTotal = 0;
 
 
-                    Object.keys(
-                        tamanhosEscolhidos
-                    ).forEach(
+                    tamanhos.forEach(
                         function(tamanho) {
 
                             quantidadeTotal +=
-
                                 tamanhosEscolhidos[
                                     tamanho
                                 ];
@@ -2361,42 +2443,69 @@
                     );
 
 
-                    /* =========================
-                       PREÇO TOTAL
-                    ========================= */
+                    /*
+                     * VALOR TOTAL
+                     */
 
-                    const precoTotal =
-
-                        precoUnitario *
+                    const valorTotal =
+                        precoFinal *
                         quantidadeTotal;
 
 
-                    const precoFormatado =
+                    /*
+                     * FORMATA
+                     */
+
+                    const precoUnitarioFormatado =
 
                         "R$ " +
 
-                        precoTotal
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        );
+                        precoFinal
+                            .toFixed(2)
+                            .replace(
+                                ".",
+                                ","
+                            );
 
 
-                    /* =========================
-                       LISTA DOS TAMANHOS
-                    ========================= */
+                    const valorTotalFormatado =
 
-                    let listaTamanhos = "";
+                        "R$ " +
+
+                        valorTotal
+                            .toFixed(2)
+                            .replace(
+                                ".",
+                                ","
+                            );
 
 
-                    Object.keys(
-                        tamanhosEscolhidos
-                    ).forEach(
+                    /*
+                     * MENSAGEM
+                     */
+
+                    let mensagem =
+
+                        "Olá! Quero comprar a camisa Glory!" +
+
+                        "\n\n" +
+
+                        "TAMANHOS:";
+
+
+                    /*
+                     * ADICIONA CADA TAMANHO
+                     */
+
+                    tamanhos.forEach(
                         function(tamanho) {
 
 
-                            listaTamanhos +=
+                            mensagem +=
+
+                                "\n" +
+
+                                "• " +
 
                                 tamanho +
 
@@ -2406,27 +2515,15 @@
                                     tamanho
                                 ] +
 
-                                " unidade(s)\n";
+                                " unidade(s)";
 
                         }
                     );
 
 
-                    /* =========================
-                       MENSAGEM
-                    ========================= */
-
-                    let mensagem =
-
-                        "Olá! Quero comprar a camisa Glory!" +
+                    mensagem +=
 
                         "\n\n" +
-
-                        "Tamanhos:\n" +
-
-                        listaTamanhos +
-
-                        "\n" +
 
                         "Quantidade total: " +
 
@@ -2436,20 +2533,13 @@
 
                         "Preço unitário: " +
 
-                        "R$ " +
-
-                        precoUnitario
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        ) +
+                        precoUnitarioFormatado +
 
                         "\n" +
 
-                        "Preço total: " +
+                        "Valor total: " +
 
-                        precoFormatado +
+                        valorTotalFormatado +
 
                         "\n" +
 
@@ -2458,9 +2548,9 @@
                         pagamentoEscolhido;
 
 
-                    /* =========================
-                       CUPOM
-                    ========================= */
+                    /*
+                     * CUPOM
+                     */
 
                     if (
                         cupomAplicado !== ""
@@ -2477,9 +2567,9 @@
                     }
 
 
-                    /* =========================
-                       PARCELAMENTO
-                    ========================= */
+                    /*
+                     * PARCELAMENTO
+                     */
 
                     if (
                         pagamentoEscolhido ===
@@ -2487,8 +2577,8 @@
                     ) {
 
 
-                        const parcela =
-                            precoTotal / 2;
+                        const parcelaTotal =
+                            valorTotal / 2;
 
 
                         mensagem +=
@@ -2497,21 +2587,21 @@
 
                             "Parcelamento: 2x de R$ " +
 
-                            parcela
-                            .toFixed(2)
-                            .replace(
-                                ".",
-                                ","
-                            ) +
+                            parcelaTotal
+                                .toFixed(2)
+                                .replace(
+                                    ".",
+                                    ","
+                                ) +
 
                             " sem juros";
 
                     }
 
 
-                    /* =========================
-                       LINK WHATSAPP
-                    ========================= */
+                    /*
+                     * LINK
+                     */
 
                     const linkWhatsApp =
 
@@ -2536,11 +2626,12 @@
 
 
         /* =========================
-           PREÇO INICIAL
+           INICIALIZAÇÃO
         ========================= */
 
         atualizarPreco();
 
+        atualizarEstoqueVisual();
 
     </script>
 
