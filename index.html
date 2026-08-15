@@ -3,2267 +3,1937 @@
 
 <head>
 
-    <meta charset="UTF-8">
+<meta charset="UTF-8">
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
- <title>HOLINESS — Glory</title>
+<title>HOLINESS — Glory</title>
 
 <link rel="icon" type="image/png" href="Logo.png">
 
-    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+<style>
 
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <style>
+html {
+    scroll-behavior: smooth;
+}
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f3ef;
+    color: #111;
+}
 
-        html {
-            scroll-behavior: smooth;
-        }
+/* =========================
+   BARRA SUPERIOR
+========================= */
 
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f3ef;
-            color: #111;
-        }
+.topbar {
+    width: 100%;
+    height: 28px;
 
+    background: #000;
+    color: #fff;
 
-        /* =========================
-           BARRA SUPERIOR
-        ========================= */
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-        .topbar {
-            width: 100%;
-            height: 28px;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
 
-            background: #000;
-            color: #fff;
+.topbar strong {
+    margin-left: 5px;
+}
 
-            display: flex;
-            align-items: center;
-            justify-content: center;
+/* =========================
+   HEADER
+========================= */
 
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
+header {
+    height: 76px;
 
-        .topbar strong {
-            margin-left: 5px;
-        }
+    background: #fff;
 
+    display: flex;
+    align-items: center;
 
-        /* =========================
-           HEADER
-        ========================= */
+    padding: 0 45px;
 
-        header {
-            height: 76px;
+    border-bottom: 1px solid #ddd;
+}
 
-            background: #fff;
+.brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
 
-            display: flex;
-            align-items: center;
+.brand-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
 
-            padding: 0 45px;
+.logo {
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    letter-spacing: 1px;
+    font-size: 30px;
+}
 
-            border-bottom: 1px solid #ddd;
-        }
+/* =========================
+   PRODUTO
+========================= */
 
-        .brand {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-        }
+.product {
+    min-height: calc(100vh - 104px);
 
-        .brand-logo {
-            width: 65px;
-            height: 65px;
-            object-fit: contain;
-            display: block;
-        }
+    display: grid;
 
-        .logo {
-            font-family: "Anton", sans-serif;
-            font-weight: 400;
-            letter-spacing: 1px;
-            font-size: 30px;
-        }
+    grid-template-columns: 58% 42%;
+}
 
+/* =========================
+   GALERIA
+========================= */
 
-        /* =========================
-           PRODUTO
-        ========================= */
+.product-gallery {
+    background: #e5e1dc;
 
-        .product {
-            min-height: calc(100vh - 104px);
+    padding: 35px 45px;
 
-            display: grid;
+    display: flex;
 
-            grid-template-columns: 58% 42%;
-        }
+    flex-direction: column;
 
+    align-items: center;
 
-        /* =========================
-           GALERIA
-        ========================= */
+    justify-content: center;
+}
 
-        .product-gallery {
-            background: #e5e1dc;
+.main-photo {
+    width: 100%;
+    height: 600px;
 
-            padding: 35px 45px;
+    display: flex;
 
-            display: flex;
+    align-items: center;
 
-            flex-direction: column;
+    justify-content: center;
 
-            align-items: center;
+    overflow: hidden;
 
-            justify-content: center;
-        }
+    margin-bottom: 18px;
+}
 
-        .main-photo {
-            width: 100%;
-            height: 600px;
+.main-photo img {
+    width: 100%;
+    height: 100%;
 
-            display: flex;
+    object-fit: contain;
 
-            align-items: center;
+    display: block;
+}
 
-            justify-content: center;
+/* =========================
+   MINIATURAS
+========================= */
 
-            overflow: hidden;
+.thumbnails {
+    width: 100%;
 
-            margin-bottom: 18px;
-        }
+    display: flex;
 
-        .main-photo img {
-            width: 100%;
-            height: 100%;
+    justify-content: flex-start;
 
-            object-fit: contain;
+    gap: 10px;
+}
 
-            display: block;
-        }
+.thumbnail {
+    width: 90px;
+    height: 90px;
 
+    border: 1px solid #bbb;
 
-        /* =========================
-           MINIATURAS
-        ========================= */
+    background: #eee;
 
-        .thumbnails {
-            width: 100%;
+    cursor: pointer;
 
-            display: flex;
+    overflow: hidden;
 
-            justify-content: flex-start;
+    opacity: .6;
 
-            gap: 10px;
-        }
+    transition: .2s;
+}
 
-        .thumbnail {
-            width: 90px;
-            height: 90px;
+.thumbnail img {
+    width: 100%;
+    height: 100%;
 
-            border: 1px solid #bbb;
+    object-fit: cover;
 
-            background: #eee;
+    display: block;
+}
 
-            cursor: pointer;
+.thumbnail:hover {
+    opacity: 1;
+}
 
-            overflow: hidden;
+.thumbnail.active {
+    border: 2px solid #000;
 
-            opacity: .6;
+    opacity: 1;
+}
 
-            transition: .2s;
-        }
+/* =========================
+   INFORMAÇÕES
+========================= */
 
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
+.info {
+    background: #f5f3ef;
 
-            object-fit: cover;
+    padding: 55px 70px;
 
-            display: block;
-        }
+    display: flex;
 
-        .thumbnail:hover {
-            opacity: 1;
-        }
+    flex-direction: column;
 
-        .thumbnail.active {
-            border: 2px solid #000;
+    justify-content: center;
+}
 
-            opacity: 1;
-        }
+.small-title {
+    font-family: "Anton", sans-serif;
 
+    font-size: 12px;
 
-        /* =========================
-           INFORMAÇÕES
-        ========================= */
+    letter-spacing: 3px;
 
-        .info {
-            background: #f5f3ef;
+    color: #777;
 
-            padding: 55px 70px;
+    margin-bottom: 20px;
+}
 
-            display: flex;
+h1 {
+    font-family: "Anton", sans-serif;
 
-            flex-direction: column;
+    font-size: 80px;
 
-            justify-content: center;
-        }
+    font-weight: 400;
 
-        .small-title {
-            font-family: "Anton", sans-serif;
+    line-height: .9;
 
-            font-size: 12px;
+    letter-spacing: 2px;
 
-            letter-spacing: 3px;
+    margin-bottom: 25px;
+}
 
-            color: #777;
+.line {
+    width: 65px;
+    height: 3px;
 
-            margin-bottom: 20px;
-        }
+    background: #d99a13;
 
-        h1 {
-            font-family: "Anton", sans-serif;
+    margin-bottom: 25px;
+}
 
-            font-size: 80px;
+.phrase {
+    font-family: Georgia, serif;
 
-            font-weight: 400;
+    font-size: 19px;
 
-            line-height: .9;
+    line-height: 1.5;
 
-            letter-spacing: 2px;
+    max-width: 500px;
 
-            margin-bottom: 25px;
-        }
+    margin-bottom: 30px;
+}
 
-        .line {
-            width: 65px;
-            height: 3px;
+/* =========================
+   PREÇO
+========================= */
 
-            background: #d99a13;
+.price {
+    font-family: "Anton", sans-serif;
 
-            margin-bottom: 25px;
-        }
+    font-size: 30px;
 
-        .phrase {
-            font-family: Georgia, serif;
+    font-weight: 400;
 
-            font-size: 19px;
+    letter-spacing: .5px;
 
-            line-height: 1.5;
+    margin-bottom: 5px;
+}
 
-            max-width: 500px;
+.price-old {
+    color: #999;
 
-            margin-bottom: 30px;
-        }
+    text-decoration: line-through;
 
+    font-family: Arial, Helvetica, sans-serif;
 
-        /* =========================
-           PREÇO
-        ========================= */
+    font-size: 14px;
 
-        .price {
-            font-family: "Anton", sans-serif;
+    margin-right: 10px;
+}
 
-            font-size: 30px;
+.price-discount {
+    color: #16833b;
 
-            font-weight: 400;
+    font-size: 11px;
 
-            letter-spacing: .5px;
+    margin-top: 5px;
 
-            margin-bottom: 5px;
-        }
+    margin-bottom: 5px;
+}
 
-        .price-old {
-            color: #999;
+.installments {
+    color: #777;
 
-            text-decoration: line-through;
+    font-size: 11px;
 
-            font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 25px;
+}
 
-            font-size: 14px;
+/* =========================
+   CUPOM
+========================= */
 
-            margin-right: 10px;
-        }
+.coupon-area {
+    max-width: 450px;
 
-        .price-discount {
-            color: #16833b;
+    margin-bottom: 25px;
+}
 
-            font-size: 11px;
+.coupon-title {
+    font-family: "Anton", sans-serif;
 
-            margin-top: 5px;
+    font-size: 12px;
 
-            margin-bottom: 5px;
-        }
+    letter-spacing: 2px;
 
-        .installments {
-            color: #777;
+    margin-bottom: 10px;
+}
 
-            font-size: 11px;
+.coupon-box {
+    display: flex;
 
-            margin-bottom: 25px;
-        }
+    width: 100%;
+}
 
+.coupon-box input {
+    flex: 1;
 
-        /* =========================
-           CUPOM
-        ========================= */
+    height: 48px;
 
-        .coupon-area {
-            max-width: 450px;
+    border: 1px solid #aaa;
 
-            margin-bottom: 25px;
-        }
+    border-right: none;
 
-        .coupon-title {
-            font-family: "Anton", sans-serif;
+    background: #fff;
 
-            font-size: 12px;
+    padding: 0 15px;
 
-            font-weight: 400;
+    font-size: 11px;
 
-            letter-spacing: 2px;
+    outline: none;
 
-            margin-bottom: 10px;
-        }
+    text-transform: uppercase;
+}
 
-        .coupon-box {
-            display: flex;
+.coupon-box button {
+    width: 100px;
 
-            width: 100%;
-        }
+    height: 48px;
 
-        .coupon-box input {
-            flex: 1;
+    border: none;
 
-            height: 48px;
+    background: #000;
 
-            border: 1px solid #aaa;
+    color: #fff;
 
-            border-right: none;
+    font-family: "Anton", sans-serif;
 
-            background: #fff;
+    font-size: 12px;
 
-            padding: 0 15px;
+    letter-spacing: 1px;
 
-            font-size: 11px;
+    cursor: pointer;
+}
 
-            outline: none;
+.coupon-box button:hover {
+    background: #d99a13;
 
-            text-transform: uppercase;
-        }
+    color: #000;
+}
 
-        .coupon-box button {
-            width: 100px;
+.coupon-message {
+    margin-top: 8px;
 
-            height: 48px;
+    min-height: 18px;
 
-            border: none;
+    font-size: 11px;
+}
 
-            background: #000;
+.coupon-success {
+    color: #16833b;
+}
 
-            color: #fff;
+.coupon-error {
+    color: #b00000;
+}
 
-            font-family: "Anton", sans-serif;
+/* =========================
+   TAMANHOS
+========================= */
 
-            font-size: 12px;
+.size-title {
+    font-family: "Anton", sans-serif;
 
-            font-weight: 400;
+    font-size: 12px;
 
-            letter-spacing: 1px;
+    letter-spacing: 2px;
 
-            cursor: pointer;
-        }
+    margin-bottom: 12px;
+}
 
-        .coupon-box button:hover {
-            background: #d99a13;
+.sizes {
+    display: flex;
 
-            color: #000;
-        }
+    gap: 10px;
 
-        .coupon-message {
-            margin-top: 8px;
+    margin-bottom: 10px;
 
-            min-height: 18px;
+    flex-wrap: wrap;
+}
 
-            font-size: 11px;
-        }
+.size {
+    width: 55px;
+    height: 48px;
 
-        .coupon-success {
-            color: #16833b;
-        }
+    background: #fff;
 
-        .coupon-error {
-            color: #b00000;
-        }
+    border: 1px solid #aaa;
 
+    color: #111;
 
-        /* =========================
-           TAMANHOS
-        ========================= */
+    font-family: "Anton", sans-serif;
 
-        .size-title {
-            font-family: "Anton", sans-serif;
+    font-size: 15px;
 
-            font-size: 12px;
+    cursor: pointer;
 
-            font-weight: 400;
+    transition: .2s;
 
-            letter-spacing: 2px;
+    position: relative;
+}
 
-            margin-bottom: 12px;
-        }
+.size:hover {
+    background: #eee;
 
-        .sizes {
-            display: flex;
+    border-color: #000;
+}
 
-            gap: 10px;
+.size.selected {
+    background: #000;
 
-            margin-bottom: 10px;
+    color: #fff;
 
-            flex-wrap: wrap;
-        }
+    border-color: #000;
+}
 
-        .size {
-            width: 55px;
-            height: 48px;
+/* TAMANHO ESGOTADO */
 
-            background: #fff;
+.size.sold-out {
+    background: #ddd;
 
-            border: 1px solid #aaa;
+    color: #888;
 
-            color: #111;
+    cursor: not-allowed;
 
-            font-family: "Anton", sans-serif;
+    border-color: #bbb;
 
-            font-size: 15px;
+    text-decoration: line-through;
+}
 
-            font-weight: 400;
+.size.sold-out::after {
+    content: "×";
 
-            cursor: pointer;
+    position: absolute;
 
-            transition: .2s;
+    font-family: Arial, sans-serif;
 
-            position: relative;
-        }
+    font-size: 30px;
 
-        .size:hover {
-            background: #eee;
+    font-weight: bold;
 
-            border-color: #000;
-        }
+    color: #b00000;
 
-        .size.selected {
-            background: #000;
+    left: 50%;
 
-            color: #fff;
+    top: 50%;
 
-            border-color: #000;
-        }
+    transform: translate(-50%, -50%);
+}
 
-        .size.esgotado {
-            background: #eee;
+.selected-text {
+    min-height: 25px;
 
-            color: #999;
+    margin-bottom: 18px;
 
-            border-color: #ccc;
+    font-size: 11px;
 
-            cursor: not-allowed;
+    color: #777;
+}
 
-            text-decoration: line-through;
-        }
+.selected-text strong {
+    color: #111;
+}
 
-        .size.esgotado::after {
-            content: "✕";
+/* =========================
+   QUANTIDADE
+========================= */
 
-            position: absolute;
+.quantity-area {
+    max-width: 450px;
 
-            top: -8px;
-            right: -8px;
+    margin-bottom: 25px;
 
-            width: 20px;
-            height: 20px;
+    display: none;
+}
 
-            border-radius: 50%;
+.quantity-title {
+    font-family: "Anton", sans-serif;
 
-            background: #000;
+    font-size: 12px;
 
-            color: #fff;
+    letter-spacing: 2px;
 
-            font-family: Arial, sans-serif;
+    margin-bottom: 12px;
+}
 
-            font-size: 11px;
+.quantity-row {
+    display: flex;
 
-            display: flex;
+    align-items: center;
 
-            align-items: center;
+    justify-content: space-between;
 
-            justify-content: center;
+    background: #fff;
 
-            text-decoration: none;
-        }
+    border: 1px solid #ddd;
 
+    padding: 10px 12px;
 
-        /* =========================
-           ÁREA DE QUANTIDADES
-        ========================= */
+    margin-bottom: 7px;
+}
 
-        .selected-text {
-            min-height: 25px;
+.quantity-info {
+    font-size: 11px;
+}
 
-            margin-bottom: 12px;
+.quantity-info strong {
+    font-family: "Anton", sans-serif;
 
-            font-size: 11px;
+    font-size: 14px;
+}
 
-            color: #777;
-        }
+.quantity-controls {
+    display: flex;
 
-        .selected-text strong {
-            color: #111;
-        }
+    align-items: center;
 
-        .quantity-area {
-            max-width: 450px;
+    gap: 8px;
+}
 
-            margin-bottom: 18px;
-        }
+.quantity-controls button {
+    width: 30px;
+    height: 30px;
 
-        .quantity-item {
-            display: flex;
+    border: 1px solid #aaa;
 
-            align-items: center;
+    background: #fff;
 
-            justify-content: space-between;
+    cursor: pointer;
 
-            background: #fff;
+    font-size: 18px;
+}
 
-            border: 1px solid #ddd;
+.quantity-controls button:hover {
+    background: #000;
 
-            padding: 10px 12px;
+    color: #fff;
+}
 
-            margin-bottom: 8px;
-        }
+.quantity-number {
+    min-width: 25px;
 
-        .quantity-info {
-            display: flex;
+    text-align: center;
 
-            flex-direction: column;
+    font-family: "Anton", sans-serif;
+}
 
-            gap: 3px;
-        }
+/* =========================
+   RESUMO
+========================= */
 
-        .quantity-size {
-            font-family: "Anton", sans-serif;
+.order-summary {
+    max-width: 450px;
 
-            font-size: 14px;
-        }
+    background: #fff;
 
-        .quantity-stock {
-            font-size: 10px;
+    border: 1px solid #ddd;
 
-            color: #777;
-        }
+    padding: 18px;
 
-        .quantity-controls {
-            display: flex;
+    margin-bottom: 25px;
 
-            align-items: center;
+    display: none;
+}
 
-            gap: 8px;
-        }
+.summary-title {
+    font-family: "Anton", sans-serif;
 
-        .quantity-button {
-            width: 30px;
-            height: 30px;
+    font-size: 13px;
 
-            border: 1px solid #aaa;
+    letter-spacing: 2px;
 
-            background: #fff;
+    margin-bottom: 15px;
+}
 
-            cursor: pointer;
+.summary-item {
+    display: flex;
 
-            font-size: 16px;
-        }
+    justify-content: space-between;
 
-        .quantity-button:hover {
-            background: #eee;
-        }
+    align-items: center;
 
-        .quantity-number {
-            min-width: 25px;
+    font-size: 11px;
 
-            text-align: center;
+    padding: 8px 0;
 
-            font-family: "Anton", sans-serif;
+    border-bottom: 1px solid #eee;
+}
 
-            font-size: 14px;
-        }
+.summary-item:last-child {
+    border-bottom: none;
+}
 
-        .remove-size {
-            border: none;
+.summary-total {
+    margin-top: 15px;
 
-            background: none;
+    padding-top: 12px;
 
-            color: #999;
+    border-top: 1px solid #ddd;
+}
 
-            font-size: 10px;
+.summary-line {
+    display: flex;
 
-            cursor: pointer;
+    justify-content: space-between;
 
-            margin-left: 10px;
-        }
+    font-size: 11px;
 
-        .remove-size:hover {
-            color: #000;
-        }
+    margin-bottom: 7px;
+}
 
+.summary-discount {
+    color: #16833b;
+}
 
-        /* =========================
-           PAGAMENTO
-        ========================= */
+.summary-final {
+    display: flex;
 
-        .payment-title {
-            font-family: "Anton", sans-serif;
+    justify-content: space-between;
 
-            font-size: 12px;
+    margin-top: 10px;
 
-            font-weight: 400;
+    padding-top: 10px;
 
-            letter-spacing: 2px;
+    border-top: 2px solid #111;
 
-            margin-top: 5px;
+    font-family: "Anton", sans-serif;
 
-            margin-bottom: 12px;
-        }
+    font-size: 20px;
+}
 
-        .payments {
-            display: flex;
+/* =========================
+   PAGAMENTO
+========================= */
 
-            gap: 10px;
+.payment-title {
+    font-family: "Anton", sans-serif;
 
-            margin-bottom: 10px;
+    font-size: 12px;
 
-            flex-wrap: wrap;
-        }
+    letter-spacing: 2px;
 
-        .payment {
-            padding: 12px 18px;
+    margin-top: 5px;
 
-            background: #fff;
+    margin-bottom: 12px;
+}
 
-            border: 1px solid #aaa;
+.payments {
+    display: flex;
 
-            color: #111;
+    gap: 10px;
 
-            font-family: "Anton", sans-serif;
+    margin-bottom: 10px;
 
-            font-size: 13px;
+    flex-wrap: wrap;
+}
 
-            font-weight: 400;
+.payment {
+    padding: 12px 18px;
 
-            letter-spacing: .5px;
+    background: #fff;
 
-            cursor: pointer;
+    border: 1px solid #aaa;
 
-            transition: .2s;
-        }
+    color: #111;
 
-        .payment:hover {
-            background: #eee;
+    font-family: "Anton", sans-serif;
 
-            border-color: #000;
-        }
+    font-size: 13px;
 
-        .payment.selected {
-            background: #000;
+    cursor: pointer;
 
-            color: #fff;
+    transition: .2s;
+}
 
-            border-color: #000;
-        }
+.payment:hover {
+    background: #eee;
 
-        .payment-text {
-            min-height: 20px;
+    border-color: #000;
+}
 
-            margin-bottom: 20px;
+.payment.selected {
+    background: #000;
 
-            font-size: 11px;
+    color: #fff;
 
-            color: #777;
-        }
+    border-color: #000;
+}
 
+.payment-text {
+    min-height: 20px;
 
-        /* =========================
-           BOTÃO COMPRAR
-        ========================= */
+    margin-bottom: 20px;
 
-        .buy {
-            width: 100%;
+    font-size: 11px;
 
-            max-width: 450px;
+    color: #777;
+}
 
-            height: 60px;
+/* =========================
+   BOTÃO
+========================= */
 
-            border: none;
+.buy {
+    width: 100%;
 
-            background: #000;
+    max-width: 450px;
 
-            color: #fff;
+    height: 60px;
 
-            font-family: "Anton", sans-serif;
+    border: none;
 
-            font-size: 15px;
+    background: #000;
 
-            font-weight: 400;
+    color: #fff;
 
-            letter-spacing: 2px;
+    font-family: "Anton", sans-serif;
 
-            cursor: pointer;
+    font-size: 15px;
 
-            transition: .3s;
-        }
+    letter-spacing: 2px;
 
-        .buy:hover {
-            background: #d99a13;
+    cursor: pointer;
 
-            color: #000;
-        }
+    transition: .3s;
+}
 
+.buy:hover {
+    background: #d99a13;
 
-        /* =========================
-           DETALHES
-        ========================= */
+    color: #000;
+}
 
-        .details {
-            max-width: 450px;
+/* =========================
+   DETALHES
+========================= */
 
-            margin-top: 30px;
-        }
+.details {
+    max-width: 450px;
 
-        .detail {
-            border-top: 1px solid #ddd;
+    margin-top: 30px;
+}
 
-            padding: 14px 0;
+.detail {
+    border-top: 1px solid #ddd;
 
-            display: flex;
+    padding: 14px 0;
 
-            justify-content: space-between;
+    display: flex;
 
-            font-size: 10px;
-        }
+    justify-content: space-between;
 
-        .detail span {
-            color: #777;
-        }
+    font-size: 10px;
+}
 
-        .detail strong {
-            font-family: "Anton", sans-serif;
+.detail span {
+    color: #777;
+}
 
-            font-weight: 400;
+.detail strong {
+    font-family: "Anton", sans-serif;
 
-            letter-spacing: .5px;
-        }
+    font-weight: 400;
+}
 
+/* =========================
+   DUAS IMAGENS
+========================= */
 
-        /* =========================
-           DUAS IMAGENS
-        ========================= */
+.story {
+    width: 100%;
 
-        .story {
-            width: 100%;
+    height: 600px;
 
-            height: 600px;
+    display: grid;
 
-            display: grid;
+    grid-template-columns: 1fr 1fr;
 
-            grid-template-columns: 1fr 1fr;
+    background: #111;
+}
 
-            background: #111;
-        }
+.story-image {
+    width: 100%;
 
-        .story-image {
-            width: 100%;
+    height: 600px;
 
-            height: 600px;
+    overflow: hidden;
+}
 
-            overflow: hidden;
-        }
+.story-image img {
+    width: 100%;
 
-        .story-image img {
-            width: 100%;
+    height: 100%;
 
-            height: 100%;
+    display: block;
 
-            display: block;
+    object-fit: cover;
+}
 
-            object-fit: cover;
+/* =========================
+   RODAPÉ
+========================= */
 
-            object-position: center;
-        }
+footer {
+    min-height: 120px;
 
+    background: #f5f3ef;
 
-        /* =========================
-           RODAPÉ
-        ========================= */
+    color: #111;
 
-        footer {
-            min-height: 120px;
+    display: flex;
 
-            background: #f5f3ef;
+    align-items: center;
 
-            color: #111;
+    justify-content: space-between;
 
-            display: flex;
+    padding: 20px 40px;
 
-            align-items: center;
+    border-top: 1px solid #ddd;
+}
 
-            justify-content: space-between;
+footer p {
+    color: #777;
 
-            padding: 20px 40px;
+    font-family: Georgia, serif;
 
-            border-top: 1px solid #ddd;
-        }
+    font-size: 12px;
 
-        footer .logo {
-            color: #111;
-        }
+    line-height: 1.5;
 
-        footer p {
-            color: #777;
+    max-width: 650px;
 
-            font-family: Georgia, serif;
+    text-align: right;
+}
 
-            font-size: 12px;
+/* =========================
+   RESPONSIVO
+========================= */
 
-            line-height: 1.5;
+@media (max-width: 800px) {
 
-            letter-spacing: .3px;
+    header {
+        padding: 0 20px;
+    }
 
-            max-width: 650px;
+    .product {
+        grid-template-columns: 1fr;
+    }
 
-            text-align: right;
-        }
+    .product-gallery {
+        padding: 20px;
+    }
 
+    .main-photo {
+        height: 500px;
+    }
 
-        /* =========================
-           RESPONSIVO
-        ========================= */
+    .info {
+        padding: 50px 25px;
+    }
 
-        @media (max-width: 800px) {
+    h1 {
+        font-size: 60px;
+    }
 
-            header {
-                padding: 0 20px;
-            }
+    .story {
+        grid-template-columns: 1fr;
 
-            .product {
-                grid-template-columns: 1fr;
-            }
+        height: auto;
+    }
 
-            .product-gallery {
-                padding: 20px;
-            }
+    .story-image {
+        height: 500px;
+    }
 
-            .main-photo {
-                height: 500px;
-            }
+    footer {
+        padding: 25px 20px;
 
-            .info {
-                padding: 50px 25px;
-            }
+        flex-direction: column;
 
-            h1 {
-                font-size: 60px;
-            }
+        gap: 15px;
 
-            .story {
-                grid-template-columns: 1fr;
+        text-align: center;
+    }
 
-                height: auto;
-            }
+    footer p {
+        text-align: center;
+    }
 
-            .story-image {
-                height: 500px;
-            }
+}
 
-            footer {
-                padding: 25px 20px;
-
-                flex-direction: column;
-
-                gap: 15px;
-
-                text-align: center;
-            }
-
-            footer p {
-                text-align: center;
-            }
-
-        }
-
-    </style>
+</style>
 
 </head>
 
-
 <body>
 
+<div class="topbar">
 
-    <!-- =========================
-         BARRA SUPERIOR
-    ========================= -->
+PRIMEIRA COMPRA?
+&nbsp;
+USE O CUPOM
+<strong>GLORY10</strong>
 
-    <div class="topbar">
+</div>
 
-        PRIMEIRA COMPRA?
-        &nbsp;
-        USE O CUPOM
-        <strong>GLORY10</strong>
+<header>
 
-    </div>
+<div class="brand">
+
+<img
+    class="brand-logo"
+    src="Logo.png"
+    alt="Logo Holiness"
+>
+
+<div class="logo">
+HOLINESS
+</div>
+
+</div>
+
+</header>
+
+<section class="product">
+
+<div class="product-gallery">
+
+<div class="main-photo">
+
+<img
+    id="mainImage"
+    src="Frente.png"
+    alt="Frente da camisa Glory"
+>
+
+</div>
+
+<div class="thumbnails">
+
+<div
+    class="thumbnail active"
+    onclick="trocarFoto('Frente.png', this)"
+>
+
+<img src="Frente.png" alt="Frente">
+
+</div>
+
+<div
+    class="thumbnail"
+    onclick="trocarFoto('Costa.png', this)"
+>
+
+<img src="Costa.png" alt="Costa">
+
+</div>
+
+<div
+    class="thumbnail"
+    onclick="trocarFoto('Chuva.png', this)"
+>
+
+<img src="Chuva.png" alt="Chuva">
+
+</div>
+
+</div>
+
+</div>
+
+<div class="info">
+
+<div class="small-title">
+NOVA COLEÇÃO • 001
+</div>
+
+<h1>
+GLORY
+</h1>
+
+<div class="line"></div>
+
+<p class="phrase">
+
+"Acredito que, buscando incansavelmente a Deus,
+chegaremos a manifestação visível da presença,
+do poder e de todas as perfeições - à Glória."
+
+</p>
+
+<div
+    class="price"
+    id="price"
+>
+R$ 98,89
+</div>
+
+<div
+    id="discountText"
+    class="price-discount"
+>
+</div>
+
+<div
+    class="installments"
+    id="installments"
+>
+ou 2x de R$ 49,45 sem juros
+</div>
+
+<!-- CUPOM -->
+
+<div class="coupon-area">
+
+<div class="coupon-title">
+CUPOM DE DESCONTO
+</div>
+
+<div class="coupon-box">
+
+<input
+    type="text"
+    id="couponInput"
+    placeholder="DIGITE SEU CUPOM"
+>
+
+<button
+    type="button"
+    id="couponButton"
+>
+APLICAR
+</button>
+
+</div>
+
+<div
+    id="couponMessage"
+    class="coupon-message"
+>
+</div>
+
+</div>
+
+<!-- TAMANHOS -->
+
+<div class="size-title">
+ESCOLHA OS TAMANHOS
+</div>
+
+<div class="sizes">
+
+<button
+    type="button"
+    class="size"
+    data-size="PP"
+    data-quantity="3"
+>
+PP
+</button>
+
+<button
+    type="button"
+    class="size"
+    data-size="P"
+    data-quantity="3"
+>
+P
+</button>
+
+<button
+    type="button"
+    class="size"
+    data-size="M"
+    data-quantity="4"
+>
+M
+</button>
+
+<button
+    type="button"
+    class="size"
+    data-size="G"
+    data-quantity="4"
+>
+G
+</button>
+
+<button
+    type="button"
+    class="size"
+    data-size="GG"
+    data-quantity="2"
+>
+GG
+</button>
+
+<button
+    type="button"
+    class="size"
+    data-size="XG"
+    data-quantity="1"
+>
+XG
+</button>
+
+</div>
+
+<div
+    class="selected-text"
+    id="selectedText"
+>
+Selecione um ou mais tamanhos
+</div>
+
+<!-- QUANTIDADES -->
+
+<div
+    class="quantity-area"
+    id="quantityArea"
+>
+
+<div class="quantity-title">
+QUANTIDADE POR TAMANHO
+</div>
+
+<div id="quantityList"></div>
+
+</div>
+
+<!-- RESUMO -->
+
+<div
+    class="order-summary"
+    id="orderSummary"
+>
+
+<div class="summary-title">
+RESUMO DO PEDIDO
+</div>
+
+<div id="summaryItems"></div>
+
+<div class="summary-total">
+
+<div class="summary-line">
+
+<span>
+Subtotal
+</span>
+
+<strong id="summarySubtotal">
+R$ 0,00
+</strong>
+
+</div>
+
+<div
+    class="summary-line summary-discount"
+    id="summaryDiscountLine"
+>
+
+<span>
+Desconto
+</span>
+
+<strong id="summaryDiscount">
+-R$ 0,00
+</strong>
+
+</div>
+
+<div class="summary-final">
+
+<span>
+TOTAL
+</span>
+
+<strong id="summaryTotal">
+R$ 0,00
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- PAGAMENTO -->
+
+<div class="payment-title">
+MÉTODO DE PAGAMENTO
+</div>
+
+<div class="payments">
+
+<button
+    type="button"
+    class="payment"
+    data-payment="PIX"
+>
+PIX
+</button>
+
+<button
+    type="button"
+    class="payment"
+    data-payment="Cartão"
+>
+CARTÃO
+</button>
+
+<button
+    type="button"
+    class="payment"
+    data-payment="Dinheiro"
+>
+DINHEIRO
+</button>
+
+</div>
+
+<div
+    class="payment-text"
+    id="paymentText"
+>
+Selecione o método de pagamento
+</div>
+
+<button
+    type="button"
+    class="buy"
+    id="buyButton"
+>
+FINALIZAR COMPRA →
+</button>
+
+<div class="details">
+
+<div class="detail">
+
+<span>
+MATERIAL
+</span>
+
+<strong>
+100% ALGODÃO
+</strong>
+
+</div>
+
+<div class="detail">
+
+<span>
+MODELAGEM
+</span>
+
+<strong>
+OVERSIZED
+</strong>
+
+</div>
+
+<div class="detail">
+
+<span>
+ENVIO
+</span>
+
+<strong>
+TODO O BRASIL
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="story">
+
+<div class="story-image">
+
+<img
+    src="Obrigado.png"
+    alt="Obrigado"
+>
+
+</div>
+
+<div class="story-image">
+
+<img
+    src="fig.png"
+    alt="Glory"
+>
+
+</div>
+
+</section>
+
+<footer>
+
+<div class="logo">
+HOLINESS
+</div>
+
+<p>
+
+“Ao contemplarmos a presença de Deus,<br>
+somos transformados progressivamente à imagem de Cristo<br>
+pelo Espírito Santo.”
+
+</p>
+
+</footer>
+
+<script>
+
+/* =========================
+   CONFIGURAÇÕES
+========================= */
+
+const precoOriginal = 98.89;
+
+const precoComCupomGLORY10 = 89.90;
+
+const cupons = {
+    "GLORY10": 10,
+    "ALTAR20": 20
+};
+
+const estoque = {
+    "PP": 3,
+    "P": 3,
+    "M": 4,
+    "G": 4,
+    "GG": 2,
+    "XG": 1
+};
+
+let tamanhosEscolhidos = {};
+
+let pagamentoEscolhido = "";
+
+let cupomAplicado = "";
+
+let desconto = 0;
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
+/* =========================
+   TROCAR FOTOS
+========================= */
 
-    <header>
+function trocarFoto(foto, elemento) {
 
-        <div class="brand">
+    document.getElementById("mainImage").src = foto;
 
-            <img
-                class="brand-logo"
-                src="Logo.png"
-                alt="Logo Holiness"
-            >
+    document
+        .querySelectorAll(".thumbnail")
+        .forEach(function(item) {
 
-            <div class="logo">
-                HOLINESS
+            item.classList.remove("active");
+
+        });
+
+    elemento.classList.add("active");
+
+}
+
+
+/* =========================
+   FORMATAR DINHEIRO
+========================= */
+
+function dinheiro(valor) {
+
+    return "R$ " +
+        valor
+        .toFixed(2)
+        .replace(".", ",");
+
+}
+
+
+/* =========================
+   TAMANHOS
+========================= */
+
+const botoesTamanho =
+    document.querySelectorAll(".size");
+
+const selectedText =
+    document.getElementById("selectedText");
+
+const quantityArea =
+    document.getElementById("quantityArea");
+
+const quantityList =
+    document.getElementById("quantityList");
+
+const orderSummary =
+    document.getElementById("orderSummary");
+
+const summaryItems =
+    document.getElementById("summaryItems");
+
+
+botoesTamanho.forEach(function(botao) {
+
+    botao.addEventListener("click", function() {
+
+        const tamanho =
+            botao.getAttribute("data-size");
+
+        const disponivel =
+            estoque[tamanho];
+
+
+        /* SE ESTIVER ESGOTADO */
+
+        if (disponivel <= 0) {
+
+            return;
+
+        }
+
+
+        /* SE JÁ FOI SELECIONADO */
+
+        if (
+            tamanhosEscolhidos[tamanho]
+        ) {
+
+            delete tamanhosEscolhidos[tamanho];
+
+            botao.classList.remove("selected");
+
+        }
+
+        /* ADICIONA */
+
+        else {
+
+            tamanhosEscolhidos[tamanho] = 1;
+
+            botao.classList.add("selected");
+
+        }
+
+
+        atualizarSelecao();
+
+        atualizarResumo();
+
+    });
+
+});
+
+
+/* =========================
+   ATUALIZAR SELEÇÃO
+========================= */
+
+function atualizarSelecao() {
+
+    const tamanhos =
+        Object.keys(tamanhosEscolhidos);
+
+
+    if (tamanhos.length === 0) {
+
+        selectedText.innerHTML =
+            "Selecione um ou mais tamanhos";
+
+        quantityArea.style.display = "none";
+
+        return;
+
+    }
+
+
+    selectedText.innerHTML =
+        tamanhos.length +
+        (
+            tamanhos.length === 1
+                ? " tamanho selecionado"
+                : " tamanhos selecionados"
+        );
+
+
+    quantityArea.style.display = "block";
+
+
+    quantityList.innerHTML = "";
+
+
+    tamanhos.forEach(function(tamanho) {
+
+        const quantidade =
+            tamanhosEscolhidos[tamanho];
+
+        const maximo =
+            estoque[tamanho];
+
+
+        const linha =
+            document.createElement("div");
+
+        linha.className =
+            "quantity-row";
+
+
+        linha.innerHTML = `
+
+            <div class="quantity-info">
+
+                <strong>${tamanho}</strong>
+
+                <br>
+
+                ${maximo} disponíveis
+
             </div>
 
-        </div>
-
-    </header>
-
-
-    <!-- =========================
-         PRODUTO
-    ========================= -->
-
-    <section class="product">
-
-
-        <!-- GALERIA -->
-
-        <div class="product-gallery">
-
-
-            <div class="main-photo">
-
-                <img
-                    id="mainImage"
-                    src="Frente.png"
-                    alt="Frente da camisa Glory"
-                >
-
-            </div>
-
-
-            <!-- MINIATURAS -->
-
-            <div class="thumbnails">
-
-                <div
-                    class="thumbnail active"
-                    onclick="trocarFoto('Frente.png', this)"
-                >
-
-                    <img
-                        src="Frente.png"
-                        alt="Frente"
-                    >
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto('Costa.png', this)"
-                >
-
-                    <img
-                        src="Costa.png"
-                        alt="Costa"
-                    >
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto('Chuva.png', this)"
-                >
-
-                    <img
-                        src="Chuva.png"
-                        alt="Chuva"
-                    >
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- =========================
-             INFORMAÇÕES
-        ========================= -->
-
-        <div class="info">
-
-
-            <div class="small-title">
-
-                NOVA COLEÇÃO • 001
-
-            </div>
-
-
-            <h1>
-
-                GLORY
-
-            </h1>
-
-
-            <div class="line"></div>
-
-
-            <p class="phrase">
-
-                "Acredito que, buscando incansavelmente a Deus,
-                chegaremos a manifestação visível da presença,
-                do poder e de todas as perfeições - à Glória."
-
-            </p>
-
-
-            <!-- PREÇO -->
-
-            <div
-                class="price"
-                id="price"
-            >
-
-                R$ 98,89
-
-            </div>
-
-
-            <div
-                id="discountText"
-                class="price-discount"
-            >
-
-            </div>
-
-
-            <div
-                class="installments"
-                id="installments"
-            >
-
-                ou 2x de R$ 49,45 sem juros
-
-            </div>
-
-
-            <!-- =========================
-                 CUPOM
-            ========================= -->
-
-            <div class="coupon-area">
-
-                <div class="coupon-title">
-
-                    CUPOM DE DESCONTO
-
-                </div>
-
-
-                <div class="coupon-box">
-
-                    <input
-                        type="text"
-                        id="couponInput"
-                        placeholder="DIGITE SEU CUPOM"
-                    >
-
-
-                    <button
-                        type="button"
-                        id="couponButton"
-                    >
-
-                        APLICAR
-
-                    </button>
-
-                </div>
-
-
-                <div
-                    id="couponMessage"
-                    class="coupon-message"
-                >
-
-                </div>
-
-            </div>
-
-
-            <!-- =========================
-                 TAMANHOS
-            ========================= -->
-
-            <div class="size-title">
-
-                ESCOLHA OS TAMANHOS
-
-            </div>
-
-
-            <div class="sizes">
-
+            <div class="quantity-controls">
 
                 <button
                     type="button"
-                    class="size"
-                    data-size="PP"
-                    data-stock="3"
+                    onclick="alterarQuantidade('${tamanho}', -1)"
                 >
-
-                    PP
-
+                    −
                 </button>
 
+                <span class="quantity-number">
+                    ${quantidade}
+                </span>
 
                 <button
                     type="button"
-                    class="size"
-                    data-size="P"
-                    data-stock="3"
+                    onclick="alterarQuantidade('${tamanho}', 1)"
                 >
-
-                    P
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="size"
-                    data-size="M"
-                    data-stock="4"
-                >
-
-                    M
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="size"
-                    data-size="G"
-                    data-stock="4"
-                >
-
-                    G
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="size"
-                    data-size="GG"
-                    data-stock="2"
-                >
-
-                    GG
-
-                </button>
-
-
-                <button
-                    type="button"
-                    class="size"
-                    data-size="XG"
-                    data-stock="1"
-                >
-
-                    XG
-
+                    +
                 </button>
 
             </div>
 
+        `;
 
-            <div
-                class="selected-text"
-                id="selectedText"
-            >
 
-                Clique em um tamanho para adicionar ao pedido.
+        quantityList.appendChild(linha);
 
-            </div>
+    });
 
+}
 
-            <!-- =========================
-                 QUANTIDADES ESCOLHIDAS
-            ========================= -->
 
-            <div
-                class="quantity-area"
-                id="quantityArea"
-            >
+/* =========================
+   ALTERAR QUANTIDADE
+========================= */
 
-            </div>
+function alterarQuantidade(
+    tamanho,
+    valor
+) {
 
+    if (
+        !tamanhosEscolhidos[tamanho]
+    ) {
 
-            <!-- =========================
-                 PAGAMENTO
-            ========================= -->
+        return;
 
-            <div class="payment-title">
+    }
 
-                MÉTODO DE PAGAMENTO
 
-            </div>
+    let novaQuantidade =
+        tamanhosEscolhidos[tamanho] +
+        valor;
 
 
-            <div class="payments">
+    /* NÃO DEIXA ABAIXO DE 1 */
 
+    if (novaQuantidade < 1) {
 
-                <button
-                    type="button"
-                    class="payment"
-                    data-payment="PIX"
-                >
+        novaQuantidade = 1;
 
-                    PIX
+    }
 
-                </button>
 
+    /* NÃO PASSA DO ESTOQUE */
 
-                <button
-                    type="button"
-                    class="payment"
-                    data-payment="Cartão"
-                >
+    if (
+        novaQuantidade >
+        estoque[tamanho]
+    ) {
 
-                    CARTÃO
+        novaQuantidade =
+            estoque[tamanho];
 
-                </button>
+    }
 
 
-                <button
-                    type="button"
-                    class="payment"
-                    data-payment="Dinheiro"
-                >
+    tamanhosEscolhidos[tamanho] =
+        novaQuantidade;
 
-                    DINHEIRO
 
-                </button>
+    atualizarSelecao();
 
-            </div>
+    atualizarResumo();
 
+}
 
-            <div
-                class="payment-text"
-                id="paymentText"
-            >
 
-                Selecione o método de pagamento
+/* =========================
+   PREÇO ATUAL
+========================= */
 
-            </div>
+function obterPrecoUnitario() {
 
+    if (
+        cupomAplicado === "GLORY10"
+    ) {
 
-            <!-- =========================
-                 FINALIZAR COMPRA
-            ========================= -->
+        return precoComCupomGLORY10;
 
-            <button
-                type="button"
-                class="buy"
-                id="buyButton"
-            >
+    }
 
-                FINALIZAR COMPRA →
 
-            </button>
+    if (desconto > 0) {
 
+        return precoOriginal -
+            (
+                precoOriginal *
+                desconto /
+                100
+            );
 
-            <!-- =========================
-                 DETALHES
-            ========================= -->
+    }
 
-            <div class="details">
 
+    return precoOriginal;
 
-                <div class="detail">
+}
 
-                    <span>
-                        MATERIAL
-                    </span>
 
-                    <strong>
-                        100% ALGODÃO
-                    </strong>
+/* =========================
+   ATUALIZAR RESUMO
+========================= */
 
-                </div>
+function atualizarResumo() {
 
+    const tamanhos =
+        Object.keys(tamanhosEscolhidos);
 
-                <div class="detail">
 
-                    <span>
-                        MODELAGEM
-                    </span>
+    if (tamanhos.length === 0) {
 
-                    <strong>
-                        OVERSIZED
-                    </strong>
+        orderSummary.style.display =
+            "none";
 
-                </div>
+        return;
 
+    }
 
-                <div class="detail">
 
-                    <span>
-                        ENVIO
-                    </span>
+    orderSummary.style.display =
+        "block";
 
-                    <strong>
-                        TODO O BRASIL
-                    </strong>
 
-                </div>
+    summaryItems.innerHTML = "";
 
 
-            </div>
+    const precoUnitario =
+        obterPrecoUnitario();
 
 
-        </div>
+    let subtotal =
+        0;
 
-    </section>
 
+    tamanhos.forEach(function(tamanho) {
 
-    <!-- =========================
-         DUAS IMAGENS
-    ========================= -->
+        const quantidade =
+            tamanhosEscolhidos[tamanho];
 
-    <section class="story">
 
+        const valor =
+            precoOriginal *
+            quantidade;
 
-        <div class="story-image">
 
-            <img
-                src="Obrigado.png"
-                alt="Obrigado"
-            >
+        subtotal += valor;
 
-        </div>
 
+        const item =
+            document.createElement("div");
 
-        <div class="story-image">
 
-            <img
-                src="fig.png"
-                alt="Glory"
-            >
+        item.className =
+            "summary-item";
 
-        </div>
 
+        item.innerHTML = `
 
-    </section>
+            <span>
+                ${tamanho} × ${quantidade}
+            </span>
 
+            <strong>
+                ${dinheiro(valor)}
+            </strong>
 
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
+        `;
 
-    <footer>
 
+        summaryItems.appendChild(item);
 
-        <div class="logo">
+    });
 
-            HOLINESS
 
-        </div>
+    /* =========================
+       DESCONTO
+    ========================= */
 
+    let descontoValor =
+        subtotal -
+        (
+            precoUnitario *
+            Object.values(tamanhosEscolhidos)
+                .reduce(
+                    (a, b) => a + b,
+                    0
+                )
+        );
 
-        <p>
 
-            “Ao contemplarmos a presença de Deus,<br>
-            somos transformados progressivamente à imagem de Cristo<br>
-            pelo Espírito Santo.”
+    /*
+     * ARREDONDAMENTO
+     */
 
-        </p>
+    descontoValor =
+        Math.max(
+            0,
+            descontoValor
+        );
 
 
-    </footer>
+    const quantidadeTotal =
+        Object.values(
+            tamanhosEscolhidos
+        ).reduce(
+            (a, b) => a + b,
+            0
+        );
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
+    const total =
+        precoUnitario *
+        quantidadeTotal;
 
-    <script>
 
+    document.getElementById(
+        "summarySubtotal"
+    ).innerHTML =
+        dinheiro(subtotal);
 
-        /* =========================
-           CONFIGURAÇÕES
-        ========================= */
 
-        const precoOriginal = 98.89;
+    document.getElementById(
+        "summaryDiscount"
+    ).innerHTML =
+        "-" + dinheiro(descontoValor);
 
-        const precoComCupomGLORY10 = 89.90;
 
-        let pagamentoEscolhido = "";
+    document.getElementById(
+        "summaryTotal"
+    ).innerHTML =
+        dinheiro(total);
 
-        let cupomAplicado = "";
 
-        let desconto = 0;
+    /* =========================
+       DESCONTO VISUAL
+    ========================= */
 
+    const discountLine =
+        document.getElementById(
+            "summaryDiscountLine"
+        );
 
-        /*
-         * ESTOQUE
-         */
 
-        const estoque = {
+    if (descontoValor > 0) {
 
-            PP: 3,
+        discountLine.style.display =
+            "flex";
 
-            P: 3,
+    }
 
-            M: 4,
+    else {
 
-            G: 4,
+        discountLine.style.display =
+            "none";
 
-            GG: 2,
+    }
 
-            XG: 1
 
-        };
+    /* =========================
+       PARCELAMENTO
+    ========================= */
 
+    if (
+        pagamentoEscolhido === "Cartão"
+    ) {
 
-        /*
-         * TAMANHOS ESCOLHIDOS
-         *
-         * Exemplo:
-         *
-         * {
-         *    P: 2,
-         *    M: 1,
-         *    XG: 1
-         * }
-         */
+        const parcela =
+            total / 2;
 
-        const tamanhosEscolhidos = {};
 
+        document.getElementById(
+            "installments"
+        ).innerHTML =
 
-        /* =========================
-           TROCAR FOTOS
-        ========================= */
+            "ou 2x de " +
 
-        function trocarFoto(foto, elemento) {
+            dinheiro(parcela) +
 
-            document.getElementById(
-                "mainImage"
-            ).src = foto;
+            " sem juros";
 
+    }
 
-            document
-                .querySelectorAll(".thumbnail")
-                .forEach(function(item) {
+}
+
+
+/* =========================
+   PAGAMENTO
+========================= */
+
+const pagamentos =
+    document.querySelectorAll(".payment");
+
+const paymentText =
+    document.getElementById("paymentText");
+
+
+pagamentos.forEach(function(botao) {
+
+    botao.addEventListener(
+        "click",
+        function() {
+
+            pagamentos.forEach(
+                function(item) {
 
                     item.classList.remove(
-                        "active"
-                    );
-
-                });
-
-
-            elemento.classList.add(
-                "active"
-            );
-
-        }
-
-
-        /* =========================
-           ELEMENTOS
-        ========================= */
-
-        const botoesTamanho =
-            document.querySelectorAll(
-                ".size"
-            );
-
-
-        const texto =
-            document.getElementById(
-                "selectedText"
-            );
-
-
-        const quantityArea =
-            document.getElementById(
-                "quantityArea"
-            );
-
-
-        /* =========================
-           CLICAR NO TAMANHO
-        ========================= */
-
-        botoesTamanho.forEach(
-            function(botao) {
-
-                botao.addEventListener(
-                    "click",
-                    function() {
-
-
-                        const tamanho =
-                            botao.getAttribute(
-                                "data-size"
-                            );
-
-
-                        const disponivel =
-                            estoque[tamanho];
-
-
-                        /*
-                         * SE ESGOTADO
-                         */
-
-                        if (
-                            disponivel <= 0
-                        ) {
-
-                            texto.innerHTML =
-
-                                "✕ " +
-
-                                "<strong>" +
-
-                                tamanho +
-
-                                "</strong>" +
-
-                                " — ESGOTADO";
-
-
-                            texto.style.color =
-                                "#b00000";
-
-
-                            return;
-
-                        }
-
-
-                        /*
-                         * ADICIONA TAMANHO
-                         */
-
-                        if (
-                            !tamanhosEscolhidos
-                                .hasOwnProperty(tamanho)
-                        ) {
-
-                            tamanhosEscolhidos[tamanho] = 1;
-
-                        }
-
-
-                        botao.classList.add(
-                            "selected"
-                        );
-
-
-                        /*
-                         * MOSTRA DISPONIBILIDADE
-                         */
-
-                        texto.innerHTML =
-
-                            "Tamanho " +
-
-                            "<strong>" +
-
-                            tamanho +
-
-                            "</strong>" +
-
-                            " — " +
-
-                            disponivel +
-
-                            " disponíveis";
-
-
-                        texto.style.color =
-                            "#777";
-
-
-                        atualizarQuantidades();
-
-                    }
-                );
-
-            }
-        );
-
-
-        /* =========================
-           ATUALIZAR QUANTIDADES
-        ========================= */
-
-        function atualizarQuantidades() {
-
-
-            quantityArea.innerHTML = "";
-
-
-            const tamanhos =
-                Object.keys(
-                    tamanhosEscolhidos
-                );
-
-
-            tamanhos.forEach(
-                function(tamanho) {
-
-
-                    const quantidade =
-                        tamanhosEscolhidos[
-                            tamanho
-                        ];
-
-
-                    const maximo =
-                        estoque[tamanho];
-
-
-                    const item =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    item.className =
-                        "quantity-item";
-
-
-                    item.innerHTML =
-
-                        '<div class="quantity-info">' +
-
-                            '<div class="quantity-size">' +
-
-                                tamanho +
-
-                            '</div>' +
-
-                            '<div class="quantity-stock">' +
-
-                                maximo +
-
-                                " disponíveis" +
-
-                            '</div>' +
-
-                        '</div>' +
-
-
-                        '<div class="quantity-controls">' +
-
-                            '<button type="button" class="quantity-button minus">' +
-
-                                "−" +
-
-                            '</button>' +
-
-
-                            '<span class="quantity-number">' +
-
-                                quantidade +
-
-                            '</span>' +
-
-
-                            '<button type="button" class="quantity-button plus">' +
-
-                                "+" +
-
-                            '</button>' +
-
-
-                            '<button type="button" class="remove-size">' +
-
-                                "REMOVER" +
-
-                            '</button>' +
-
-                        '</div>';
-
-
-                    /*
-                     * BOTÃO MENOS
-                     */
-
-                    item
-                        .querySelector(".minus")
-                        .addEventListener(
-                            "click",
-                            function() {
-
-
-                                if (
-                                    tamanhosEscolhidos[
-                                        tamanho
-                                    ] > 1
-                                ) {
-
-                                    tamanhosEscolhidos[
-                                        tamanho
-                                    ]--;
-
-                                }
-
-
-                                atualizarQuantidades();
-
-                            }
-                        );
-
-
-                    /*
-                     * BOTÃO MAIS
-                     */
-
-                    item
-                        .querySelector(".plus")
-                        .addEventListener(
-                            "click",
-                            function() {
-
-
-                                if (
-                                    tamanhosEscolhidos[
-                                        tamanho
-                                    ] < maximo
-                                ) {
-
-                                    tamanhosEscolhidos[
-                                        tamanho
-                                    ]++;
-
-                                }
-
-                                else {
-
-                                    alert(
-                                        "Não há mais unidades disponíveis deste tamanho."
-                                    );
-
-                                }
-
-
-                                atualizarQuantidades();
-
-                            }
-                        );
-
-
-                    /*
-                     * REMOVER
-                     */
-
-                    item
-                        .querySelector(".remove-size")
-                        .addEventListener(
-                            "click",
-                            function() {
-
-
-                                delete tamanhosEscolhidos[
-                                    tamanho
-                                ];
-
-
-                                /*
-                                 * TIRA A SELEÇÃO
-                                 */
-
-                                botoesTamanho.forEach(
-                                    function(botao) {
-
-                                        if (
-                                            botao.getAttribute(
-                                                "data-size"
-                                            ) === tamanho
-                                        ) {
-
-                                            botao.classList.remove(
-                                                "selected"
-                                            );
-
-                                        }
-
-                                    }
-                                );
-
-
-                                atualizarQuantidades();
-
-                            }
-                        );
-
-
-                    quantityArea.appendChild(
-                        item
+                        "selected"
                     );
 
                 }
             );
 
-        }
+
+            botao.classList.add("selected");
 
 
-        /* =========================
-           PAGAMENTO
-        ========================= */
-
-        const pagamentos =
-            document.querySelectorAll(
-                ".payment"
-            );
-
-
-        const paymentText =
-            document.getElementById(
-                "paymentText"
-            );
-
-
-        pagamentos.forEach(
-            function(botao) {
-
-                botao.addEventListener(
-                    "click",
-                    function() {
-
-
-                        pagamentos.forEach(
-                            function(item) {
-
-                                item.classList.remove(
-                                    "selected"
-                                );
-
-                            }
-                        );
-
-
-                        botao.classList.add(
-                            "selected"
-                        );
-
-
-                        pagamentoEscolhido =
-                            botao.getAttribute(
-                                "data-payment"
-                            );
-
-
-                        if (
-                            pagamentoEscolhido ===
-                            "Cartão"
-                        ) {
-
-                            const precoAtual =
-                                obterPrecoAtual();
-
-
-                            const parcela =
-                                precoAtual / 2;
-
-
-                            paymentText.innerHTML =
-
-                                "Pagamento: " +
-
-                                "<strong>Cartão</strong>" +
-
-                                " — 2x de " +
-
-                                "<strong>R$ " +
-
-                                parcela
-                                    .toFixed(2)
-                                    .replace(
-                                        ".",
-                                        ","
-                                    ) +
-
-                                "</strong> sem juros";
-
-                        }
-
-                        else {
-
-                            paymentText.innerHTML =
-
-                                "Pagamento: " +
-
-                                "<strong>" +
-
-                                pagamentoEscolhido +
-
-                                "</strong>";
-
-                        }
-
-
-                        paymentText.style.color =
-                            "#777";
-
-                    }
+            pagamentoEscolhido =
+                botao.getAttribute(
+                    "data-payment"
                 );
 
-            }
-        );
-
-
-        /* =========================
-           CUPONS
-        ========================= */
-
-        const cupons = {
-
-            "GLORY10": 10,
-
-            "ALTAR20": 20
-
-        };
-
-
-        const couponInput =
-            document.getElementById(
-                "couponInput"
-            );
-
-
-        const couponButton =
-            document.getElementById(
-                "couponButton"
-            );
-
-
-        const couponMessage =
-            document.getElementById(
-                "couponMessage"
-            );
-
-
-        const priceElement =
-            document.getElementById(
-                "price"
-            );
-
-
-        const discountText =
-            document.getElementById(
-                "discountText"
-            );
-
-
-        const installmentsElement =
-            document.getElementById(
-                "installments"
-            );
-
-
-        /* =========================
-           APLICAR CUPOM
-        ========================= */
-
-        couponButton.addEventListener(
-            "click",
-            function() {
-
-
-                const cupom =
-                    couponInput.value
-                    .trim()
-                    .toUpperCase();
-
-
-                if (
-                    cupom === ""
-                ) {
-
-                    cupomAplicado = "";
-
-                    desconto = 0;
-
-
-                    couponMessage.innerHTML =
-                        "Digite um cupom.";
-
-
-                    couponMessage.className =
-                        "coupon-message coupon-error";
-
-
-                    atualizarPreco();
-
-
-                    return;
-
-                }
-
-
-                if (
-                    cupons.hasOwnProperty(
-                        cupom
-                    )
-                ) {
-
-
-                    desconto =
-                        cupons[cupom];
-
-
-                    cupomAplicado =
-                        cupom;
-
-
-                    couponMessage.innerHTML =
-
-                        "✓ Cupom " +
-
-                        "<strong>" +
-
-                        cupom +
-
-                        "</strong>" +
-
-                        " aplicado! " +
-
-                        desconto +
-
-                        "% de desconto.";
-
-
-                    couponMessage.className =
-                        "coupon-message coupon-success";
-
-
-                    atualizarPreco();
-
-
-                    return;
-
-                }
-
-
-                cupomAplicado = "";
-
-                desconto = 0;
-
-
-                couponMessage.innerHTML =
-                    "✕ Cupom inválido.";
-
-
-                couponMessage.className =
-                    "coupon-message coupon-error";
-
-
-                atualizarPreco();
-
-            }
-        );
-
-
-        /* =========================
-           OBTER PREÇO
-        ========================= */
-
-        function obterPrecoAtual() {
-
-
-            if (
-                cupomAplicado ===
-                "GLORY10"
-            ) {
-
-                return precoComCupomGLORY10;
-
-            }
-
-
-            if (
-                desconto > 0
-            ) {
-
-                return (
-
-                    precoOriginal -
-
-                    (
-                        precoOriginal *
-                        desconto /
-                        100
-                    )
-
-                );
-
-            }
-
-
-            return precoOriginal;
-
-        }
-
-
-        /* =========================
-           ATUALIZAR PREÇO
-        ========================= */
-
-        function atualizarPreco() {
-
-
-            const novoPreco =
-                obterPrecoAtual();
-
-
-            if (
-                desconto > 0
-            ) {
-
-
-                priceElement.innerHTML =
-
-                    '<span class="price-old">' +
-
-                    "R$ " +
-
-                    precoOriginal
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        ) +
-
-                    "</span>" +
-
-                    "R$ " +
-
-                    novoPreco
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        );
-
-
-                discountText.innerHTML =
-
-                    "Você economiza R$ " +
-
-                    (
-                        precoOriginal -
-                        novoPreco
-                    )
-                    .toFixed(2)
-                    .replace(
-                        ".",
-                        ","
-                    ) +
-
-                    " (" +
-
-                    desconto +
-
-                    "% OFF)";
-
-
-            }
-
-            else {
-
-
-                priceElement.innerHTML =
-                    "R$ 98,89";
-
-
-                discountText.innerHTML =
-                    "";
-
-            }
-
-
-            /*
-             * PARCELAMENTO
-             */
-
-            const parcela =
-                novoPreco / 2;
-
-
-            installmentsElement.innerHTML =
-
-                "ou 2x de R$ " +
-
-                parcela
-                    .toFixed(2)
-                    .replace(
-                        ".",
-                        ","
-                    ) +
-
-                " sem juros";
-
-
-            /*
-             * ATUALIZA TEXTO DO CARTÃO
-             */
 
             if (
                 pagamentoEscolhido ===
                 "Cartão"
             ) {
+
+                const quantidadeTotal =
+                    Object.values(
+                        tamanhosEscolhidos
+                    ).reduce(
+                        (a, b) => a + b,
+                        0
+                    );
+
+
+                const precoUnitario =
+                    obterPrecoUnitario();
+
+
+                const total =
+                    precoUnitario *
+                    quantidadeTotal;
+
+
+                const parcela =
+                    total / 2;
+
 
                 paymentText.innerHTML =
 
@@ -2273,369 +1943,551 @@
 
                     " — 2x de " +
 
-                    "<strong>R$ " +
+                    "<strong>" +
 
-                    parcela
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        ) +
+                    dinheiro(parcela) +
 
                     "</strong> sem juros";
 
             }
 
+            else {
+
+                paymentText.innerHTML =
+
+                    "Pagamento: " +
+
+                    "<strong>" +
+
+                    pagamentoEscolhido +
+
+                    "</strong>";
+
+            }
+
+
+            paymentText.style.color =
+                "#777";
+
+
+            atualizarResumo();
+
+        }
+    );
+
+});
+
+
+/* =========================
+   CUPOM
+========================= */
+
+const couponInput =
+    document.getElementById(
+        "couponInput"
+    );
+
+const couponButton =
+    document.getElementById(
+        "couponButton"
+    );
+
+const couponMessage =
+    document.getElementById(
+        "couponMessage"
+    );
+
+const priceElement =
+    document.getElementById(
+        "price"
+    );
+
+const discountText =
+    document.getElementById(
+        "discountText"
+    );
+
+
+couponButton.addEventListener(
+    "click",
+    function() {
+
+        const cupom =
+            couponInput.value
+                .trim()
+                .toUpperCase();
+
+
+        if (cupom === "") {
+
+            cupomAplicado = "";
+
+            desconto = 0;
+
+
+            couponMessage.innerHTML =
+                "Digite um cupom.";
+
+
+            couponMessage.className =
+                "coupon-message coupon-error";
+
+
+            atualizarPreco();
+
+            return;
+
         }
 
 
-        /* =========================
-           MARCAR ESGOTADOS
-        ========================= */
+        if (
+            cupons.hasOwnProperty(cupom)
+        ) {
 
-        function atualizarEstoqueVisual() {
-
-
-            botoesTamanho.forEach(
-                function(botao) {
+            desconto =
+                cupons[cupom];
 
 
-                    const tamanho =
-                        botao.getAttribute(
-                            "data-size"
-                        );
+            cupomAplicado =
+                cupom;
 
 
-                    const disponivel =
-                        estoque[tamanho];
+            couponMessage.innerHTML =
+
+                "✓ Cupom " +
+
+                "<strong>" +
+
+                cupom +
+
+                "</strong>" +
+
+                " aplicado!";
 
 
-                    if (
-                        disponivel <= 0
-                    ) {
+            couponMessage.className =
+                "coupon-message coupon-success";
 
-                        botao.classList.add(
-                            "esgotado"
-                        );
 
-                        botao.disabled =
-                            true;
+            atualizarPreco();
 
-                    }
-
-                }
-            );
+            return;
 
         }
 
 
-        /* =========================
-           FINALIZAR COMPRA
-        ========================= */
+        cupomAplicado = "";
 
-        document
-            .getElementById(
-                "buyButton"
-            )
-            .addEventListener(
-                "click",
-                function() {
+        desconto = 0;
 
 
-                    /*
-                     * VERIFICA TAMANHOS
-                     */
+        couponMessage.innerHTML =
+            "✕ Cupom inválido.";
 
-                    const tamanhos =
-                        Object.keys(
-                            tamanhosEscolhidos
-                        );
 
+        couponMessage.className =
+            "coupon-message coupon-error";
 
-                    if (
-                        tamanhos.length === 0
-                    ) {
-
-
-                        texto.innerHTML =
-
-                            "⚠ " +
-
-                            "<strong>" +
-
-                            "Selecione pelo menos um tamanho."
-
-                            +
-
-                            "</strong>";
-
-
-                        texto.style.color =
-                            "#b00000";
-
-
-                        return;
-
-                    }
-
-
-                    /*
-                     * VERIFICA PAGAMENTO
-                     */
-
-                    if (
-                        pagamentoEscolhido === ""
-                    ) {
-
-
-                        paymentText.innerHTML =
-
-                            "⚠ " +
-
-                            "<strong>" +
-
-                            "Selecione um método de pagamento."
-
-                            +
-
-                            "</strong>";
-
-
-                        paymentText.style.color =
-                            "#b00000";
-
-
-                        return;
-
-                    }
-
-
-                    /* =========================
-                       WHATSAPP
-                    ========================= */
-
-                    const numeroWhatsApp =
-                        "5533998019698";
-
-
-                    /*
-                     * PREÇO
-                     */
-
-                    const precoFinal =
-                        obterPrecoAtual();
-
-
-                    /*
-                     * QUANTIDADE TOTAL
-                     */
-
-                    let quantidadeTotal = 0;
-
-
-                    tamanhos.forEach(
-                        function(tamanho) {
-
-                            quantidadeTotal +=
-                                tamanhosEscolhidos[
-                                    tamanho
-                                ];
-
-                        }
-                    );
-
-
-                    /*
-                     * VALOR TOTAL
-                     */
-
-                    const valorTotal =
-                        precoFinal *
-                        quantidadeTotal;
-
-
-                    /*
-                     * FORMATA
-                     */
-
-                    const precoUnitarioFormatado =
-
-                        "R$ " +
-
-                        precoFinal
-                            .toFixed(2)
-                            .replace(
-                                ".",
-                                ","
-                            );
-
-
-                    const valorTotalFormatado =
-
-                        "R$ " +
-
-                        valorTotal
-                            .toFixed(2)
-                            .replace(
-                                ".",
-                                ","
-                            );
-
-
-                    /*
-                     * MENSAGEM
-                     */
-
-                    let mensagem =
-
-                        "Olá! Quero comprar a camisa Glory!" +
-
-                        "\n\n" +
-
-                        "TAMANHOS:";
-
-
-                    /*
-                     * ADICIONA CADA TAMANHO
-                     */
-
-                    tamanhos.forEach(
-                        function(tamanho) {
-
-
-                            mensagem +=
-
-                                "\n" +
-
-                                "• " +
-
-                                tamanho +
-
-                                " — " +
-
-                                tamanhosEscolhidos[
-                                    tamanho
-                                ] +
-
-                                " unidade(s)";
-
-                        }
-                    );
-
-
-                    mensagem +=
-
-                        "\n\n" +
-
-                        "Quantidade total: " +
-
-                        quantidadeTotal +
-
-                        "\n" +
-
-                        "Preço unitário: " +
-
-                        precoUnitarioFormatado +
-
-                        "\n" +
-
-                        "Valor total: " +
-
-                        valorTotalFormatado +
-
-                        "\n" +
-
-                        "Pagamento: " +
-
-                        pagamentoEscolhido;
-
-
-                    /*
-                     * CUPOM
-                     */
-
-                    if (
-                        cupomAplicado !== ""
-                    ) {
-
-                        mensagem +=
-
-                            "\n" +
-
-                            "Cupom: " +
-
-                            cupomAplicado;
-
-                    }
-
-
-                    /*
-                     * PARCELAMENTO
-                     */
-
-                    if (
-                        pagamentoEscolhido ===
-                        "Cartão"
-                    ) {
-
-
-                        const parcelaTotal =
-                            valorTotal / 2;
-
-
-                        mensagem +=
-
-                            "\n" +
-
-                            "Parcelamento: 2x de R$ " +
-
-                            parcelaTotal
-                                .toFixed(2)
-                                .replace(
-                                    ".",
-                                    ","
-                                ) +
-
-                            " sem juros";
-
-                    }
-
-
-                    /*
-                     * LINK
-                     */
-
-                    const linkWhatsApp =
-
-                        "https://wa.me/" +
-
-                        numeroWhatsApp +
-
-                        "?text=" +
-
-                        encodeURIComponent(
-                            mensagem
-                        );
-
-
-                    window.open(
-                        linkWhatsApp,
-                        "_blank"
-                    );
-
-                }
-            );
-
-
-        /* =========================
-           INICIALIZAÇÃO
-        ========================= */
 
         atualizarPreco();
 
-        atualizarEstoqueVisual();
+    }
+);
 
-    </script>
+
+/* =========================
+   ATUALIZAR PREÇO PRINCIPAL
+========================= */
+
+function atualizarPreco() {
+
+    let novoPreco =
+        obterPrecoUnitario();
+
+
+    if (desconto > 0) {
+
+        priceElement.innerHTML =
+
+            '<span class="price-old">' +
+
+            dinheiro(precoOriginal) +
+
+            '</span>' +
+
+            dinheiro(novoPreco);
+
+
+        discountText.innerHTML =
+
+            "Desconto aplicado";
+
+    }
+
+    else {
+
+        priceElement.innerHTML =
+            dinheiro(precoOriginal);
+
+
+        discountText.innerHTML = "";
+
+    }
+
+
+    /* PARCELAMENTO */
+
+    const quantidadeTotal =
+        Object.values(
+            tamanhosEscolhidos
+        ).reduce(
+            (a, b) => a + b,
+            0
+        );
+
+
+    if (
+        pagamentoEscolhido === "Cartão" &&
+        quantidadeTotal > 0
+    ) {
+
+        const total =
+            novoPreco *
+            quantidadeTotal;
+
+
+        document.getElementById(
+            "installments"
+        ).innerHTML =
+
+            "ou 2x de " +
+
+            dinheiro(total / 2) +
+
+            " sem juros";
+
+    }
+
+    else if (
+        cupomAplicado === "GLORY10"
+    ) {
+
+        document.getElementById(
+            "installments"
+        ).innerHTML =
+
+            "ou 2x de R$ 44,95 sem juros";
+
+    }
+
+    else {
+
+        document.getElementById(
+            "installments"
+        ).innerHTML =
+
+            "ou 2x de R$ 49,45 sem juros";
+
+    }
+
+
+    atualizarResumo();
+
+}
+
+
+/* =========================
+   FINALIZAR COMPRA
+========================= */
+
+document
+.getElementById("buyButton")
+.addEventListener(
+    "click",
+    function() {
+
+
+        const tamanhos =
+            Object.keys(
+                tamanhosEscolhidos
+            );
+
+
+        /* =========================
+           VERIFICA TAMANHO
+        ========================= */
+
+        if (
+            tamanhos.length === 0
+        ) {
+
+            selectedText.innerHTML =
+
+                "⚠ " +
+
+                "<strong>" +
+
+                "Selecione pelo menos um tamanho."
+
+                +
+
+                "</strong>";
+
+
+            selectedText.style.color =
+                "#b00000";
+
+
+            return;
+
+        }
+
+
+        /* =========================
+           VERIFICA PAGAMENTO
+        ========================= */
+
+        if (
+            pagamentoEscolhido === ""
+        ) {
+
+            paymentText.innerHTML =
+
+                "⚠ " +
+
+                "<strong>" +
+
+                "Selecione um método de pagamento."
+
+                +
+
+                "</strong>";
+
+
+            paymentText.style.color =
+                "#b00000";
+
+
+            return;
+
+        }
+
+
+        /* =========================
+           WHATSAPP
+        ========================= */
+
+        const numeroWhatsApp =
+            "5533998019698";
+
+
+        const precoUnitario =
+            obterPrecoUnitario();
+
+
+        const quantidadeTotal =
+            Object.values(
+                tamanhosEscolhidos
+            ).reduce(
+                (a, b) => a + b,
+                0
+            );
+
+
+        const subtotal =
+            precoOriginal *
+            quantidadeTotal;
+
+
+        const total =
+            precoUnitario *
+            quantidadeTotal;
+
+
+        const descontoValor =
+            subtotal -
+            total;
+
+
+        /* =========================
+           MENSAGEM
+        ========================= */
+
+        let mensagem =
+
+            "Olá! Quero comprar a camisa Glory!" +
+
+            "\n\n" +
+
+            "TAMANHOS E QUANTIDADES:";
+
+
+        tamanhos.forEach(
+            function(tamanho) {
+
+                mensagem +=
+
+                    "\n" +
+
+                    tamanho +
+
+                    ": " +
+
+                    tamanhosEscolhidos[
+                        tamanho
+                    ] +
+
+                    " unidade(s)";
+
+            }
+        );
+
+
+        mensagem +=
+
+            "\n\n" +
+
+            "Quantidade total: " +
+
+            quantidadeTotal +
+
+            "\n" +
+
+            "Subtotal: " +
+
+            dinheiro(subtotal);
+
+
+        if (
+            cupomAplicado !== ""
+        ) {
+
+            mensagem +=
+
+                "\n" +
+
+                "Cupom: " +
+
+                cupomAplicado +
+
+                "\n" +
+
+                "Desconto: -" +
+
+                dinheiro(
+                    descontoValor
+                );
+
+        }
+
+
+        mensagem +=
+
+            "\n" +
+
+            "TOTAL: " +
+
+            dinheiro(total) +
+
+            "\n" +
+
+            "Pagamento: " +
+
+            pagamentoEscolhido;
+
+
+        /* =========================
+           PARCELAMENTO
+        ========================= */
+
+        if (
+            pagamentoEscolhido ===
+            "Cartão"
+        ) {
+
+            mensagem +=
+
+                "\n" +
+
+                "Parcelamento: 2x de " +
+
+                dinheiro(
+                    total / 2
+                ) +
+
+                " sem juros";
+
+        }
+
+
+        /* =========================
+           LINK
+        ========================= */
+
+        const linkWhatsApp =
+
+            "https://wa.me/" +
+
+            numeroWhatsApp +
+
+            "?text=" +
+
+            encodeURIComponent(
+                mensagem
+            );
+
+
+        window.open(
+            linkWhatsApp,
+            "_blank"
+        );
+
+    }
+);
+
+
+/* =========================
+   MARCAR ESGOTADOS
+========================= */
+
+function verificarEstoque() {
+
+    botoesTamanho.forEach(
+        function(botao) {
+
+            const tamanho =
+                botao.getAttribute(
+                    "data-size"
+                );
+
+
+            if (
+                estoque[tamanho] <= 0
+            ) {
+
+                botao.classList.add(
+                    "sold-out"
+                );
+
+                botao.disabled = true;
+
+            }
+
+        }
+    );
+
+}
+
+
+/* =========================
+   INICIAR
+========================= */
+
+verificarEstoque();
+
+atualizarPreco();
+
+</script>
 
 </body>
 
