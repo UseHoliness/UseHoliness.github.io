@@ -432,6 +432,16 @@
             flex-wrap: wrap;
         }
 
+        .size-option {
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            gap: 5px;
+        }
+
         .size {
             width: 55px;
             height: 48px;
@@ -467,115 +477,88 @@
             border-color: #000;
         }
 
+        .stock-text {
+            font-size: 8px;
+            color: #777;
+            white-space: nowrap;
+        }
+
 
         /* =========================
-           TAMANHOS ESCOLHIDOS
+           CONTROLE DE QUANTIDADE
         ========================= */
 
-        .selected-sizes {
-            max-width: 450px;
+        .quantity-control {
+            display: none;
+
+            align-items: center;
+
+            justify-content: center;
 
             margin-top: 5px;
 
-            margin-bottom: 18px;
-        }
-
-        .selected-size-item {
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
             background: #fff;
-
-            border: 1px solid #ddd;
-
-            padding: 10px 12px;
-
-            margin-bottom: 8px;
-
-            font-size: 11px;
-        }
-
-        .selected-size-name {
-            font-family: "Anton", sans-serif;
-
-            font-size: 14px;
-
-            letter-spacing: .5px;
-        }
-
-        .quantity-control {
-            display: flex;
-
-            align-items: center;
-
-            gap: 10px;
-        }
-
-        .quantity-button {
-            width: 28px;
-            height: 28px;
 
             border: 1px solid #aaa;
 
+            height: 30px;
+        }
+
+        .quantity-control.active {
+            display: flex;
+        }
+
+        .quantity-btn {
+            width: 28px;
+            height: 28px;
+
+            border: none;
+
             background: #fff;
 
-            cursor: pointer;
+            color: #111;
 
             font-size: 16px;
 
-            line-height: 1;
+            cursor: pointer;
 
-            transition: .2s;
+            font-family: Arial, sans-serif;
         }
 
-        .quantity-button:hover {
-            background: #000;
-
-            color: #fff;
-
-            border-color: #000;
+        .quantity-btn:hover {
+            background: #eee;
         }
 
-        .quantity-value {
-            min-width: 18px;
+        .quantity-number {
+            width: 25px;
 
             text-align: center;
 
-            font-family: "Anton", sans-serif;
+            font-size: 11px;
 
-            font-size: 14px;
+            font-weight: bold;
         }
 
-        .remove-size {
-            border: none;
 
-            background: transparent;
+        /* =========================
+           RESUMO DOS TAMANHOS
+        ========================= */
 
-            color: #999;
+        .selected-text {
+            min-height: 25px;
 
-            cursor: pointer;
+            margin-top: 8px;
 
-            font-size: 16px;
+            margin-bottom: 18px;
 
-            margin-left: 12px;
-        }
-
-        .remove-size:hover {
-            color: #b00000;
-        }
-
-        .quantity-summary {
             font-size: 11px;
 
             color: #777;
 
-            margin-top: 5px;
+            line-height: 1.6;
         }
 
-        .quantity-summary strong {
+        .selected-text strong {
             color: #111;
         }
 
@@ -1093,7 +1076,7 @@
 
             <div class="size-title">
 
-                ESCOLHA ATÉ 2 TAMANHOS
+                ESCOLHA OS TAMANHOS
 
             </div>
 
@@ -1101,73 +1084,227 @@
             <div class="sizes">
 
 
-                <button
-                    type="button"
-                    class="size"
-                    data-size="PP"
-                    data-quantity="3"
-                >
+                <!-- PP -->
 
-                    PP
+                <div class="size-option">
 
-                </button>
+                    <button
+                        type="button"
+                        class="size"
+                        data-size="PP"
+                        data-stock="3"
+                    >
+                        PP
+                    </button>
+
+                    <div class="stock-text">
+                        3 disponíveis
+                    </div>
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="quantity-btn minus"
+                        >
+                            −
+                        </button>
+
+                        <span class="quantity-number">
+                            0
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-btn plus"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
 
 
-                <button
-                    type="button"
-                    class="size"
-                    data-size="M"
-                    data-quantity="4"
-                >
+                <!-- M -->
 
-                    M
+                <div class="size-option">
 
-                </button>
+                    <button
+                        type="button"
+                        class="size"
+                        data-size="M"
+                        data-stock="4"
+                    >
+                        M
+                    </button>
+
+                    <div class="stock-text">
+                        4 disponíveis
+                    </div>
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="quantity-btn minus"
+                        >
+                            −
+                        </button>
+
+                        <span class="quantity-number">
+                            0
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-btn plus"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
 
 
-                <button
-                    type="button"
-                    class="size"
-                    data-size="G"
-                    data-quantity="4"
-                >
+                <!-- G -->
 
-                    G
+                <div class="size-option">
 
-                </button>
+                    <button
+                        type="button"
+                        class="size"
+                        data-size="G"
+                        data-stock="4"
+                    >
+                        G
+                    </button>
+
+                    <div class="stock-text">
+                        4 disponíveis
+                    </div>
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="quantity-btn minus"
+                        >
+                            −
+                        </button>
+
+                        <span class="quantity-number">
+                            0
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-btn plus"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
 
 
-                <button
-                    type="button"
-                    class="size"
-                    data-size="GG"
-                    data-quantity="2"
-                >
+                <!-- GG -->
 
-                    GG
+                <div class="size-option">
 
-                </button>
+                    <button
+                        type="button"
+                        class="size"
+                        data-size="GG"
+                        data-stock="2"
+                    >
+                        GG
+                    </button>
+
+                    <div class="stock-text">
+                        2 disponíveis
+                    </div>
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="quantity-btn minus"
+                        >
+                            −
+                        </button>
+
+                        <span class="quantity-number">
+                            0
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-btn plus"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- XG -->
+
+                <div class="size-option">
+
+                    <button
+                        type="button"
+                        class="size"
+                        data-size="XG"
+                        data-stock="1"
+                    >
+                        XG
+                    </button>
+
+                    <div class="stock-text">
+                        1 disponível
+                    </div>
+
+                    <div class="quantity-control">
+
+                        <button
+                            type="button"
+                            class="quantity-btn minus"
+                        >
+                            −
+                        </button>
+
+                        <span class="quantity-number">
+                            0
+                        </span>
+
+                        <button
+                            type="button"
+                            class="quantity-btn plus"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
 
 
             </div>
 
 
-            <!-- TAMANHOS SELECIONADOS -->
+            <!-- RESUMO -->
 
             <div
-                class="selected-sizes"
-                id="selectedSizes"
+                class="selected-text"
+                id="selectedText"
             >
 
-            </div>
-
-
-            <div
-                class="quantity-summary"
-                id="quantitySummary"
-            >
-
-                Selecione um tamanho para começar.
+                Selecione um ou mais tamanhos
 
             </div>
 
@@ -1379,20 +1516,6 @@
         let desconto = 0;
 
 
-        /*
-         * Guarda os tamanhos selecionados.
-         *
-         * Exemplo:
-         *
-         * {
-         *     M: 2,
-         *     G: 1
-         * }
-         */
-
-        let tamanhosEscolhidos = {};
-
-
         /* =========================
            TROCAR FOTOS
         ========================= */
@@ -1423,382 +1546,240 @@
 
 
         /* =========================
-           ELEMENTOS
+           TAMANHOS E QUANTIDADES
         ========================= */
 
-        const botoes =
+        const opcoesTamanho =
             document.querySelectorAll(
-                ".size"
+                ".size-option"
             );
 
 
-        const selectedSizes =
+        const texto =
             document.getElementById(
-                "selectedSizes"
+                "selectedText"
             );
 
 
-        const quantitySummary =
-            document.getElementById(
-                "quantitySummary"
-            );
+        opcoesTamanho.forEach(function(opcao) {
+
+            const botao =
+                opcao.querySelector(".size");
+
+            const controle =
+                opcao.querySelector(".quantity-control");
+
+            const numero =
+                opcao.querySelector(".quantity-number");
+
+            const botaoMais =
+                opcao.querySelector(".plus");
+
+            const botaoMenos =
+                opcao.querySelector(".minus");
+
+            const estoque =
+                parseInt(
+                    botao.getAttribute("data-stock")
+                );
 
 
-        /* =========================
-           TAMANHOS
-        ========================= */
+            let quantidade = 0;
 
-        botoes.forEach(function(botao) {
+
+            /* =========================
+               CLICAR NO TAMANHO
+            ========================= */
 
             botao.addEventListener(
                 "click",
                 function() {
 
-                    const tamanho =
-                        botao.getAttribute(
-                            "data-size"
-                        );
+                    if (quantidade === 0) {
 
+                        quantidade = 1;
 
-                    const estoque =
-                        Number(
-                            botao.getAttribute(
-                                "data-quantity"
-                            )
-                        );
+                    } else {
 
-
-                    /*
-                     * Se já estiver selecionado,
-                     * não faz nada.
-                     */
-
-                    if (
-                        tamanhosEscolhidos.hasOwnProperty(
-                            tamanho
-                        )
-                    ) {
-
-                        return;
+                        quantidade = 0;
 
                     }
 
+                    atualizarQuantidade();
 
-                    /*
-                     * Permite no máximo
-                     * 2 tamanhos diferentes.
-                     */
+                }
+            );
+
+
+            /* =========================
+               BOTÃO +
+            ========================= */
+
+            botaoMais.addEventListener(
+                "click",
+                function() {
 
                     if (
-                        Object.keys(
-                            tamanhosEscolhidos
-                        ).length >= 2
+                        quantidade < estoque
                     ) {
 
-                        quantitySummary.innerHTML =
+                        quantidade++;
 
-                            "⚠ <strong>Você pode escolher no máximo 2 tamanhos diferentes.</strong>";
-
-                        quantitySummary.style.color =
-                            "#b00000";
-
-                        return;
+                        atualizarQuantidade();
 
                     }
 
+                }
+            );
 
-                    /*
-                     * Adiciona o tamanho
-                     * com quantidade 1.
-                     */
 
-                    tamanhosEscolhidos[tamanho] = 1;
+            /* =========================
+               BOTÃO -
+            ========================= */
 
+            botaoMenos.addEventListener(
+                "click",
+                function() {
+
+                    if (
+                        quantidade > 0
+                    ) {
+
+                        quantidade--;
+
+                        atualizarQuantidade();
+
+                    }
+
+                }
+            );
+
+
+            /* =========================
+               ATUALIZA VISUAL
+            ========================= */
+
+            function atualizarQuantidade() {
+
+                numero.textContent =
+                    quantidade;
+
+
+                if (
+                    quantidade > 0
+                ) {
 
                     botao.classList.add(
                         "selected"
                     );
 
+                    controle.classList.add(
+                        "active"
+                    );
 
-                    renderizarTamanhos();
+                } else {
+
+                    botao.classList.remove(
+                        "selected"
+                    );
+
+                    controle.classList.remove(
+                        "active"
+                    );
 
                 }
-            );
+
+
+                atualizarResumo();
+
+                atualizarPreco();
+
+            }
 
         });
 
 
         /* =========================
-           RENDERIZAR TAMANHOS
+           ATUALIZAR RESUMO
         ========================= */
 
-        function renderizarTamanhos() {
+        function atualizarResumo() {
 
-            selectedSizes.innerHTML = "";
+            let itens = [];
 
+            let quantidadeTotal = 0;
 
-            const tamanhos =
-                Object.keys(
-                    tamanhosEscolhidos
-                );
 
+            opcoesTamanho.forEach(
+                function(opcao) {
 
-            if (
-                tamanhos.length === 0
-            ) {
+                    const botao =
+                        opcao.querySelector(".size");
 
-                quantitySummary.innerHTML =
-                    "Selecione um tamanho para começar.";
+                    const numero =
+                        opcao.querySelector(".quantity-number");
 
-                quantitySummary.style.color =
-                    "#777";
+                    const quantidade =
+                        parseInt(
+                            numero.textContent
+                        );
 
-                return;
 
-            }
+                    if (
+                        quantidade > 0
+                    ) {
 
-
-            tamanhos.forEach(function(tamanho) {
-
-                const botaoTamanho =
-                    document.querySelector(
-                        '.size[data-size="' +
-                        tamanho +
-                        '"]'
-                    );
-
-
-                const estoque =
-                    Number(
-                        botaoTamanho.getAttribute(
-                            "data-quantity"
-                        )
-                    );
-
-
-                const quantidade =
-                    tamanhosEscolhidos[tamanho];
-
-
-                const item =
-                    document.createElement(
-                        "div"
-                    );
-
-
-                item.className =
-                    "selected-size-item";
-
-
-                item.innerHTML =
-
-                    '<div>' +
-
-                        '<span class="selected-size-name">' +
-
-                            tamanho +
-
-                        '</span>' +
-
-                        '<div style="font-size:9px;color:#777;margin-top:3px;">' +
-
-                            estoque +
-
-                            ' disponíveis' +
-
-                        '</div>' +
-
-                    '</div>' +
-
-
-                    '<div style="display:flex;align-items:center;">' +
-
-                        '<div class="quantity-control">' +
-
-                            '<button type="button" class="quantity-button decrease">' +
-
-                                "−" +
-
-                            '</button>' +
-
-                            '<span class="quantity-value">' +
-
-                                quantidade +
-
-                            '</span>' +
-
-                            '<button type="button" class="quantity-button increase">' +
-
-                                "+" +
-
-                            '</button>' +
-
-                        '</div>' +
-
-
-                        '<button type="button" class="remove-size" title="Remover tamanho">' +
-
-                            "×" +
-
-                        '</button>' +
-
-                    '</div>';
-
-
-                /* =========================
-                   BOTÃO DIMINUIR
-                ========================= */
-
-                item
-                    .querySelector(".decrease")
-                    .addEventListener(
-                        "click",
-                        function() {
-
-                            if (
-                                tamanhosEscolhidos[tamanho] > 1
-                            ) {
-
-                                tamanhosEscolhidos[tamanho]--;
-
-                                renderizarTamanhos();
-
-                            }
-
-                        }
-                    );
-
-
-                /* =========================
-                   BOTÃO AUMENTAR
-                ========================= */
-
-                item
-                    .querySelector(".increase")
-                    .addEventListener(
-                        "click",
-                        function() {
-
-                            if (
-                                tamanhosEscolhidos[tamanho] <
-                                estoque
-                            ) {
-
-                                tamanhosEscolhidos[tamanho]++;
-
-                                renderizarTamanhos();
-
-                            } else {
-
-                                quantitySummary.innerHTML =
-
-                                    "⚠ <strong>Quantidade máxima disponível para o tamanho " +
-
-                                    tamanho +
-
-                                    " é " +
-
-                                    estoque +
-
-                                    ".</strong>";
-
-                                quantitySummary.style.color =
-                                    "#b00000";
-
-                            }
-
-                        }
-                    );
-
-
-                /* =========================
-                   REMOVER TAMANHO
-                ========================= */
-
-                item
-                    .querySelector(".remove-size")
-                    .addEventListener(
-                        "click",
-                        function() {
-
-                            delete tamanhosEscolhidos[
-                                tamanho
-                            ];
-
-
-                            botaoTamanho.classList.remove(
-                                "selected"
+                        const tamanho =
+                            botao.getAttribute(
+                                "data-size"
                             );
 
 
-                            renderizarTamanhos();
-
-                        }
-                    );
-
-
-                selectedSizes.appendChild(
-                    item
-                );
-
-            });
+                        itens.push(
+                            quantidade +
+                            "x " +
+                            tamanho
+                        );
 
 
-            atualizarResumoQuantidade();
+                        quantidadeTotal +=
+                            quantidade;
 
-        }
+                    }
 
-
-        /* =========================
-           RESUMO DA QUANTIDADE
-        ========================= */
-
-        function atualizarResumoQuantidade() {
-
-            let totalQuantidade = 0;
-
-
-            Object.keys(
-                tamanhosEscolhidos
-            ).forEach(function(tamanho) {
-
-                totalQuantidade +=
-
-                    tamanhosEscolhidos[
-                        tamanho
-                    ];
-
-            });
+                }
+            );
 
 
             if (
-                totalQuantidade === 0
+                itens.length === 0
             ) {
 
-                quantitySummary.innerHTML =
-                    "Selecione um tamanho para começar.";
+                texto.innerHTML =
+                    "Selecione um ou mais tamanhos";
 
                 return;
 
             }
 
 
-            quantitySummary.innerHTML =
+            texto.innerHTML =
 
-                "Total: <strong>" +
+                "<strong>" +
 
-                totalQuantidade +
+                itens.join(" • ") +
+
+                "</strong>" +
+
+                " — " +
+
+                quantidadeTotal +
 
                 (
-                    totalQuantidade === 1
+                    quantidadeTotal === 1
                         ? " camiseta"
                         : " camisetas"
-                ) +
-
-                "</strong>";
-
-            quantitySummary.style.color =
-                "#777";
+                );
 
         }
 
@@ -1826,6 +1807,7 @@
                     "click",
                     function() {
 
+
                         pagamentos.forEach(
                             function(item) {
 
@@ -1848,55 +1830,7 @@
                             );
 
 
-                        if (
-                            pagamentoEscolhido === "Cartão"
-                        ) {
-
-                            const total =
-                                calcularTotal();
-
-
-                            const parcela =
-                                total / 2;
-
-
-                            paymentText.innerHTML =
-
-                                "Pagamento: " +
-
-                                "<strong>Cartão</strong>" +
-
-                                " — 2x de " +
-
-                                "<strong>" +
-
-                                formatarMoeda(
-                                    parcela
-                                ) +
-
-                                "</strong>" +
-
-                                " sem juros";
-
-                        }
-
-                        else {
-
-                            paymentText.innerHTML =
-
-                                "Pagamento: " +
-
-                                "<strong>" +
-
-                                pagamentoEscolhido +
-
-                                "</strong>";
-
-                        }
-
-
-                        paymentText.style.color =
-                            "#777";
+                        atualizarPagamento();
 
                     }
                 );
@@ -1958,6 +1892,7 @@
             "click",
             function() {
 
+
                 const cupom =
                     couponInput.value
                     .trim()
@@ -1994,6 +1929,7 @@
                         cupom
                     )
                 ) {
+
 
                     desconto =
                         cupons[cupom];
@@ -2052,10 +1988,42 @@
 
 
         /* =========================
-           CALCULAR PREÇO UNITÁRIO
+           QUANTIDADE TOTAL
         ========================= */
 
-        function calcularPrecoUnitario() {
+        function obterQuantidadeTotal() {
+
+            let total = 0;
+
+
+            opcoesTamanho.forEach(
+                function(opcao) {
+
+                    const numero =
+                        opcao.querySelector(
+                            ".quantity-number"
+                        );
+
+
+                    total +=
+                        parseInt(
+                            numero.textContent
+                        );
+
+                }
+            );
+
+
+            return total;
+
+        }
+
+
+        /* =========================
+           PREÇO POR CAMISETA
+        ========================= */
+
+        function obterPrecoUnitario() {
 
             if (
                 cupomAplicado === "GLORY10"
@@ -2091,198 +2059,56 @@
 
 
         /* =========================
-           CALCULAR TOTAL
-        ========================= */
-
-        function calcularTotal() {
-
-            let totalQuantidade = 0;
-
-
-            Object.keys(
-                tamanhosEscolhidos
-            ).forEach(function(tamanho) {
-
-                totalQuantidade +=
-
-                    tamanhosEscolhidos[
-                        tamanho
-                    ];
-
-            });
-
-
-            return (
-
-                calcularPrecoUnitario() *
-
-                totalQuantidade
-
-            );
-
-        }
-
-
-        /* =========================
-           FORMATAR MOEDA
-        ========================= */
-
-        function formatarMoeda(valor) {
-
-            return (
-
-                "R$ " +
-
-                valor
-                    .toFixed(2)
-                    .replace(".", ",")
-
-            );
-
-        }
-
-
-        /* =========================
            ATUALIZAR PREÇO
         ========================= */
 
         function atualizarPreco() {
 
-            const quantidade =
-                Object.values(
-                    tamanhosEscolhidos
-                ).reduce(
-                    function(total, quantidade) {
-
-                        return total + quantidade;
-
-                    },
-                    0
-                );
+            const quantidadeTotal =
+                obterQuantidadeTotal();
 
 
             const precoUnitario =
-                calcularPrecoUnitario();
+                obterPrecoUnitario();
 
 
-            const total =
+            const precoTotal =
                 precoUnitario *
-                quantidade;
+                quantidadeTotal;
 
 
-            /*
-             * Sem quantidade:
-             * mostra preço unitário.
-             */
+            /* =========================
+               SEM PRODUTO
+            ========================= */
 
             if (
-                quantidade === 0
+                quantidadeTotal === 0
             ) {
 
                 if (
-                    desconto > 0
+                    cupomAplicado === "GLORY10"
                 ) {
 
                     priceElement.innerHTML =
 
                         '<span class="price-old">' +
 
-                        formatarMoeda(
-                            precoOriginal
-                        ) +
+                        "R$ 98,89" +
 
                         "</span>" +
 
-                        formatarMoeda(
-                            precoUnitario
-                        );
-
+                        "R$ 89,90";
 
                     discountText.innerHTML =
+                        "R$ 8,99 de desconto por camiseta.";
 
-                        "Você economiza " +
-
-                        formatarMoeda(
-                            precoOriginal -
-                            precoUnitario
-                        ) +
-
-                        " (" +
-
-                        desconto +
-
-                        "% OFF)";
-
-                }
-
-                else {
+                } else {
 
                     priceElement.innerHTML =
-                        formatarMoeda(
-                            precoOriginal
-                        );
-
-                    discountText.innerHTML = "";
-
-                }
-
-            }
-
-            /*
-             * Com quantidade:
-             * mostra o total.
-             */
-
-            else {
-
-                if (
-                    desconto > 0
-                ) {
-
-                    priceElement.innerHTML =
-
-                        '<span class="price-old">' +
-
-                        formatarMoeda(
-                            precoOriginal *
-                            quantidade
-                        ) +
-
-                        "</span>" +
-
-                        formatarMoeda(
-                            total
-                        );
-
+                        "R$ 98,89";
 
                     discountText.innerHTML =
-
-                        "Você economiza " +
-
-                        formatarMoeda(
-                            (
-                                precoOriginal -
-                                precoUnitario
-                            ) *
-                            quantidade
-                        ) +
-
-                        " (" +
-
-                        desconto +
-
-                        "% OFF)";
-
-                }
-
-                else {
-
-                    priceElement.innerHTML =
-                        formatarMoeda(
-                            total
-                        );
-
-                    discountText.innerHTML = "";
+                        "";
 
                 }
 
@@ -2290,44 +2116,128 @@
 
 
             /* =========================
-               PARCELAMENTO
+               COM PRODUTOS
             ========================= */
 
+            else {
+
+                if (
+                    cupomAplicado !== ""
+                ) {
+
+                    priceElement.innerHTML =
+
+                        '<span class="price-old">' +
+
+                        "R$ " +
+
+                        (
+                            precoOriginal *
+                            quantidadeTotal
+                        )
+                        .toFixed(2)
+                        .replace(".", ",") +
+
+                        "</span>" +
+
+                        "R$ " +
+
+                        precoTotal
+                        .toFixed(2)
+                        .replace(".", ",");
+
+
+                    const economia =
+
+                        (
+                            (
+                                precoOriginal -
+                                precoUnitario
+                            ) *
+                            quantidadeTotal
+                        );
+
+
+                    discountText.innerHTML =
+
+                        "Você economiza R$ " +
+
+                        economia
+                        .toFixed(2)
+                        .replace(".", ",");
+
+                }
+
+                else {
+
+                    priceElement.innerHTML =
+
+                        "R$ " +
+
+                        precoTotal
+                        .toFixed(2)
+                        .replace(".", ",");
+
+
+                    discountText.innerHTML =
+                        "";
+
+                }
+
+            }
+
+
+            atualizarPagamento();
+
+        }
+
+
+        /* =========================
+           ATUALIZAR PARCELAMENTO
+        ========================= */
+
+        function atualizarPagamento() {
+
+            const quantidadeTotal =
+                obterQuantidadeTotal();
+
+
+            const precoUnitario =
+                obterPrecoUnitario();
+
+
+            const total =
+                precoUnitario *
+                quantidadeTotal;
+
+
             if (
-                quantidade > 0
+                quantidadeTotal === 0
             ) {
 
                 installmentsElement.innerHTML =
 
-                    "ou 2x de " +
+                    "ou 2x de R$ 49,45 sem juros";
 
-                    formatarMoeda(
-                        total / 2
-                    ) +
-
-                    " sem juros";
-
-            }
-
-            else {
-
-                installmentsElement.innerHTML =
-
-                    "ou 2x de " +
-
-                    formatarMoeda(
-                        precoUnitario / 2
-                    ) +
-
-                    " sem juros";
+                return;
 
             }
 
 
-            /*
-             * Atualiza texto do cartão
-             * caso esteja selecionado.
-             */
+            const parcela =
+                total / 2;
+
+
+            installmentsElement.innerHTML =
+
+                "ou 2x de R$ " +
+
+                parcela
+                .toFixed(2)
+                .replace(".", ",") +
+
+                " sem juros";
+
 
             if (
                 pagamentoEscolhido === "Cartão"
@@ -2341,19 +2251,31 @@
 
                     " — 2x de " +
 
-                    "<strong>" +
+                    "<strong>R$ " +
 
-                    formatarMoeda(
-                        (
-                            quantidade > 0
-                                ? total
-                                : precoUnitario
-                        ) / 2
-                    ) +
+                    parcela
+                    .toFixed(2)
+                    .replace(".", ",") +
 
                     "</strong>" +
 
                     " sem juros";
+
+            }
+
+            else if (
+                pagamentoEscolhido !== ""
+            ) {
+
+                paymentText.innerHTML =
+
+                    "Pagamento: " +
+
+                    "<strong>" +
+
+                    pagamentoEscolhido +
+
+                    "</strong>";
 
             }
 
@@ -2375,15 +2297,19 @@
                        VERIFICA TAMANHO
                     ========================= */
 
+                    const quantidadeTotal =
+                        obterQuantidadeTotal();
+
+
                     if (
-                        Object.keys(
-                            tamanhosEscolhidos
-                        ).length === 0
+                        quantidadeTotal === 0
                     ) {
 
-                        quantitySummary.innerHTML =
+                        texto.innerHTML =
 
-                            "⚠ <strong>" +
+                            "⚠ " +
+
+                            "<strong>" +
 
                             "Selecione pelo menos um tamanho."
 
@@ -2392,7 +2318,7 @@
                             "</strong>";
 
 
-                        quantitySummary.style.color =
+                        texto.style.color =
                             "#b00000";
 
 
@@ -2409,9 +2335,12 @@
                         pagamentoEscolhido === ""
                     ) {
 
+
                         paymentText.innerHTML =
 
-                            "⚠ <strong>" +
+                            "⚠ " +
+
+                            "<strong>" +
 
                             "Selecione um método de pagamento."
 
@@ -2429,6 +2358,14 @@
                     }
 
 
+                    paymentText.style.color =
+                        "#777";
+
+
+                    texto.style.color =
+                        "#777";
+
+
                     /* =========================
                        WHATSAPP
                     ========================= */
@@ -2438,36 +2375,86 @@
 
 
                     /* =========================
-                       QUANTIDADE TOTAL
-                    ========================= */
-
-                    let quantidadeTotal = 0;
-
-
-                    Object.keys(
-                        tamanhosEscolhidos
-                    ).forEach(function(tamanho) {
-
-                        quantidadeTotal +=
-
-                            tamanhosEscolhidos[
-                                tamanho
-                            ];
-
-                    });
-
-
-                    /* =========================
-                       PREÇO TOTAL
+                       PREÇO
                     ========================= */
 
                     const precoUnitario =
-                        calcularPrecoUnitario();
+                        obterPrecoUnitario();
 
 
                     const precoFinal =
                         precoUnitario *
                         quantidadeTotal;
+
+
+                    /* =========================
+                       FORMATA PREÇO
+                    ========================= */
+
+                    const precoFormatado =
+
+                        "R$ " +
+
+                        precoFinal
+                        .toFixed(2)
+                        .replace(
+                            ".",
+                            ","
+                        );
+
+
+                    /* =========================
+                       LISTA DE TAMANHOS
+                    ========================= */
+
+                    let listaTamanhos = [];
+
+
+                    opcoesTamanho.forEach(
+                        function(opcao) {
+
+                            const botao =
+                                opcao.querySelector(
+                                    ".size"
+                                );
+
+
+                            const numero =
+                                opcao.querySelector(
+                                    ".quantity-number"
+                                );
+
+
+                            const quantidade =
+                                parseInt(
+                                    numero.textContent
+                                );
+
+
+                            if (
+                                quantidade > 0
+                            ) {
+
+                                const tamanho =
+                                    botao.getAttribute(
+                                        "data-size"
+                                    );
+
+
+                                listaTamanhos.push(
+
+                                    quantidade +
+
+                                    "x " +
+
+                                    tamanho
+
+                                );
+
+                            }
+
+                        }
+                    );
 
 
                     /* =========================
@@ -2478,44 +2465,13 @@
 
                         "Olá! Quero comprar a camisa Glory!" +
 
-                        "\n\n";
+                        "\n\n" +
 
+                        "Tamanhos: " +
 
-                    mensagem +=
-                        "PEDIDO:" +
-                        "\n";
-
-
-                    Object.keys(
-                        tamanhosEscolhidos
-                    ).forEach(function(tamanho) {
-
-                        mensagem +=
-
-                            "Tamanho " +
-
-                            tamanho +
-
-                            ": " +
-
-                            tamanhosEscolhidos[
-                                tamanho
-                            ] +
-
-                            (
-                                tamanhosEscolhidos[
-                                    tamanho
-                                ] === 1
-                                    ? " unidade"
-                                    : " unidades"
-                            ) +
-
-                            "\n";
-
-                    });
-
-
-                    mensagem +=
+                        listaTamanhos.join(
+                            " + "
+                        ) +
 
                         "\n" +
 
@@ -2523,27 +2479,11 @@
 
                         quantidadeTotal +
 
-                        (
-                            quantidadeTotal === 1
-                                ? " camiseta"
-                                : " camisetas"
-                        ) +
-
                         "\n" +
 
-                        "Preço unitário: " +
+                        "Preço total: " +
 
-                        formatarMoeda(
-                            precoUnitario
-                        ) +
-
-                        "\n" +
-
-                        "Total: " +
-
-                        formatarMoeda(
-                            precoFinal
-                        ) +
+                        precoFormatado +
 
                         "\n" +
 
@@ -2572,12 +2512,16 @@
 
 
                     /* =========================
-                       PARCELAMENTO
+                       CARTÃO
                     ========================= */
 
                     if (
                         pagamentoEscolhido === "Cartão"
                     ) {
+
+                        const parcela =
+                            precoFinal / 2;
+
 
                         mensagem +=
 
@@ -2585,9 +2529,11 @@
 
                             "Parcelamento: 2x de " +
 
-                            formatarMoeda(
-                                precoFinal / 2
-                            ) +
+                            "R$ " +
+
+                            parcela
+                            .toFixed(2)
+                            .replace(".", ",") +
 
                             " sem juros";
 
@@ -2621,10 +2567,11 @@
 
 
         /* =========================
-           ATUALIZA PREÇO AO INICIAR
+           PREÇO INICIAL
         ========================= */
 
         atualizarPreco();
+
 
     </script>
 
