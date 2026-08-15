@@ -81,11 +81,11 @@
         }
 
         .brand-logo {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    display: block;
-}
+            width: 65px;
+            height: 65px;
+            object-fit: contain;
+            display: block;
+        }
 
         .logo {
             font-family: "Anton", sans-serif;
@@ -794,6 +794,7 @@
     <header>
 
         <div class="brand">
+
             <img
                 class="brand-logo"
                 src="Logo.png"
@@ -803,6 +804,7 @@
             <div class="logo">
                 HOLINESS
             </div>
+
         </div>
 
     </header>
@@ -926,7 +928,7 @@
                 id="price"
             >
 
-                R$ 149,90
+                R$ 98,89
 
             </div>
 
@@ -939,9 +941,12 @@
             </div>
 
 
-            <div class="installments">
+            <div
+                class="installments"
+                id="installments"
+            >
 
-                ou 3x de R$ 49,97 sem juros
+                ou 2x de R$ 49,45 sem juros
 
             </div>
 
@@ -1271,6 +1276,8 @@
 
         const precoOriginal = 98.89;
 
+        const precoComCupomGLORY10 = 89.90;
+
         let tamanhoEscolhido = "";
 
         let quantidadeEscolhida = "";
@@ -1434,15 +1441,35 @@
                             );
 
 
-                        paymentText.innerHTML =
+                        if (
+                            pagamentoEscolhido === "Cartão"
+                        ) {
 
-                            "Pagamento: " +
+                            paymentText.innerHTML =
 
-                            "<strong>" +
+                                "Pagamento: " +
 
-                            pagamentoEscolhido +
+                                "<strong>Cartão</strong>" +
 
-                            "</strong>";
+                                " — 2x de " +
+
+                                "<strong>R$ 44,95</strong>" +
+
+                                " sem juros";
+
+                        } else {
+
+                            paymentText.innerHTML =
+
+                                "Pagamento: " +
+
+                                "<strong>" +
+
+                                pagamentoEscolhido +
+
+                                "</strong>";
+
+                        }
 
 
                         paymentText.style.color =
@@ -1495,6 +1522,12 @@
         const discountText =
             document.getElementById(
                 "discountText"
+            );
+
+
+        const installmentsElement =
+            document.getElementById(
+                "installments"
             );
 
 
@@ -1602,10 +1635,34 @@
         function atualizarPreco() {
 
 
-            if (desconto > 0) {
+            let novoPreco;
 
 
-                const novoPreco =
+            /*
+             * GLORY10:
+             * preço exibido sem cupom = R$ 98,89
+             * preço com cupom = R$ 89,90
+             */
+
+            if (
+                cupomAplicado === "GLORY10"
+            ) {
+
+                novoPreco =
+                    precoComCupomGLORY10;
+
+            }
+
+            /*
+             * Outros cupons continuam
+             * funcionando normalmente.
+             */
+
+            else if (
+                desconto > 0
+            ) {
+
+                novoPreco =
 
                     precoOriginal -
 
@@ -1614,6 +1671,24 @@
                         desconto /
                         100
                     );
+
+            }
+
+            else {
+
+                novoPreco =
+                    precoOriginal;
+
+            }
+
+
+            /* =========================
+               PREÇO COM CUPOM
+            ========================= */
+
+            if (
+                desconto > 0
+            ) {
 
 
                 priceElement.innerHTML =
@@ -1655,7 +1730,13 @@
                     "% OFF)";
 
 
-            } else {
+            }
+
+            /* =========================
+               SEM CUPOM
+            ========================= */
+
+            else {
 
 
                 priceElement.innerHTML =
@@ -1663,6 +1744,29 @@
 
 
                 discountText.innerHTML = "";
+
+            }
+
+
+            /* =========================
+               PARCELAMENTO
+            ========================= */
+
+            if (
+                cupomAplicado === "GLORY10"
+            ) {
+
+                installmentsElement.innerHTML =
+
+                    "ou 2x de R$ 44,95 sem juros";
+
+            }
+
+            else {
+
+                installmentsElement.innerHTML =
+
+                    "ou 2x de R$ 49,45 sem juros";
 
             }
 
@@ -1746,13 +1850,24 @@
                         "5533998019698";
 
 
-                    /* CALCULA PREÇO FINAL */
+                    /* =========================
+                       CALCULA PREÇO FINAL
+                    ========================= */
 
                     let precoFinal =
                         precoOriginal;
 
 
                     if (
+                        cupomAplicado === "GLORY10"
+                    ) {
+
+                        precoFinal =
+                            precoComCupomGLORY10;
+
+                    }
+
+                    else if (
                         desconto > 0
                     ) {
 
@@ -1769,7 +1884,9 @@
                     }
 
 
-                    /* FORMATA PREÇO */
+                    /* =========================
+                       FORMATA PREÇO
+                    ========================= */
 
                     const precoFormatado =
 
@@ -1787,7 +1904,7 @@
                        MENSAGEM WHATSAPP
                     ========================= */
 
-                    const mensagem =
+                    let mensagem =
 
                         "Olá! Quero comprar a camisa Glory!" +
 
@@ -1805,6 +1922,54 @@
 
                         "Pagamento: " +
                         pagamentoEscolhido;
+
+
+                    /* =========================
+                       INFORMAÇÃO DO CUPOM
+                    ========================= */
+
+                    if (
+                        cupomAplicado !== ""
+                    ) {
+
+                        mensagem +=
+
+                            "\n" +
+
+                            "Cupom: " +
+
+                            cupomAplicado;
+
+                    }
+
+
+                    /* =========================
+                       INFORMAÇÃO DO CARTÃO
+                    ========================= */
+
+                    if (
+                        pagamentoEscolhido === "Cartão"
+                    ) {
+
+                        const parcela =
+                            precoFinal / 2;
+
+
+                        mensagem +=
+
+                            "\n" +
+
+                            "Parcelamento: 2x de " +
+
+                            "R$ " +
+
+                            parcela
+                                .toFixed(2)
+                                .replace(".", ",") +
+
+                            " sem juros";
+
+                    }
 
 
                     /* =========================
@@ -1831,6 +1996,13 @@
 
                 }
             );
+
+
+        /* =========================
+           PREÇO INICIAL
+        ========================= */
+
+        atualizarPreco();
 
 
     </script>
