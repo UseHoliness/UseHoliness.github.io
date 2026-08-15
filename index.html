@@ -1,0 +1,1925 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>HOLINESS — Glory</title>
+
+    <!-- FONTE ANTON -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f3ef;
+            color: #111;
+        }
+
+
+        /* =========================
+           BARRA SUPERIOR
+        ========================= */
+
+        .topbar {
+            width: 100%;
+            height: 28px;
+
+            background: #000;
+            color: #fff;
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
+
+        .topbar strong {
+            margin-left: 5px;
+        }
+
+
+        /* =========================
+           HEADER
+        ========================= */
+
+        header {
+            height: 76px;
+
+            background: #fff;
+
+            display: flex;
+            align-items: center;
+
+            padding: 0 45px;
+
+            border-bottom: 1px solid #ddd;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand-logo {
+    width: 65px;
+    height: 65px;
+    object-fit: contain;
+    display: block;
+}
+
+        .logo {
+            font-family: "Anton", sans-serif;
+            font-weight: 400;
+            letter-spacing: 1px;
+            font-size: 30px;
+        }
+
+
+        /* =========================
+           PRODUTO
+        ========================= */
+
+        .product {
+            min-height: calc(100vh - 104px);
+
+            display: grid;
+
+            grid-template-columns: 58% 42%;
+        }
+
+
+        /* =========================
+           GALERIA
+        ========================= */
+
+        .product-gallery {
+            background: #e5e1dc;
+
+            padding: 35px 45px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+        }
+
+        .main-photo {
+            width: 100%;
+            height: 600px;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: center;
+
+            overflow: hidden;
+
+            margin-bottom: 18px;
+        }
+
+        .main-photo img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: contain;
+
+            display: block;
+        }
+
+
+        /* =========================
+           MINIATURAS
+        ========================= */
+
+        .thumbnails {
+            width: 100%;
+
+            display: flex;
+
+            justify-content: flex-start;
+
+            gap: 10px;
+        }
+
+        .thumbnail {
+            width: 90px;
+            height: 90px;
+
+            border: 1px solid #bbb;
+
+            background: #eee;
+
+            cursor: pointer;
+
+            overflow: hidden;
+
+            opacity: .6;
+
+            transition: .2s;
+        }
+
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
+
+            object-fit: cover;
+
+            display: block;
+        }
+
+        .thumbnail:hover {
+            opacity: 1;
+        }
+
+        .thumbnail.active {
+            border: 2px solid #000;
+
+            opacity: 1;
+        }
+
+
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
+
+        .info {
+            background: #f5f3ef;
+
+            padding: 55px 70px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            justify-content: center;
+        }
+
+        .small-title {
+            font-family: "Anton", sans-serif;
+
+            font-size: 12px;
+
+            letter-spacing: 3px;
+
+            color: #777;
+
+            margin-bottom: 20px;
+        }
+
+        h1 {
+            font-family: "Anton", sans-serif;
+
+            font-size: 80px;
+
+            font-weight: 400;
+
+            line-height: .9;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 25px;
+        }
+
+        .line {
+            width: 65px;
+            height: 3px;
+
+            background: #d99a13;
+
+            margin-bottom: 25px;
+        }
+
+        .phrase {
+            font-family: Georgia, serif;
+
+            font-size: 19px;
+
+            line-height: 1.5;
+
+            max-width: 500px;
+
+            margin-bottom: 30px;
+        }
+
+
+        /* =========================
+           PREÇO
+        ========================= */
+
+        .price {
+            font-family: "Anton", sans-serif;
+
+            font-size: 30px;
+
+            font-weight: 400;
+
+            letter-spacing: .5px;
+
+            margin-bottom: 5px;
+        }
+
+        .price-old {
+            color: #999;
+
+            text-decoration: line-through;
+
+            font-family: Arial, Helvetica, sans-serif;
+
+            font-size: 14px;
+
+            margin-right: 10px;
+        }
+
+        .price-discount {
+            color: #16833b;
+
+            font-size: 11px;
+
+            margin-top: 5px;
+
+            margin-bottom: 5px;
+        }
+
+        .installments {
+            color: #777;
+
+            font-size: 11px;
+
+            margin-bottom: 25px;
+        }
+
+
+        /* =========================
+           CUPOM
+        ========================= */
+
+        .coupon-area {
+            max-width: 450px;
+
+            margin-bottom: 25px;
+        }
+
+        .coupon-title {
+            font-family: "Anton", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 10px;
+        }
+
+        .coupon-box {
+            display: flex;
+
+            width: 100%;
+        }
+
+        .coupon-box input {
+            flex: 1;
+
+            height: 48px;
+
+            border: 1px solid #aaa;
+
+            border-right: none;
+
+            background: #fff;
+
+            padding: 0 15px;
+
+            font-size: 11px;
+
+            outline: none;
+
+            text-transform: uppercase;
+        }
+
+        .coupon-box button {
+            width: 100px;
+
+            height: 48px;
+
+            border: none;
+
+            background: #000;
+
+            color: #fff;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 400;
+
+            letter-spacing: 1px;
+
+            cursor: pointer;
+        }
+
+        .coupon-box button:hover {
+            background: #d99a13;
+
+            color: #000;
+        }
+
+        .coupon-message {
+            margin-top: 8px;
+
+            min-height: 18px;
+
+            font-size: 11px;
+        }
+
+        .coupon-success {
+            color: #16833b;
+        }
+
+        .coupon-error {
+            color: #b00000;
+        }
+
+
+        /* =========================
+           TAMANHOS
+        ========================= */
+
+        .size-title {
+            font-family: "Anton", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            margin-bottom: 12px;
+        }
+
+        .sizes {
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        .size {
+            width: 55px;
+            height: 48px;
+
+            background: #fff;
+
+            border: 1px solid #aaa;
+
+            color: #111;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 400;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .size:hover {
+            background: #eee;
+
+            border-color: #000;
+        }
+
+        .size.selected {
+            background: #000;
+
+            color: #fff;
+
+            border-color: #000;
+        }
+
+        .selected-text {
+            min-height: 25px;
+
+            margin-bottom: 18px;
+
+            font-size: 11px;
+
+            color: #777;
+        }
+
+        .selected-text strong {
+            color: #111;
+        }
+
+        .stock-info {
+            min-height: 18px;
+            margin-top: -2px;
+            margin-bottom: 18px;
+            font-size: 11px;
+            color: #777;
+        }
+
+        .size.out-of-stock {
+            color: #999;
+            background: #eee;
+            border-color: #ddd;
+            cursor: not-allowed;
+            text-decoration: line-through;
+            opacity: .7;
+        }
+
+        .stock-low {
+            color: #b00000;
+        }
+
+
+        /* =========================
+           PAGAMENTO
+        ========================= */
+
+        .payment-title {
+            font-family: "Anton", sans-serif;
+
+            font-size: 12px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            margin-top: 5px;
+
+            margin-bottom: 12px;
+        }
+
+        .payments {
+            display: flex;
+
+            gap: 10px;
+
+            margin-bottom: 10px;
+
+            flex-wrap: wrap;
+        }
+
+        .payment {
+            padding: 12px 18px;
+
+            background: #fff;
+
+            border: 1px solid #aaa;
+
+            color: #111;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 13px;
+
+            font-weight: 400;
+
+            letter-spacing: .5px;
+
+            cursor: pointer;
+
+            transition: .2s;
+        }
+
+        .payment:hover {
+            background: #eee;
+
+            border-color: #000;
+        }
+
+        .payment.selected {
+            background: #000;
+
+            color: #fff;
+
+            border-color: #000;
+        }
+
+        .payment-text {
+            min-height: 20px;
+
+            margin-bottom: 20px;
+
+            font-size: 11px;
+
+            color: #777;
+        }
+
+
+        /* =========================
+           BOTÃO COMPRAR
+        ========================= */
+
+        .buy {
+            width: 100%;
+
+            max-width: 450px;
+
+            height: 60px;
+
+            border: none;
+
+            background: #000;
+
+            color: #fff;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 15px;
+
+            font-weight: 400;
+
+            letter-spacing: 2px;
+
+            cursor: pointer;
+
+            transition: .3s;
+        }
+
+        .buy:hover {
+            background: #d99a13;
+
+            color: #000;
+        }
+
+
+        /* =========================
+           DETALHES
+        ========================= */
+
+        .details {
+            max-width: 450px;
+
+            margin-top: 30px;
+        }
+
+        .detail {
+            border-top: 1px solid #ddd;
+
+            padding: 14px 0;
+
+            display: flex;
+
+            justify-content: space-between;
+
+            font-size: 10px;
+        }
+
+        .detail span {
+            color: #777;
+        }
+
+        .detail strong {
+            font-family: "Anton", sans-serif;
+
+            font-weight: 400;
+
+            letter-spacing: .5px;
+        }
+
+
+        /* =========================
+           DUAS IMAGENS
+        ========================= */
+
+        .story {
+            width: 100%;
+
+            height: 600px;
+
+            display: grid;
+
+            grid-template-columns: 1fr 1fr;
+
+            background: #111;
+        }
+
+        .story-image {
+            width: 100%;
+
+            height: 600px;
+
+            overflow: hidden;
+        }
+
+        .story-image img {
+            width: 100%;
+
+            height: 100%;
+
+            display: block;
+
+            object-fit: cover;
+
+            object-position: center;
+        }
+
+
+        /* =========================
+           RODAPÉ
+        ========================= */
+
+        footer {
+            min-height: 120px;
+
+            background: #f5f3ef;
+
+            color: #111;
+
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            padding: 20px 40px;
+
+            border-top: 1px solid #ddd;
+        }
+
+        footer .logo {
+            color: #111;
+        }
+
+        footer p {
+            color: #777;
+
+            font-family: Georgia, serif;
+
+            font-size: 12px;
+
+            line-height: 1.5;
+
+            letter-spacing: .3px;
+
+            max-width: 650px;
+
+            text-align: right;
+        }
+
+
+        /* =========================
+           RESPONSIVO
+        ========================= */
+
+        @media (max-width: 800px) {
+
+            header {
+                padding: 0 20px;
+            }
+
+            .product {
+                grid-template-columns: 1fr;
+            }
+
+            .product-gallery {
+                padding: 20px;
+            }
+
+            .main-photo {
+                height: 500px;
+            }
+
+            .info {
+                padding: 50px 25px;
+            }
+
+            h1 {
+                font-size: 60px;
+            }
+
+            .story {
+                grid-template-columns: 1fr;
+
+                height: auto;
+            }
+
+            .story-image {
+                height: 500px;
+            }
+
+            footer {
+                padding: 25px 20px;
+
+                flex-direction: column;
+
+                gap: 15px;
+
+                text-align: center;
+            }
+
+            footer p {
+                text-align: center;
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================
+         BARRA SUPERIOR
+    ========================= -->
+
+    <div class="topbar">
+
+        PRIMEIRA COMPRA?
+        &nbsp;
+        USE O CUPOM
+        <strong>GLORY10</strong>
+
+    </div>
+
+
+    <!-- =========================
+         HEADER
+    ========================= -->
+
+    <header>
+
+        <div class="brand">
+            <img
+                class="brand-logo"
+                src="Logo.png"
+                alt="Logo Holiness"
+            >
+
+            <div class="logo">
+                HOLINESS
+            </div>
+        </div>
+
+    </header>
+
+
+    <!-- =========================
+         PRODUTO
+    ========================= -->
+
+    <section class="product">
+
+
+        <!-- GALERIA -->
+
+        <div class="product-gallery">
+
+
+            <div class="main-photo">
+
+                <img
+                    id="mainImage"
+                    src="Frente.png"
+                    alt="Frente da camisa Glory"
+                >
+
+            </div>
+
+
+            <!-- MINIATURAS -->
+
+            <div class="thumbnails">
+
+
+                <!-- FRENTE -->
+
+                <div
+                    class="thumbnail active"
+                    onclick="trocarFoto('Frente.png', this)"
+                >
+
+                    <img
+                        src="Frente.png"
+                        alt="Frente"
+                    >
+
+                </div>
+
+
+                <!-- COSTA -->
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto('Costa.png', this)"
+                >
+
+                    <img
+                        src="Costa.png"
+                        alt="Costa"
+                    >
+
+                </div>
+
+
+                <!-- CHUVA -->
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto('Chuva.png', this)"
+                >
+
+                    <img
+                        src="Chuva.png"
+                        alt="Chuva"
+                    >
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+        <!-- =========================
+             INFORMAÇÕES
+        ========================= -->
+
+        <div class="info">
+
+
+            <div class="small-title">
+
+                NOVA COLEÇÃO • 001
+
+            </div>
+
+
+            <h1>
+
+                GLORY
+
+            </h1>
+
+
+            <div class="line"></div>
+
+
+            <p class="phrase">
+
+                "Acreditamos que, buscando incansavelmente à Deus,
+                chegaremos a manifestação visível da presença,
+                do poder e de todas as perfeições."
+
+            </p>
+
+
+            <!-- PREÇO -->
+
+            <div
+                class="price"
+                id="price"
+            >
+
+                R$ 149,90
+
+            </div>
+
+
+            <div
+                id="discountText"
+                class="price-discount"
+            >
+
+            </div>
+
+
+            <div class="installments">
+
+                ou 3x de R$ 49,97 sem juros
+
+            </div>
+
+
+            <!-- =========================
+                 CUPOM
+            ========================= -->
+
+            <div class="coupon-area">
+
+
+                <div class="coupon-title">
+
+                    CUPOM DE DESCONTO
+
+                </div>
+
+
+                <div class="coupon-box">
+
+
+                    <input
+                        type="text"
+                        id="couponInput"
+                        placeholder="DIGITE SEU CUPOM"
+                    >
+
+
+                    <button
+                        type="button"
+                        id="couponButton"
+                    >
+
+                        APLICAR
+
+                    </button>
+
+
+                </div>
+
+
+                <div
+                    id="couponMessage"
+                    class="coupon-message"
+                >
+
+                </div>
+
+
+            </div>
+
+
+            <!-- =========================
+                 TAMANHOS
+            ========================= -->
+
+            <div class="size-title">
+
+                ESCOLHA O TAMANHO
+
+            </div>
+
+
+            <div class="sizes">
+
+
+                <button
+                    type="button"
+                    class="size"
+                    data-size="PP"
+                >
+
+                    PP
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size"
+                    data-size="M"
+                >
+
+                    M
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size"
+                    data-size="G"
+                >
+
+                    G
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="size"
+                    data-size="GG"
+                >
+
+                    GG
+
+                </button>
+
+
+            </div>
+
+            <div class="stock-info" id="stockInfo"></div>
+
+
+            <div
+                class="selected-text"
+                id="selectedText"
+            >
+
+                Selecione um tamanho
+
+            </div>
+
+
+            <!-- =========================
+                 PAGAMENTO
+            ========================= -->
+
+            <div class="payment-title">
+
+                MÉTODO DE PAGAMENTO
+
+            </div>
+
+
+            <div class="payments">
+
+
+                <button
+                    type="button"
+                    class="payment"
+                    data-payment="PIX"
+                >
+
+                    PIX
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment"
+                    data-payment="Cartão"
+                >
+
+                    CARTÃO
+
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment"
+                    data-payment="Dinheiro"
+                >
+
+                    DINHEIRO
+
+                </button>
+
+
+            </div>
+
+
+            <div
+                class="payment-text"
+                id="paymentText"
+            >
+
+                Selecione o método de pagamento
+
+            </div>
+
+
+            <!-- =========================
+                 FINALIZAR COMPRA
+            ========================= -->
+
+            <button
+                type="button"
+                class="buy"
+                id="buyButton"
+            >
+
+                FINALIZAR COMPRA →
+
+            </button>
+
+
+            <!-- =========================
+                 DETALHES
+            ========================= -->
+
+            <div class="details">
+
+
+                <div class="detail">
+
+                    <span>
+                        MATERIAL
+                    </span>
+
+                    <strong>
+                        100% ALGODÃO
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        MODELAGEM
+                    </span>
+
+                    <strong>
+                        OVERSIZED
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        ENVIO
+                    </span>
+
+                    <strong>
+                        TODO O BRASIL
+                    </strong>
+
+                </div>
+
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         DUAS IMAGENS
+    ========================= -->
+
+    <section class="story">
+
+
+        <!-- ESQUERDA -->
+
+        <div class="story-image">
+
+            <img
+                src="Obrigado.png"
+                alt="Obrigado"
+            >
+
+        </div>
+
+
+        <!-- DIREITA -->
+
+        <div class="story-image">
+
+            <img
+                src="fig.png"
+                alt="Glory"
+            >
+
+        </div>
+
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+
+        <div class="logo">
+
+            HOLINESS
+
+        </div>
+
+
+        <p>
+
+            “Ao contemplarmos a presença de Deus,<br>
+            somos transformados progressivamente à imagem de Cristo<br>
+            pelo Espírito Santo.”
+
+        </p>
+
+
+    </footer>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+
+        /* =========================
+           CONFIGURAÇÕES
+        ========================= */
+
+        const precoOriginal = 149.90;
+
+        /* =========================
+           ESTOQUE
+           ALTERE ESTES NÚMEROS
+           PARA ATUALIZAR O ESTOQUE
+        ========================= */
+
+        const estoque = {
+            PP: 3,
+            M: 2,
+            G: 2,
+            GG: 2
+        };
+
+        let tamanhoEscolhido = "";
+
+        let quantidadeEscolhida = "";
+
+        let pagamentoEscolhido = "";
+
+        let cupomAplicado = "";
+
+        let desconto = 0;
+
+
+        /* =========================
+           TROCAR FOTOS
+        ========================= */
+
+        function trocarFoto(foto, elemento) {
+
+            document.getElementById(
+                "mainImage"
+            ).src = foto;
+
+
+            document
+                .querySelectorAll(".thumbnail")
+                .forEach(function(item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
+
+
+            elemento.classList.add(
+                "active"
+            );
+
+        }
+
+
+        /* =========================
+           TAMANHOS
+        ========================= */
+
+        const botoes =
+            document.querySelectorAll(
+                ".size"
+            );
+
+        const texto =
+            document.getElementById(
+                "selectedText"
+            );
+
+        const stockInfo =
+            document.getElementById(
+                "stockInfo"
+            );
+
+        function atualizarEstoqueVisual() {
+
+            botoes.forEach(function(botao) {
+
+                const tamanho =
+                    botao.getAttribute("data-size");
+
+                const quantidade =
+                    estoque[tamanho] || 0;
+
+                if (quantidade <= 0) {
+
+                    botao.classList.add("out-of-stock");
+                    botao.disabled = true;
+
+                } else {
+
+                    botao.classList.remove("out-of-stock");
+                    botao.disabled = false;
+
+                }
+
+            });
+
+        }
+
+        atualizarEstoqueVisual();
+
+        botoes.forEach(function(botao) {
+
+            botao.addEventListener(
+                "click",
+                function() {
+
+                    const tamanho =
+                        botao.getAttribute("data-size");
+
+                    const quantidade =
+                        estoque[tamanho] || 0;
+
+                    if (quantidade <= 0) {
+                        return;
+                    }
+
+                    botoes.forEach(function(item) {
+                        item.classList.remove("selected");
+                    });
+
+                    botao.classList.add("selected");
+
+                    tamanhoEscolhido = tamanho;
+                    quantidadeEscolhida = quantidade;
+
+                    texto.innerHTML =
+                        "Tamanho " +
+                        "<strong>" +
+                        tamanhoEscolhido +
+                        "</strong>" +
+                        " — " +
+                        quantidade +
+                        " disponíveis";
+
+                    texto.style.color = "#777";
+
+                    if (quantidade <= 2) {
+
+                        stockInfo.innerHTML =
+                            "⚠ Últimas " +
+                            quantidade +
+                            " unidades neste tamanho.";
+
+                        stockInfo.className =
+                            "stock-info stock-low";
+
+                    } else {
+
+                        stockInfo.innerHTML =
+                            quantidade +
+                            " unidades disponíveis.";
+
+                        stockInfo.className =
+                            "stock-info";
+
+                    }
+
+                }
+            );
+
+        });
+
+
+        /* =========================
+           PAGAMENTO
+        ========================= */
+
+        const pagamentos =
+            document.querySelectorAll(
+                ".payment"
+            );
+
+
+        const paymentText =
+            document.getElementById(
+                "paymentText"
+            );
+
+
+        pagamentos.forEach(
+            function(botao) {
+
+                botao.addEventListener(
+                    "click",
+                    function() {
+
+
+                        pagamentos.forEach(
+                            function(item) {
+
+                                item.classList.remove(
+                                    "selected"
+                                );
+
+                            }
+                        );
+
+
+                        botao.classList.add(
+                            "selected"
+                        );
+
+
+                        pagamentoEscolhido =
+                            botao.getAttribute(
+                                "data-payment"
+                            );
+
+
+                        paymentText.innerHTML =
+
+                            "Pagamento: " +
+
+                            "<strong>" +
+
+                            pagamentoEscolhido +
+
+                            "</strong>";
+
+
+                        paymentText.style.color =
+                            "#777";
+
+                    }
+                );
+
+            }
+        );
+
+
+        /* =========================
+           CUPONS
+        ========================= */
+
+        const cupons = {
+
+            "GLORY10": 10,
+
+            "ALTAR20": 20
+
+        };
+
+
+        const couponInput =
+            document.getElementById(
+                "couponInput"
+            );
+
+
+        const couponButton =
+            document.getElementById(
+                "couponButton"
+            );
+
+
+        const couponMessage =
+            document.getElementById(
+                "couponMessage"
+            );
+
+
+        const priceElement =
+            document.getElementById(
+                "price"
+            );
+
+
+        const discountText =
+            document.getElementById(
+                "discountText"
+            );
+
+
+        couponButton.addEventListener(
+            "click",
+            function() {
+
+
+                const cupom =
+                    couponInput.value
+                    .trim()
+                    .toUpperCase();
+
+
+                if (cupom === "") {
+
+                    cupomAplicado = "";
+
+                    desconto = 0;
+
+
+                    couponMessage.innerHTML =
+                        "Digite um cupom.";
+
+
+                    couponMessage.className =
+                        "coupon-message coupon-error";
+
+
+                    atualizarPreco();
+
+
+                    return;
+
+                }
+
+
+                if (
+                    cupons.hasOwnProperty(
+                        cupom
+                    )
+                ) {
+
+
+                    desconto =
+                        cupons[cupom];
+
+
+                    cupomAplicado =
+                        cupom;
+
+
+                    couponMessage.innerHTML =
+
+                        "✓ Cupom " +
+
+                        "<strong>" +
+
+                        cupom +
+
+                        "</strong>" +
+
+                        " aplicado! " +
+
+                        desconto +
+
+                        "% de desconto.";
+
+
+                    couponMessage.className =
+                        "coupon-message coupon-success";
+
+
+                    atualizarPreco();
+
+
+                    return;
+
+                }
+
+
+                cupomAplicado = "";
+
+                desconto = 0;
+
+
+                couponMessage.innerHTML =
+                    "✕ Cupom inválido.";
+
+
+                couponMessage.className =
+                    "coupon-message coupon-error";
+
+
+                atualizarPreco();
+
+            }
+        );
+
+
+        /* =========================
+           ATUALIZAR PREÇO
+        ========================= */
+
+        function atualizarPreco() {
+
+
+            if (desconto > 0) {
+
+
+                const novoPreco =
+
+                    precoOriginal -
+
+                    (
+                        precoOriginal *
+                        desconto /
+                        100
+                    );
+
+
+                priceElement.innerHTML =
+
+                    '<span class="price-old">' +
+
+                    "R$ " +
+
+                    precoOriginal
+                        .toFixed(2)
+                        .replace(".", ",")
+
+                    +
+
+                    "</span>" +
+
+                    "R$ " +
+
+                    novoPreco
+                        .toFixed(2)
+                        .replace(".", ",");
+
+
+                discountText.innerHTML =
+
+                    "Você economiza R$ " +
+
+                    (
+                        precoOriginal -
+                        novoPreco
+                    )
+                    .toFixed(2)
+                    .replace(".", ",") +
+
+                    " (" +
+
+                    desconto +
+
+                    "% OFF)";
+
+
+            } else {
+
+
+                priceElement.innerHTML =
+                    "R$ 149,90";
+
+
+                discountText.innerHTML = "";
+
+            }
+
+        }
+
+
+        /* =========================
+           FINALIZAR COMPRA
+        ========================= */
+
+        document
+            .getElementById("buyButton")
+            .addEventListener(
+                "click",
+                function() {
+
+
+                    /* VERIFICA TAMANHO */
+
+                    if (
+                        tamanhoEscolhido === ""
+                    ) {
+
+
+                        texto.innerHTML =
+
+                            "⚠ " +
+
+                            "<strong>" +
+
+                            "Selecione um tamanho primeiro."
+
+                            +
+
+                            "</strong>";
+
+
+                        texto.style.color =
+                            "#b00000";
+
+
+                        return;
+
+                    }
+
+
+                    /* VERIFICA ESTOQUE */
+
+                    if (
+                        !tamanhoEscolhido ||
+                        (estoque[tamanhoEscolhido] || 0) <= 0
+                    ) {
+
+                        texto.innerHTML =
+                            "⚠ " +
+                            "<strong>" +
+                            "Esse tamanho está esgotado." +
+                            "</strong>";
+
+                        texto.style.color = "#b00000";
+
+                        return;
+
+                    }
+
+
+                    /* VERIFICA PAGAMENTO */
+
+                    if (
+                        pagamentoEscolhido === ""
+                    ) {
+
+
+                        paymentText.innerHTML =
+
+                            "⚠ " +
+
+                            "<strong>" +
+
+                            "Selecione um método de pagamento."
+
+                            +
+
+                            "</strong>";
+
+
+                        paymentText.style.color =
+                            "#b00000";
+
+
+                        return;
+
+                    }
+
+
+                    /* =========================
+                       SEU WHATSAPP
+                    ========================= */
+
+                    const numeroWhatsApp =
+                        "5533998019698";
+
+
+                    /* CALCULA PREÇO FINAL */
+
+                    let precoFinal =
+                        precoOriginal;
+
+
+                    if (
+                        desconto > 0
+                    ) {
+
+                        precoFinal =
+
+                            precoOriginal -
+
+                            (
+                                precoOriginal *
+                                desconto /
+                                100
+                            );
+
+                    }
+
+
+                    /* FORMATA PREÇO */
+
+                    const precoFormatado =
+
+                        "R$ " +
+
+                        precoFinal
+                        .toFixed(2)
+                        .replace(
+                            ".",
+                            ","
+                        );
+
+
+                    /* =========================
+                       MENSAGEM WHATSAPP
+                    ========================= */
+
+                    const mensagem =
+
+                        "Olá! Quero comprar a camisa Glory!" +
+
+                        "\n\n" +
+
+                        "Tamanho: " +
+                        tamanhoEscolhido +
+
+                        "\n" +
+
+                        "Preço: " +
+                        precoFormatado +
+
+                        "\n" +
+
+                        "Pagamento: " +
+                        pagamentoEscolhido;
+
+
+                    /* =========================
+                       LINK WHATSAPP
+                    ========================= */
+
+                    const linkWhatsApp =
+
+                        "https://wa.me/" +
+
+                        numeroWhatsApp +
+
+                        "?text=" +
+
+                        encodeURIComponent(
+                            mensagem
+                        );
+
+
+                    window.open(
+                        linkWhatsApp,
+                        "_blank"
+                    );
+
+                }
+            );
+
+
+    </script>
+
+</body>
+
+</html>
