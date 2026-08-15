@@ -481,27 +481,6 @@
             color: #111;
         }
 
-        .stock-info {
-            min-height: 18px;
-            margin-top: -2px;
-            margin-bottom: 18px;
-            font-size: 11px;
-            color: #777;
-        }
-
-        .size.out-of-stock {
-            color: #999;
-            background: #eee;
-            border-color: #ddd;
-            cursor: not-allowed;
-            text-decoration: line-through;
-            opacity: .7;
-        }
-
-        .stock-low {
-            color: #b00000;
-        }
-
 
         /* =========================
            PAGAMENTO
@@ -1033,6 +1012,7 @@
                     type="button"
                     class="size"
                     data-size="PP"
+                    data-quantity="3"
                 >
 
                     PP
@@ -1044,6 +1024,7 @@
                     type="button"
                     class="size"
                     data-size="M"
+                    data-quantity="2"
                 >
 
                     M
@@ -1055,6 +1036,7 @@
                     type="button"
                     class="size"
                     data-size="G"
+                    data-quantity="2"
                 >
 
                     G
@@ -1066,6 +1048,7 @@
                     type="button"
                     class="size"
                     data-size="GG"
+                    data-quantity="2"
                 >
 
                     GG
@@ -1074,8 +1057,6 @@
 
 
             </div>
-
-            <div class="stock-info" id="stockInfo"></div>
 
 
             <div
@@ -1288,20 +1269,7 @@
            CONFIGURAÇÕES
         ========================= */
 
-        const precoOriginal = 149.90;
-
-        /* =========================
-           ESTOQUE
-           ALTERE ESTES NÚMEROS
-           PARA ATUALIZAR O ESTOQUE
-        ========================= */
-
-        const estoque = {
-            PP: 3,
-            M: 2,
-            G: 2,
-            GG: 2
-        };
+        const precoOriginal = 98.89;
 
         let tamanhoEscolhido = "";
 
@@ -1352,43 +1320,12 @@
                 ".size"
             );
 
+
         const texto =
             document.getElementById(
                 "selectedText"
             );
 
-        const stockInfo =
-            document.getElementById(
-                "stockInfo"
-            );
-
-        function atualizarEstoqueVisual() {
-
-            botoes.forEach(function(botao) {
-
-                const tamanho =
-                    botao.getAttribute("data-size");
-
-                const quantidade =
-                    estoque[tamanho] || 0;
-
-                if (quantidade <= 0) {
-
-                    botao.classList.add("out-of-stock");
-                    botao.disabled = true;
-
-                } else {
-
-                    botao.classList.remove("out-of-stock");
-                    botao.disabled = false;
-
-                }
-
-            });
-
-        }
-
-        atualizarEstoqueVisual();
 
         botoes.forEach(function(botao) {
 
@@ -1396,56 +1333,54 @@
                 "click",
                 function() {
 
-                    const tamanho =
-                        botao.getAttribute("data-size");
 
-                    const quantidade =
-                        estoque[tamanho] || 0;
+                    botoes.forEach(
+                        function(item) {
 
-                    if (quantidade <= 0) {
-                        return;
-                    }
+                            item.classList.remove(
+                                "selected"
+                            );
 
-                    botoes.forEach(function(item) {
-                        item.classList.remove("selected");
-                    });
+                        }
+                    );
 
-                    botao.classList.add("selected");
 
-                    tamanhoEscolhido = tamanho;
-                    quantidadeEscolhida = quantidade;
+                    botao.classList.add(
+                        "selected"
+                    );
+
+
+                    tamanhoEscolhido =
+                        botao.getAttribute(
+                            "data-size"
+                        );
+
+
+                    quantidadeEscolhida =
+                        botao.getAttribute(
+                            "data-quantity"
+                        );
+
 
                     texto.innerHTML =
+
                         "Tamanho " +
+
                         "<strong>" +
+
                         tamanhoEscolhido +
+
                         "</strong>" +
+
                         " — " +
-                        quantidade +
+
+                        quantidadeEscolhida +
+
                         " disponíveis";
 
-                    texto.style.color = "#777";
 
-                    if (quantidade <= 2) {
-
-                        stockInfo.innerHTML =
-                            "⚠ Últimas " +
-                            quantidade +
-                            " unidades neste tamanho.";
-
-                        stockInfo.className =
-                            "stock-info stock-low";
-
-                    } else {
-
-                        stockInfo.innerHTML =
-                            quantidade +
-                            " unidades disponíveis.";
-
-                        stockInfo.className =
-                            "stock-info";
-
-                    }
+                    texto.style.color =
+                        "#777";
 
                 }
             );
@@ -1724,7 +1659,7 @@
 
 
                 priceElement.innerHTML =
-                    "R$ 149,90";
+                    "R$ 98,89";
 
 
                 discountText.innerHTML = "";
@@ -1768,26 +1703,6 @@
                         texto.style.color =
                             "#b00000";
 
-
-                        return;
-
-                    }
-
-
-                    /* VERIFICA ESTOQUE */
-
-                    if (
-                        !tamanhoEscolhido ||
-                        (estoque[tamanhoEscolhido] || 0) <= 0
-                    ) {
-
-                        texto.innerHTML =
-                            "⚠ " +
-                            "<strong>" +
-                            "Esse tamanho está esgotado." +
-                            "</strong>";
-
-                        texto.style.color = "#b00000";
 
                         return;
 
