@@ -467,17 +467,115 @@
             border-color: #000;
         }
 
-        .selected-text {
-            min-height: 25px;
+
+        /* =========================
+           TAMANHOS ESCOLHIDOS
+        ========================= */
+
+        .selected-sizes {
+            max-width: 450px;
+
+            margin-top: 5px;
 
             margin-bottom: 18px;
+        }
 
+        .selected-size-item {
+            display: flex;
+
+            align-items: center;
+
+            justify-content: space-between;
+
+            background: #fff;
+
+            border: 1px solid #ddd;
+
+            padding: 10px 12px;
+
+            margin-bottom: 8px;
+
+            font-size: 11px;
+        }
+
+        .selected-size-name {
+            font-family: "Anton", sans-serif;
+
+            font-size: 14px;
+
+            letter-spacing: .5px;
+        }
+
+        .quantity-control {
+            display: flex;
+
+            align-items: center;
+
+            gap: 10px;
+        }
+
+        .quantity-button {
+            width: 28px;
+            height: 28px;
+
+            border: 1px solid #aaa;
+
+            background: #fff;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            line-height: 1;
+
+            transition: .2s;
+        }
+
+        .quantity-button:hover {
+            background: #000;
+
+            color: #fff;
+
+            border-color: #000;
+        }
+
+        .quantity-value {
+            min-width: 18px;
+
+            text-align: center;
+
+            font-family: "Anton", sans-serif;
+
+            font-size: 14px;
+        }
+
+        .remove-size {
+            border: none;
+
+            background: transparent;
+
+            color: #999;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            margin-left: 12px;
+        }
+
+        .remove-size:hover {
+            color: #b00000;
+        }
+
+        .quantity-summary {
             font-size: 11px;
 
             color: #777;
+
+            margin-top: 5px;
         }
 
-        .selected-text strong {
+        .quantity-summary strong {
             color: #111;
         }
 
@@ -838,8 +936,6 @@
             <div class="thumbnails">
 
 
-                <!-- FRENTE -->
-
                 <div
                     class="thumbnail active"
                     onclick="trocarFoto('Frente.png', this)"
@@ -853,8 +949,6 @@
                 </div>
 
 
-                <!-- COSTA -->
-
                 <div
                     class="thumbnail"
                     onclick="trocarFoto('Costa.png', this)"
@@ -867,8 +961,6 @@
 
                 </div>
 
-
-                <!-- CHUVA -->
 
                 <div
                     class="thumbnail"
@@ -957,7 +1049,6 @@
 
             <div class="coupon-area">
 
-
                 <div class="coupon-title">
 
                     CUPOM DE DESCONTO
@@ -966,7 +1057,6 @@
 
 
                 <div class="coupon-box">
-
 
                     <input
                         type="text"
@@ -984,7 +1074,6 @@
 
                     </button>
 
-
                 </div>
 
 
@@ -995,7 +1084,6 @@
 
                 </div>
 
-
             </div>
 
 
@@ -1005,7 +1093,7 @@
 
             <div class="size-title">
 
-                ESCOLHA O TAMANHO
+                ESCOLHA ATÉ 2 TAMANHOS
 
             </div>
 
@@ -1064,12 +1152,22 @@
             </div>
 
 
+            <!-- TAMANHOS SELECIONADOS -->
+
             <div
-                class="selected-text"
-                id="selectedText"
+                class="selected-sizes"
+                id="selectedSizes"
             >
 
-                Selecione um tamanho
+            </div>
+
+
+            <div
+                class="quantity-summary"
+                id="quantitySummary"
+            >
+
+                Selecione um tamanho para começar.
 
             </div>
 
@@ -1210,8 +1308,6 @@
     <section class="story">
 
 
-        <!-- ESQUERDA -->
-
         <div class="story-image">
 
             <img
@@ -1221,8 +1317,6 @@
 
         </div>
 
-
-        <!-- DIREITA -->
 
         <div class="story-image">
 
@@ -1278,15 +1372,25 @@
 
         const precoComCupomGLORY10 = 89.90;
 
-        let tamanhoEscolhido = "";
-
-        let quantidadeEscolhida = "";
-
         let pagamentoEscolhido = "";
 
         let cupomAplicado = "";
 
         let desconto = 0;
+
+
+        /*
+         * Guarda os tamanhos selecionados.
+         *
+         * Exemplo:
+         *
+         * {
+         *     M: 2,
+         *     G: 1
+         * }
+         */
+
+        let tamanhosEscolhidos = {};
 
 
         /* =========================
@@ -1319,7 +1423,7 @@
 
 
         /* =========================
-           TAMANHOS
+           ELEMENTOS
         ========================= */
 
         const botoes =
@@ -1328,11 +1432,21 @@
             );
 
 
-        const texto =
+        const selectedSizes =
             document.getElementById(
-                "selectedText"
+                "selectedSizes"
             );
 
+
+        const quantitySummary =
+            document.getElementById(
+                "quantitySummary"
+            );
+
+
+        /* =========================
+           TAMANHOS
+        ========================= */
 
         botoes.forEach(function(botao) {
 
@@ -1340,16 +1454,65 @@
                 "click",
                 function() {
 
+                    const tamanho =
+                        botao.getAttribute(
+                            "data-size"
+                        );
 
-                    botoes.forEach(
-                        function(item) {
 
-                            item.classList.remove(
-                                "selected"
-                            );
+                    const estoque =
+                        Number(
+                            botao.getAttribute(
+                                "data-quantity"
+                            )
+                        );
 
-                        }
-                    );
+
+                    /*
+                     * Se já estiver selecionado,
+                     * não faz nada.
+                     */
+
+                    if (
+                        tamanhosEscolhidos.hasOwnProperty(
+                            tamanho
+                        )
+                    ) {
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Permite no máximo
+                     * 2 tamanhos diferentes.
+                     */
+
+                    if (
+                        Object.keys(
+                            tamanhosEscolhidos
+                        ).length >= 2
+                    ) {
+
+                        quantitySummary.innerHTML =
+
+                            "⚠ <strong>Você pode escolher no máximo 2 tamanhos diferentes.</strong>";
+
+                        quantitySummary.style.color =
+                            "#b00000";
+
+                        return;
+
+                    }
+
+
+                    /*
+                     * Adiciona o tamanho
+                     * com quantidade 1.
+                     */
+
+                    tamanhosEscolhidos[tamanho] = 1;
 
 
                     botao.classList.add(
@@ -1357,42 +1520,287 @@
                     );
 
 
-                    tamanhoEscolhido =
-                        botao.getAttribute(
-                            "data-size"
-                        );
-
-
-                    quantidadeEscolhida =
-                        botao.getAttribute(
-                            "data-quantity"
-                        );
-
-
-                    texto.innerHTML =
-
-                        "Tamanho " +
-
-                        "<strong>" +
-
-                        tamanhoEscolhido +
-
-                        "</strong>" +
-
-                        " — " +
-
-                        quantidadeEscolhida +
-
-                        " disponíveis";
-
-
-                    texto.style.color =
-                        "#777";
+                    renderizarTamanhos();
 
                 }
             );
 
         });
+
+
+        /* =========================
+           RENDERIZAR TAMANHOS
+        ========================= */
+
+        function renderizarTamanhos() {
+
+            selectedSizes.innerHTML = "";
+
+
+            const tamanhos =
+                Object.keys(
+                    tamanhosEscolhidos
+                );
+
+
+            if (
+                tamanhos.length === 0
+            ) {
+
+                quantitySummary.innerHTML =
+                    "Selecione um tamanho para começar.";
+
+                quantitySummary.style.color =
+                    "#777";
+
+                return;
+
+            }
+
+
+            tamanhos.forEach(function(tamanho) {
+
+                const botaoTamanho =
+                    document.querySelector(
+                        '.size[data-size="' +
+                        tamanho +
+                        '"]'
+                    );
+
+
+                const estoque =
+                    Number(
+                        botaoTamanho.getAttribute(
+                            "data-quantity"
+                        )
+                    );
+
+
+                const quantidade =
+                    tamanhosEscolhidos[tamanho];
+
+
+                const item =
+                    document.createElement(
+                        "div"
+                    );
+
+
+                item.className =
+                    "selected-size-item";
+
+
+                item.innerHTML =
+
+                    '<div>' +
+
+                        '<span class="selected-size-name">' +
+
+                            tamanho +
+
+                        '</span>' +
+
+                        '<div style="font-size:9px;color:#777;margin-top:3px;">' +
+
+                            estoque +
+
+                            ' disponíveis' +
+
+                        '</div>' +
+
+                    '</div>' +
+
+
+                    '<div style="display:flex;align-items:center;">' +
+
+                        '<div class="quantity-control">' +
+
+                            '<button type="button" class="quantity-button decrease">' +
+
+                                "−" +
+
+                            '</button>' +
+
+                            '<span class="quantity-value">' +
+
+                                quantidade +
+
+                            '</span>' +
+
+                            '<button type="button" class="quantity-button increase">' +
+
+                                "+" +
+
+                            '</button>' +
+
+                        '</div>' +
+
+
+                        '<button type="button" class="remove-size" title="Remover tamanho">' +
+
+                            "×" +
+
+                        '</button>' +
+
+                    '</div>';
+
+
+                /* =========================
+                   BOTÃO DIMINUIR
+                ========================= */
+
+                item
+                    .querySelector(".decrease")
+                    .addEventListener(
+                        "click",
+                        function() {
+
+                            if (
+                                tamanhosEscolhidos[tamanho] > 1
+                            ) {
+
+                                tamanhosEscolhidos[tamanho]--;
+
+                                renderizarTamanhos();
+
+                            }
+
+                        }
+                    );
+
+
+                /* =========================
+                   BOTÃO AUMENTAR
+                ========================= */
+
+                item
+                    .querySelector(".increase")
+                    .addEventListener(
+                        "click",
+                        function() {
+
+                            if (
+                                tamanhosEscolhidos[tamanho] <
+                                estoque
+                            ) {
+
+                                tamanhosEscolhidos[tamanho]++;
+
+                                renderizarTamanhos();
+
+                            } else {
+
+                                quantitySummary.innerHTML =
+
+                                    "⚠ <strong>Quantidade máxima disponível para o tamanho " +
+
+                                    tamanho +
+
+                                    " é " +
+
+                                    estoque +
+
+                                    ".</strong>";
+
+                                quantitySummary.style.color =
+                                    "#b00000";
+
+                            }
+
+                        }
+                    );
+
+
+                /* =========================
+                   REMOVER TAMANHO
+                ========================= */
+
+                item
+                    .querySelector(".remove-size")
+                    .addEventListener(
+                        "click",
+                        function() {
+
+                            delete tamanhosEscolhidos[
+                                tamanho
+                            ];
+
+
+                            botaoTamanho.classList.remove(
+                                "selected"
+                            );
+
+
+                            renderizarTamanhos();
+
+                        }
+                    );
+
+
+                selectedSizes.appendChild(
+                    item
+                );
+
+            });
+
+
+            atualizarResumoQuantidade();
+
+        }
+
+
+        /* =========================
+           RESUMO DA QUANTIDADE
+        ========================= */
+
+        function atualizarResumoQuantidade() {
+
+            let totalQuantidade = 0;
+
+
+            Object.keys(
+                tamanhosEscolhidos
+            ).forEach(function(tamanho) {
+
+                totalQuantidade +=
+
+                    tamanhosEscolhidos[
+                        tamanho
+                    ];
+
+            });
+
+
+            if (
+                totalQuantidade === 0
+            ) {
+
+                quantitySummary.innerHTML =
+                    "Selecione um tamanho para começar.";
+
+                return;
+
+            }
+
+
+            quantitySummary.innerHTML =
+
+                "Total: <strong>" +
+
+                totalQuantidade +
+
+                (
+                    totalQuantidade === 1
+                        ? " camiseta"
+                        : " camisetas"
+                ) +
+
+                "</strong>";
+
+            quantitySummary.style.color =
+                "#777";
+
+        }
 
 
         /* =========================
@@ -1417,7 +1825,6 @@
                 botao.addEventListener(
                     "click",
                     function() {
-
 
                         pagamentos.forEach(
                             function(item) {
@@ -1445,6 +1852,14 @@
                             pagamentoEscolhido === "Cartão"
                         ) {
 
+                            const total =
+                                calcularTotal();
+
+
+                            const parcela =
+                                total / 2;
+
+
                             paymentText.innerHTML =
 
                                 "Pagamento: " +
@@ -1453,11 +1868,19 @@
 
                                 " — 2x de " +
 
-                                "<strong>R$ 44,95</strong>" +
+                                "<strong>" +
+
+                                formatarMoeda(
+                                    parcela
+                                ) +
+
+                                "</strong>" +
 
                                 " sem juros";
 
-                        } else {
+                        }
+
+                        else {
 
                             paymentText.innerHTML =
 
@@ -1535,14 +1958,15 @@
             "click",
             function() {
 
-
                 const cupom =
                     couponInput.value
                     .trim()
                     .toUpperCase();
 
 
-                if (cupom === "") {
+                if (
+                    cupom === ""
+                ) {
 
                     cupomAplicado = "";
 
@@ -1570,7 +1994,6 @@
                         cupom
                     )
                 ) {
-
 
                     desconto =
                         cupons[cupom];
@@ -1629,40 +2052,25 @@
 
 
         /* =========================
-           ATUALIZAR PREÇO
+           CALCULAR PREÇO UNITÁRIO
         ========================= */
 
-        function atualizarPreco() {
-
-
-            let novoPreco;
-
-
-            /*
-             * GLORY10:
-             * preço exibido sem cupom = R$ 98,89
-             * preço com cupom = R$ 89,90
-             */
+        function calcularPrecoUnitario() {
 
             if (
                 cupomAplicado === "GLORY10"
             ) {
 
-                novoPreco =
-                    precoComCupomGLORY10;
+                return precoComCupomGLORY10;
 
             }
 
-            /*
-             * Outros cupons continuam
-             * funcionando normalmente.
-             */
 
-            else if (
+            if (
                 desconto > 0
             ) {
 
-                novoPreco =
+                return (
 
                     precoOriginal -
 
@@ -1670,80 +2078,213 @@
                         precoOriginal *
                         desconto /
                         100
-                    );
+                    )
 
-            }
-
-            else {
-
-                novoPreco =
-                    precoOriginal;
+                );
 
             }
 
 
-            /* =========================
-               PREÇO COM CUPOM
-            ========================= */
+            return precoOriginal;
+
+        }
+
+
+        /* =========================
+           CALCULAR TOTAL
+        ========================= */
+
+        function calcularTotal() {
+
+            let totalQuantidade = 0;
+
+
+            Object.keys(
+                tamanhosEscolhidos
+            ).forEach(function(tamanho) {
+
+                totalQuantidade +=
+
+                    tamanhosEscolhidos[
+                        tamanho
+                    ];
+
+            });
+
+
+            return (
+
+                calcularPrecoUnitario() *
+
+                totalQuantidade
+
+            );
+
+        }
+
+
+        /* =========================
+           FORMATAR MOEDA
+        ========================= */
+
+        function formatarMoeda(valor) {
+
+            return (
+
+                "R$ " +
+
+                valor
+                    .toFixed(2)
+                    .replace(".", ",")
+
+            );
+
+        }
+
+
+        /* =========================
+           ATUALIZAR PREÇO
+        ========================= */
+
+        function atualizarPreco() {
+
+            const quantidade =
+                Object.values(
+                    tamanhosEscolhidos
+                ).reduce(
+                    function(total, quantidade) {
+
+                        return total + quantidade;
+
+                    },
+                    0
+                );
+
+
+            const precoUnitario =
+                calcularPrecoUnitario();
+
+
+            const total =
+                precoUnitario *
+                quantidade;
+
+
+            /*
+             * Sem quantidade:
+             * mostra preço unitário.
+             */
 
             if (
-                desconto > 0
+                quantidade === 0
             ) {
 
+                if (
+                    desconto > 0
+                ) {
 
-                priceElement.innerHTML =
+                    priceElement.innerHTML =
 
-                    '<span class="price-old">' +
+                        '<span class="price-old">' +
 
-                    "R$ " +
+                        formatarMoeda(
+                            precoOriginal
+                        ) +
 
-                    precoOriginal
-                        .toFixed(2)
-                        .replace(".", ",")
+                        "</span>" +
 
-                    +
-
-                    "</span>" +
-
-                    "R$ " +
-
-                    novoPreco
-                        .toFixed(2)
-                        .replace(".", ",");
+                        formatarMoeda(
+                            precoUnitario
+                        );
 
 
-                discountText.innerHTML =
+                    discountText.innerHTML =
 
-                    "Você economiza R$ " +
+                        "Você economiza " +
 
-                    (
-                        precoOriginal -
-                        novoPreco
-                    )
-                    .toFixed(2)
-                    .replace(".", ",") +
+                        formatarMoeda(
+                            precoOriginal -
+                            precoUnitario
+                        ) +
 
-                    " (" +
+                        " (" +
 
-                    desconto +
+                        desconto +
 
-                    "% OFF)";
+                        "% OFF)";
 
+                }
+
+                else {
+
+                    priceElement.innerHTML =
+                        formatarMoeda(
+                            precoOriginal
+                        );
+
+                    discountText.innerHTML = "";
+
+                }
 
             }
 
-            /* =========================
-               SEM CUPOM
-            ========================= */
+            /*
+             * Com quantidade:
+             * mostra o total.
+             */
 
             else {
 
+                if (
+                    desconto > 0
+                ) {
 
-                priceElement.innerHTML =
-                    "R$ 98,89";
+                    priceElement.innerHTML =
+
+                        '<span class="price-old">' +
+
+                        formatarMoeda(
+                            precoOriginal *
+                            quantidade
+                        ) +
+
+                        "</span>" +
+
+                        formatarMoeda(
+                            total
+                        );
 
 
-                discountText.innerHTML = "";
+                    discountText.innerHTML =
+
+                        "Você economiza " +
+
+                        formatarMoeda(
+                            (
+                                precoOriginal -
+                                precoUnitario
+                            ) *
+                            quantidade
+                        ) +
+
+                        " (" +
+
+                        desconto +
+
+                        "% OFF)";
+
+                }
+
+                else {
+
+                    priceElement.innerHTML =
+                        formatarMoeda(
+                            total
+                        );
+
+                    discountText.innerHTML = "";
+
+                }
 
             }
 
@@ -1753,12 +2294,18 @@
             ========================= */
 
             if (
-                cupomAplicado === "GLORY10"
+                quantidade > 0
             ) {
 
                 installmentsElement.innerHTML =
 
-                    "ou 2x de R$ 44,95 sem juros";
+                    "ou 2x de " +
+
+                    formatarMoeda(
+                        total / 2
+                    ) +
+
+                    " sem juros";
 
             }
 
@@ -1766,7 +2313,47 @@
 
                 installmentsElement.innerHTML =
 
-                    "ou 2x de R$ 49,45 sem juros";
+                    "ou 2x de " +
+
+                    formatarMoeda(
+                        precoUnitario / 2
+                    ) +
+
+                    " sem juros";
+
+            }
+
+
+            /*
+             * Atualiza texto do cartão
+             * caso esteja selecionado.
+             */
+
+            if (
+                pagamentoEscolhido === "Cartão"
+            ) {
+
+                paymentText.innerHTML =
+
+                    "Pagamento: " +
+
+                    "<strong>Cartão</strong>" +
+
+                    " — 2x de " +
+
+                    "<strong>" +
+
+                    formatarMoeda(
+                        (
+                            quantidade > 0
+                                ? total
+                                : precoUnitario
+                        ) / 2
+                    ) +
+
+                    "</strong>" +
+
+                    " sem juros";
 
             }
 
@@ -1784,27 +2371,28 @@
                 function() {
 
 
-                    /* VERIFICA TAMANHO */
+                    /* =========================
+                       VERIFICA TAMANHO
+                    ========================= */
 
                     if (
-                        tamanhoEscolhido === ""
+                        Object.keys(
+                            tamanhosEscolhidos
+                        ).length === 0
                     ) {
 
+                        quantitySummary.innerHTML =
 
-                        texto.innerHTML =
+                            "⚠ <strong>" +
 
-                            "⚠ " +
-
-                            "<strong>" +
-
-                            "Selecione um tamanho primeiro."
+                            "Selecione pelo menos um tamanho."
 
                             +
 
                             "</strong>";
 
 
-                        texto.style.color =
+                        quantitySummary.style.color =
                             "#b00000";
 
 
@@ -1813,18 +2401,17 @@
                     }
 
 
-                    /* VERIFICA PAGAMENTO */
+                    /* =========================
+                       VERIFICA PAGAMENTO
+                    ========================= */
 
                     if (
                         pagamentoEscolhido === ""
                     ) {
 
-
                         paymentText.innerHTML =
 
-                            "⚠ " +
-
-                            "<strong>" +
+                            "⚠ <strong>" +
 
                             "Selecione um método de pagamento."
 
@@ -1843,7 +2430,7 @@
 
 
                     /* =========================
-                       SEU WHATSAPP
+                       WHATSAPP
                     ========================= */
 
                     const numeroWhatsApp =
@@ -1851,81 +2438,122 @@
 
 
                     /* =========================
-                       CALCULA PREÇO FINAL
+                       QUANTIDADE TOTAL
                     ========================= */
 
-                    let precoFinal =
-                        precoOriginal;
+                    let quantidadeTotal = 0;
 
 
-                    if (
-                        cupomAplicado === "GLORY10"
-                    ) {
+                    Object.keys(
+                        tamanhosEscolhidos
+                    ).forEach(function(tamanho) {
 
-                        precoFinal =
-                            precoComCupomGLORY10;
+                        quantidadeTotal +=
 
-                    }
+                            tamanhosEscolhidos[
+                                tamanho
+                            ];
 
-                    else if (
-                        desconto > 0
-                    ) {
-
-                        precoFinal =
-
-                            precoOriginal -
-
-                            (
-                                precoOriginal *
-                                desconto /
-                                100
-                            );
-
-                    }
+                    });
 
 
                     /* =========================
-                       FORMATA PREÇO
+                       PREÇO TOTAL
                     ========================= */
 
-                    const precoFormatado =
+                    const precoUnitario =
+                        calcularPrecoUnitario();
 
-                        "R$ " +
 
-                        precoFinal
-                        .toFixed(2)
-                        .replace(
-                            ".",
-                            ","
-                        );
+                    const precoFinal =
+                        precoUnitario *
+                        quantidadeTotal;
 
 
                     /* =========================
-                       MENSAGEM WHATSAPP
+                       MENSAGEM
                     ========================= */
 
                     let mensagem =
 
                         "Olá! Quero comprar a camisa Glory!" +
 
-                        "\n\n" +
+                        "\n\n";
 
-                        "Tamanho: " +
-                        tamanhoEscolhido +
+
+                    mensagem +=
+                        "PEDIDO:" +
+                        "\n";
+
+
+                    Object.keys(
+                        tamanhosEscolhidos
+                    ).forEach(function(tamanho) {
+
+                        mensagem +=
+
+                            "Tamanho " +
+
+                            tamanho +
+
+                            ": " +
+
+                            tamanhosEscolhidos[
+                                tamanho
+                            ] +
+
+                            (
+                                tamanhosEscolhidos[
+                                    tamanho
+                                ] === 1
+                                    ? " unidade"
+                                    : " unidades"
+                            ) +
+
+                            "\n";
+
+                    });
+
+
+                    mensagem +=
 
                         "\n" +
 
-                        "Preço: " +
-                        precoFormatado +
+                        "Quantidade total: " +
+
+                        quantidadeTotal +
+
+                        (
+                            quantidadeTotal === 1
+                                ? " camiseta"
+                                : " camisetas"
+                        ) +
+
+                        "\n" +
+
+                        "Preço unitário: " +
+
+                        formatarMoeda(
+                            precoUnitario
+                        ) +
+
+                        "\n" +
+
+                        "Total: " +
+
+                        formatarMoeda(
+                            precoFinal
+                        ) +
 
                         "\n" +
 
                         "Pagamento: " +
+
                         pagamentoEscolhido;
 
 
                     /* =========================
-                       INFORMAÇÃO DO CUPOM
+                       CUPOM
                     ========================= */
 
                     if (
@@ -1944,16 +2572,12 @@
 
 
                     /* =========================
-                       INFORMAÇÃO DO CARTÃO
+                       PARCELAMENTO
                     ========================= */
 
                     if (
                         pagamentoEscolhido === "Cartão"
                     ) {
-
-                        const parcela =
-                            precoFinal / 2;
-
 
                         mensagem +=
 
@@ -1961,11 +2585,9 @@
 
                             "Parcelamento: 2x de " +
 
-                            "R$ " +
-
-                            parcela
-                                .toFixed(2)
-                                .replace(".", ",") +
+                            formatarMoeda(
+                                precoFinal / 2
+                            ) +
 
                             " sem juros";
 
@@ -1999,11 +2621,10 @@
 
 
         /* =========================
-           PREÇO INICIAL
+           ATUALIZA PREÇO AO INICIAR
         ========================= */
 
         atualizarPreco();
-
 
     </script>
 
