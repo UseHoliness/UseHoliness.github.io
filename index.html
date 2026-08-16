@@ -503,6 +503,130 @@ h1 {
 }
 
 /* =========================
+   BOTÃO TABELA DE MEDIDAS
+========================= */
+
+.measure-button {
+    display: inline-block;
+
+    width: fit-content;
+
+    margin-top: -5px;
+
+    margin-bottom: 20px;
+
+    background: transparent;
+
+    border: none;
+
+    padding: 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 1.5px;
+
+    text-decoration: underline;
+
+    cursor: pointer;
+
+    color: #111;
+
+    transition: .2s;
+}
+
+.measure-button:hover {
+    color: #d99a13;
+}
+
+/* =========================
+   MODAL TABELA DE MEDIDAS
+========================= */
+
+.measure-modal {
+    display: none;
+
+    position: fixed;
+
+    z-index: 9999;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, .75);
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.measure-modal.active {
+    display: flex;
+}
+
+.measure-content {
+    position: relative;
+
+    max-width: 700px;
+
+    width: 100%;
+
+    max-height: 90vh;
+
+    background: #fff;
+
+    padding: 15px;
+
+    overflow: auto;
+}
+
+.measure-content img {
+    display: block;
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: 80vh;
+
+    object-fit: contain;
+}
+
+.measure-close {
+    position: absolute;
+
+    top: 8px;
+
+    right: 12px;
+
+    width: 35px;
+
+    height: 35px;
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    font-size: 24px;
+
+    line-height: 35px;
+
+    cursor: pointer;
+
+    z-index: 2;
+}
+
+.measure-close:hover {
+    background: #d99a13;
+
+    color: #000;
+}
+
+/* =========================
    QUANTIDADE
 ========================= */
 
@@ -927,6 +1051,11 @@ footer p {
         text-align: center;
     }
 
+    .measure-content {
+        max-width: 95%;
+        padding: 10px;
+    }
+
 }
 
 </style>
@@ -1146,6 +1275,16 @@ XG
 
 </div>
 
+<!-- BOTÃO TABELA DE MEDIDAS -->
+
+<button
+    type="button"
+    class="measure-button"
+    id="measureButton"
+>
+    VER TABELA DE MEDIDAS
+</button>
+
 <div
     class="selected-text"
     id="selectedText"
@@ -1319,6 +1458,10 @@ TODO O BRASIL
 
 </section>
 
+<!-- =========================
+     STORY
+========================= -->
+
 <section class="story">
 
 <div class="story-image">
@@ -1341,6 +1484,10 @@ TODO O BRASIL
 
 </section>
 
+<!-- =========================
+     RODAPÉ
+========================= -->
+
 <footer>
 
 <div class="logo">
@@ -1356,6 +1503,34 @@ pelo Espírito Santo.”
 </p>
 
 </footer>
+
+<!-- =========================
+     MODAL TABELA DE MEDIDAS
+========================= -->
+
+<div
+    class="measure-modal"
+    id="measureModal"
+>
+
+<div class="measure-content">
+
+<button
+    type="button"
+    class="measure-close"
+    id="measureClose"
+>
+×
+</button>
+
+<img
+    src="medida.png"
+    alt="Tabela de medidas da camisa"
+>
+
+</div>
+
+</div>
 
 <script>
 
@@ -1459,16 +1634,12 @@ botoesTamanho.forEach(function(botao) {
             estoque[tamanho];
 
 
-        /* SE ESTIVER ESGOTADO */
-
         if (disponivel <= 0) {
 
             return;
 
         }
 
-
-        /* SE JÁ FOI SELECIONADO */
 
         if (
             tamanhosEscolhidos[tamanho]
@@ -1479,8 +1650,6 @@ botoesTamanho.forEach(function(botao) {
             botao.classList.remove("selected");
 
         }
-
-        /* ADICIONA */
 
         else {
 
@@ -1620,16 +1789,12 @@ function alterarQuantidade(
         valor;
 
 
-    /* NÃO DEIXA ABAIXO DE 1 */
-
     if (novaQuantidade < 1) {
 
         novaQuantidade = 1;
 
     }
 
-
-    /* NÃO PASSA DO ESTOQUE */
 
     if (
         novaQuantidade >
@@ -1760,10 +1925,6 @@ function atualizarResumo() {
     });
 
 
-    /* =========================
-       DESCONTO
-    ========================= */
-
     let descontoValor =
         subtotal -
         (
@@ -1775,10 +1936,6 @@ function atualizarResumo() {
                 )
         );
 
-
-    /*
-     * ARREDONDAMENTO
-     */
 
     descontoValor =
         Math.max(
@@ -1819,10 +1976,6 @@ function atualizarResumo() {
         dinheiro(total);
 
 
-    /* =========================
-       DESCONTO VISUAL
-    ========================= */
-
     const discountLine =
         document.getElementById(
             "summaryDiscountLine"
@@ -1843,10 +1996,6 @@ function atualizarResumo() {
 
     }
 
-
-    /* =========================
-       PARCELAMENTO
-    ========================= */
 
     if (
         pagamentoEscolhido === "Cartão"
@@ -2135,8 +2284,6 @@ function atualizarPreco() {
     }
 
 
-    /* PARCELAMENTO */
-
     const quantidadeTotal =
         Object.values(
             tamanhosEscolhidos
@@ -2206,16 +2353,11 @@ document
     "click",
     function() {
 
-
         const tamanhos =
             Object.keys(
                 tamanhosEscolhidos
             );
 
-
-        /* =========================
-           VERIFICA TAMANHO
-        ========================= */
 
         if (
             tamanhos.length === 0
@@ -2227,9 +2369,7 @@ document
 
                 "<strong>" +
 
-                "Selecione pelo menos um tamanho."
-
-                +
+                "Selecione pelo menos um tamanho." +
 
                 "</strong>";
 
@@ -2243,10 +2383,6 @@ document
         }
 
 
-        /* =========================
-           VERIFICA PAGAMENTO
-        ========================= */
-
         if (
             pagamentoEscolhido === ""
         ) {
@@ -2257,9 +2393,7 @@ document
 
                 "<strong>" +
 
-                "Selecione um método de pagamento."
-
-                +
+                "Selecione um método de pagamento." +
 
                 "</strong>";
 
@@ -2272,10 +2406,6 @@ document
 
         }
 
-
-        /* =========================
-           WHATSAPP
-        ========================= */
 
         const numeroWhatsApp =
             "5533998019698";
@@ -2308,10 +2438,6 @@ document
             subtotal -
             total;
 
-
-        /* =========================
-           MENSAGEM
-        ========================= */
 
         let mensagem =
 
@@ -2396,10 +2522,6 @@ document
             pagamentoEscolhido;
 
 
-        /* =========================
-           PARCELAMENTO
-        ========================= */
-
         if (
             pagamentoEscolhido ===
             "Cartão"
@@ -2419,10 +2541,6 @@ document
 
         }
 
-
-        /* =========================
-           LINK
-        ========================= */
 
         const linkWhatsApp =
 
@@ -2477,6 +2595,94 @@ function verificarEstoque() {
     );
 
 }
+
+
+/* =========================
+   TABELA DE MEDIDAS
+========================= */
+
+const measureButton =
+    document.getElementById(
+        "measureButton"
+    );
+
+const measureModal =
+    document.getElementById(
+        "measureModal"
+    );
+
+const measureClose =
+    document.getElementById(
+        "measureClose"
+    );
+
+
+/* ABRIR */
+
+measureButton.addEventListener(
+    "click",
+    function() {
+
+        measureModal.classList.add(
+            "active"
+        );
+
+    }
+);
+
+
+/* FECHAR NO X */
+
+measureClose.addEventListener(
+    "click",
+    function() {
+
+        measureModal.classList.remove(
+            "active"
+        );
+
+    }
+);
+
+
+/* FECHAR CLICANDO FORA */
+
+measureModal.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target === measureModal
+        ) {
+
+            measureModal.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
+
+
+/* FECHAR COM ESC */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            measureModal.classList.remove(
+                "active"
+            );
+
+        }
+
+    }
+);
 
 
 /* =========================
