@@ -2,1242 +2,458 @@
 <html lang="pt-BR">
 
 <head>
-
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>HOLINESS — Glory & Frassati</title>
+    <title>HOLINESS</title>
 
-    <!-- FONTE ANTON -->
+    <!-- Fonte Anton -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
     <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-    <style>
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: Arial, Helvetica, sans-serif;
-            background: #f5f3ef;
-            color: #111;
-        }
-
-        /* =========================
-           TOPO
-        ========================= */
-
-        .topbar {
-            width: 100%;
-            height: 28px;
-            background: #000;
-            color: #fff;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-size: 10px;
-            letter-spacing: 1px;
-        }
-
-        .topbar strong {
-            margin-left: 5px;
-        }
-
-        /* =========================
-           HEADER
-        ========================= */
-
-        header {
-            height: 76px;
-            background: #fff;
-
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-
-            padding: 0 45px;
-
-            border-bottom: 1px solid #ddd;
-
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
-        .logo {
-            font-family: "Anton", sans-serif;
-            font-size: 30px;
-            font-weight: 400;
-            letter-spacing: 1px;
-        }
-
-        .cart-button {
-            position: relative;
-
-            border: none;
-            background: transparent;
-
-            font-family: "Anton", sans-serif;
-            font-size: 15px;
-            letter-spacing: 1px;
-
-            cursor: pointer;
-        }
-
-        .cart-count {
-            position: absolute;
-
-            top: -12px;
-            right: -15px;
-
-            width: 22px;
-            height: 22px;
-
-            border-radius: 50%;
-
-            background: #000;
-            color: #fff;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            font-family: Arial, sans-serif;
-            font-size: 10px;
-        }
-
-        /* =========================
-           PRODUTO
-        ========================= */
-
-        .product {
-            min-height: calc(100vh - 104px);
-
-            display: grid;
-
-            grid-template-columns: 58% 42%;
-        }
-
-        /* =========================
-           GALERIA
-        ========================= */
-
-        .product-gallery {
-            background: #e5e1dc;
-
-            padding: 35px 45px;
-
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .main-photo {
-            width: 100%;
-            height: 600px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            overflow: hidden;
-
-            margin-bottom: 18px;
-        }
-
-        .main-photo img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: contain;
-
-            display: block;
-        }
-
-        .thumbnails {
-            width: 100%;
-
-            display: flex;
-            justify-content: flex-start;
-
-            gap: 10px;
-        }
-
-        .thumbnail {
-            width: 90px;
-            height: 90px;
-
-            border: 1px solid #bbb;
-
-            background: #eee;
-
-            cursor: pointer;
-
-            overflow: hidden;
-
-            opacity: .6;
-
-            transition: .2s;
-        }
-
-        .thumbnail img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-        }
-
-        .thumbnail:hover {
-            opacity: 1;
-        }
-
-        .thumbnail.active {
-            border: 2px solid #000;
-            opacity: 1;
-        }
-
-        /* =========================
-           INFORMAÇÕES
-        ========================= */
-
-        .info {
-            background: #f5f3ef;
-
-            padding: 55px 70px;
-
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .small-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-            letter-spacing: 3px;
-
-            color: #777;
-
-            margin-bottom: 20px;
-        }
-
-        h1 {
-            font-family: "Anton", sans-serif;
-
-            font-size: 80px;
-            font-weight: 400;
-
-            line-height: .9;
-            letter-spacing: 2px;
-
-            margin-bottom: 25px;
-        }
-
-        .line {
-            width: 65px;
-            height: 3px;
-
-            background: #d99a13;
-
-            margin-bottom: 25px;
-        }
-
-        .phrase {
-            font-family: Georgia, serif;
-
-            font-size: 18px;
-            line-height: 1.5;
-
-            max-width: 500px;
-
-            margin-bottom: 30px;
-        }
-
-        /* =========================
-           PREÇO
-        ========================= */
-
-        .price {
-            font-family: "Anton", sans-serif;
-
-            font-size: 30px;
-            font-weight: 400;
-
-            margin-bottom: 5px;
-        }
-
-        .price-old {
-            color: #999;
-
-            text-decoration: line-through;
-
-            font-family: Arial, sans-serif;
-
-            font-size: 14px;
-
-            margin-right: 10px;
-        }
-
-        .price-discount {
-            color: #16833b;
-
-            font-size: 11px;
-
-            margin-top: 5px;
-            margin-bottom: 5px;
-        }
-
-        .installments {
-            color: #777;
-
-            font-size: 11px;
-
-            margin-bottom: 25px;
-        }
-
-        /* =========================
-           CUPOM
-        ========================= */
-
-        .coupon-area {
-            max-width: 450px;
-
-            margin-bottom: 25px;
-        }
-
-        .coupon-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 10px;
-        }
-
-        .coupon-box {
-            display: flex;
-
-            width: 100%;
-        }
-
-        .coupon-box input {
-            flex: 1;
-
-            height: 48px;
-
-            border: 1px solid #aaa;
-
-            border-right: none;
-
-            background: #fff;
-
-            padding: 0 15px;
-
-            font-size: 11px;
-
-            outline: none;
-
-            text-transform: uppercase;
-        }
-
-        .coupon-box button {
-            width: 100px;
-            height: 48px;
-
-            border: none;
-
-            background: #000;
-            color: #fff;
-
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-
-            cursor: pointer;
-        }
-
-        .coupon-box button:hover {
-            background: #d99a13;
-            color: #000;
-        }
-
-        .coupon-message {
-            margin-top: 8px;
-
-            min-height: 18px;
-
-            font-size: 11px;
-        }
-
-        .coupon-success {
-            color: #16833b;
-        }
-
-        .coupon-error {
-            color: #b00000;
-        }
-
-        /* =========================
-           TAMANHOS
-        ========================= */
-
-        .size-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 12px;
-        }
-
-        .sizes {
-            display: flex;
-
-            gap: 10px;
-
-            margin-bottom: 10px;
-
-            flex-wrap: wrap;
-        }
-
-        .size {
-            width: 55px;
-            height: 48px;
-
-            background: #fff;
-
-            border: 1px solid #aaa;
-
-            font-family: "Anton", sans-serif;
-
-            font-size: 15px;
-
-            cursor: pointer;
-
-            transition: .2s;
-        }
-
-        .size:hover {
-            background: #eee;
-            border-color: #000;
-        }
-
-        .size.selected {
-            background: #000;
-            color: #fff;
-
-            border-color: #000;
-        }
-
-        .selected-text {
-            min-height: 25px;
-
-            margin-bottom: 18px;
-
-            font-size: 11px;
-
-            color: #777;
-        }
-
-        /* =========================
-           QUANTIDADE
-        ========================= */
-
-        .quantity-area {
-            margin-bottom: 22px;
-        }
-
-        .quantity-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 10px;
-        }
-
-        .quantity-control {
-            display: flex;
-
-            width: 140px;
-            height: 45px;
-        }
-
-        .quantity-control button {
-            width: 45px;
-
-            border: 1px solid #aaa;
-
-            background: #fff;
-
-            font-size: 18px;
-
-            cursor: pointer;
-        }
-
-        .quantity-control span {
-            width: 50px;
-
-            display: flex;
-            align-items: center;
-            justify-content: center;
-
-            background: #fff;
-
-            border-top: 1px solid #aaa;
-            border-bottom: 1px solid #aaa;
-
-            font-weight: bold;
-        }
-
-        /* =========================
-           BOTÃO CARRINHO
-        ========================= */
-
-        .add-cart {
-            width: 100%;
-            max-width: 450px;
-
-            height: 60px;
-
-            border: none;
-
-            background: #000;
-            color: #fff;
-
-            font-family: "Anton", sans-serif;
-
-            font-size: 15px;
-
-            letter-spacing: 2px;
-
-            cursor: pointer;
-
-            transition: .3s;
-
-            margin-bottom: 25px;
-        }
-
-        .add-cart:hover {
-            background: #d99a13;
-            color: #000;
-        }
-
-        /* =========================
-           DETALHES
-        ========================= */
-
-        .details {
-            max-width: 450px;
-
-            margin-top: 5px;
-        }
-
-        .detail {
-            border-top: 1px solid #ddd;
-
-            padding: 14px 0;
-
-            display: flex;
-            justify-content: space-between;
-
-            font-size: 10px;
-        }
-
-        .detail strong {
-            font-family: "Anton", sans-serif;
-
-            font-weight: 400;
-
-            letter-spacing: .5px;
-        }
-
-        .detail span {
-            color: #777;
-        }
-
-        /* =========================
-           SEGUNDO PRODUTO
-        ========================= */
-
-        .product-card {
-            display: grid;
-
-            grid-template-columns: 58% 42%;
-
-            min-height: 700px;
-        }
-
-        .product-card .product-gallery {
-            background: #dedbd6;
-        }
-
-        .product-card .info {
-            background: #eeeae4;
-        }
-
-        /* =========================
-           STORY
-        ========================= */
-
-        .story {
-            width: 100%;
-
-            height: 600px;
-
-            display: grid;
-
-            grid-template-columns: 1fr 1fr;
-
-            background: #111;
-        }
-
-        .story-image {
-            width: 100%;
-            height: 600px;
-
-            overflow: hidden;
-        }
-
-        .story-image img {
-            width: 100%;
-            height: 100%;
-
-            object-fit: cover;
-
-            display: block;
-        }
-
-        /* =========================
-           RODAPÉ
-        ========================= */
-
-        footer {
-            min-height: 120px;
-
-            background: #f5f3ef;
-
-            display: flex;
-
-            align-items: center;
-
-            justify-content: space-between;
-
-            padding: 20px 40px;
-
-            border-top: 1px solid #ddd;
-        }
-
-        footer p {
-            color: #777;
-
-            font-family: Georgia, serif;
-
-            font-size: 12px;
-
-            line-height: 1.5;
-
-            max-width: 650px;
-
-            text-align: right;
-        }
-
-        /* =========================
-           CARRINHO
-        ========================= */
-
-        .cart-overlay {
-            position: fixed;
-
-            inset: 0;
-
-            background: rgba(0,0,0,.45);
-
-            z-index: 999;
-
-            opacity: 0;
-
-            visibility: hidden;
-
-            transition: .3s;
-        }
-
-        .cart-overlay.active {
-            opacity: 1;
-
-            visibility: visible;
-        }
-
-        .cart {
-            position: absolute;
-
-            top: 0;
-            right: 0;
-
-            width: 450px;
-            max-width: 100%;
-
-            height: 100%;
-
-            background: #f5f3ef;
-
-            padding: 30px;
-
-            overflow-y: auto;
-
-            transform: translateX(100%);
-
-            transition: .3s;
-        }
-
-        .cart-overlay.active .cart {
-            transform: translateX(0);
-        }
-
-        .cart-header {
-            display: flex;
-
-            justify-content: space-between;
-
-            align-items: center;
-
-            padding-bottom: 20px;
-
-            border-bottom: 1px solid #ddd;
-
-            margin-bottom: 20px;
-        }
-
-        .cart-header h2 {
-            font-family: "Anton", sans-serif;
-
-            font-weight: 400;
-
-            font-size: 28px;
-
-            letter-spacing: 1px;
-        }
-
-        .close-cart {
-            border: none;
-
-            background: transparent;
-
-            font-size: 25px;
-
-            cursor: pointer;
-        }
-
-        .empty-cart {
-            text-align: center;
-
-            color: #777;
-
-            padding: 50px 10px;
-
-            font-size: 13px;
-        }
-
-        .cart-item {
-            display: flex;
-
-            gap: 15px;
-
-            padding: 15px 0;
-
-            border-bottom: 1px solid #ddd;
-        }
-
-        .cart-item img {
-            width: 90px;
-            height: 100px;
-
-            object-fit: contain;
-
-            background: #e5e1dc;
-        }
-
-        .cart-item-info {
-            flex: 1;
-        }
-
-        .cart-item-info h3 {
-            font-family: "Anton", sans-serif;
-
-            font-weight: 400;
-
-            font-size: 20px;
-
-            margin-bottom: 5px;
-        }
-
-        .cart-item-info p {
-            font-size: 11px;
-
-            color: #777;
-
-            margin-bottom: 4px;
-        }
-
-        .cart-remove {
-            border: none;
-
-            background: transparent;
-
-            color: #999;
-
-            cursor: pointer;
-
-            font-size: 11px;
-
-            margin-top: 5px;
-        }
-
-        .cart-total {
-            padding: 20px 0;
-
-            display: flex;
-
-            justify-content: space-between;
-
-            font-family: "Anton", sans-serif;
-
-            font-size: 23px;
-        }
-
-        .cart-payment-title {
-            font-family: "Anton", sans-serif;
-
-            font-size: 12px;
-
-            letter-spacing: 2px;
-
-            margin-bottom: 10px;
-        }
-
-        .cart-payments {
-            display: flex;
-
-            gap: 8px;
-
-            flex-wrap: wrap;
-
-            margin-bottom: 20px;
-        }
-
-        .cart-payment {
-            padding: 11px 14px;
-
-            background: #fff;
-
-            border: 1px solid #aaa;
-
-            font-family: "Anton", sans-serif;
-
-            cursor: pointer;
-        }
-
-        .cart-payment.selected {
-            background: #000;
-
-            color: #fff;
-
-            border-color: #000;
-        }
-
-        .checkout {
-            width: 100%;
-
-            height: 58px;
-
-            background: #000;
-
-            color: #fff;
-
-            border: none;
-
-            font-family: "Anton", sans-serif;
-
-            font-size: 15px;
-
-            letter-spacing: 2px;
-
-            cursor: pointer;
-        }
-
-        .checkout:hover {
-            background: #d99a13;
-
-            color: #000;
-        }
-
-        .cart-error {
-            color: #b00000;
-
-            font-size: 11px;
-
-            margin-bottom: 10px;
-
-            min-height: 15px;
-        }
-
-        /* =========================
-           RESPONSIVO
-        ========================= */
-
-        @media (max-width: 900px) {
-
-            header {
-                padding: 0 20px;
-            }
-
-            .product,
-            .product-card {
-                grid-template-columns: 1fr;
-            }
-
-            .product-gallery {
-                padding: 20px;
-            }
-
-            .main-photo {
-                height: 500px;
-            }
-
-            .info {
-                padding: 50px 25px;
-            }
-
-            h1 {
-                font-size: 60px;
-            }
-
-            .story {
-                grid-template-columns: 1fr;
-
-                height: auto;
-            }
-
-            .story-image {
-                height: 500px;
-            }
-
-            footer {
-                flex-direction: column;
-
-                gap: 15px;
-
-                text-align: center;
-            }
-
-            footer p {
-                text-align: center;
-            }
-
-        }
-
-    </style>
-
+    <link rel="stylesheet" href="style.css">
 </head>
-
 
 <body>
 
-
-    <!-- =========================
-         TOPO
-    ========================= -->
-
+    <!-- TOPO -->
     <div class="topbar">
-
-        PRIMEIRA COMPRA?
-        &nbsp;
-        USE O CUPOM
-        <strong>GLORY10</strong>
-
+        PRIMEIRA COMPRA? USE O CUPOM <strong>GLORY10</strong>
     </div>
 
 
-    <!-- =========================
-         HEADER
-    ========================= -->
-
+    <!-- HEADER -->
     <header>
 
-        <div class="logo">
+        <a href="#" class="logo">
             HOLINESS
-        </div>
+        </a>
 
-        <button
-            class="cart-button"
-            onclick="abrirCarrinho()"
-        >
-
+        <button class="cart-button" onclick="abrirCarrinho()">
             CARRINHO
-
-            <span
-                class="cart-count"
-                id="cartCount"
-            >
-                0
-            </span>
-
+            <span id="cartCount">0</span>
         </button>
 
     </header>
 
 
-    <!-- =====================================================
-         PRODUTO 1 — GLORY
-    ====================================================== -->
+    <!-- HERO -->
+    <section class="hero">
 
-    <section class="product">
+        <div class="hero-content">
 
-
-        <!-- GALERIA GLORY -->
-
-        <div class="product-gallery">
-
-            <div class="main-photo">
-
-                <img
-                    id="gloryMainImage"
-                    src="Frente.png"
-                    alt="Glory"
-                >
-
-            </div>
-
-
-            <div class="thumbnails">
-
-                <div
-                    class="thumbnail active"
-                    onclick="trocarFoto(
-                        'Frente.png',
-                        'gloryMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Frente.png">
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto(
-                        'Costa.png',
-                        'gloryMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Costa.png">
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto(
-                        'Chuva.png',
-                        'gloryMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Chuva.png">
-
-                </div>
-
-            </div>
-
-        </div>
-
-
-        <!-- INFORMAÇÕES GLORY -->
-
-        <div class="info">
-
-            <div class="small-title">
-                NOVA COLEÇÃO • 001
-            </div>
-
+            <span>MODA • FÉ • IDENTIDADE</span>
 
             <h1>
-                GLORY
+                HOLINESS
             </h1>
 
-
-            <div class="line"></div>
-
-
-            <p class="phrase">
-
-                "Acreditamos que, buscando incansavelmente à Deus,
-                chegaremos a manifestação visível da presença,
-                do poder e de todas as perfeições."
-
+            <p>
+                Ao contemplarmos a presença de Deus,
+                somos transformados progressivamente
+                à imagem de Cristo pelo Espírito Santo.
             </p>
 
+        </div>
 
-            <div
-                class="price"
-                id="gloryPrice"
-            >
-                R$ 149,90
-            </div>
+    </section>
 
 
-            <div
-                class="price-discount"
-                id="gloryDiscount"
-            >
-            </div>
+    <!-- PRODUTOS -->
+    <section class="products">
+
+        <div class="section-title">
+
+            <span>NOVA COLEÇÃO</span>
+
+            <h2>
+                CAMISAS
+            </h2>
+
+        </div>
 
 
-            <div
-                class="installments"
-                id="gloryInstallments"
-            >
-                ou 2x de R$ 74,95 sem juros
-            </div>
+        <div class="products-grid">
 
 
-            <div class="size-title">
-                ESCOLHA O TAMANHO
-            </div>
+            <!-- =========================
+                 GLORY
+            ========================== -->
 
+            <div class="product">
 
-            <div class="sizes">
+                <div class="product-image">
 
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Glory','PP',this)"
-                >
-                    PP
-                </button>
+                    <img
+                        id="gloryImage"
+                        src="Frente.png"
+                        alt="Camisa Glory"
+                    >
 
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Glory','M',this)"
-                >
-                    M
-                </button>
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Glory','G',this)"
-                >
-                    G
-                </button>
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Glory','GG',this)"
-                >
-                    GG
-                </button>
-
-            </div>
-
-
-            <div
-                class="selected-text"
-                id="glorySelected"
-            >
-                Selecione um tamanho
-            </div>
-
-
-            <div class="quantity-area">
-
-                <div class="quantity-title">
-                    QUANTIDADE
                 </div>
 
-                <div class="quantity-control">
 
-                    <button onclick="alterarQuantidade('Glory',-1)">
-                        −
+                <div class="product-thumbnails">
+
+                    <button
+                        class="thumb active"
+                        onclick="trocarImagem(
+                            'gloryImage',
+                            'Frente.png',
+                            this
+                        )"
+                    >
+                        <img src="Frente.png">
                     </button>
 
-                    <span id="gloryQuantity">
-                        1
-                    </span>
+                    <button
+                        class="thumb"
+                        onclick="trocarImagem(
+                            'gloryImage',
+                            'Costa.png',
+                            this
+                        )"
+                    >
+                        <img src="Costa.png">
+                    </button>
 
-                    <button onclick="alterarQuantidade('Glory',1)">
-                        +
+                    <button
+                        class="thumb"
+                        onclick="trocarImagem(
+                            'gloryImage',
+                            'Chuva.png',
+                            this
+                        )"
+                    >
+                        <img src="Chuva.png">
                     </button>
 
                 </div>
 
+
+                <div class="product-info">
+
+                    <span class="product-number">
+                        001
+                    </span>
+
+                    <h3>
+                        GLORY
+                    </h3>
+
+                    <p class="description">
+                        "Acreditamos que, buscando incansavelmente
+                        à Deus, chegaremos a manifestação visível
+                        da presença, do poder e de todas as perfeições."
+                    </p>
+
+                    <div class="price">
+                        R$ 109,90
+                    </div>
+
+
+                    <!-- CUPOM -->
+
+                    <div class="coupon">
+
+                        <label>
+                            CUPOM DE DESCONTO
+                        </label>
+
+                        <div class="coupon-input">
+
+                            <input
+                                type="text"
+                                id="couponInput"
+                                placeholder="DIGITE SEU CUPOM"
+                            >
+
+                            <button onclick="aplicarCupom()">
+                                APLICAR
+                            </button>
+
+                        </div>
+
+                        <div
+                            id="couponMessage"
+                            class="coupon-message"
+                        ></div>
+
+                    </div>
+
+
+                    <!-- TAMANHOS -->
+
+                    <label class="label">
+                        ESCOLHA O TAMANHO
+                    </label>
+
+                    <div class="sizes">
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Glory',
+                                'PP',
+                                this
+                            )"
+                        >
+                            PP
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Glory',
+                                'M',
+                                this
+                            )"
+                        >
+                            M
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Glory',
+                                'G',
+                                this
+                            )"
+                        >
+                            G
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Glory',
+                                'GG',
+                                this
+                            )"
+                        >
+                            GG
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="GlorySelectedSize"
+                        class="stock"
+                    >
+                        Selecione um tamanho
+                    </div>
+
+
+                    <!-- QUANTIDADE -->
+
+                    <label class="label">
+                        QUANTIDADE
+                    </label>
+
+                    <div class="quantity">
+
+                        <button onclick="alterarQuantidade('Glory', -1)">
+                            −
+                        </button>
+
+                        <span id="GloryQuantity">
+                            1
+                        </span>
+
+                        <button onclick="alterarQuantidade('Glory', 1)">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="add-button"
+                        onclick="adicionarProduto(
+                            'Glory',
+                            'Frente.png'
+                        )"
+                    >
+                        ADICIONAR AO CARRINHO →
+                    </button>
+
+                </div>
+
             </div>
 
 
-            <button
-                class="add-cart"
-                onclick="adicionarCarrinho('Glory')"
-            >
 
-                ADICIONAR AO CARRINHO →
+            <!-- =========================
+                 FRASSATI
+            ========================== -->
 
-            </button>
+            <div class="product">
 
+                <div class="product-image">
 
-            <div class="details">
-
-                <div class="detail">
-
-                    <span>
-                        MATERIAL
-                    </span>
-
-                    <strong>
-                        100% ALGODÃO
-                    </strong>
+                    <img
+                        id="frassatiImage"
+                        src="Frente2.png"
+                        alt="Camisa Frassati"
+                    >
 
                 </div>
 
 
-                <div class="detail">
+                <div class="product-thumbnails">
 
-                    <span>
-                        MODELAGEM
-                    </span>
+                    <button
+                        class="thumb active"
+                        onclick="trocarImagem(
+                            'frassatiImage',
+                            'Frente2.png',
+                            this
+                        )"
+                    >
+                        <img src="Frente2.png">
+                    </button>
 
-                    <strong>
-                        OVERSIZED
-                    </strong>
+                    <button
+                        class="thumb"
+                        onclick="trocarImagem(
+                            'frassatiImage',
+                            'Trás2.png',
+                            this
+                        )"
+                    >
+                        <img src="Trás2.png">
+                    </button>
+
+                    <button
+                        class="thumb"
+                        onclick="trocarImagem(
+                            'frassatiImage',
+                            'Chuva2.png',
+                            this
+                        )"
+                    >
+                        <img src="Chuva2.png">
+                    </button>
 
                 </div>
 
 
-                <div class="detail">
+                <div class="product-info">
 
-                    <span>
-                        ENVIO
+                    <span class="product-number">
+                        002
                     </span>
 
-                    <strong>
-                        TODO O BRASIL
-                    </strong>
+                    <h3>
+                        FRASSATI
+                    </h3>
+
+                    <p class="description">
+                        Uma peça feita para carregar a fé,
+                        a identidade e a busca constante
+                        pela santidade.
+                    </p>
+
+                    <div class="price">
+                        R$ 109,90
+                    </div>
+
+
+                    <div class="same-coupon">
+                        O cupom aplicado acima também vale para esta camisa.
+                    </div>
+
+
+                    <!-- TAMANHOS -->
+
+                    <label class="label">
+                        ESCOLHA O TAMANHO
+                    </label>
+
+                    <div class="sizes">
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Frassati',
+                                'PP',
+                                this
+                            )"
+                        >
+                            PP
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Frassati',
+                                'M',
+                                this
+                            )"
+                        >
+                            M
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Frassati',
+                                'G',
+                                this
+                            )"
+                        >
+                            G
+                        </button>
+
+                        <button
+                            onclick="selecionarTamanho(
+                                'Frassati',
+                                'GG',
+                                this
+                            )"
+                        >
+                            GG
+                        </button>
+
+                    </div>
+
+
+                    <div
+                        id="FrassatiSelectedSize"
+                        class="stock"
+                    >
+                        Selecione um tamanho
+                    </div>
+
+
+                    <!-- QUANTIDADE -->
+
+                    <label class="label">
+                        QUANTIDADE
+                    </label>
+
+                    <div class="quantity">
+
+                        <button onclick="alterarQuantidade('Frassati', -1)">
+                            −
+                        </button>
+
+                        <span id="FrassatiQuantity">
+                            1
+                        </span>
+
+                        <button onclick="alterarQuantidade('Frassati', 1)">
+                            +
+                        </button>
+
+                    </div>
+
+
+                    <button
+                        class="add-button"
+                        onclick="adicionarProduto(
+                            'Frassati',
+                            'Frente2.png'
+                        )"
+                    >
+                        ADICIONAR AO CARRINHO →
+                    </button>
 
                 </div>
 
@@ -1248,318 +464,51 @@
     </section>
 
 
-    <!-- =====================================================
-         PRODUTO 2 — FRASSATI
-    ====================================================== -->
+    <!-- IMAGENS -->
+    <section class="images-section">
 
-    <section class="product-card">
-
-
-        <!-- GALERIA FRASSATI -->
-
-        <div class="product-gallery">
-
-            <div class="main-photo">
-
-                <img
-                    id="frassatiMainImage"
-                    src="Frente2.png"
-                    alt="Frassati"
-                >
-
-            </div>
-
-
-            <div class="thumbnails">
-
-                <div
-                    class="thumbnail active"
-                    onclick="trocarFoto(
-                        'Frente2.png',
-                        'frassatiMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Frente2.png">
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto(
-                        'Trás2.png',
-                        'frassatiMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Trás2.png">
-
-                </div>
-
-
-                <div
-                    class="thumbnail"
-                    onclick="trocarFoto(
-                        'Chuva2.png',
-                        'frassatiMainImage',
-                        this
-                    )"
-                >
-
-                    <img src="Chuva2.png">
-
-                </div>
-
-            </div>
-
+        <div>
+            <img src="Obrigado.png">
         </div>
 
-
-        <!-- INFORMAÇÕES FRASSATI -->
-
-        <div class="info">
-
-            <div class="small-title">
-                NOVA COLEÇÃO • 002
-            </div>
-
-
-            <h1>
-                FRASSATI
-            </h1>
-
-
-            <div class="line"></div>
-
-
-            <p class="phrase">
-
-                Uma peça feita para carregar a fé,
-                a identidade e a busca constante pela santidade.
-
-            </p>
-
-
-            <div
-                class="price"
-                id="frassatiPrice"
-            >
-                R$ 149,90
-            </div>
-
-
-            <div
-                class="price-discount"
-                id="frassatiDiscount"
-            >
-            </div>
-
-
-            <div
-                class="installments"
-                id="frassatiInstallments"
-            >
-                ou 2x de R$ 74,95 sem juros
-            </div>
-
-
-            <div class="size-title">
-                ESCOLHA O TAMANHO
-            </div>
-
-
-            <div class="sizes">
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Frassati','PP',this)"
-                >
-                    PP
-                </button>
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Frassati','M',this)"
-                >
-                    M
-                </button>
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Frassati','G',this)"
-                >
-                    G
-                </button>
-
-                <button
-                    class="size"
-                    onclick="selecionarTamanho('Frassati','GG',this)"
-                >
-                    GG
-                </button>
-
-            </div>
-
-
-            <div
-                class="selected-text"
-                id="frassatiSelected"
-            >
-                Selecione um tamanho
-            </div>
-
-
-            <div class="quantity-area">
-
-                <div class="quantity-title">
-                    QUANTIDADE
-                </div>
-
-                <div class="quantity-control">
-
-                    <button onclick="alterarQuantidade('Frassati',-1)">
-                        −
-                    </button>
-
-                    <span id="frassatiQuantity">
-                        1
-                    </span>
-
-                    <button onclick="alterarQuantidade('Frassati',1)">
-                        +
-                    </button>
-
-                </div>
-
-            </div>
-
-
-            <button
-                class="add-cart"
-                onclick="adicionarCarrinho('Frassati')"
-            >
-
-                ADICIONAR AO CARRINHO →
-
-            </button>
-
-
-            <div class="details">
-
-                <div class="detail">
-
-                    <span>
-                        MATERIAL
-                    </span>
-
-                    <strong>
-                        100% ALGODÃO
-                    </strong>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <span>
-                        MODELAGEM
-                    </span>
-
-                    <strong>
-                        OVERSIZED
-                    </strong>
-
-                </div>
-
-
-                <div class="detail">
-
-                    <span>
-                        ENVIO
-                    </span>
-
-                    <strong>
-                        TODO O BRASIL
-                    </strong>
-
-                </div>
-
-            </div>
-
+        <div>
+            <img src="fig.png">
         </div>
 
     </section>
 
 
-    <!-- =========================
-         IMAGENS
-    ========================= -->
-
-    <section class="story">
-
-        <div class="story-image">
-
-            <img
-                src="Obrigado.png"
-                alt="Obrigado"
-            >
-
-        </div>
-
-
-        <div class="story-image">
-
-            <img
-                src="fig.png"
-                alt="Holiness"
-            >
-
-        </div>
-
-    </section>
-
-
-    <!-- =========================
-         RODAPÉ
-    ========================= -->
-
+    <!-- RODAPÉ -->
     <footer>
 
-        <div class="logo">
+        <div class="footer-logo">
             HOLINESS
         </div>
 
-
         <p>
-
-            “Ao contemplarmos a presença de Deus,<br>
-            somos transformados progressivamente à imagem de Cristo<br>
-            pelo Espírito Santo.”
-
+            Ao contemplarmos a presença de Deus,
+            somos transformados progressivamente
+            à imagem de Cristo pelo Espírito Santo.
         </p>
 
     </footer>
 
 
-    <!-- =====================================================
+
+    <!-- =========================
          CARRINHO
-    ====================================================== -->
+    ========================== -->
 
     <div
-        class="cart-overlay"
         id="cartOverlay"
+        class="cart-overlay"
         onclick="fecharCarrinhoFora(event)"
     >
-
 
         <div
             class="cart"
             onclick="event.stopPropagation()"
         >
-
 
             <div class="cart-header">
 
@@ -1567,1003 +516,86 @@
                     CARRINHO
                 </h2>
 
-                <button
-                    class="close-cart"
-                    onclick="fecharCarrinho()"
-                >
+                <button onclick="fecharCarrinho()">
                     ×
                 </button>
 
             </div>
 
 
-            <div id="cartItems">
-
-                <div class="empty-cart">
-
-                    Seu carrinho está vazio.
-
-                </div>
-
-            </div>
+            <div id="cartItems"></div>
 
 
-            <div
-                class="cart-total"
-                id="cartTotal"
-            >
+            <div class="cart-total">
 
                 <span>
                     TOTAL
                 </span>
 
-                <span>
+                <strong id="cartTotal">
                     R$ 0,00
-                </span>
+                </strong>
 
             </div>
 
 
-            <div class="cart-payment-title">
+            <!-- PAGAMENTO -->
 
+            <div class="payment-title">
                 MÉTODO DE PAGAMENTO
-
             </div>
 
-
-            <div class="cart-payments">
-
+            <div class="payments">
 
                 <button
-                    class="cart-payment"
-                    onclick="selecionarPagamento('PIX',this)"
+                    onclick="selecionarPagamento(
+                        'PIX',
+                        this
+                    )"
                 >
                     PIX
                 </button>
 
-
                 <button
-                    class="cart-payment"
-                    onclick="selecionarPagamento('Cartão',this)"
+                    onclick="selecionarPagamento(
+                        'Cartão',
+                        this
+                    )"
                 >
                     CARTÃO
                 </button>
 
-
                 <button
-                    class="cart-payment"
-                    onclick="selecionarPagamento('Dinheiro',this)"
+                    onclick="selecionarPagamento(
+                        'Dinheiro',
+                        this
+                    )"
                 >
                     DINHEIRO
                 </button>
-
 
             </div>
 
 
             <div
-                class="cart-error"
                 id="cartError"
-            >
-            </div>
+                class="cart-error"
+            ></div>
 
 
             <button
                 class="checkout"
                 onclick="finalizarCompra()"
             >
-
                 FINALIZAR PEDIDO → WHATSAPP
-
             </button>
-
 
         </div>
 
     </div>
 
 
-    <!-- =========================
-         JAVASCRIPT
-    ========================= -->
-
-    <script>
-
-        /* =========================
-           CONFIGURAÇÕES
-        ========================= */
-
-        const PRECO = 149.90;
-
-        const numeroWhatsApp =
-            "5533998019698";
-
-
-        /* ESTOQUE */
-
-        const estoque = {
-
-            PP: 3,
-            M: 2,
-            G: 2,
-            GG: 3
-
-        };
-
-
-        /* CUPONS */
-
-        const cupons = {
-
-            "GLORY10": 10,
-            "ALTAR20": 20
-
-        };
-
-
-        /* =========================
-           ESTADO
-        ========================= */
-
-        let produtos = {
-
-            Glory: {
-
-                nome: "Glory",
-
-                imagem: "Frente.png",
-
-                tamanho: "",
-
-                quantidade: 1
-
-            },
-
-            Frassati: {
-
-                nome: "Frassati",
-
-                imagem: "Frente2.png",
-
-                tamanho: "",
-
-                quantidade: 1
-
-            }
-
-        };
-
-
-        let carrinho = [];
-
-        let desconto = 0;
-
-        let cupomAplicado = "";
-
-        let pagamentoEscolhido = "";
-
-
-        /* =========================
-           FUNÇÕES AUXILIARES
-        ========================= */
-
-        function dinheiro(valor) {
-
-            return "R$ " +
-                valor
-                    .toFixed(2)
-                    .replace(".", ",");
-
-        }
-
-
-        /* =========================
-           TROCAR FOTO
-        ========================= */
-
-        function trocarFoto(
-            foto,
-            elementoImagem,
-            elemento
-        ) {
-
-            document.getElementById(
-                elementoImagem
-            ).src = foto;
-
-
-            const galeria =
-                elemento.closest(
-                    ".product-gallery"
-                );
-
-
-            galeria
-                .querySelectorAll(
-                    ".thumbnail"
-                )
-                .forEach(function(item) {
-
-                    item.classList.remove(
-                        "active"
-                    );
-
-                });
-
-
-            elemento.classList.add(
-                "active"
-            );
-
-        }
-
-
-        /* =========================
-           TAMANHO
-        ========================= */
-
-        function selecionarTamanho(
-            produto,
-            tamanho,
-            botao
-        ) {
-
-            produtos[produto].tamanho =
-                tamanho;
-
-
-            const info =
-                botao.closest(".info");
-
-
-            info
-                .querySelectorAll(".size")
-                .forEach(function(item) {
-
-                    item.classList.remove(
-                        "selected"
-                    );
-
-                });
-
-
-            botao.classList.add(
-                "selected"
-            );
-
-
-            const texto =
-                produto === "Glory"
-                    ? document.getElementById(
-                        "glorySelected"
-                    )
-                    : document.getElementById(
-                        "frassatiSelected"
-                    );
-
-
-            texto.innerHTML =
-
-                "Tamanho " +
-
-                "<strong>" +
-
-                tamanho +
-
-                "</strong>" +
-
-                " — " +
-
-                estoque[tamanho] +
-
-                " disponíveis";
-
-        }
-
-
-        /* =========================
-           QUANTIDADE
-        ========================= */
-
-        function alterarQuantidade(
-            produto,
-            valor
-        ) {
-
-            let quantidade =
-                produtos[produto].quantidade;
-
-
-            quantidade += valor;
-
-
-            if (quantidade < 1) {
-
-                quantidade = 1;
-
-            }
-
-
-            if (
-                quantidade >
-                10
-            ) {
-
-                quantidade = 10;
-
-            }
-
-
-            produtos[produto].quantidade =
-                quantidade;
-
-
-            const elemento =
-                produto === "Glory"
-                    ? document.getElementById(
-                        "gloryQuantity"
-                    )
-                    : document.getElementById(
-                        "frassatiQuantity"
-                    );
-
-
-            elemento.innerText =
-                quantidade;
-
-        }
-
-
-        /* =========================
-           ADICIONAR AO CARRINHO
-        ========================= */
-
-        function adicionarCarrinho(
-            produto
-        ) {
-
-            const item =
-                produtos[produto];
-
-
-            if (
-                item.tamanho === ""
-            ) {
-
-                alert(
-                    "Selecione um tamanho antes de adicionar ao carrinho."
-                );
-
-                return;
-
-            }
-
-
-            if (
-                item.quantidade >
-                estoque[item.tamanho]
-            ) {
-
-                alert(
-                    "A quantidade escolhida ultrapassa o estoque disponível."
-                );
-
-                return;
-
-            }
-
-
-            /* verifica se já existe */
-
-            const existente =
-                carrinho.find(function(
-                    produtoCarrinho
-                ) {
-
-                    return (
-
-                        produtoCarrinho.nome ===
-                        produto &&
-
-                        produtoCarrinho.tamanho ===
-                        item.tamanho
-
-                    );
-
-                });
-
-
-            if (existente) {
-
-                existente.quantidade +=
-                    item.quantidade;
-
-
-                if (
-                    existente.quantidade >
-                    estoque[item.tamanho]
-                ) {
-
-                    existente.quantidade =
-                        estoque[item.tamanho];
-
-                }
-
-            } else {
-
-                carrinho.push({
-
-                    nome: produto,
-
-                    tamanho: item.tamanho,
-
-                    quantidade:
-                        item.quantidade,
-
-                    preco: PRECO,
-
-                    imagem: item.imagem
-
-                });
-
-            }
-
-
-            atualizarCarrinho();
-
-
-            abrirCarrinho();
-
-        }
-
-
-        /* =========================
-           ATUALIZAR CARRINHO
-        ========================= */
-
-        function atualizarCarrinho() {
-
-            const container =
-                document.getElementById(
-                    "cartItems"
-                );
-
-
-            const count =
-                carrinho.reduce(
-                    function(total, item) {
-
-                        return total +
-                            item.quantidade;
-
-                    },
-                    0
-                );
-
-
-            document.getElementById(
-                "cartCount"
-            ).innerText = count;
-
-
-            if (
-                carrinho.length === 0
-            ) {
-
-                container.innerHTML =
-
-                    '<div class="empty-cart">' +
-
-                    "Seu carrinho está vazio." +
-
-                    "</div>";
-
-
-                document.getElementById(
-                    "cartTotal"
-                ).innerHTML =
-
-                    "<span>TOTAL</span>" +
-
-                    "<span>R$ 0,00</span>";
-
-
-                return;
-
-            }
-
-
-            container.innerHTML = "";
-
-
-            carrinho.forEach(
-                function(item, index) {
-
-                    const div =
-                        document.createElement(
-                            "div"
-                        );
-
-
-                    div.className =
-                        "cart-item";
-
-
-                    div.innerHTML =
-
-                        '<img src="' +
-                        item.imagem +
-                        '">' +
-
-                        '<div class="cart-item-info">' +
-
-                        "<h3>" +
-                        item.nome +
-                        "</h3>" +
-
-                        "<p>Tamanho: " +
-                        item.tamanho +
-                        "</p>" +
-
-                        "<p>Quantidade: " +
-                        item.quantidade +
-                        "</p>" +
-
-                        "<p>" +
-                        dinheiro(
-                            item.preco *
-                            item.quantidade
-                        ) +
-                        "</p>" +
-
-                        '<button class="cart-remove" ' +
-                        'onclick="removerCarrinho(' +
-                        index +
-                        ')">' +
-
-                        "REMOVER" +
-
-                        "</button>" +
-
-                        "</div>";
-
-
-                    container.appendChild(
-                        div
-                    );
-
-                }
-            );
-
-
-            atualizarTotal();
-
-        }
-
-
-        /* =========================
-           REMOVER
-        ========================= */
-
-        function removerCarrinho(
-            index
-        ) {
-
-            carrinho.splice(
-                index,
-                1
-            );
-
-
-            atualizarCarrinho();
-
-        }
-
-
-        /* =========================
-           TOTAL
-        ========================= */
-
-        function calcularSubtotal() {
-
-            return carrinho.reduce(
-                function(total, item) {
-
-                    return total +
-                        (
-                            item.preco *
-                            item.quantidade
-                        );
-
-                },
-                0
-            );
-
-        }
-
-
-        function calcularTotal() {
-
-            const subtotal =
-                calcularSubtotal();
-
-
-            return subtotal -
-                (
-                    subtotal *
-                    desconto /
-                    100
-                );
-
-        }
-
-
-        function atualizarTotal() {
-
-            const subtotal =
-                calcularSubtotal();
-
-
-            const total =
-                calcularTotal();
-
-
-            let textoTotal =
-                dinheiro(total);
-
-
-            if (
-                desconto > 0
-            ) {
-
-                textoTotal =
-
-                    '<span style="text-decoration:line-through;color:#999;font-family:Arial;font-size:12px;margin-right:8px;">' +
-
-                    dinheiro(subtotal) +
-
-                    "</span>" +
-
-                    dinheiro(total);
-
-            }
-
-
-            document.getElementById(
-                "cartTotal"
-            ).innerHTML =
-
-                "<span>TOTAL</span>" +
-
-                "<span>" +
-
-                textoTotal +
-
-                "</span>";
-
-        }
-
-
-        /* =========================
-           PAGAMENTO
-        ========================= */
-
-        function selecionarPagamento(
-            pagamento,
-            botao
-        ) {
-
-            pagamentoEscolhido =
-                pagamento;
-
-
-            document
-                .querySelectorAll(
-                    ".cart-payment"
-                )
-                .forEach(function(item) {
-
-                    item.classList.remove(
-                        "selected"
-                    );
-
-                });
-
-
-            botao.classList.add(
-                "selected"
-            );
-
-
-            document.getElementById(
-                "cartError"
-            ).innerText = "";
-
-        }
-
-
-        /* =========================
-           CUPOM
-           
-           COMO O CUPOM É APLICADO
-           NO PEDIDO TODO, ELE SERÁ
-           CALCULADO NO CARRINHO.
-        ========================= */
-
-        function aplicarCupom(
-            codigo
-        ) {
-
-            codigo =
-                codigo
-                    .trim()
-                    .toUpperCase();
-
-
-            if (
-                cupons[codigo]
-            ) {
-
-                desconto =
-                    cupons[codigo];
-
-                cupomAplicado =
-                    codigo;
-
-
-                atualizarTotal();
-
-
-                return true;
-
-            }
-
-
-            desconto = 0;
-
-            cupomAplicado = "";
-
-
-            return false;
-
-        }
-
-
-        /* =========================
-           ABRIR CARRINHO
-        ========================= */
-
-        function abrirCarrinho() {
-
-            document
-                .getElementById(
-                    "cartOverlay"
-                )
-                .classList.add(
-                    "active"
-                );
-
-        }
-
-
-        /* =========================
-           FECHAR CARRINHO
-        ========================= */
-
-        function fecharCarrinho() {
-
-            document
-                .getElementById(
-                    "cartOverlay"
-                )
-                .classList.remove(
-                    "active"
-                );
-
-        }
-
-
-        function fecharCarrinhoFora(
-            event
-        ) {
-
-            if (
-                event.target.id ===
-                "cartOverlay"
-            ) {
-
-                fecharCarrinho();
-
-            }
-
-        }
-
-
-        /* =========================
-           FINALIZAR
-        ========================= */
-
-        function finalizarCompra() {
-
-            const error =
-                document.getElementById(
-                    "cartError"
-                );
-
-
-            error.innerText = "";
-
-
-            if (
-                carrinho.length === 0
-            ) {
-
-                error.innerText =
-                    "Adicione pelo menos uma camisa ao carrinho.";
-
-                return;
-
-            }
-
-
-            if (
-                pagamentoEscolhido === ""
-            ) {
-
-                error.innerText =
-                    "Selecione um método de pagamento.";
-
-                return;
-
-            }
-
-
-            const subtotal =
-                calcularSubtotal();
-
-
-            const total =
-                calcularTotal();
-
-
-            let mensagem =
-
-                "Olá! Quero fazer um pedido na HOLINESS." +
-
-                "\n\n" +
-
-                "PEDIDO:";
-
-
-            carrinho.forEach(
-                function(item) {
-
-                    mensagem +=
-
-                        "\n\n" +
-
-                        "• " +
-                        item.nome +
-
-                        "\n" +
-
-                        "Tamanho: " +
-                        item.tamanho +
-
-                        "\n" +
-
-                        "Quantidade: " +
-                        item.quantidade +
-
-                        "\n" +
-
-                        "Valor: " +
-
-                        dinheiro(
-                            item.preco *
-                            item.quantidade
-                        );
-
-                }
-            );
-
-
-            mensagem +=
-
-                "\n\n" +
-
-                "Subtotal: " +
-
-                dinheiro(subtotal);
-
-
-            if (
-                cupomAplicado !== ""
-            ) {
-
-                mensagem +=
-
-                    "\n" +
-
-                    "Cupom: " +
-
-                    cupomAplicado +
-
-                    "\n" +
-
-                    "Desconto: " +
-
-                    dinheiro(
-                        subtotal -
-                        total
-                    );
-
-            }
-
-
-            mensagem +=
-
-                "\n" +
-
-                "TOTAL: " +
-
-                dinheiro(total) +
-
-                "\n\n" +
-
-                "Método de pagamento: " +
-
-                pagamentoEscolhido;
-
-
-            if (
-                pagamentoEscolhido ===
-                "Cartão"
-            ) {
-
-                mensagem +=
-
-                    "\n" +
-
-                    "Parcelamento: 2x de " +
-
-                    dinheiro(
-                        total / 2
-                    ) +
-
-                    " sem juros";
-
-            }
-
-
-            const link =
-
-                "https://wa.me/" +
-
-                numeroWhatsApp +
-
-                "?text=" +
-
-                encodeURIComponent(
-                    mensagem
-                );
-
-
-            window.open(
-                link,
-                "_blank"
-            );
-
-        }
-
-
-        /* =========================
-           INICIALIZAÇÃO
-        ========================= */
-
-        atualizarCarrinho();
-
-    </script>
+    <script src="script.js"></script>
 
 </body>
 
