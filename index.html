@@ -2969,7 +2969,9 @@ function finalizarCompra() {
 
 
     let mensagem =
-        "Olá! Quero fazer meu pedido na HOLINESS." +
+        "Olá! 👋" +
+        "\n" +
+        "Quero fazer meu pedido da HOLINESS! 🔥" +
         "\n\n";
 
 
@@ -2982,15 +2984,15 @@ function finalizarCompra() {
         function(item) {
 
             mensagem +=
-                "Camisa: " +
+                "👕 " +
                 item.nome +
                 "\n" +
 
-                "Tamanho: " +
+                "📏 Tamanho: " +
                 item.tamanho +
                 "\n" +
 
-                "Quantidade: " +
+                "🔢 Quantidade: " +
                 item.quantidade +
                 "\n\n";
 
@@ -2999,7 +3001,7 @@ function finalizarCompra() {
 
 
     mensagem +=
-        "Preço: " +
+        "💰 Total: " +
         dinheiro(total);
 
 
@@ -3008,15 +3010,14 @@ function finalizarCompra() {
     ) {
 
         mensagem +=
-            "\nCupom: " +
+            "\n🎟️ Cupom: " +
             cupomAtual;
 
     }
 
 
     mensagem +=
-        "\nMétodo de pagamento: " +
-        pagamentoSelecionado;
+        "\n\nQuero finalizar meu pedido! 🙌";
 
 
     const url =
