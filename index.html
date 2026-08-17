@@ -2974,19 +2974,18 @@ function finalizarCompra() {
 
 
     /*
-       Só envia:
-       - tamanho
-       - preço
-       - cupom, se usado
-       - método de pagamento
-
-       Conforme você pediu.
+       Envia no WhatsApp o modelo da camisa,
+       o tamanho e a quantidade.
     */
 
     carrinho.forEach(
         function(item) {
 
             mensagem +=
+                "Camisa: " +
+                item.nome +
+                "\n" +
+
                 "Tamanho: " +
                 item.tamanho +
                 "\n" +
