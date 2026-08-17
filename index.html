@@ -3,2058 +3,2517 @@
 
 <head>
 
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLINESS — Glory & Frassati</title>
 
-<title>HOLINESS — Glory</title>
+    <!-- FONTE ANTON -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-<link rel="icon" type="image/png" href="Logo.png">
+    <style>
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+        html {
+            scroll-behavior: smooth;
+        }
 
-<style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: #f5f3ef;
+            color: #111;
+        }
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* =========================
+           TOPO
+        ========================= */
 
-html {
-    scroll-behavior: smooth;
-}
+        .topbar {
+            width: 100%;
+            height: 28px;
+            background: #000;
+            color: #fff;
 
-body {
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f5f3ef;
-    color: #111;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-/* =========================
-   BARRA SUPERIOR
-========================= */
+            font-size: 10px;
+            letter-spacing: 1px;
+        }
 
-.topbar {
-    width: 100%;
-    height: 28px;
+        .topbar strong {
+            margin-left: 5px;
+        }
 
-    background: #000;
-    color: #fff;
+        /* =========================
+           HEADER
+        ========================= */
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+        header {
+            height: 76px;
+            background: #fff;
 
-    font-size: 10px;
-    letter-spacing: 1px;
-}
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
 
-.topbar strong {
-    margin-left: 5px;
-}
+            padding: 0 45px;
 
-/* =========================
-   HEADER
-========================= */
+            border-bottom: 1px solid #ddd;
 
-header {
-    height: 76px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
 
-    background: #fff;
+        .logo {
+            font-family: "Anton", sans-serif;
+            font-size: 30px;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
 
-    display: flex;
-    align-items: center;
+        .cart-button {
+            position: relative;
 
-    padding: 0 45px;
+            border: none;
+            background: transparent;
 
-    border-bottom: 1px solid #ddd;
-}
+            font-family: "Anton", sans-serif;
+            font-size: 15px;
+            letter-spacing: 1px;
 
-.brand {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
+            cursor: pointer;
+        }
 
-.brand-logo {
-    width: 65px;
-    height: 65px;
-    object-fit: contain;
-    display: block;
-}
+        .cart-count {
+            position: absolute;
 
-.logo {
-    font-family: "Anton", sans-serif;
-    font-weight: 400;
-    letter-spacing: 1px;
-    font-size: 30px;
-}
+            top: -12px;
+            right: -15px;
 
-/* =========================
-   PRODUTO
-========================= */
+            width: 22px;
+            height: 22px;
 
-.product {
-    min-height: calc(100vh - 104px);
+            border-radius: 50%;
 
-    display: grid;
+            background: #000;
+            color: #fff;
 
-    grid-template-columns: 58% 42%;
-}
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-/* =========================
-   GALERIA
-========================= */
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+        }
 
-.product-gallery {
-    background: #e5e1dc;
+        /* =========================
+           PRODUTO
+        ========================= */
 
-    padding: 35px 45px;
+        .product {
+            min-height: calc(100vh - 104px);
 
-    display: flex;
+            display: grid;
 
-    flex-direction: column;
+            grid-template-columns: 58% 42%;
+        }
 
-    align-items: center;
+        /* =========================
+           GALERIA
+        ========================= */
 
-    justify-content: center;
-}
+        .product-gallery {
+            background: #e5e1dc;
 
-.main-photo {
-    width: 100%;
-    height: 600px;
+            padding: 35px 45px;
 
-    display: flex;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
 
-    align-items: center;
+        .main-photo {
+            width: 100%;
+            height: 600px;
 
-    justify-content: center;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    overflow: hidden;
+            overflow: hidden;
 
-    margin-bottom: 18px;
-}
+            margin-bottom: 18px;
+        }
 
-.main-photo img {
-    width: 100%;
-    height: 100%;
+        .main-photo img {
+            width: 100%;
+            height: 100%;
 
-    object-fit: contain;
+            object-fit: contain;
 
-    display: block;
-}
+            display: block;
+        }
 
-/* =========================
-   MINIATURAS
-========================= */
+        .thumbnails {
+            width: 100%;
 
-.thumbnails {
-    width: 100%;
+            display: flex;
+            justify-content: flex-start;
 
-    display: flex;
+            gap: 10px;
+        }
 
-    justify-content: flex-start;
+        .thumbnail {
+            width: 90px;
+            height: 90px;
 
-    gap: 10px;
-}
+            border: 1px solid #bbb;
 
-.thumbnail {
-    width: 90px;
-    height: 90px;
+            background: #eee;
 
-    border: 1px solid #bbb;
+            cursor: pointer;
 
-    background: #eee;
+            overflow: hidden;
 
-    cursor: pointer;
+            opacity: .6;
 
-    overflow: hidden;
+            transition: .2s;
+        }
 
-    opacity: .6;
+        .thumbnail img {
+            width: 100%;
+            height: 100%;
 
-    transition: .2s;
-}
+            object-fit: cover;
+        }
 
-.thumbnail img {
-    width: 100%;
-    height: 100%;
+        .thumbnail:hover {
+            opacity: 1;
+        }
 
-    object-fit: cover;
+        .thumbnail.active {
+            border: 2px solid #000;
+            opacity: 1;
+        }
 
-    display: block;
-}
+        /* =========================
+           INFORMAÇÕES
+        ========================= */
 
-.thumbnail:hover {
-    opacity: 1;
-}
+        .info {
+            background: #f5f3ef;
 
-.thumbnail.active {
-    border: 2px solid #000;
+            padding: 55px 70px;
 
-    opacity: 1;
-}
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
 
-/* =========================
-   INFORMAÇÕES
-========================= */
+        .small-title {
+            font-family: "Anton", sans-serif;
 
-.info {
-    background: #f5f3ef;
+            font-size: 12px;
+            letter-spacing: 3px;
 
-    padding: 55px 70px;
+            color: #777;
 
-    display: flex;
+            margin-bottom: 20px;
+        }
 
-    flex-direction: column;
+        h1 {
+            font-family: "Anton", sans-serif;
 
-    justify-content: center;
-}
+            font-size: 80px;
+            font-weight: 400;
 
-.small-title {
-    font-family: "Anton", sans-serif;
+            line-height: .9;
+            letter-spacing: 2px;
 
-    font-size: 12px;
+            margin-bottom: 25px;
+        }
 
-    letter-spacing: 3px;
+        .line {
+            width: 65px;
+            height: 3px;
 
-    color: #777;
+            background: #d99a13;
 
-    margin-bottom: 20px;
-}
+            margin-bottom: 25px;
+        }
 
-h1 {
-    font-family: "Anton", sans-serif;
+        .phrase {
+            font-family: Georgia, serif;
 
-    font-size: 80px;
+            font-size: 18px;
+            line-height: 1.5;
 
-    font-weight: 400;
+            max-width: 500px;
 
-    line-height: .9;
+            margin-bottom: 30px;
+        }
 
-    letter-spacing: 2px;
+        /* =========================
+           PREÇO
+        ========================= */
 
-    margin-bottom: 25px;
-}
+        .price {
+            font-family: "Anton", sans-serif;
 
-.line {
-    width: 65px;
-    height: 3px;
+            font-size: 30px;
+            font-weight: 400;
 
-    background: #d99a13;
+            margin-bottom: 5px;
+        }
 
-    margin-bottom: 25px;
-}
+        .price-old {
+            color: #999;
 
-.phrase {
-    font-family: Georgia, serif;
+            text-decoration: line-through;
 
-    font-size: 19px;
+            font-family: Arial, sans-serif;
 
-    line-height: 1.5;
+            font-size: 14px;
 
-    max-width: 500px;
+            margin-right: 10px;
+        }
 
-    margin-bottom: 30px;
-}
+        .price-discount {
+            color: #16833b;
 
-/* =========================
-   PREÇO
-========================= */
+            font-size: 11px;
 
-.price {
-    font-family: "Anton", sans-serif;
+            margin-top: 5px;
+            margin-bottom: 5px;
+        }
 
-    font-size: 30px;
+        .installments {
+            color: #777;
 
-    font-weight: 400;
+            font-size: 11px;
 
-    letter-spacing: .5px;
+            margin-bottom: 25px;
+        }
 
-    margin-bottom: 5px;
-}
+        /* =========================
+           CUPOM
+        ========================= */
 
-.price-old {
-    color: #999;
+        .coupon-area {
+            max-width: 450px;
 
-    text-decoration: line-through;
+            margin-bottom: 25px;
+        }
 
-    font-family: Arial, Helvetica, sans-serif;
+        .coupon-title {
+            font-family: "Anton", sans-serif;
 
-    font-size: 14px;
+            font-size: 12px;
 
-    margin-right: 10px;
-}
+            letter-spacing: 2px;
 
-.price-discount {
-    color: #16833b;
+            margin-bottom: 10px;
+        }
 
-    font-size: 11px;
+        .coupon-box {
+            display: flex;
 
-    margin-top: 5px;
+            width: 100%;
+        }
 
-    margin-bottom: 5px;
-}
+        .coupon-box input {
+            flex: 1;
 
-.installments {
-    color: #777;
+            height: 48px;
 
-    font-size: 11px;
+            border: 1px solid #aaa;
 
-    margin-bottom: 25px;
-}
+            border-right: none;
 
-/* =========================
-   CUPOM
-========================= */
+            background: #fff;
 
-.coupon-area {
-    max-width: 450px;
+            padding: 0 15px;
 
-    margin-bottom: 25px;
-}
+            font-size: 11px;
 
-.coupon-title {
-    font-family: "Anton", sans-serif;
+            outline: none;
 
-    font-size: 12px;
+            text-transform: uppercase;
+        }
 
-    letter-spacing: 2px;
+        .coupon-box button {
+            width: 100px;
+            height: 48px;
 
-    margin-bottom: 10px;
-}
+            border: none;
 
-.coupon-box {
-    display: flex;
+            background: #000;
+            color: #fff;
 
-    width: 100%;
-}
+            font-family: "Anton", sans-serif;
 
-.coupon-box input {
-    flex: 1;
+            font-size: 12px;
 
-    height: 48px;
+            cursor: pointer;
+        }
 
-    border: 1px solid #aaa;
+        .coupon-box button:hover {
+            background: #d99a13;
+            color: #000;
+        }
 
-    border-right: none;
+        .coupon-message {
+            margin-top: 8px;
 
-    background: #fff;
+            min-height: 18px;
 
-    padding: 0 15px;
+            font-size: 11px;
+        }
 
-    font-size: 11px;
+        .coupon-success {
+            color: #16833b;
+        }
 
-    outline: none;
+        .coupon-error {
+            color: #b00000;
+        }
 
-    text-transform: uppercase;
-}
+        /* =========================
+           TAMANHOS
+        ========================= */
 
-.coupon-box button {
-    width: 100px;
+        .size-title {
+            font-family: "Anton", sans-serif;
 
-    height: 48px;
+            font-size: 12px;
 
-    border: none;
+            letter-spacing: 2px;
 
-    background: #000;
+            margin-bottom: 12px;
+        }
 
-    color: #fff;
+        .sizes {
+            display: flex;
 
-    font-family: "Anton", sans-serif;
+            gap: 10px;
 
-    font-size: 12px;
+            margin-bottom: 10px;
 
-    letter-spacing: 1px;
+            flex-wrap: wrap;
+        }
 
-    cursor: pointer;
-}
+        .size {
+            width: 55px;
+            height: 48px;
 
-.coupon-box button:hover {
-    background: #d99a13;
+            background: #fff;
 
-    color: #000;
-}
+            border: 1px solid #aaa;
 
-.coupon-message {
-    margin-top: 8px;
+            font-family: "Anton", sans-serif;
 
-    min-height: 18px;
+            font-size: 15px;
 
-    font-size: 11px;
-}
+            cursor: pointer;
 
-.coupon-success {
-    color: #16833b;
-}
+            transition: .2s;
+        }
 
-.coupon-error {
-    color: #b00000;
-}
+        .size:hover {
+            background: #eee;
+            border-color: #000;
+        }
 
-/* =========================
-   TAMANHOS
-========================= */
+        .size.selected {
+            background: #000;
+            color: #fff;
 
-.size-title {
-    font-family: "Anton", sans-serif;
+            border-color: #000;
+        }
 
-    font-size: 12px;
+        .selected-text {
+            min-height: 25px;
 
-    letter-spacing: 2px;
+            margin-bottom: 18px;
 
-    margin-bottom: 12px;
-}
+            font-size: 11px;
 
-.sizes {
-    display: flex;
+            color: #777;
+        }
 
-    gap: 10px;
+        /* =========================
+           QUANTIDADE
+        ========================= */
 
-    margin-bottom: 10px;
+        .quantity-area {
+            margin-bottom: 22px;
+        }
 
-    flex-wrap: wrap;
-}
+        .quantity-title {
+            font-family: "Anton", sans-serif;
 
-.size {
-    width: 55px;
-    height: 48px;
+            font-size: 12px;
 
-    background: #fff;
+            letter-spacing: 2px;
 
-    border: 1px solid #aaa;
+            margin-bottom: 10px;
+        }
 
-    color: #111;
+        .quantity-control {
+            display: flex;
 
-    font-family: "Anton", sans-serif;
+            width: 140px;
+            height: 45px;
+        }
 
-    font-size: 15px;
+        .quantity-control button {
+            width: 45px;
 
-    cursor: pointer;
+            border: 1px solid #aaa;
 
-    transition: .2s;
+            background: #fff;
 
-    position: relative;
-}
+            font-size: 18px;
 
-.size:hover {
-    background: #eee;
+            cursor: pointer;
+        }
 
-    border-color: #000;
-}
+        .quantity-control span {
+            width: 50px;
 
-.size.selected {
-    background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
 
-    color: #fff;
+            background: #fff;
 
-    border-color: #000;
-}
+            border-top: 1px solid #aaa;
+            border-bottom: 1px solid #aaa;
 
-/* TAMANHO ESGOTADO */
+            font-weight: bold;
+        }
 
-.size.sold-out {
-    background: #ddd;
+        /* =========================
+           BOTÃO CARRINHO
+        ========================= */
 
-    color: #888;
+        .add-cart {
+            width: 100%;
+            max-width: 450px;
 
-    cursor: not-allowed;
+            height: 60px;
 
-    border-color: #bbb;
+            border: none;
 
-    text-decoration: line-through;
-}
+            background: #000;
+            color: #fff;
 
-.size.sold-out::after {
-    content: "×";
+            font-family: "Anton", sans-serif;
 
-    position: absolute;
+            font-size: 15px;
 
-    font-family: Arial, sans-serif;
+            letter-spacing: 2px;
 
-    font-size: 30px;
+            cursor: pointer;
 
-    font-weight: bold;
+            transition: .3s;
 
-    color: #b00000;
+            margin-bottom: 25px;
+        }
 
-    left: 50%;
+        .add-cart:hover {
+            background: #d99a13;
+            color: #000;
+        }
 
-    top: 50%;
+        /* =========================
+           DETALHES
+        ========================= */
 
-    transform: translate(-50%, -50%);
-}
+        .details {
+            max-width: 450px;
 
-.selected-text {
-    min-height: 25px;
+            margin-top: 5px;
+        }
 
-    margin-bottom: 18px;
+        .detail {
+            border-top: 1px solid #ddd;
 
-    font-size: 11px;
+            padding: 14px 0;
 
-    color: #777;
-}
+            display: flex;
+            justify-content: space-between;
 
-.selected-text strong {
-    color: #111;
-}
+            font-size: 10px;
+        }
 
-/* =========================
-   BOTÃO TABELA DE MEDIDAS
-========================= */
+        .detail strong {
+            font-family: "Anton", sans-serif;
 
-.measure-button {
-    display: inline-block;
+            font-weight: 400;
 
-    width: fit-content;
+            letter-spacing: .5px;
+        }
 
-    margin-top: -5px;
+        .detail span {
+            color: #777;
+        }
 
-    margin-bottom: 20px;
+        /* =========================
+           SEGUNDO PRODUTO
+        ========================= */
 
-    background: transparent;
+        .product-card {
+            display: grid;
 
-    border: none;
+            grid-template-columns: 58% 42%;
 
-    padding: 0;
+            min-height: 700px;
+        }
 
-    font-family: "Anton", sans-serif;
+        .product-card .product-gallery {
+            background: #dedbd6;
+        }
 
-    font-size: 11px;
+        .product-card .info {
+            background: #eeeae4;
+        }
 
-    letter-spacing: 1.5px;
+        /* =========================
+           STORY
+        ========================= */
 
-    text-decoration: underline;
+        .story {
+            width: 100%;
 
-    cursor: pointer;
+            height: 600px;
 
-    color: #111;
+            display: grid;
 
-    transition: .2s;
-}
+            grid-template-columns: 1fr 1fr;
 
-.measure-button:hover {
-    color: #d99a13;
-}
+            background: #111;
+        }
 
-/* =========================
-   MODAL TABELA DE MEDIDAS
-========================= */
+        .story-image {
+            width: 100%;
+            height: 600px;
 
-.measure-modal {
-    display: none;
+            overflow: hidden;
+        }
 
-    position: fixed;
+        .story-image img {
+            width: 100%;
+            height: 100%;
 
-    z-index: 9999;
+            object-fit: cover;
 
-    inset: 0;
+            display: block;
+        }
 
-    background: rgba(0, 0, 0, .75);
+        /* =========================
+           RODAPÉ
+        ========================= */
 
-    align-items: center;
+        footer {
+            min-height: 120px;
 
-    justify-content: center;
+            background: #f5f3ef;
 
-    padding: 20px;
-}
+            display: flex;
 
-.measure-modal.active {
-    display: flex;
-}
+            align-items: center;
 
-.measure-content {
-    position: relative;
+            justify-content: space-between;
 
-    max-width: 700px;
+            padding: 20px 40px;
 
-    width: 100%;
+            border-top: 1px solid #ddd;
+        }
 
-    max-height: 90vh;
+        footer p {
+            color: #777;
 
-    background: #fff;
+            font-family: Georgia, serif;
 
-    padding: 15px;
+            font-size: 12px;
 
-    overflow: auto;
-}
+            line-height: 1.5;
 
-.measure-content img {
-    display: block;
+            max-width: 650px;
 
-    width: 100%;
+            text-align: right;
+        }
 
-    height: auto;
+        /* =========================
+           CARRINHO
+        ========================= */
 
-    max-height: 80vh;
+        .cart-overlay {
+            position: fixed;
 
-    object-fit: contain;
-}
+            inset: 0;
 
-.measure-close {
-    position: absolute;
+            background: rgba(0,0,0,.45);
 
-    top: 8px;
+            z-index: 999;
 
-    right: 12px;
+            opacity: 0;
 
-    width: 35px;
+            visibility: hidden;
 
-    height: 35px;
+            transition: .3s;
+        }
 
-    border: none;
+        .cart-overlay.active {
+            opacity: 1;
 
-    background: #000;
+            visibility: visible;
+        }
 
-    color: #fff;
+        .cart {
+            position: absolute;
 
-    font-size: 24px;
+            top: 0;
+            right: 0;
 
-    line-height: 35px;
+            width: 450px;
+            max-width: 100%;
 
-    cursor: pointer;
+            height: 100%;
 
-    z-index: 2;
-}
+            background: #f5f3ef;
 
-.measure-close:hover {
-    background: #d99a13;
+            padding: 30px;
 
-    color: #000;
-}
+            overflow-y: auto;
 
-/* =========================
-   QUANTIDADE
-========================= */
+            transform: translateX(100%);
 
-.quantity-area {
-    max-width: 450px;
+            transition: .3s;
+        }
 
-    margin-bottom: 25px;
+        .cart-overlay.active .cart {
+            transform: translateX(0);
+        }
 
-    display: none;
-}
+        .cart-header {
+            display: flex;
 
-.quantity-title {
-    font-family: "Anton", sans-serif;
+            justify-content: space-between;
 
-    font-size: 12px;
+            align-items: center;
 
-    letter-spacing: 2px;
+            padding-bottom: 20px;
 
-    margin-bottom: 12px;
-}
+            border-bottom: 1px solid #ddd;
 
-.quantity-row {
-    display: flex;
+            margin-bottom: 20px;
+        }
 
-    align-items: center;
+        .cart-header h2 {
+            font-family: "Anton", sans-serif;
 
-    justify-content: space-between;
+            font-weight: 400;
 
-    background: #fff;
+            font-size: 28px;
 
-    border: 1px solid #ddd;
+            letter-spacing: 1px;
+        }
 
-    padding: 10px 12px;
+        .close-cart {
+            border: none;
 
-    margin-bottom: 7px;
-}
+            background: transparent;
 
-.quantity-info {
-    font-size: 11px;
-}
+            font-size: 25px;
 
-.quantity-info strong {
-    font-family: "Anton", sans-serif;
+            cursor: pointer;
+        }
 
-    font-size: 14px;
-}
+        .empty-cart {
+            text-align: center;
 
-.quantity-controls {
-    display: flex;
+            color: #777;
 
-    align-items: center;
+            padding: 50px 10px;
 
-    gap: 8px;
-}
+            font-size: 13px;
+        }
 
-.quantity-controls button {
-    width: 30px;
-    height: 30px;
+        .cart-item {
+            display: flex;
 
-    border: 1px solid #aaa;
+            gap: 15px;
 
-    background: #fff;
+            padding: 15px 0;
 
-    cursor: pointer;
+            border-bottom: 1px solid #ddd;
+        }
 
-    font-size: 18px;
-}
+        .cart-item img {
+            width: 90px;
+            height: 100px;
 
-.quantity-controls button:hover {
-    background: #000;
+            object-fit: contain;
 
-    color: #fff;
-}
+            background: #e5e1dc;
+        }
 
-.quantity-number {
-    min-width: 25px;
+        .cart-item-info {
+            flex: 1;
+        }
 
-    text-align: center;
+        .cart-item-info h3 {
+            font-family: "Anton", sans-serif;
 
-    font-family: "Anton", sans-serif;
-}
+            font-weight: 400;
 
-/* =========================
-   RESUMO
-========================= */
+            font-size: 20px;
 
-.order-summary {
-    max-width: 450px;
+            margin-bottom: 5px;
+        }
 
-    background: #fff;
+        .cart-item-info p {
+            font-size: 11px;
 
-    border: 1px solid #ddd;
+            color: #777;
 
-    padding: 18px;
+            margin-bottom: 4px;
+        }
 
-    margin-bottom: 25px;
+        .cart-remove {
+            border: none;
 
-    display: none;
-}
+            background: transparent;
 
-.summary-title {
-    font-family: "Anton", sans-serif;
+            color: #999;
 
-    font-size: 13px;
+            cursor: pointer;
 
-    letter-spacing: 2px;
+            font-size: 11px;
 
-    margin-bottom: 15px;
-}
+            margin-top: 5px;
+        }
 
-.summary-item {
-    display: flex;
+        .cart-total {
+            padding: 20px 0;
 
-    justify-content: space-between;
+            display: flex;
 
-    align-items: center;
+            justify-content: space-between;
 
-    font-size: 11px;
+            font-family: "Anton", sans-serif;
 
-    padding: 8px 0;
+            font-size: 23px;
+        }
 
-    border-bottom: 1px solid #eee;
-}
+        .cart-payment-title {
+            font-family: "Anton", sans-serif;
 
-.summary-item:last-child {
-    border-bottom: none;
-}
+            font-size: 12px;
 
-.summary-total {
-    margin-top: 15px;
+            letter-spacing: 2px;
 
-    padding-top: 12px;
+            margin-bottom: 10px;
+        }
 
-    border-top: 1px solid #ddd;
-}
+        .cart-payments {
+            display: flex;
 
-.summary-line {
-    display: flex;
+            gap: 8px;
 
-    justify-content: space-between;
+            flex-wrap: wrap;
 
-    font-size: 11px;
+            margin-bottom: 20px;
+        }
 
-    margin-bottom: 7px;
-}
+        .cart-payment {
+            padding: 11px 14px;
 
-.summary-discount {
-    color: #16833b;
-}
+            background: #fff;
 
-.summary-final {
-    display: flex;
+            border: 1px solid #aaa;
 
-    justify-content: space-between;
+            font-family: "Anton", sans-serif;
 
-    margin-top: 10px;
+            cursor: pointer;
+        }
 
-    padding-top: 10px;
+        .cart-payment.selected {
+            background: #000;
 
-    border-top: 2px solid #111;
+            color: #fff;
 
-    font-family: "Anton", sans-serif;
+            border-color: #000;
+        }
 
-    font-size: 20px;
-}
+        .checkout {
+            width: 100%;
 
-/* =========================
-   PAGAMENTO
-========================= */
+            height: 58px;
 
-.payment-title {
-    font-family: "Anton", sans-serif;
+            background: #000;
 
-    font-size: 12px;
+            color: #fff;
 
-    letter-spacing: 2px;
+            border: none;
 
-    margin-top: 5px;
+            font-family: "Anton", sans-serif;
 
-    margin-bottom: 12px;
-}
+            font-size: 15px;
 
-.payments {
-    display: flex;
+            letter-spacing: 2px;
 
-    gap: 10px;
+            cursor: pointer;
+        }
 
-    margin-bottom: 10px;
+        .checkout:hover {
+            background: #d99a13;
 
-    flex-wrap: wrap;
-}
+            color: #000;
+        }
 
-.payment {
-    padding: 12px 18px;
+        .cart-error {
+            color: #b00000;
 
-    background: #fff;
+            font-size: 11px;
 
-    border: 1px solid #aaa;
+            margin-bottom: 10px;
 
-    color: #111;
+            min-height: 15px;
+        }
 
-    font-family: "Anton", sans-serif;
+        /* =========================
+           RESPONSIVO
+        ========================= */
 
-    font-size: 13px;
+        @media (max-width: 900px) {
 
-    cursor: pointer;
+            header {
+                padding: 0 20px;
+            }
 
-    transition: .2s;
-}
+            .product,
+            .product-card {
+                grid-template-columns: 1fr;
+            }
 
-.payment:hover {
-    background: #eee;
+            .product-gallery {
+                padding: 20px;
+            }
 
-    border-color: #000;
-}
+            .main-photo {
+                height: 500px;
+            }
 
-.payment.selected {
-    background: #000;
+            .info {
+                padding: 50px 25px;
+            }
 
-    color: #fff;
+            h1 {
+                font-size: 60px;
+            }
 
-    border-color: #000;
-}
+            .story {
+                grid-template-columns: 1fr;
 
-.payment-text {
-    min-height: 20px;
+                height: auto;
+            }
 
-    margin-bottom: 20px;
+            .story-image {
+                height: 500px;
+            }
 
-    font-size: 11px;
+            footer {
+                flex-direction: column;
 
-    color: #777;
-}
+                gap: 15px;
 
-/* =========================
-   BOTÃO
-========================= */
+                text-align: center;
+            }
 
-.buy {
-    width: 100%;
+            footer p {
+                text-align: center;
+            }
 
-    max-width: 450px;
+        }
 
-    height: 60px;
-
-    border: none;
-
-    background: #000;
-
-    color: #fff;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 15px;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: .3s;
-}
-
-.buy:hover {
-    background: #d99a13;
-
-    color: #000;
-}
-
-/* =========================
-   DETALHES
-========================= */
-
-.details {
-    max-width: 450px;
-
-    margin-top: 30px;
-}
-
-.detail {
-    border-top: 1px solid #ddd;
-
-    padding: 14px 0;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    font-size: 10px;
-}
-
-.detail span {
-    color: #777;
-}
-
-.detail strong {
-    font-family: "Anton", sans-serif;
-
-    font-weight: 400;
-}
-
-/* =========================
-   DUAS IMAGENS
-========================= */
-
-.story {
-    width: 100%;
-
-    height: 600px;
-
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    background: #111;
-}
-
-.story-image {
-    width: 100%;
-
-    height: 600px;
-
-    overflow: hidden;
-}
-
-.story-image img {
-    width: 100%;
-
-    height: 100%;
-
-    display: block;
-
-    object-fit: cover;
-}
-
-/* =========================
-   RODAPÉ
-========================= */
-
-footer {
-    min-height: 120px;
-
-    background: #f5f3ef;
-
-    color: #111;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: space-between;
-
-    padding: 20px 40px;
-
-    border-top: 1px solid #ddd;
-}
-
-footer p {
-    color: #777;
-
-    font-family: Georgia, serif;
-
-    font-size: 12px;
-
-    line-height: 1.5;
-
-    max-width: 650px;
-
-    text-align: right;
-}
-
-/* =========================
-   RESPONSIVO
-========================= */
-
-@media (max-width: 800px) {
-
-    header {
-        padding: 0 20px;
-    }
-
-    .product {
-        grid-template-columns: 1fr;
-    }
-
-    .product-gallery {
-        padding: 20px;
-    }
-
-    .main-photo {
-        height: 500px;
-    }
-
-    .info {
-        padding: 50px 25px;
-    }
-
-    h1 {
-        font-size: 60px;
-    }
-
-    .story {
-        grid-template-columns: 1fr;
-
-        height: auto;
-    }
-
-    .story-image {
-        height: 500px;
-    }
-
-    footer {
-        padding: 25px 20px;
-
-        flex-direction: column;
-
-        gap: 15px;
-
-        text-align: center;
-    }
-
-    footer p {
-        text-align: center;
-    }
-
-    .measure-content {
-        max-width: 95%;
-        padding: 10px;
-    }
-
-}
-
-</style>
+    </style>
 
 </head>
 
+
 <body>
 
-<div class="topbar">
 
-PRIMEIRA COMPRA?
-&nbsp;
-USE O CUPOM
-<strong>GLORY10</strong>
+    <!-- =========================
+         TOPO
+    ========================= -->
 
-</div>
+    <div class="topbar">
 
-<header>
+        PRIMEIRA COMPRA?
+        &nbsp;
+        USE O CUPOM
+        <strong>GLORY10</strong>
 
-<div class="brand">
+    </div>
 
-<img
-    class="brand-logo"
-    src="Logo.png"
-    alt="Logo Holiness"
->
 
-<div class="logo">
-HOLINESS
-</div>
+    <!-- =========================
+         HEADER
+    ========================= -->
 
-</div>
+    <header>
 
-</header>
+        <div class="logo">
+            HOLINESS
+        </div>
 
-<section class="product">
+        <button
+            class="cart-button"
+            onclick="abrirCarrinho()"
+        >
 
-<div class="product-gallery">
+            CARRINHO
 
-<div class="main-photo">
-
-<img
-    id="mainImage"
-    src="Frente.png"
-    alt="Frente da camisa Glory"
->
-
-</div>
-
-<div class="thumbnails">
-
-<div
-    class="thumbnail active"
-    onclick="trocarFoto('Frente.png', this)"
->
-
-<img src="Frente.png" alt="Frente">
-
-</div>
-
-<div
-    class="thumbnail"
-    onclick="trocarFoto('Costa.png', this)"
->
-
-<img src="Costa.png" alt="Costa">
-
-</div>
-
-<div
-    class="thumbnail"
-    onclick="trocarFoto('Chuva.png', this)"
->
-
-<img src="Chuva.png" alt="Chuva">
-
-</div>
-
-</div>
-
-</div>
-
-<div class="info">
-
-<div class="small-title">
-NOVA COLEÇÃO • 001
-</div>
-
-<h1>
-GLORY
-</h1>
-
-<div class="line"></div>
-
-<p class="phrase">
-
-"Acredito que, buscando incansavelmente a Deus,
-chegaremos a manifestação visível da presença,
-do poder e de todas as perfeições - à Glória."
-
-</p>
-
-<div
-    class="price"
-    id="price"
->
-R$ 109,90
-</div>
-
-<div
-    id="discountText"
-    class="price-discount"
->
-</div>
-
-<div
-    class="installments"
-    id="installments"
->
-ou 2x de R$ 54,95 sem juros
-</div>
-
-<!-- CUPOM -->
-
-<div class="coupon-area">
-
-<div class="coupon-title">
-CUPOM DE DESCONTO
-</div>
-
-<div class="coupon-box">
-
-<input
-    type="text"
-    id="couponInput"
-    placeholder="DIGITE SEU CUPOM"
->
-
-<button
-    type="button"
-    id="couponButton"
->
-APLICAR
-</button>
-
-</div>
-
-<div
-    id="couponMessage"
-    class="coupon-message"
->
-</div>
-
-</div>
-
-<!-- TAMANHOS -->
-
-<div class="size-title">
-ESCOLHA OS TAMANHOS
-</div>
-
-<div class="sizes">
-
-<button
-    type="button"
-    class="size"
-    data-size="PP"
-    data-quantity="3"
->
-PP
-</button>
-
-<button
-    type="button"
-    class="size"
-    data-size="P"
-    data-quantity="3"
->
-P
-</button>
-
-<button
-    type="button"
-    class="size"
-    data-size="M"
-    data-quantity="4"
->
-M
-</button>
-
-<button
-    type="button"
-    class="size"
-    data-size="G"
-    data-quantity="4"
->
-G
-</button>
-
-<button
-    type="button"
-    class="size"
-    data-size="GG"
-    data-quantity="2"
->
-GG
-</button>
-
-<button
-    type="button"
-    class="size"
-    data-size="XG"
-    data-quantity="1"
->
-XG
-</button>
-
-</div>
-
-<!-- BOTÃO TABELA DE MEDIDAS -->
-
-<button
-    type="button"
-    class="measure-button"
-    id="measureButton"
->
-    VER TABELA DE MEDIDAS
-</button>
-
-<div
-    class="selected-text"
-    id="selectedText"
->
-Selecione um ou mais tamanhos
-</div>
-
-<!-- QUANTIDADES -->
-
-<div
-    class="quantity-area"
-    id="quantityArea"
->
-
-<div class="quantity-title">
-QUANTIDADE POR TAMANHO
-</div>
-
-<div id="quantityList"></div>
-
-</div>
-
-<!-- RESUMO -->
-
-<div
-    class="order-summary"
-    id="orderSummary"
->
-
-<div class="summary-title">
-RESUMO DO PEDIDO
-</div>
-
-<div id="summaryItems"></div>
-
-<div class="summary-total">
-
-<div class="summary-line">
-
-<span>
-Subtotal
-</span>
-
-<strong id="summarySubtotal">
-R$ 0,00
-</strong>
-
-</div>
-
-<div
-    class="summary-line summary-discount"
-    id="summaryDiscountLine"
->
-
-<span>
-Desconto
-</span>
-
-<strong id="summaryDiscount">
--R$ 0,00
-</strong>
-
-</div>
-
-<div class="summary-final">
-
-<span>
-TOTAL
-</span>
-
-<strong id="summaryTotal">
-R$ 0,00
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-<!-- PAGAMENTO -->
-
-<div class="payment-title">
-MÉTODO DE PAGAMENTO
-</div>
-
-<div class="payments">
-
-<button
-    type="button"
-    class="payment"
-    data-payment="PIX"
->
-PIX
-</button>
-
-<button
-    type="button"
-    class="payment"
-    data-payment="Cartão"
->
-CARTÃO
-</button>
-
-<button
-    type="button"
-    class="payment"
-    data-payment="Dinheiro"
->
-DINHEIRO
-</button>
-
-</div>
-
-<div
-    class="payment-text"
-    id="paymentText"
->
-Selecione o método de pagamento
-</div>
-
-<button
-    type="button"
-    class="buy"
-    id="buyButton"
->
-FINALIZAR COMPRA →
-</button>
-
-<div class="details">
-
-<div class="detail">
-
-<span>
-MATERIAL
-</span>
-
-<strong>
-100% ALGODÃO
-</strong>
-
-</div>
-
-<div class="detail">
-
-<span>
-MODELAGEM
-</span>
-
-<strong>
-OVERSIZED
-</strong>
-
-</div>
-
-<div class="detail">
-
-<span>
-ENVIO
-</span>
-
-<strong>
-TODO O BRASIL
-</strong>
-
-</div>
-
-</div>
-
-</div>
-
-</section>
-
-<!-- =========================
-     STORY
-========================= -->
-
-<section class="story">
-
-<div class="story-image">
-
-<img
-    src="Obrigado.png"
-    alt="Obrigado"
->
-
-</div>
-
-<div class="story-image">
-
-<img
-    src="fig.png"
-    alt="Glory"
->
-
-</div>
-
-</section>
-
-<!-- =========================
-     RODAPÉ
-========================= -->
-
-<footer>
-
-<div class="logo">
-HOLINESS
-</div>
-
-<p>
-
-“Ao contemplarmos a presença de Deus,<br>
-somos transformados progressivamente à imagem de Cristo<br>
-pelo Espírito Santo.”
-
-</p>
-
-</footer>
-
-<!-- =========================
-     MODAL TABELA DE MEDIDAS
-========================= -->
-
-<div
-    class="measure-modal"
-    id="measureModal"
->
-
-<div class="measure-content">
-
-<button
-    type="button"
-    class="measure-close"
-    id="measureClose"
->
-×
-</button>
-
-<img
-    src="medida.png"
-    alt="Tabela de medidas da camisa"
->
-
-</div>
-
-</div>
-
-<script>
-
-/* =========================
-   CONFIGURAÇÕES
-========================= */
-
-const precoOriginal = 109.90;
-
-const precoComCupomGLORY10 = 98.91;
-
-const cupons = {
-    "GLORY10": 10,
-    "ALTAR20": 20
-};
-
-const estoque = {
-    "PP": 3,
-    "P": 3,
-    "M": 4,
-    "G": 4,
-    "GG": 2,
-    "XG": 1
-};
-
-let tamanhosEscolhidos = {};
-
-let pagamentoEscolhido = "";
-
-let cupomAplicado = "";
-
-let desconto = 0;
-
-
-/* =========================
-   TROCAR FOTOS
-========================= */
-
-function trocarFoto(foto, elemento) {
-
-    document.getElementById("mainImage").src = foto;
-
-    document
-        .querySelectorAll(".thumbnail")
-        .forEach(function(item) {
-
-            item.classList.remove("active");
-
-        });
-
-    elemento.classList.add("active");
-
-}
-
-
-/* =========================
-   FORMATAR DINHEIRO
-========================= */
-
-function dinheiro(valor) {
-
-    return "R$ " +
-        valor
-        .toFixed(2)
-        .replace(".", ",");
-
-}
-
-
-/* =========================
-   TAMANHOS
-========================= */
-
-const botoesTamanho =
-    document.querySelectorAll(".size");
-
-const selectedText =
-    document.getElementById("selectedText");
-
-const quantityArea =
-    document.getElementById("quantityArea");
-
-const quantityList =
-    document.getElementById("quantityList");
-
-const orderSummary =
-    document.getElementById("orderSummary");
-
-const summaryItems =
-    document.getElementById("summaryItems");
-
-
-botoesTamanho.forEach(function(botao) {
-
-    botao.addEventListener("click", function() {
-
-        const tamanho =
-            botao.getAttribute("data-size");
-
-        const disponivel =
-            estoque[tamanho];
-
-
-        if (disponivel <= 0) {
-
-            return;
-
-        }
-
-
-        if (
-            tamanhosEscolhidos[tamanho]
-        ) {
-
-            delete tamanhosEscolhidos[tamanho];
-
-            botao.classList.remove("selected");
-
-        }
-
-        else {
-
-            tamanhosEscolhidos[tamanho] = 1;
-
-            botao.classList.add("selected");
-
-        }
-
-
-        atualizarSelecao();
-
-        atualizarResumo();
-
-    });
-
-});
-
-
-/* =========================
-   ATUALIZAR SELEÇÃO
-========================= */
-
-function atualizarSelecao() {
-
-    const tamanhos =
-        Object.keys(tamanhosEscolhidos);
-
-
-    if (tamanhos.length === 0) {
-
-        selectedText.innerHTML =
-            "Selecione um ou mais tamanhos";
-
-        quantityArea.style.display = "none";
-
-        return;
-
-    }
-
-
-    selectedText.innerHTML =
-        tamanhos.length +
-        (
-            tamanhos.length === 1
-                ? " tamanho selecionado"
-                : " tamanhos selecionados"
-        );
-
-
-    quantityArea.style.display = "block";
-
-
-    quantityList.innerHTML = "";
-
-
-    tamanhos.forEach(function(tamanho) {
-
-        const quantidade =
-            tamanhosEscolhidos[tamanho];
-
-        const maximo =
-            estoque[tamanho];
-
-
-        const linha =
-            document.createElement("div");
-
-        linha.className =
-            "quantity-row";
-
-
-        linha.innerHTML = `
-
-            <div class="quantity-info">
-
-                <strong>${tamanho}</strong>
-
-                <br>
-
-                ${maximo} disponíveis
-
-            </div>
-
-            <div class="quantity-controls">
-
-                <button
-                    type="button"
-                    onclick="alterarQuantidade('${tamanho}', -1)"
-                >
-                    −
-                </button>
-
-                <span class="quantity-number">
-                    ${quantidade}
-                </span>
-
-                <button
-                    type="button"
-                    onclick="alterarQuantidade('${tamanho}', 1)"
-                >
-                    +
-                </button>
-
-            </div>
-
-        `;
-
-
-        quantityList.appendChild(linha);
-
-    });
-
-}
-
-
-/* =========================
-   ALTERAR QUANTIDADE
-========================= */
-
-function alterarQuantidade(
-    tamanho,
-    valor
-) {
-
-    if (
-        !tamanhosEscolhidos[tamanho]
-    ) {
-
-        return;
-
-    }
-
-
-    let novaQuantidade =
-        tamanhosEscolhidos[tamanho] +
-        valor;
-
-
-    if (novaQuantidade < 1) {
-
-        novaQuantidade = 1;
-
-    }
-
-
-    if (
-        novaQuantidade >
-        estoque[tamanho]
-    ) {
-
-        novaQuantidade =
-            estoque[tamanho];
-
-    }
-
-
-    tamanhosEscolhidos[tamanho] =
-        novaQuantidade;
-
-
-    atualizarSelecao();
-
-    atualizarResumo();
-
-}
-
-
-/* =========================
-   PREÇO ATUAL
-========================= */
-
-function obterPrecoUnitario() {
-
-    if (
-        cupomAplicado === "GLORY10"
-    ) {
-
-        return precoComCupomGLORY10;
-
-    }
-
-
-    if (desconto > 0) {
-
-        return precoOriginal -
-            (
-                precoOriginal *
-                desconto /
-                100
-            );
-
-    }
-
-
-    return precoOriginal;
-
-}
-
-
-/* =========================
-   ATUALIZAR RESUMO
-========================= */
-
-function atualizarResumo() {
-
-    const tamanhos =
-        Object.keys(tamanhosEscolhidos);
-
-
-    if (tamanhos.length === 0) {
-
-        orderSummary.style.display =
-            "none";
-
-        return;
-
-    }
-
-
-    orderSummary.style.display =
-        "block";
-
-
-    summaryItems.innerHTML = "";
-
-
-    const precoUnitario =
-        obterPrecoUnitario();
-
-
-    let subtotal =
-        0;
-
-
-    tamanhos.forEach(function(tamanho) {
-
-        const quantidade =
-            tamanhosEscolhidos[tamanho];
-
-
-        const valor =
-            precoOriginal *
-            quantidade;
-
-
-        subtotal += valor;
-
-
-        const item =
-            document.createElement("div");
-
-
-        item.className =
-            "summary-item";
-
-
-        item.innerHTML = `
-
-            <span>
-                ${tamanho} × ${quantidade}
+            <span
+                class="cart-count"
+                id="cartCount"
+            >
+                0
             </span>
 
-            <strong>
-                ${dinheiro(valor)}
-            </strong>
+        </button>
 
-        `;
+    </header>
 
 
-        summaryItems.appendChild(item);
+    <!-- =====================================================
+         PRODUTO 1 — GLORY
+    ====================================================== -->
 
-    });
+    <section class="product">
 
 
-    let descontoValor =
-        subtotal -
-        (
-            precoUnitario *
-            Object.values(tamanhosEscolhidos)
-                .reduce(
-                    (a, b) => a + b,
-                    0
+        <!-- GALERIA GLORY -->
+
+        <div class="product-gallery">
+
+            <div class="main-photo">
+
+                <img
+                    id="gloryMainImage"
+                    src="Frente.png"
+                    alt="Glory"
+                >
+
+            </div>
+
+
+            <div class="thumbnails">
+
+                <div
+                    class="thumbnail active"
+                    onclick="trocarFoto(
+                        'Frente.png',
+                        'gloryMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Frente.png">
+
+                </div>
+
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto(
+                        'Costa.png',
+                        'gloryMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Costa.png">
+
+                </div>
+
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto(
+                        'Chuva.png',
+                        'gloryMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Chuva.png">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES GLORY -->
+
+        <div class="info">
+
+            <div class="small-title">
+                NOVA COLEÇÃO • 001
+            </div>
+
+
+            <h1>
+                GLORY
+            </h1>
+
+
+            <div class="line"></div>
+
+
+            <p class="phrase">
+
+                "Acreditamos que, buscando incansavelmente à Deus,
+                chegaremos a manifestação visível da presença,
+                do poder e de todas as perfeições."
+
+            </p>
+
+
+            <div
+                class="price"
+                id="gloryPrice"
+            >
+                R$ 149,90
+            </div>
+
+
+            <div
+                class="price-discount"
+                id="gloryDiscount"
+            >
+            </div>
+
+
+            <div
+                class="installments"
+                id="gloryInstallments"
+            >
+                ou 2x de R$ 74,95 sem juros
+            </div>
+
+
+            <div class="size-title">
+                ESCOLHA O TAMANHO
+            </div>
+
+
+            <div class="sizes">
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Glory','PP',this)"
+                >
+                    PP
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Glory','M',this)"
+                >
+                    M
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Glory','G',this)"
+                >
+                    G
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Glory','GG',this)"
+                >
+                    GG
+                </button>
+
+            </div>
+
+
+            <div
+                class="selected-text"
+                id="glorySelected"
+            >
+                Selecione um tamanho
+            </div>
+
+
+            <div class="quantity-area">
+
+                <div class="quantity-title">
+                    QUANTIDADE
+                </div>
+
+                <div class="quantity-control">
+
+                    <button onclick="alterarQuantidade('Glory',-1)">
+                        −
+                    </button>
+
+                    <span id="gloryQuantity">
+                        1
+                    </span>
+
+                    <button onclick="alterarQuantidade('Glory',1)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="add-cart"
+                onclick="adicionarCarrinho('Glory')"
+            >
+
+                ADICIONAR AO CARRINHO →
+
+            </button>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    <span>
+                        MATERIAL
+                    </span>
+
+                    <strong>
+                        100% ALGODÃO
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        MODELAGEM
+                    </span>
+
+                    <strong>
+                        OVERSIZED
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        ENVIO
+                    </span>
+
+                    <strong>
+                        TODO O BRASIL
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PRODUTO 2 — FRASSATI
+    ====================================================== -->
+
+    <section class="product-card">
+
+
+        <!-- GALERIA FRASSATI -->
+
+        <div class="product-gallery">
+
+            <div class="main-photo">
+
+                <img
+                    id="frassatiMainImage"
+                    src="Frente2.png"
+                    alt="Frassati"
+                >
+
+            </div>
+
+
+            <div class="thumbnails">
+
+                <div
+                    class="thumbnail active"
+                    onclick="trocarFoto(
+                        'Frente2.png',
+                        'frassatiMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Frente2.png">
+
+                </div>
+
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto(
+                        'Trás2.png',
+                        'frassatiMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Trás2.png">
+
+                </div>
+
+
+                <div
+                    class="thumbnail"
+                    onclick="trocarFoto(
+                        'Chuva2.png',
+                        'frassatiMainImage',
+                        this
+                    )"
+                >
+
+                    <img src="Chuva2.png">
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- INFORMAÇÕES FRASSATI -->
+
+        <div class="info">
+
+            <div class="small-title">
+                NOVA COLEÇÃO • 002
+            </div>
+
+
+            <h1>
+                FRASSATI
+            </h1>
+
+
+            <div class="line"></div>
+
+
+            <p class="phrase">
+
+                Uma peça feita para carregar a fé,
+                a identidade e a busca constante pela santidade.
+
+            </p>
+
+
+            <div
+                class="price"
+                id="frassatiPrice"
+            >
+                R$ 149,90
+            </div>
+
+
+            <div
+                class="price-discount"
+                id="frassatiDiscount"
+            >
+            </div>
+
+
+            <div
+                class="installments"
+                id="frassatiInstallments"
+            >
+                ou 2x de R$ 74,95 sem juros
+            </div>
+
+
+            <div class="size-title">
+                ESCOLHA O TAMANHO
+            </div>
+
+
+            <div class="sizes">
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Frassati','PP',this)"
+                >
+                    PP
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Frassati','M',this)"
+                >
+                    M
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Frassati','G',this)"
+                >
+                    G
+                </button>
+
+                <button
+                    class="size"
+                    onclick="selecionarTamanho('Frassati','GG',this)"
+                >
+                    GG
+                </button>
+
+            </div>
+
+
+            <div
+                class="selected-text"
+                id="frassatiSelected"
+            >
+                Selecione um tamanho
+            </div>
+
+
+            <div class="quantity-area">
+
+                <div class="quantity-title">
+                    QUANTIDADE
+                </div>
+
+                <div class="quantity-control">
+
+                    <button onclick="alterarQuantidade('Frassati',-1)">
+                        −
+                    </button>
+
+                    <span id="frassatiQuantity">
+                        1
+                    </span>
+
+                    <button onclick="alterarQuantidade('Frassati',1)">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <button
+                class="add-cart"
+                onclick="adicionarCarrinho('Frassati')"
+            >
+
+                ADICIONAR AO CARRINHO →
+
+            </button>
+
+
+            <div class="details">
+
+                <div class="detail">
+
+                    <span>
+                        MATERIAL
+                    </span>
+
+                    <strong>
+                        100% ALGODÃO
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        MODELAGEM
+                    </span>
+
+                    <strong>
+                        OVERSIZED
+                    </strong>
+
+                </div>
+
+
+                <div class="detail">
+
+                    <span>
+                        ENVIO
+                    </span>
+
+                    <strong>
+                        TODO O BRASIL
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         IMAGENS
+    ========================= -->
+
+    <section class="story">
+
+        <div class="story-image">
+
+            <img
+                src="Obrigado.png"
+                alt="Obrigado"
+            >
+
+        </div>
+
+
+        <div class="story-image">
+
+            <img
+                src="fig.png"
+                alt="Holiness"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- =========================
+         RODAPÉ
+    ========================= -->
+
+    <footer>
+
+        <div class="logo">
+            HOLINESS
+        </div>
+
+
+        <p>
+
+            “Ao contemplarmos a presença de Deus,<br>
+            somos transformados progressivamente à imagem de Cristo<br>
+            pelo Espírito Santo.”
+
+        </p>
+
+    </footer>
+
+
+    <!-- =====================================================
+         CARRINHO
+    ====================================================== -->
+
+    <div
+        class="cart-overlay"
+        id="cartOverlay"
+        onclick="fecharCarrinhoFora(event)"
+    >
+
+
+        <div
+            class="cart"
+            onclick="event.stopPropagation()"
+        >
+
+
+            <div class="cart-header">
+
+                <h2>
+                    CARRINHO
+                </h2>
+
+                <button
+                    class="close-cart"
+                    onclick="fecharCarrinho()"
+                >
+                    ×
+                </button>
+
+            </div>
+
+
+            <div id="cartItems">
+
+                <div class="empty-cart">
+
+                    Seu carrinho está vazio.
+
+                </div>
+
+            </div>
+
+
+            <div
+                class="cart-total"
+                id="cartTotal"
+            >
+
+                <span>
+                    TOTAL
+                </span>
+
+                <span>
+                    R$ 0,00
+                </span>
+
+            </div>
+
+
+            <div class="cart-payment-title">
+
+                MÉTODO DE PAGAMENTO
+
+            </div>
+
+
+            <div class="cart-payments">
+
+
+                <button
+                    class="cart-payment"
+                    onclick="selecionarPagamento('PIX',this)"
+                >
+                    PIX
+                </button>
+
+
+                <button
+                    class="cart-payment"
+                    onclick="selecionarPagamento('Cartão',this)"
+                >
+                    CARTÃO
+                </button>
+
+
+                <button
+                    class="cart-payment"
+                    onclick="selecionarPagamento('Dinheiro',this)"
+                >
+                    DINHEIRO
+                </button>
+
+
+            </div>
+
+
+            <div
+                class="cart-error"
+                id="cartError"
+            >
+            </div>
+
+
+            <button
+                class="checkout"
+                onclick="finalizarCompra()"
+            >
+
+                FINALIZAR PEDIDO → WHATSAPP
+
+            </button>
+
+
+        </div>
+
+    </div>
+
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================= -->
+
+    <script>
+
+        /* =========================
+           CONFIGURAÇÕES
+        ========================= */
+
+        const PRECO = 149.90;
+
+        const numeroWhatsApp =
+            "5533998019698";
+
+
+        /* ESTOQUE */
+
+        const estoque = {
+
+            PP: 3,
+            M: 2,
+            G: 2,
+            GG: 3
+
+        };
+
+
+        /* CUPONS */
+
+        const cupons = {
+
+            "GLORY10": 10,
+            "ALTAR20": 20
+
+        };
+
+
+        /* =========================
+           ESTADO
+        ========================= */
+
+        let produtos = {
+
+            Glory: {
+
+                nome: "Glory",
+
+                imagem: "Frente.png",
+
+                tamanho: "",
+
+                quantidade: 1
+
+            },
+
+            Frassati: {
+
+                nome: "Frassati",
+
+                imagem: "Frente2.png",
+
+                tamanho: "",
+
+                quantidade: 1
+
+            }
+
+        };
+
+
+        let carrinho = [];
+
+        let desconto = 0;
+
+        let cupomAplicado = "";
+
+        let pagamentoEscolhido = "";
+
+
+        /* =========================
+           FUNÇÕES AUXILIARES
+        ========================= */
+
+        function dinheiro(valor) {
+
+            return "R$ " +
+                valor
+                    .toFixed(2)
+                    .replace(".", ",");
+
+        }
+
+
+        /* =========================
+           TROCAR FOTO
+        ========================= */
+
+        function trocarFoto(
+            foto,
+            elementoImagem,
+            elemento
+        ) {
+
+            document.getElementById(
+                elementoImagem
+            ).src = foto;
+
+
+            const galeria =
+                elemento.closest(
+                    ".product-gallery"
+                );
+
+
+            galeria
+                .querySelectorAll(
+                    ".thumbnail"
                 )
-        );
+                .forEach(function(item) {
+
+                    item.classList.remove(
+                        "active"
+                    );
+
+                });
 
 
-    descontoValor =
-        Math.max(
-            0,
-            descontoValor
-        );
+            elemento.classList.add(
+                "active"
+            );
+
+        }
 
 
-    const quantidadeTotal =
-        Object.values(
-            tamanhosEscolhidos
-        ).reduce(
-            (a, b) => a + b,
-            0
-        );
+        /* =========================
+           TAMANHO
+        ========================= */
+
+        function selecionarTamanho(
+            produto,
+            tamanho,
+            botao
+        ) {
+
+            produtos[produto].tamanho =
+                tamanho;
 
 
-    const total =
-        precoUnitario *
-        quantidadeTotal;
+            const info =
+                botao.closest(".info");
 
 
-    document.getElementById(
-        "summarySubtotal"
-    ).innerHTML =
-        dinheiro(subtotal);
-
-
-    document.getElementById(
-        "summaryDiscount"
-    ).innerHTML =
-        "-" + dinheiro(descontoValor);
-
-
-    document.getElementById(
-        "summaryTotal"
-    ).innerHTML =
-        dinheiro(total);
-
-
-    const discountLine =
-        document.getElementById(
-            "summaryDiscountLine"
-        );
-
-
-    if (descontoValor > 0) {
-
-        discountLine.style.display =
-            "flex";
-
-    }
-
-    else {
-
-        discountLine.style.display =
-            "none";
-
-    }
-
-
-    if (
-        pagamentoEscolhido === "Cartão"
-    ) {
-
-        const parcela =
-            total / 2;
-
-
-        document.getElementById(
-            "installments"
-        ).innerHTML =
-
-            "ou 2x de " +
-
-            dinheiro(parcela) +
-
-            " sem juros";
-
-    }
-
-}
-
-
-/* =========================
-   PAGAMENTO
-========================= */
-
-const pagamentos =
-    document.querySelectorAll(".payment");
-
-const paymentText =
-    document.getElementById("paymentText");
-
-
-pagamentos.forEach(function(botao) {
-
-    botao.addEventListener(
-        "click",
-        function() {
-
-            pagamentos.forEach(
-                function(item) {
+            info
+                .querySelectorAll(".size")
+                .forEach(function(item) {
 
                     item.classList.remove(
                         "selected"
+                    );
+
+                });
+
+
+            botao.classList.add(
+                "selected"
+            );
+
+
+            const texto =
+                produto === "Glory"
+                    ? document.getElementById(
+                        "glorySelected"
+                    )
+                    : document.getElementById(
+                        "frassatiSelected"
+                    );
+
+
+            texto.innerHTML =
+
+                "Tamanho " +
+
+                "<strong>" +
+
+                tamanho +
+
+                "</strong>" +
+
+                " — " +
+
+                estoque[tamanho] +
+
+                " disponíveis";
+
+        }
+
+
+        /* =========================
+           QUANTIDADE
+        ========================= */
+
+        function alterarQuantidade(
+            produto,
+            valor
+        ) {
+
+            let quantidade =
+                produtos[produto].quantidade;
+
+
+            quantidade += valor;
+
+
+            if (quantidade < 1) {
+
+                quantidade = 1;
+
+            }
+
+
+            if (
+                quantidade >
+                10
+            ) {
+
+                quantidade = 10;
+
+            }
+
+
+            produtos[produto].quantidade =
+                quantidade;
+
+
+            const elemento =
+                produto === "Glory"
+                    ? document.getElementById(
+                        "gloryQuantity"
+                    )
+                    : document.getElementById(
+                        "frassatiQuantity"
+                    );
+
+
+            elemento.innerText =
+                quantidade;
+
+        }
+
+
+        /* =========================
+           ADICIONAR AO CARRINHO
+        ========================= */
+
+        function adicionarCarrinho(
+            produto
+        ) {
+
+            const item =
+                produtos[produto];
+
+
+            if (
+                item.tamanho === ""
+            ) {
+
+                alert(
+                    "Selecione um tamanho antes de adicionar ao carrinho."
+                );
+
+                return;
+
+            }
+
+
+            if (
+                item.quantidade >
+                estoque[item.tamanho]
+            ) {
+
+                alert(
+                    "A quantidade escolhida ultrapassa o estoque disponível."
+                );
+
+                return;
+
+            }
+
+
+            /* verifica se já existe */
+
+            const existente =
+                carrinho.find(function(
+                    produtoCarrinho
+                ) {
+
+                    return (
+
+                        produtoCarrinho.nome ===
+                        produto &&
+
+                        produtoCarrinho.tamanho ===
+                        item.tamanho
+
+                    );
+
+                });
+
+
+            if (existente) {
+
+                existente.quantidade +=
+                    item.quantidade;
+
+
+                if (
+                    existente.quantidade >
+                    estoque[item.tamanho]
+                ) {
+
+                    existente.quantidade =
+                        estoque[item.tamanho];
+
+                }
+
+            } else {
+
+                carrinho.push({
+
+                    nome: produto,
+
+                    tamanho: item.tamanho,
+
+                    quantidade:
+                        item.quantidade,
+
+                    preco: PRECO,
+
+                    imagem: item.imagem
+
+                });
+
+            }
+
+
+            atualizarCarrinho();
+
+
+            abrirCarrinho();
+
+        }
+
+
+        /* =========================
+           ATUALIZAR CARRINHO
+        ========================= */
+
+        function atualizarCarrinho() {
+
+            const container =
+                document.getElementById(
+                    "cartItems"
+                );
+
+
+            const count =
+                carrinho.reduce(
+                    function(total, item) {
+
+                        return total +
+                            item.quantidade;
+
+                    },
+                    0
+                );
+
+
+            document.getElementById(
+                "cartCount"
+            ).innerText = count;
+
+
+            if (
+                carrinho.length === 0
+            ) {
+
+                container.innerHTML =
+
+                    '<div class="empty-cart">' +
+
+                    "Seu carrinho está vazio." +
+
+                    "</div>";
+
+
+                document.getElementById(
+                    "cartTotal"
+                ).innerHTML =
+
+                    "<span>TOTAL</span>" +
+
+                    "<span>R$ 0,00</span>";
+
+
+                return;
+
+            }
+
+
+            container.innerHTML = "";
+
+
+            carrinho.forEach(
+                function(item, index) {
+
+                    const div =
+                        document.createElement(
+                            "div"
+                        );
+
+
+                    div.className =
+                        "cart-item";
+
+
+                    div.innerHTML =
+
+                        '<img src="' +
+                        item.imagem +
+                        '">' +
+
+                        '<div class="cart-item-info">' +
+
+                        "<h3>" +
+                        item.nome +
+                        "</h3>" +
+
+                        "<p>Tamanho: " +
+                        item.tamanho +
+                        "</p>" +
+
+                        "<p>Quantidade: " +
+                        item.quantidade +
+                        "</p>" +
+
+                        "<p>" +
+                        dinheiro(
+                            item.preco *
+                            item.quantidade
+                        ) +
+                        "</p>" +
+
+                        '<button class="cart-remove" ' +
+                        'onclick="removerCarrinho(' +
+                        index +
+                        ')">' +
+
+                        "REMOVER" +
+
+                        "</button>" +
+
+                        "</div>";
+
+
+                    container.appendChild(
+                        div
                     );
 
                 }
             );
 
 
-            botao.classList.add("selected");
+            atualizarTotal();
 
+        }
+
+
+        /* =========================
+           REMOVER
+        ========================= */
+
+        function removerCarrinho(
+            index
+        ) {
+
+            carrinho.splice(
+                index,
+                1
+            );
+
+
+            atualizarCarrinho();
+
+        }
+
+
+        /* =========================
+           TOTAL
+        ========================= */
+
+        function calcularSubtotal() {
+
+            return carrinho.reduce(
+                function(total, item) {
+
+                    return total +
+                        (
+                            item.preco *
+                            item.quantidade
+                        );
+
+                },
+                0
+            );
+
+        }
+
+
+        function calcularTotal() {
+
+            const subtotal =
+                calcularSubtotal();
+
+
+            return subtotal -
+                (
+                    subtotal *
+                    desconto /
+                    100
+                );
+
+        }
+
+
+        function atualizarTotal() {
+
+            const subtotal =
+                calcularSubtotal();
+
+
+            const total =
+                calcularTotal();
+
+
+            let textoTotal =
+                dinheiro(total);
+
+
+            if (
+                desconto > 0
+            ) {
+
+                textoTotal =
+
+                    '<span style="text-decoration:line-through;color:#999;font-family:Arial;font-size:12px;margin-right:8px;">' +
+
+                    dinheiro(subtotal) +
+
+                    "</span>" +
+
+                    dinheiro(total);
+
+            }
+
+
+            document.getElementById(
+                "cartTotal"
+            ).innerHTML =
+
+                "<span>TOTAL</span>" +
+
+                "<span>" +
+
+                textoTotal +
+
+                "</span>";
+
+        }
+
+
+        /* =========================
+           PAGAMENTO
+        ========================= */
+
+        function selecionarPagamento(
+            pagamento,
+            botao
+        ) {
 
             pagamentoEscolhido =
-                botao.getAttribute(
-                    "data-payment"
+                pagamento;
+
+
+            document
+                .querySelectorAll(
+                    ".cart-payment"
+                )
+                .forEach(function(item) {
+
+                    item.classList.remove(
+                        "selected"
+                    );
+
+                });
+
+
+            botao.classList.add(
+                "selected"
+            );
+
+
+            document.getElementById(
+                "cartError"
+            ).innerText = "";
+
+        }
+
+
+        /* =========================
+           CUPOM
+           
+           COMO O CUPOM É APLICADO
+           NO PEDIDO TODO, ELE SERÁ
+           CALCULADO NO CARRINHO.
+        ========================= */
+
+        function aplicarCupom(
+            codigo
+        ) {
+
+            codigo =
+                codigo
+                    .trim()
+                    .toUpperCase();
+
+
+            if (
+                cupons[codigo]
+            ) {
+
+                desconto =
+                    cupons[codigo];
+
+                cupomAplicado =
+                    codigo;
+
+
+                atualizarTotal();
+
+
+                return true;
+
+            }
+
+
+            desconto = 0;
+
+            cupomAplicado = "";
+
+
+            return false;
+
+        }
+
+
+        /* =========================
+           ABRIR CARRINHO
+        ========================= */
+
+        function abrirCarrinho() {
+
+            document
+                .getElementById(
+                    "cartOverlay"
+                )
+                .classList.add(
+                    "active"
                 );
+
+        }
+
+
+        /* =========================
+           FECHAR CARRINHO
+        ========================= */
+
+        function fecharCarrinho() {
+
+            document
+                .getElementById(
+                    "cartOverlay"
+                )
+                .classList.remove(
+                    "active"
+                );
+
+        }
+
+
+        function fecharCarrinhoFora(
+            event
+        ) {
+
+            if (
+                event.target.id ===
+                "cartOverlay"
+            ) {
+
+                fecharCarrinho();
+
+            }
+
+        }
+
+
+        /* =========================
+           FINALIZAR
+        ========================= */
+
+        function finalizarCompra() {
+
+            const error =
+                document.getElementById(
+                    "cartError"
+                );
+
+
+            error.innerText = "";
+
+
+            if (
+                carrinho.length === 0
+            ) {
+
+                error.innerText =
+                    "Adicione pelo menos uma camisa ao carrinho.";
+
+                return;
+
+            }
+
+
+            if (
+                pagamentoEscolhido === ""
+            ) {
+
+                error.innerText =
+                    "Selecione um método de pagamento.";
+
+                return;
+
+            }
+
+
+            const subtotal =
+                calcularSubtotal();
+
+
+            const total =
+                calcularTotal();
+
+
+            let mensagem =
+
+                "Olá! Quero fazer um pedido na HOLINESS." +
+
+                "\n\n" +
+
+                "PEDIDO:";
+
+
+            carrinho.forEach(
+                function(item) {
+
+                    mensagem +=
+
+                        "\n\n" +
+
+                        "• " +
+                        item.nome +
+
+                        "\n" +
+
+                        "Tamanho: " +
+                        item.tamanho +
+
+                        "\n" +
+
+                        "Quantidade: " +
+                        item.quantidade +
+
+                        "\n" +
+
+                        "Valor: " +
+
+                        dinheiro(
+                            item.preco *
+                            item.quantidade
+                        );
+
+                }
+            );
+
+
+            mensagem +=
+
+                "\n\n" +
+
+                "Subtotal: " +
+
+                dinheiro(subtotal);
+
+
+            if (
+                cupomAplicado !== ""
+            ) {
+
+                mensagem +=
+
+                    "\n" +
+
+                    "Cupom: " +
+
+                    cupomAplicado +
+
+                    "\n" +
+
+                    "Desconto: " +
+
+                    dinheiro(
+                        subtotal -
+                        total
+                    );
+
+            }
+
+
+            mensagem +=
+
+                "\n" +
+
+                "TOTAL: " +
+
+                dinheiro(total) +
+
+                "\n\n" +
+
+                "Método de pagamento: " +
+
+                pagamentoEscolhido;
 
 
             if (
@@ -2062,638 +2521,49 @@ pagamentos.forEach(function(botao) {
                 "Cartão"
             ) {
 
-                const quantidadeTotal =
-                    Object.values(
-                        tamanhosEscolhidos
-                    ).reduce(
-                        (a, b) => a + b,
-                        0
-                    );
-
-
-                const precoUnitario =
-                    obterPrecoUnitario();
-
-
-                const total =
-                    precoUnitario *
-                    quantidadeTotal;
-
-
-                const parcela =
-                    total / 2;
-
-
-                paymentText.innerHTML =
-
-                    "Pagamento: " +
-
-                    "<strong>Cartão</strong>" +
-
-                    " — 2x de " +
-
-                    "<strong>" +
-
-                    dinheiro(parcela) +
-
-                    "</strong> sem juros";
-
-            }
-
-            else {
-
-                paymentText.innerHTML =
-
-                    "Pagamento: " +
-
-                    "<strong>" +
-
-                    pagamentoEscolhido +
-
-                    "</strong>";
-
-            }
-
-
-            paymentText.style.color =
-                "#777";
-
-
-            atualizarResumo();
-
-        }
-    );
-
-});
-
-
-/* =========================
-   CUPOM
-========================= */
-
-const couponInput =
-    document.getElementById(
-        "couponInput"
-    );
-
-const couponButton =
-    document.getElementById(
-        "couponButton"
-    );
-
-const couponMessage =
-    document.getElementById(
-        "couponMessage"
-    );
-
-const priceElement =
-    document.getElementById(
-        "price"
-    );
-
-const discountText =
-    document.getElementById(
-        "discountText"
-    );
-
-
-couponButton.addEventListener(
-    "click",
-    function() {
-
-        const cupom =
-            couponInput.value
-                .trim()
-                .toUpperCase();
-
-
-        if (cupom === "") {
-
-            cupomAplicado = "";
-
-            desconto = 0;
-
-
-            couponMessage.innerHTML =
-                "Digite um cupom.";
-
-
-            couponMessage.className =
-                "coupon-message coupon-error";
-
-
-            atualizarPreco();
-
-            return;
-
-        }
-
-
-        if (
-            cupons.hasOwnProperty(cupom)
-        ) {
-
-            desconto =
-                cupons[cupom];
-
-
-            cupomAplicado =
-                cupom;
-
-
-            couponMessage.innerHTML =
-
-                "✓ Cupom " +
-
-                "<strong>" +
-
-                cupom +
-
-                "</strong>" +
-
-                " aplicado!";
-
-
-            couponMessage.className =
-                "coupon-message coupon-success";
-
-
-            atualizarPreco();
-
-            return;
-
-        }
-
-
-        cupomAplicado = "";
-
-        desconto = 0;
-
-
-        couponMessage.innerHTML =
-            "✕ Cupom inválido.";
-
-
-        couponMessage.className =
-            "coupon-message coupon-error";
-
-
-        atualizarPreco();
-
-    }
-);
-
-
-/* =========================
-   ATUALIZAR PREÇO PRINCIPAL
-========================= */
-
-function atualizarPreco() {
-
-    let novoPreco =
-        obterPrecoUnitario();
-
-
-    if (desconto > 0) {
-
-        priceElement.innerHTML =
-
-            '<span class="price-old">' +
-
-            dinheiro(precoOriginal) +
-
-            '</span>' +
-
-            dinheiro(novoPreco);
-
-
-        discountText.innerHTML =
-
-            "10% de desconto aplicado";
-
-    }
-
-    else {
-
-        priceElement.innerHTML =
-            dinheiro(precoOriginal);
-
-
-        discountText.innerHTML = "";
-
-    }
-
-
-    const quantidadeTotal =
-        Object.values(
-            tamanhosEscolhidos
-        ).reduce(
-            (a, b) => a + b,
-            0
-        );
-
-
-    if (
-        pagamentoEscolhido === "Cartão" &&
-        quantidadeTotal > 0
-    ) {
-
-        const total =
-            novoPreco *
-            quantidadeTotal;
-
-
-        document.getElementById(
-            "installments"
-        ).innerHTML =
-
-            "ou 2x de " +
-
-            dinheiro(total / 2) +
-
-            " sem juros";
-
-    }
-
-    else if (
-        cupomAplicado === "GLORY10"
-    ) {
-
-        document.getElementById(
-            "installments"
-        ).innerHTML =
-
-            "ou 2x de R$ 49,46 sem juros";
-
-    }
-
-    else {
-
-        document.getElementById(
-            "installments"
-        ).innerHTML =
-
-            "ou 2x de R$ 54,95 sem juros";
-
-    }
-
-
-    atualizarResumo();
-
-}
-
-
-/* =========================
-   FINALIZAR COMPRA
-========================= */
-
-document
-.getElementById("buyButton")
-.addEventListener(
-    "click",
-    function() {
-
-        const tamanhos =
-            Object.keys(
-                tamanhosEscolhidos
-            );
-
-
-        if (
-            tamanhos.length === 0
-        ) {
-
-            selectedText.innerHTML =
-
-                "⚠ " +
-
-                "<strong>" +
-
-                "Selecione pelo menos um tamanho." +
-
-                "</strong>";
-
-
-            selectedText.style.color =
-                "#b00000";
-
-
-            return;
-
-        }
-
-
-        if (
-            pagamentoEscolhido === ""
-        ) {
-
-            paymentText.innerHTML =
-
-                "⚠ " +
-
-                "<strong>" +
-
-                "Selecione um método de pagamento." +
-
-                "</strong>";
-
-
-            paymentText.style.color =
-                "#b00000";
-
-
-            return;
-
-        }
-
-
-        const numeroWhatsApp =
-            "5533998019698";
-
-
-        const precoUnitario =
-            obterPrecoUnitario();
-
-
-        const quantidadeTotal =
-            Object.values(
-                tamanhosEscolhidos
-            ).reduce(
-                (a, b) => a + b,
-                0
-            );
-
-
-        const subtotal =
-            precoOriginal *
-            quantidadeTotal;
-
-
-        const total =
-            precoUnitario *
-            quantidadeTotal;
-
-
-        const descontoValor =
-            subtotal -
-            total;
-
-
-        let mensagem =
-
-            "Olá! Quero comprar a camisa Glory!" +
-
-            "\n\n" +
-
-            "TAMANHOS E QUANTIDADES:";
-
-
-        tamanhos.forEach(
-            function(tamanho) {
-
                 mensagem +=
 
                     "\n" +
 
-                    tamanho +
+                    "Parcelamento: 2x de " +
 
-                    ": " +
+                    dinheiro(
+                        total / 2
+                    ) +
 
-                    tamanhosEscolhidos[
-                        tamanho
-                    ] +
-
-                    " unidade(s)";
-
-            }
-        );
-
-
-        mensagem +=
-
-            "\n\n" +
-
-            "Quantidade total: " +
-
-            quantidadeTotal +
-
-            "\n" +
-
-            "Subtotal: " +
-
-            dinheiro(subtotal);
-
-
-        if (
-            cupomAplicado !== ""
-        ) {
-
-            mensagem +=
-
-                "\n" +
-
-                "Cupom: " +
-
-                cupomAplicado +
-
-                "\n" +
-
-                "Desconto: -" +
-
-                dinheiro(
-                    descontoValor
-                );
-
-        }
-
-
-        mensagem +=
-
-            "\n" +
-
-            "TOTAL: " +
-
-            dinheiro(total) +
-
-            "\n" +
-
-            "Pagamento: " +
-
-            pagamentoEscolhido;
-
-
-        if (
-            pagamentoEscolhido ===
-            "Cartão"
-        ) {
-
-            mensagem +=
-
-                "\n" +
-
-                "Parcelamento: 2x de " +
-
-                dinheiro(
-                    total / 2
-                ) +
-
-                " sem juros";
-
-        }
-
-
-        const linkWhatsApp =
-
-            "https://wa.me/" +
-
-            numeroWhatsApp +
-
-            "?text=" +
-
-            encodeURIComponent(
-                mensagem
-            );
-
-
-        window.open(
-            linkWhatsApp,
-            "_blank"
-        );
-
-    }
-);
-
-
-/* =========================
-   MARCAR ESGOTADOS
-========================= */
-
-function verificarEstoque() {
-
-    botoesTamanho.forEach(
-        function(botao) {
-
-            const tamanho =
-                botao.getAttribute(
-                    "data-size"
-                );
-
-
-            if (
-                estoque[tamanho] <= 0
-            ) {
-
-                botao.classList.add(
-                    "sold-out"
-                );
-
-                botao.disabled = true;
+                    " sem juros";
 
             }
 
-        }
-    );
 
-}
+            const link =
 
+                "https://wa.me/" +
 
-/* =========================
-   TABELA DE MEDIDAS
-========================= */
+                numeroWhatsApp +
 
-const measureButton =
-    document.getElementById(
-        "measureButton"
-    );
+                "?text=" +
 
-const measureModal =
-    document.getElementById(
-        "measureModal"
-    );
-
-const measureClose =
-    document.getElementById(
-        "measureClose"
-    );
+                encodeURIComponent(
+                    mensagem
+                );
 
 
-/* ABRIR */
-
-measureButton.addEventListener(
-    "click",
-    function() {
-
-        measureModal.classList.add(
-            "active"
-        );
-
-    }
-);
-
-
-/* FECHAR NO X */
-
-measureClose.addEventListener(
-    "click",
-    function() {
-
-        measureModal.classList.remove(
-            "active"
-        );
-
-    }
-);
-
-
-/* FECHAR CLICANDO FORA */
-
-measureModal.addEventListener(
-    "click",
-    function(event) {
-
-        if (
-            event.target === measureModal
-        ) {
-
-            measureModal.classList.remove(
-                "active"
+            window.open(
+                link,
+                "_blank"
             );
 
         }
 
-    }
-);
 
+        /* =========================
+           INICIALIZAÇÃO
+        ========================= */
 
-/* FECHAR COM ESC */
+        atualizarCarrinho();
 
-document.addEventListener(
-    "keydown",
-    function(event) {
-
-        if (
-            event.key === "Escape"
-        ) {
-
-            measureModal.classList.remove(
-                "active"
-            );
-
-        }
-
-    }
-);
-
-
-/* =========================
-   INICIAR
-========================= */
-
-verificarEstoque();
-
-atualizarPreco();
-
-</script>
+    </script>
 
 </body>
 
