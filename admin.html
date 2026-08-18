@@ -1,0 +1,1491 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>HOLINESS — Admin</title>
+
+<link rel="icon" type="image/png" href="Logo.png">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+body {
+
+    background: #f3f1ed;
+
+    color: #111;
+
+    font-family: Arial, sans-serif;
+
+    min-height: 100vh;
+
+}
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+#loginScreen {
+
+    min-height: 100vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+}
+
+
+.login-box {
+
+    width: 100%;
+
+    max-width: 420px;
+
+    background: #fff;
+
+    padding: 45px;
+
+    border: 1px solid #ddd;
+
+}
+
+
+.login-logo {
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 42px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.login-subtitle {
+
+    color: #777;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 35px;
+
+}
+
+
+.login-box label {
+
+    display: block;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.login-box input {
+
+    width: 100%;
+
+    height: 48px;
+
+    border: 1px solid #aaa;
+
+    padding: 0 14px;
+
+    outline: none;
+
+    margin-bottom: 18px;
+
+    font-size: 14px;
+
+}
+
+
+.login-box input:focus {
+
+    border-color: #000;
+
+}
+
+
+.login-button {
+
+    width: 100%;
+
+    height: 52px;
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    font-family: "Anton", sans-serif;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+}
+
+
+.login-button:hover {
+
+    background: #d49a19;
+
+    color: #000;
+
+}
+
+
+.login-error {
+
+    min-height: 20px;
+
+    margin-top: 12px;
+
+    color: #b00000;
+
+    font-size: 11px;
+
+}
+
+
+/* =====================================================
+   ADMIN
+===================================================== */
+
+#adminScreen {
+
+    display: none;
+
+}
+
+
+header {
+
+    height: 75px;
+
+    background: #fff;
+
+    border-bottom: 1px solid #ddd;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 0 45px;
+
+}
+
+
+.logo {
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 31px;
+
+    letter-spacing: 1px;
+
+}
+
+
+.admin-label {
+
+    color: #777;
+
+    font-size: 9px;
+
+    letter-spacing: 2px;
+
+    margin-left: 10px;
+
+}
+
+
+.logout-button {
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    padding: 11px 17px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+}
+
+
+.logout-button:hover {
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+/* =====================================================
+   CONTEÚDO
+===================================================== */
+
+.container {
+
+    width: 90%;
+
+    max-width: 1100px;
+
+    margin: auto;
+
+    padding: 70px 0;
+
+}
+
+
+.page-title span {
+
+    display: block;
+
+    color: #777;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 8px;
+
+}
+
+
+.page-title h1 {
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 55px;
+
+    font-weight: 400;
+
+    margin-bottom: 45px;
+
+}
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+.products {
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 30px;
+
+}
+
+
+.product-card {
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    padding: 30px;
+
+}
+
+
+.product-number {
+
+    color: #999;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+}
+
+
+.product-card h2 {
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 35px;
+
+    font-weight: 400;
+
+    margin: 5px 0 25px;
+
+}
+
+
+.stock-list {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+.stock-row {
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    padding: 13px;
+
+    background: #f3f1ed;
+
+}
+
+
+.stock-size {
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 13px;
+
+}
+
+
+.stock-control {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+}
+
+
+.stock-control button {
+
+    width: 32px;
+
+    height: 32px;
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    cursor: pointer;
+
+    font-size: 17px;
+
+}
+
+
+.stock-control button:hover {
+
+    background: #000;
+
+    color: #fff;
+
+}
+
+
+.stock-value {
+
+    width: 50px;
+
+    height: 32px;
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-weight: bold;
+
+}
+
+
+.stock-status {
+
+    width: 80px;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    color: #16833b;
+
+}
+
+
+.stock-status.empty {
+
+    color: #b00000;
+
+}
+
+
+/* =====================================================
+   BOTÃO SALVAR
+===================================================== */
+
+.save-section {
+
+    margin-top: 35px;
+
+    background: #fff;
+
+    border: 1px solid #ddd;
+
+    padding: 25px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+}
+
+
+.save-button {
+
+    height: 52px;
+
+    padding: 0 35px;
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    font-family: "Anton", sans-serif;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+
+}
+
+
+.save-button:hover {
+
+    background: #d49a19;
+
+    color: #000;
+
+}
+
+
+.save-message {
+
+    font-size: 11px;
+
+    color: #16833b;
+
+}
+
+
+/* =====================================================
+   CARREGANDO
+===================================================== */
+
+.loading {
+
+    text-align: center;
+
+    padding: 50px;
+
+    color: #777;
+
+    font-size: 12px;
+
+}
+
+
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
+@media (max-width: 750px) {
+
+    header {
+
+        padding: 0 20px;
+
+    }
+
+
+    .admin-label {
+
+        display: none;
+
+    }
+
+
+    .container {
+
+        width: 92%;
+
+        padding: 45px 0;
+
+    }
+
+
+    .page-title h1 {
+
+        font-size: 43px;
+
+    }
+
+
+    .products {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+    .save-section {
+
+        flex-direction: column;
+
+        align-items: stretch;
+
+    }
+
+
+    .save-button {
+
+        width: 100%;
+
+    }
+
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     LOGIN
+===================================================== -->
+
+<div id="loginScreen">
+
+    <div class="login-box">
+
+        <div class="login-logo">
+            HOLINESS
+        </div>
+
+        <div class="login-subtitle">
+            PAINEL ADMINISTRATIVO
+        </div>
+
+
+        <label>
+            E-MAIL
+        </label>
+
+        <input
+            type="email"
+            id="email"
+            placeholder="seu@email.com"
+        >
+
+
+        <label>
+            SENHA
+        </label>
+
+        <input
+            type="password"
+            id="password"
+            placeholder="Sua senha"
+        >
+
+
+        <button
+            class="login-button"
+            onclick="login()"
+        >
+            ENTRAR →
+        </button>
+
+
+        <div
+            id="loginError"
+            class="login-error"
+        ></div>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     PAINEL
+===================================================== -->
+
+<div id="adminScreen">
+
+
+<header>
+
+    <div>
+
+        <span class="logo">
+            HOLINESS
+        </span>
+
+        <span class="admin-label">
+            ADMIN
+        </span>
+
+    </div>
+
+
+    <button
+        class="logout-button"
+        onclick="logout()"
+    >
+        SAIR
+    </button>
+
+</header>
+
+
+<main class="container">
+
+
+    <div class="page-title">
+
+        <span>
+            CONTROLE DE ESTOQUE
+        </span>
+
+        <h1>
+            ESTOQUE
+        </h1>
+
+    </div>
+
+
+    <div
+        id="loading"
+        class="loading"
+    >
+        Carregando estoque...
+    </div>
+
+
+    <div
+        id="products"
+        class="products"
+        style="display:none;"
+    >
+
+
+        <!-- GLORY -->
+
+        <div class="product-card">
+
+            <span class="product-number">
+                001
+            </span>
+
+            <h2>
+                GLORY
+            </h2>
+
+            <div
+                id="GloryStock"
+                class="stock-list"
+            ></div>
+
+        </div>
+
+
+        <!-- FRASSATI -->
+
+        <div class="product-card">
+
+            <span class="product-number">
+                002
+            </span>
+
+            <h2>
+                FRASSATI
+            </h2>
+
+            <div
+                id="FrassatiStock"
+                class="stock-list"
+            ></div>
+
+        </div>
+
+
+    </div>
+
+
+    <div
+        id="saveSection"
+        class="save-section"
+        style="display:none;"
+    >
+
+        <div
+            id="saveMessage"
+            class="save-message"
+        >
+            Altere o estoque e clique em salvar.
+        </div>
+
+
+        <button
+            class="save-button"
+            onclick="salvarEstoque()"
+        >
+            SALVAR ESTOQUE →
+        </button>
+
+    </div>
+
+
+</main>
+
+</div>
+
+
+<script type="module">
+
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+import {
+
+    initializeApp
+
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+
+import {
+
+    getFirestore,
+    doc,
+    getDoc,
+    setDoc
+
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+import {
+
+    getAuth,
+    signInWithEmailAndPassword,
+    onAuthStateChanged,
+    signOut
+
+} from "https://www.gstatic.com/firebasejs/12.1.0/firebase-auth.js";
+
+
+/* =====================================================
+   CONFIGURAÇÃO DO SEU FIREBASE
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+
+    authDomain:
+        "holiness-e6ec3.firebaseapp.com",
+
+    projectId:
+        "holiness-e6ec3",
+
+    storageBucket:
+        "holiness-e6ec3.firebasestorage.app",
+
+    messagingSenderId:
+        "842822716544",
+
+    appId:
+        "1:842822716544:web:d24b1835fa9f4289ce2a65",
+
+    measurementId:
+        "G-ZTL2W77QFT"
+
+};
+
+
+/* =====================================================
+   INICIAR FIREBASE
+===================================================== */
+
+const app =
+    initializeApp(
+        firebaseConfig
+    );
+
+
+const db =
+    getFirestore(app);
+
+
+const auth =
+    getAuth(app);
+
+
+/* =====================================================
+   ESTOQUE LOCAL
+===================================================== */
+
+let estoque = {
+
+    Glory: {
+
+        PP: 0,
+        P: 0,
+        M: 0,
+        G: 0,
+        GG: 0,
+        XG: 0
+
+    },
+
+    Frassati: {
+
+        PP: 0,
+        P: 0,
+        M: 0,
+        G: 0,
+        GG: 0,
+        XG: 0
+
+    }
+
+};
+
+
+/* =====================================================
+   TAMANHOS
+===================================================== */
+
+const tamanhos = [
+
+    "PP",
+    "P",
+    "M",
+    "G",
+    "GG",
+    "XG"
+
+];
+
+
+/* =====================================================
+   LOGIN
+===================================================== */
+
+window.login = async function() {
+
+
+    const email =
+        document
+            .getElementById("email")
+            .value
+            .trim();
+
+
+    const password =
+        document
+            .getElementById("password")
+            .value;
+
+
+    const error =
+        document
+            .getElementById("loginError");
+
+
+    error.innerText = "";
+
+
+    if (!email || !password) {
+
+        error.innerText =
+            "Preencha o e-mail e a senha.";
+
+        return;
+
+    }
+
+
+    try {
+
+
+        await signInWithEmailAndPassword(
+
+            auth,
+
+            email,
+
+            password
+
+        );
+
+
+    }
+
+
+    catch (e) {
+
+
+        console.error(e);
+
+
+        error.innerText =
+            "E-mail ou senha incorretos.";
+
+
+    }
+
+};
+
+
+/* =====================================================
+   LOGOUT
+===================================================== */
+
+window.logout = async function() {
+
+    await signOut(auth);
+
+};
+
+
+/* =====================================================
+   VERIFICAR LOGIN
+===================================================== */
+
+onAuthStateChanged(
+
+    auth,
+
+    async function(user) {
+
+
+        if (user) {
+
+
+            document
+                .getElementById(
+                    "loginScreen"
+                )
+                .style.display =
+                "none";
+
+
+            document
+                .getElementById(
+                    "adminScreen"
+                )
+                .style.display =
+                "block";
+
+
+            await carregarEstoque();
+
+
+        }
+
+
+        else {
+
+
+            document
+                .getElementById(
+                    "loginScreen"
+                )
+                .style.display =
+                "flex";
+
+
+            document
+                .getElementById(
+                    "adminScreen"
+                )
+                .style.display =
+                "none";
+
+
+        }
+
+    }
+
+);
+
+
+/* =====================================================
+   CARREGAR ESTOQUE
+===================================================== */
+
+async function carregarEstoque() {
+
+
+    try {
+
+
+        const gloryRef =
+            doc(
+                db,
+                "estoque",
+                "Glory"
+            );
+
+
+        const frassatiRef =
+            doc(
+                db,
+                "estoque",
+                "Frassati"
+            );
+
+
+        const glorySnap =
+            await getDoc(
+                gloryRef
+            );
+
+
+        const frassatiSnap =
+            await getDoc(
+                frassatiRef
+            );
+
+
+        if (
+            glorySnap.exists()
+        ) {
+
+            estoque.Glory =
+                glorySnap.data();
+
+        }
+
+
+        if (
+            frassatiSnap.exists()
+        ) {
+
+            estoque.Frassati =
+                frassatiSnap.data();
+
+        }
+
+
+        renderizarEstoque();
+
+
+    }
+
+
+    catch (error) {
+
+
+        console.error(error);
+
+
+        document
+            .getElementById(
+                "loading"
+            )
+            .innerText =
+            "Erro ao carregar o estoque.";
+
+    }
+
+}
+
+
+/* =====================================================
+   RENDERIZAR ESTOQUE
+===================================================== */
+
+function renderizarEstoque() {
+
+
+    document
+        .getElementById(
+            "loading"
+        )
+        .style.display =
+        "none";
+
+
+    document
+        .getElementById(
+            "products"
+        )
+        .style.display =
+        "grid";
+
+
+    document
+        .getElementById(
+            "saveSection"
+        )
+        .style.display =
+        "flex";
+
+
+    renderizarProduto(
+        "Glory"
+    );
+
+
+    renderizarProduto(
+        "Frassati"
+    );
+
+}
+
+
+/* =====================================================
+   RENDERIZAR PRODUTO
+===================================================== */
+
+function renderizarProduto(
+    produto
+) {
+
+
+    const container =
+        document.getElementById(
+            produto +
+            "Stock"
+        );
+
+
+    container.innerHTML = "";
+
+
+    tamanhos.forEach(
+
+        function(tamanho) {
+
+
+            const quantidade =
+                Number(
+                    estoque[produto][tamanho] ||
+                    0
+                );
+
+
+            const row =
+                document.createElement(
+                    "div"
+                );
+
+
+            row.className =
+                "stock-row";
+
+
+            row.innerHTML =
+
+                `
+                <span class="stock-size">
+                    ${tamanho}
+                </span>
+
+                <div class="stock-control">
+
+                    <button
+                        onclick="alterarEstoque('${produto}', '${tamanho}', -1)"
+                    >
+                        −
+                    </button>
+
+                    <div
+                        class="stock-value"
+                        id="${produto}-${tamanho}"
+                    >
+                        ${quantidade}
+                    </div>
+
+                    <button
+                        onclick="alterarEstoque('${produto}', '${tamanho}', 1)"
+                    >
+                        +
+                    </button>
+
+                </div>
+
+                <span
+                    class="stock-status ${quantidade <= 0 ? "empty" : ""}"
+                >
+                    ${
+                        quantidade <= 0
+                        ? "ESGOTADO"
+                        : "DISPONÍVEL"
+                    }
+                </span>
+                `;
+
+
+            container.appendChild(
+                row
+            );
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   ALTERAR ESTOQUE
+===================================================== */
+
+window.alterarEstoque = function(
+
+    produto,
+    tamanho,
+    valor
+
+) {
+
+
+    let atual =
+        Number(
+            estoque[produto][tamanho] ||
+            0
+        );
+
+
+    atual += valor;
+
+
+    if (atual < 0) {
+
+        atual = 0;
+
+    }
+
+
+    estoque[produto][tamanho] =
+        atual;
+
+
+    renderizarProduto(
+        produto
+    );
+
+
+    document
+        .getElementById(
+            "saveMessage"
+        )
+        .innerText =
+        "Alterações não salvas.";
+
+};
+
+
+/* =====================================================
+   SALVAR ESTOQUE
+===================================================== */
+
+window.salvarEstoque = async function() {
+
+
+    const button =
+        document.querySelector(
+            ".save-button"
+        );
+
+
+    const message =
+        document.getElementById(
+            "saveMessage"
+        );
+
+
+    button.disabled =
+        true;
+
+
+    button.innerText =
+        "SALVANDO...";
+
+
+    try {
+
+
+        await setDoc(
+
+            doc(
+                db,
+                "estoque",
+                "Glory"
+            ),
+
+            estoque.Glory
+
+        );
+
+
+        await setDoc(
+
+            doc(
+                db,
+                "estoque",
+                "Frassati"
+            ),
+
+            estoque.Frassati
+
+        );
+
+
+        message.innerText =
+            "✓ Estoque salvo com sucesso!";
+
+
+        message.style.color =
+            "#16833b";
+
+
+    }
+
+
+    catch (error) {
+
+
+        console.error(error);
+
+
+        message.innerText =
+            "Erro ao salvar o estoque.";
+
+
+        message.style.color =
+            "#b00000";
+
+
+    }
+
+
+    button.disabled =
+        false;
+
+
+    button.innerText =
+        "SALVAR ESTOQUE →";
+
+
+};
+
+
+/* =====================================================
+   ENTER NO LOGIN
+===================================================== */
+
+document
+    .getElementById(
+        "password"
+    )
+    .addEventListener(
+
+        "keydown",
+
+        function(event) {
+
+            if (
+                event.key === "Enter"
+            ) {
+
+                window.login();
+
+            }
+
+        }
+
+    );
+
+</script>
+
+
+</body>
+
+</html>
