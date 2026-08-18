@@ -2,6 +2,7 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
@@ -16,10 +17,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -48,7 +45,6 @@ body {
     background: #000;
     color: #fff;
 
-    display: flex;
     align-items: center;
     justify-content: center;
 
@@ -135,27 +131,22 @@ header {
 
 
 /* =====================================================
-   BANNER RESPONSIVO
+   BANNER
 ===================================================== */
 
-.hero {
+.collection-banner {
     width: 100%;
     margin: 0;
     padding: 0;
-    background: transparent;
     overflow: hidden;
-}
-
-.hero-picture {
-    display: block;
-    width: 100%;
     line-height: 0;
 }
 
-.hero-banner {
-    display: block;
+.collection-banner img {
     width: 100%;
     height: auto;
+    display: block;
+    object-fit: cover;
 }
 
 
@@ -222,7 +213,7 @@ header {
 
 
 /* =====================================================
-   IMAGEM PRINCIPAL
+   IMAGEM
 ===================================================== */
 
 .product-image {
@@ -450,7 +441,7 @@ header {
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 .measure-button {
@@ -543,7 +534,7 @@ header {
 
 
 /* =====================================================
-   BOTÃO ADICIONAR
+   ADICIONAR
 ===================================================== */
 
 .add-button {
@@ -961,7 +952,7 @@ footer p {
 
 
 /* =====================================================
-   MODAL TABELA
+   MODAL
 ===================================================== */
 
 .measure-overlay {
@@ -1092,10 +1083,6 @@ footer p {
 
 @media (max-width: 500px) {
 
-    .hero h1 {
-        font-size: 70px;
-    }
-
     .section-title h2 {
         font-size: 45px;
     }
@@ -1128,26 +1115,6 @@ footer p {
 
 }
 
-
-/* =====================================================
-   BANNER ANTES DA NOVA COLEÇÃO
-===================================================== */
-
-.collection-banner {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.collection-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
 </style>
 
 </head>
@@ -1156,10 +1123,6 @@ footer p {
 <body>
 
 
-<!-- =====================================================
-     TOPO
-===================================================== -->
-
 <div class="topbar">
 
     PRIMEIRA COMPRA?
@@ -1167,10 +1130,6 @@ footer p {
 
 </div>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
@@ -1192,10 +1151,6 @@ footer p {
 </header>
 
 
-<!-- =====================================================
-     BANNER ANTES DA NOVA COLEÇÃO
-===================================================== -->
-
 <section class="collection-banner">
 
     <img
@@ -1205,10 +1160,6 @@ footer p {
 
 </section>
 
-
-<!-- =====================================================
-     PRODUTOS
-===================================================== -->
 
 <section class="products">
 
@@ -1228,9 +1179,7 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- =================================================
-             GLORY
-        ================================================== -->
+        <!-- GLORY -->
 
         <div class="product">
 
@@ -1249,49 +1198,25 @@ footer p {
 
                 <button
                     class="thumb active"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Frente.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Frente.png',this)"
                 >
-
                     <img src="Frente.png">
-
                 </button>
 
 
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Costa.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Costa.png',this)"
                 >
-
                     <img src="Costa.png">
-
                 </button>
 
 
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Chuva.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Chuva.png',this)"
                 >
-
                     <img src="Chuva.png">
-
                 </button>
 
             </div>
@@ -1327,80 +1252,27 @@ footer p {
 
                 <div class="sizes">
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'PP',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','PP',this)">
                         PP
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'P',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','P',this)">
                         P
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'M',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','M',this)">
                         M
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'G',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','G',this)">
                         G
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'GG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','GG',this)">
                         GG
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'XG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','XG',this)">
                         XG
                     </button>
 
@@ -1430,31 +1302,15 @@ footer p {
 
                 <div class="quantity">
 
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Glory',
-                                -1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Glory',-1)">
                         −
                     </button>
-
 
                     <span id="GloryQuantity">
                         1
                     </span>
 
-
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Glory',
-                                1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Glory',1)">
                         +
                     </button>
 
@@ -1463,12 +1319,7 @@ footer p {
 
                 <button
                     class="add-button"
-                    onclick="
-                        adicionarProduto(
-                            'Glory',
-                            'Frente.png'
-                        )
-                    "
+                    onclick="adicionarProduto('Glory','Frente.png')"
                 >
                     ADICIONAR AO CARRINHO →
                 </button>
@@ -1478,9 +1329,7 @@ footer p {
         </div>
 
 
-        <!-- =================================================
-             FRASSATI
-        ================================================== -->
+        <!-- FRASSATI -->
 
         <div class="product">
 
@@ -1499,49 +1348,25 @@ footer p {
 
                 <button
                     class="thumb active"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Frente2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Frente2.png',this)"
                 >
-
                     <img src="Frente2.png">
-
                 </button>
 
 
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Trás2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Trás2.png',this)"
                 >
-
                     <img src="Trás2.png">
-
                 </button>
 
 
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Chuva2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
                 >
-
                     <img src="Chuva2.png">
-
                 </button>
 
             </div>
@@ -1577,80 +1402,27 @@ footer p {
 
                 <div class="sizes">
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'PP',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','PP',this)">
                         PP
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'P',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','P',this)">
                         P
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'M',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','M',this)">
                         M
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'G',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','G',this)">
                         G
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'GG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','GG',this)">
                         GG
                     </button>
 
-
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'XG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','XG',this)">
                         XG
                     </button>
 
@@ -1680,31 +1452,15 @@ footer p {
 
                 <div class="quantity">
 
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Frassati',
-                                -1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Frassati',-1)">
                         −
                     </button>
-
 
                     <span id="FrassatiQuantity">
                         1
                     </span>
 
-
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Frassati',
-                                1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Frassati',1)">
                         +
                     </button>
 
@@ -1713,12 +1469,7 @@ footer p {
 
                 <button
                     class="add-button"
-                    onclick="
-                        adicionarProduto(
-                            'Frassati',
-                            'Frente2.png'
-                        )
-                    "
+                    onclick="adicionarProduto('Frassati','Frente2.png')"
                 >
                     ADICIONAR AO CARRINHO →
                 </button>
@@ -1731,10 +1482,6 @@ footer p {
 
 </section>
 
-
-<!-- =====================================================
-     IMAGENS INFERIORES
-===================================================== -->
 
 <section class="images-section">
 
@@ -1759,10 +1506,6 @@ footer p {
 
 </section>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -1800,9 +1543,7 @@ footer p {
                 CARRINHO
             </h2>
 
-            <button
-                onclick="fecharCarrinho()"
-            >
+            <button onclick="fecharCarrinho()">
                 ×
             </button>
 
@@ -1811,8 +1552,6 @@ footer p {
 
         <div id="cartItems"></div>
 
-
-        <!-- CUPOM -->
 
         <div class="cart-coupon">
 
@@ -1830,9 +1569,7 @@ footer p {
                 >
 
 
-                <button
-                    onclick="aplicarCupom()"
-                >
+                <button onclick="aplicarCupom()">
                     APLICAR
                 </button>
 
@@ -1847,8 +1584,6 @@ footer p {
         </div>
 
 
-        <!-- TOTAL -->
-
         <div class="cart-total">
 
             <span>
@@ -1862,8 +1597,6 @@ footer p {
         </div>
 
 
-        <!-- PAGAMENTO -->
-
         <div class="payment-title">
             MÉTODO DE PAGAMENTO
         </div>
@@ -1871,38 +1604,15 @@ footer p {
 
         <div class="payments">
 
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'PIX',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('PIX',this)">
                 PIX
             </button>
 
-
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'Cartão',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('Cartão',this)">
                 CARTÃO
             </button>
 
-
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'Dinheiro',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('Dinheiro',this)">
                 DINHEIRO
             </button>
 
@@ -1928,7 +1638,7 @@ footer p {
 
 
 <!-- =====================================================
-     MODAL TABELA
+     MODAL
 ===================================================== -->
 
 <div
@@ -1961,7 +1671,61 @@ footer p {
 </div>
 
 
-<script>
+<!-- =====================================================
+     FIREBASE + JAVASCRIPT
+===================================================== -->
+
+<script type="module">
+
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
+import {
+    getFirestore,
+    doc,
+    getDoc,
+    onSnapshot
+}
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+
+
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+const firebaseConfig = {
+
+    apiKey:
+        "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+
+    authDomain:
+        "holiness-e6ec3.firebaseapp.com",
+
+    projectId:
+        "holiness-e6ec3",
+
+    storageBucket:
+        "holiness-e6ec3.firebasestorage.app",
+
+    messagingSenderId:
+        "842822716544",
+
+    appId:
+        "1:842822716544:web:d24b1835fa9f4289ce2a65",
+
+    measurementId:
+        "G-ZTL2W77QFT"
+
+};
+
+
+const app =
+    initializeApp(firebaseConfig);
+
+
+const db =
+    getFirestore(app);
+
 
 /* =====================================================
    CONFIGURAÇÕES
@@ -1969,59 +1733,34 @@ footer p {
 
 const PRECO = 109.90;
 
-
-/*
-   COLOQUE AQUI O SEU WHATSAPP.
-
-   Exemplo:
-   5533999999999
-
-   Sem:
-   +
-   espaços
-   parênteses
-   hífen
-*/
-
 const WHATSAPP = "5533998019698";
 
 
 /* =====================================================
-   ESTOQUE
+   ESTOQUE LOCAL
 ===================================================== */
 
-const estoque = {
+let estoque = {
 
     Glory: {
 
-        PP: 6,
-
-        P: 4,
-
-        M: 4,
-
-        G: 5,
-
-        GG: 3,
-
-        XG: 0
+        PP: 3,
+        P: 2,
+        M: 2,
+        G: 3,
+        GG: 1,
+        XG: 1
 
     },
-
 
     Frassati: {
 
         PP: 3,
-
         P: 2,
-
         M: 2,
-
         G: 2,
-
-        GG: 1,
-
-        XG: 0
+        GG: 0,
+        XG: 1
 
     }
 
@@ -2047,7 +1786,6 @@ const cupons = {
 
 let carrinho = [];
 
-
 let tamanhosSelecionados = {
 
     Glory: "",
@@ -2055,7 +1793,6 @@ let tamanhosSelecionados = {
     Frassati: ""
 
 };
-
 
 let quantidades = {
 
@@ -2065,12 +1802,9 @@ let quantidades = {
 
 };
 
-
 let descontoAtual = 0;
 
-
 let cupomAtual = "";
-
 
 let pagamentoSelecionado = "";
 
@@ -2085,6 +1819,116 @@ function dinheiro(valor) {
         valor
             .toFixed(2)
             .replace(".", ",");
+
+}
+
+
+/* =====================================================
+   CARREGAR ESTOQUE FIREBASE
+===================================================== */
+
+async function carregarEstoque() {
+
+    try {
+
+        const gloryRef =
+            doc(db, "estoque", "Glory");
+
+        const frassatiRef =
+            doc(db, "estoque", "Frassati");
+
+
+        const glorySnap =
+            await getDoc(gloryRef);
+
+
+        const frassatiSnap =
+            await getDoc(frassatiRef);
+
+
+        if (glorySnap.exists()) {
+
+            estoque.Glory =
+                glorySnap.data();
+
+        }
+
+
+        if (frassatiSnap.exists()) {
+
+            estoque.Frassati =
+                frassatiSnap.data();
+
+        }
+
+
+        atualizarTamanhosDisponiveis();
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao carregar estoque:",
+            erro
+        );
+
+    }
+
+}
+
+
+/* =====================================================
+   ESTOQUE EM TEMPO REAL
+===================================================== */
+
+function observarEstoque() {
+
+    onSnapshot(
+
+        doc(
+            db,
+            "estoque",
+            "Glory"
+        ),
+
+        function(snapshot) {
+
+            if (snapshot.exists()) {
+
+                estoque.Glory =
+                    snapshot.data();
+
+                atualizarTamanhosDisponiveis();
+
+            }
+
+        }
+
+    );
+
+
+    onSnapshot(
+
+        doc(
+            db,
+            "estoque",
+            "Frassati"
+        ),
+
+        function(snapshot) {
+
+            if (snapshot.exists()) {
+
+                estoque.Frassati =
+                    snapshot.data();
+
+                atualizarTamanhosDisponiveis();
+
+            }
+
+        }
+
+    );
 
 }
 
@@ -2138,6 +1982,7 @@ function selecionarTamanho(
 
     if (
         !estoque[produto] ||
+        !estoque[produto][tamanho] ||
         estoque[produto][tamanho] <= 0
     ) {
 
@@ -2149,11 +1994,6 @@ function selecionarTamanho(
     tamanhosSelecionados[produto] =
         tamanho;
 
-
-    /*
-       Quando muda de tamanho,
-       volta a quantidade para 1.
-    */
 
     quantidades[produto] = 1;
 
@@ -2190,7 +2030,8 @@ function selecionarTamanho(
         );
 
 
-    texto.style.color = "#777";
+    texto.style.color =
+        "#777";
 
 
     texto.innerHTML =
@@ -2204,7 +2045,7 @@ function selecionarTamanho(
 
 
 /* =====================================================
-   ATUALIZAR TAMANHOS DISPONÍVEIS
+   ATUALIZAR TAMANHOS
 ===================================================== */
 
 function atualizarTamanhosDisponiveis() {
@@ -2213,12 +2054,6 @@ function atualizarTamanhosDisponiveis() {
         .querySelectorAll(".product")
         .forEach(function(produtoElemento) {
 
-
-            /*
-               Aqui usamos toLowerCase()
-               para que GLORY e Glory
-               sejam tratados da mesma forma.
-            */
 
             const nomeProduto =
                 produtoElemento
@@ -2240,7 +2075,6 @@ function atualizarTamanhosDisponiveis() {
 
             }
 
-
             else if (
                 nomeProduto === "frassati"
             ) {
@@ -2249,7 +2083,6 @@ function atualizarTamanhosDisponiveis() {
                     estoque.Frassati;
 
             }
-
 
             else {
 
@@ -2268,17 +2101,11 @@ function atualizarTamanhosDisponiveis() {
             botoes.forEach(
                 function(botao) {
 
-
                     const tamanho =
                         botao.innerText
                             .trim()
                             .toUpperCase();
 
-
-                    /*
-                       Se for 0 ou não existir,
-                       fica indisponível.
-                    */
 
                     if (
                         !produtoEstoque[tamanho] ||
@@ -2289,10 +2116,10 @@ function atualizarTamanhosDisponiveis() {
                             "unavailable"
                         );
 
-                        botao.disabled = true;
+                        botao.disabled =
+                            true;
 
                     }
-
 
                     else {
 
@@ -2300,7 +2127,8 @@ function atualizarTamanhosDisponiveis() {
                             "unavailable"
                         );
 
-                        botao.disabled = false;
+                        botao.disabled =
+                            false;
 
                     }
 
@@ -2324,11 +2152,6 @@ function alterarQuantidade(
     const tamanho =
         tamanhosSelecionados[produto];
 
-
-    /*
-       Se não escolheu tamanho,
-       não permite aumentar.
-    */
 
     if (!tamanho) {
 
@@ -2452,7 +2275,6 @@ function adicionarProduto(
 
     if (existente) {
 
-
         if (
             existente.quantidade +
             quantidade >
@@ -2472,7 +2294,6 @@ function adicionarProduto(
             quantidade;
 
     }
-
 
     else {
 
@@ -2494,7 +2315,6 @@ function adicionarProduto(
 
 
     atualizarCarrinho();
-
 
     abrirCarrinho();
 
@@ -2527,7 +2347,7 @@ function calcularSubtotal() {
 
 
 /* =====================================================
-   TOTAL COM DESCONTO
+   TOTAL
 ===================================================== */
 
 function calcularTotal() {
@@ -2590,7 +2410,6 @@ function aplicarCupom() {
         descontoAtual =
             cupons[codigo];
 
-
         cupomAtual =
             codigo;
 
@@ -2600,7 +2419,6 @@ function aplicarCupom() {
             descontoAtual +
             "% de desconto.";
 
-
         mensagem.style.color =
             "#16833b";
 
@@ -2608,7 +2426,6 @@ function aplicarCupom() {
         atualizarCarrinho();
 
     }
-
 
     else {
 
@@ -2619,7 +2436,6 @@ function aplicarCupom() {
 
         mensagem.innerText =
             "Cupom inválido.";
-
 
         mensagem.style.color =
             "#b00000";
@@ -2686,7 +2502,6 @@ function atualizarCarrinho() {
         total.innerText =
             dinheiro(0);
 
-
         return;
 
     }
@@ -2697,7 +2512,6 @@ function atualizarCarrinho() {
 
     carrinho.forEach(
         function(item, index) {
-
 
             const div =
                 document.createElement(
@@ -2786,7 +2600,6 @@ function atualizarCarrinho() {
 
     }
 
-
     else {
 
         total.innerText =
@@ -2798,7 +2611,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER PRODUTO
+   REMOVER
 ===================================================== */
 
 function removerProduto(index) {
@@ -2815,7 +2628,7 @@ function removerProduto(index) {
 
 
 /* =====================================================
-   ABRIR CARRINHO
+   CARRINHO
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2833,10 +2646,6 @@ function abrirCarrinho() {
 
 }
 
-
-/* =====================================================
-   FECHAR CARRINHO
-===================================================== */
 
 function fecharCarrinho() {
 
@@ -2906,7 +2715,7 @@ function selecionarPagamento(
 
 
 /* =====================================================
-   FINALIZAR PELO WHATSAPP
+   FINALIZAR WHATSAPP
 ===================================================== */
 
 function finalizarCompra() {
@@ -2941,18 +2750,6 @@ function finalizarCompra() {
     }
 
 
-    if (
-        WHATSAPP === "SEUNUMERO"
-    ) {
-
-        erro.innerText =
-            "Configure seu número de WhatsApp no código.";
-
-        return;
-
-    }
-
-
     const total =
         calcularTotal();
 
@@ -2963,11 +2760,6 @@ function finalizarCompra() {
         "Quero fazer meu pedido da HOLINESS! 🔥" +
         "\n\n";
 
-
-    /*
-       Envia no WhatsApp o modelo da camisa,
-       o tamanho e a quantidade.
-    */
 
     carrinho.forEach(
         function(item) {
@@ -2990,7 +2782,12 @@ function finalizarCompra() {
 
 
     mensagem +=
-        "💰 Total: " +
+        "💳 Pagamento: " +
+        pagamentoSelecionado;
+
+
+    mensagem +=
+        "\n💰 Total: " +
         dinheiro(total);
 
 
@@ -3027,7 +2824,7 @@ function finalizarCompra() {
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 function abrirTabelaMedidas() {
@@ -3071,7 +2868,7 @@ function fecharTabelaFora(event) {
 
 
 /* =====================================================
-   ESC FECHA MODAIS
+   ESC
 ===================================================== */
 
 document.addEventListener(
@@ -3093,10 +2890,59 @@ document.addEventListener(
 
 
 /* =====================================================
+   DISPONIBILIZA FUNÇÕES PARA O HTML
+===================================================== */
+
+window.trocarImagem =
+    trocarImagem;
+
+window.selecionarTamanho =
+    selecionarTamanho;
+
+window.alterarQuantidade =
+    alterarQuantidade;
+
+window.adicionarProduto =
+    adicionarProduto;
+
+window.aplicarCupom =
+    aplicarCupom;
+
+window.removerProduto =
+    removerProduto;
+
+window.abrirCarrinho =
+    abrirCarrinho;
+
+window.fecharCarrinho =
+    fecharCarrinho;
+
+window.fecharCarrinhoFora =
+    fecharCarrinhoFora;
+
+window.selecionarPagamento =
+    selecionarPagamento;
+
+window.finalizarCompra =
+    finalizarCompra;
+
+window.abrirTabelaMedidas =
+    abrirTabelaMedidas;
+
+window.fecharTabelaMedidas =
+    fecharTabelaMedidas;
+
+window.fecharTabelaFora =
+    fecharTabelaFora;
+
+
+/* =====================================================
    INICIALIZAÇÃO
 ===================================================== */
 
-atualizarTamanhosDisponiveis();
+carregarEstoque();
+
+observarEstoque();
 
 atualizarCarrinho();
 
