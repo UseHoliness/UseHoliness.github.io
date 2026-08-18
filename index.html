@@ -34,7 +34,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
 /* =====================================================
    TOPO
 ===================================================== */
@@ -44,10 +43,8 @@ body {
     height: 0 !important;
     background: #000;
     color: #fff;
-
     align-items: center;
     justify-content: center;
-
     font-size: 10px;
     letter-spacing: 1px;
 }
@@ -56,79 +53,56 @@ body {
     margin-left: 5px;
 }
 
-
 /* =====================================================
    HEADER
 ===================================================== */
 
 header {
     height: 75px;
-
     background: #fff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 45px;
-
     border-bottom: 1px solid #ddd;
-
     position: sticky;
     top: 0;
-
     z-index: 100;
 }
 
 .logo {
     color: #000;
     text-decoration: none;
-
     font-family: "Anton", sans-serif;
-
     font-size: 31px;
-
     letter-spacing: 1px;
 }
 
 .cart-button {
     border: none;
     background: transparent;
-
     cursor: pointer;
-
     font-family: "Anton", sans-serif;
-
     font-size: 14px;
-
     letter-spacing: 1px;
-
     position: relative;
 }
 
 .cart-button span {
     position: absolute;
-
     top: -13px;
     right: -17px;
-
     width: 21px;
     height: 21px;
-
     border-radius: 50%;
-
     background: #000;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: Arial, sans-serif;
-
     font-size: 10px;
 }
-
 
 /* =====================================================
    BANNER
@@ -149,7 +123,6 @@ header {
     object-fit: cover;
 }
 
-
 /* =====================================================
    PRODUTOS
 ===================================================== */
@@ -164,22 +137,16 @@ header {
 
 .section-title span {
     font-family: "Anton", sans-serif;
-
     font-size: 12px;
-
     letter-spacing: 3px;
-
     color: #777;
 }
 
 .section-title h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 60px;
-
     font-weight: 400;
 }
-
 
 /* =====================================================
    GRID
@@ -187,15 +154,10 @@ header {
 
 .products-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-
     align-items: start;
 }
-
 
 /* =====================================================
    PRODUTO
@@ -203,14 +165,10 @@ header {
 
 .product {
     width: 100%;
-
     background: #fff;
-
     overflow: hidden;
-
     min-width: 0;
 }
-
 
 /* =====================================================
    IMAGEM
@@ -218,27 +176,20 @@ header {
 
 .product-image {
     width: 100%;
-
     height: 550px;
-
     background: #e6e2dd;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     display: block;
 }
-
 
 /* =====================================================
    MINIATURAS
@@ -246,46 +197,33 @@ header {
 
 .product-thumbnails {
     display: flex;
-
     gap: 8px;
-
     padding: 10px 15px;
-
     background: #e6e2dd;
 }
 
 .thumb {
     width: 65px;
     height: 65px;
-
     padding: 0;
-
     border: 1px solid #aaa;
-
     background: #ddd;
-
     cursor: pointer;
-
     opacity: .6;
-
     overflow: hidden;
 }
 
 .thumb.active {
     opacity: 1;
-
     border: 2px solid #000;
 }
 
 .thumb img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-
 
 /* =====================================================
    INFORMAÇÕES
@@ -297,44 +235,31 @@ header {
 
 .product-number {
     color: #999;
-
     font-size: 10px;
-
     letter-spacing: 3px;
 }
 
 .product-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 45px;
-
     font-weight: 400;
-
     margin: 5px 0 15px;
 }
 
 .description {
     font-family: Georgia, serif;
-
     color: #444;
-
     font-size: 14px;
-
     line-height: 1.6;
-
     margin-bottom: 18px;
-
     min-height: 46px;
 }
 
 .price {
     font-family: "Anton", sans-serif;
-
     font-size: 30px;
-
     margin-bottom: 25px;
 }
-
 
 /* =====================================================
    TAMANHOS
@@ -342,66 +267,46 @@ header {
 
 .label {
     display: block;
-
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 10px;
 }
 
 .sizes {
     display: flex;
-
     gap: 10px;
-
     margin-bottom: 8px;
-
     flex-wrap: wrap;
 }
 
 .sizes button {
     position: relative;
-
     width: 54px;
     height: 54px;
-
     min-width: 54px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     cursor: pointer;
-
     font-family: "Anton", sans-serif;
-
     font-size: 13px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: .2s;
 }
 
 .sizes button:hover:not(.unavailable) {
     background: #000;
     color: #fff;
-
     border-color: #000;
 }
 
 .sizes button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
-
 
 /* =====================================================
    SEM ESTOQUE
@@ -409,36 +314,24 @@ header {
 
 .sizes button.unavailable {
     background: #f5f5f5;
-
     color: #999;
-
     cursor: not-allowed;
 }
 
 .sizes button.unavailable::after {
     content: "×";
-
     position: absolute;
-
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: Arial, sans-serif;
-
     font-size: 31px;
-
     font-weight: 300;
-
     line-height: 1;
-
     color: #999;
-
     pointer-events: none;
 }
-
 
 /* =====================================================
    TABELA
@@ -446,27 +339,16 @@ header {
 
 .measure-button {
     display: block;
-
     background: transparent;
-
     border: none;
-
     border-bottom: 1px solid #111;
-
     padding: 5px 0;
-
     margin-top: 2px;
-
     margin-bottom: 18px;
-
     font-family: "Anton", sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 1.5px;
-
     cursor: pointer;
-
     color: #111;
 }
 
@@ -474,21 +356,16 @@ header {
     opacity: .55;
 }
 
-
 /* =====================================================
    ESTOQUE
 ===================================================== */
 
 .stock {
     min-height: 25px;
-
     font-size: 10px;
-
     color: #777;
-
     margin-bottom: 17px;
 }
-
 
 /* =====================================================
    QUANTIDADE
@@ -496,42 +373,29 @@ header {
 
 .quantity {
     width: 135px;
-
     height: 43px;
-
     display: flex;
-
     margin-bottom: 20px;
 }
 
 .quantity button {
     width: 43px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     font-size: 18px;
-
     cursor: pointer;
 }
 
 .quantity span {
     width: 49px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-top: 1px solid #aaa;
-
     border-bottom: 1px solid #aaa;
-
     background: #fff;
-
     font-weight: bold;
 }
-
 
 /* =====================================================
    ADICIONAR
@@ -539,30 +403,20 @@ header {
 
 .add-button {
     width: 100%;
-
     height: 58px;
-
     border: none;
-
     background: #000;
-
     color: #fff;
-
     font-family: "Anton", sans-serif;
-
     letter-spacing: 2px;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .add-button:hover {
     background: #d49a19;
-
     color: #000;
 }
-
 
 /* =====================================================
    IMAGENS INFERIORES
@@ -570,9 +424,7 @@ header {
 
 .images-section {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     height: 550px;
 }
 
@@ -583,12 +435,9 @@ header {
 .images-section img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-
 
 /* =====================================================
    FOOTER
@@ -596,40 +445,27 @@ header {
 
 footer {
     min-height: 170px;
-
     background: #f3f1ed;
-
     border-top: 1px solid #ddd;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 30px 50px;
 }
 
 .footer-logo {
     font-family: "Anton", sans-serif;
-
     font-size: 35px;
 }
 
 footer p {
     max-width: 500px;
-
     text-align: right;
-
     color: #777;
-
     font-family: Georgia, serif;
-
     font-size: 12px;
-
     line-height: 1.6;
 }
-
 
 /* =====================================================
    CARRINHO
@@ -637,47 +473,30 @@ footer p {
 
 .cart-overlay {
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.55);
-
     z-index: 999;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: .3s;
 }
 
 .cart-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 .cart {
     position: absolute;
-
     right: 0;
-
     top: 0;
-
     width: 440px;
-
     max-width: 100%;
-
     height: 100%;
-
     background: #f3f1ed;
-
     padding: 30px;
-
     overflow-y: auto;
-
     transform: translateX(100%);
-
     transition: .3s;
 }
 
@@ -687,34 +506,24 @@ footer p {
 
 .cart-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding-bottom: 18px;
-
     border-bottom: 1px solid #ddd;
 }
 
 .cart-header h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 28px;
-
     font-weight: 400;
 }
 
 .cart-header button {
     background: transparent;
-
     border: none;
-
     font-size: 28px;
-
     cursor: pointer;
 }
-
 
 /* =====================================================
    ITEM CARRINHO
@@ -722,20 +531,15 @@ footer p {
 
 .cart-item {
     display: flex;
-
     gap: 13px;
-
     padding: 15px 0;
-
     border-bottom: 1px solid #ddd;
 }
 
 .cart-item img {
     width: 80px;
     height: 90px;
-
     object-fit: contain;
-
     background: #e6e2dd;
 }
 
@@ -745,42 +549,30 @@ footer p {
 
 .cart-item-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 20px;
-
     font-weight: 400;
 }
 
 .cart-item-info p {
     font-size: 10px;
-
     color: #666;
-
     margin-top: 5px;
 }
 
 .remove {
     margin-top: 8px;
-
     border: none;
-
     background: transparent;
-
     color: #999;
-
     font-size: 9px;
-
     cursor: pointer;
 }
 
 .empty {
     text-align: center;
-
     padding: 50px 0;
-
     color: #777;
 }
-
 
 /* =====================================================
    CUPOM
@@ -788,19 +580,14 @@ footer p {
 
 .cart-coupon {
     margin-top: 20px;
-
     margin-bottom: 20px;
 }
 
 .cart-coupon label {
     display: block;
-
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 9px;
 }
 
@@ -810,50 +597,34 @@ footer p {
 
 .cart-coupon-input input {
     flex: 1;
-
     height: 45px;
-
     border: 1px solid #aaa;
-
     border-right: none;
-
     outline: none;
-
     padding: 0 13px;
-
     background: #fff;
-
     text-transform: uppercase;
 }
 
 .cart-coupon-input button {
     width: 100px;
-
     border: none;
-
     background: #000;
-
     color: #fff;
-
     font-family: "Anton", sans-serif;
-
     cursor: pointer;
 }
 
 .cart-coupon-input button:hover {
     background: #d49a19;
-
     color: #000;
 }
 
 .coupon-message {
     min-height: 18px;
-
     margin-top: 7px;
-
     font-size: 11px;
 }
-
 
 /* =====================================================
    TOTAL
@@ -861,18 +632,12 @@ footer p {
 
 .cart-total {
     display: flex;
-
     justify-content: space-between;
-
     padding: 22px 0;
-
     font-family: "Anton", sans-serif;
-
     font-size: 22px;
-
     border-top: 1px solid #ddd;
 }
-
 
 /* =====================================================
    PAGAMENTO
@@ -880,76 +645,53 @@ footer p {
 
 .payment-title {
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 10px;
 }
 
 .payments {
     display: flex;
-
     gap: 7px;
-
     flex-wrap: wrap;
-
     margin-bottom: 15px;
 }
 
 .payments button {
     padding: 10px 15px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     font-family: "Anton", sans-serif;
-
     cursor: pointer;
 }
 
 .payments button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
 
 .cart-error {
     min-height: 20px;
-
     color: #b00000;
-
     font-size: 11px;
 }
 
 .checkout {
     width: 100%;
-
     height: 57px;
-
     background: #000;
-
     color: #fff;
-
     border: none;
-
     font-family: "Anton", sans-serif;
-
     letter-spacing: 2px;
-
     cursor: pointer;
 }
 
 .checkout:hover {
     background: #d49a19;
-
     color: #000;
 }
-
 
 /* =====================================================
    MODAL
@@ -957,82 +699,52 @@ footer p {
 
 .measure-overlay {
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.65);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
-
     z-index: 2000;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: .25s;
 }
 
 .measure-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 .measure-modal {
     position: relative;
-
     max-width: 90vw;
-
     max-height: 90vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .measure-image {
     display: block;
-
     max-width: 90vw;
-
     max-height: 85vh;
-
     width: auto;
-
     height: auto;
-
     object-fit: contain;
 }
 
 .close-measure {
     position: absolute;
-
     top: -45px;
-
     right: 0;
-
     border: none;
-
     background: transparent;
-
     color: #fff;
-
     font-size: 35px;
-
     line-height: 1;
-
     cursor: pointer;
 }
-
 
 /* =====================================================
    RESPONSIVO
@@ -1058,7 +770,6 @@ footer p {
 
     .images-section {
         grid-template-columns: 1fr;
-
         height: auto;
     }
 
@@ -1068,9 +779,7 @@ footer p {
 
     footer {
         flex-direction: column;
-
         gap: 20px;
-
         text-align: center;
     }
 
@@ -1079,7 +788,6 @@ footer p {
     }
 
 }
-
 
 @media (max-width: 500px) {
 
@@ -1101,15 +809,12 @@ footer p {
 
     .sizes button {
         width: 48px;
-
         height: 48px;
-
         min-width: 48px;
     }
 
     .measure-image {
         max-width: 94vw;
-
         max-height: 80vh;
     }
 
@@ -1119,9 +824,7 @@ footer p {
 
 </head>
 
-
 <body>
-
 
 <div class="topbar">
 
@@ -1129,7 +832,6 @@ footer p {
     USE O CUPOM <strong>GLORY10</strong>
 
 </div>
-
 
 <header>
 
@@ -1150,7 +852,6 @@ footer p {
 
 </header>
 
-
 <section class="collection-banner">
 
     <img
@@ -1159,7 +860,6 @@ footer p {
     >
 
 </section>
-
 
 <section class="products">
 
@@ -1175,13 +875,9 @@ footer p {
 
     </div>
 
-
     <div class="products-grid">
 
-
-        <!-- =====================================================
-             GLORY
-        ===================================================== -->
+        <!-- GLORY -->
 
         <div class="product">
 
@@ -1195,40 +891,30 @@ footer p {
 
             </div>
 
-
             <div class="product-thumbnails">
 
                 <button
                     class="thumb active"
                     onclick="trocarImagem('gloryImage','Frente.png',this)"
                 >
-
                     <img src="Frente.png">
-
                 </button>
-
 
                 <button
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Costa.png',this)"
                 >
-
                     <img src="Costa.png">
-
                 </button>
-
 
                 <button
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Chuva.png',this)"
                 >
-
                     <img src="Chuva.png">
-
                 </button>
 
             </div>
-
 
             <div class="product-info">
 
@@ -1240,25 +926,19 @@ footer p {
                     GLORY
                 </h3>
 
-
                 <p class="description">
-
                     “Acredito que, buscando incansavelmente a Deus,
                     chegaremos à manifestação visível da presença,
                     do poder e de todas as perfeições — à Glória.”
-
                 </p>
-
 
                 <div class="price">
                     R$ 109,90
                 </div>
 
-
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
-
 
                 <div class="sizes">
 
@@ -1288,31 +968,23 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
-
                     TABELA DE MEDIDAS →
-
                 </button>
-
 
                 <div
                     id="GlorySelectedSize"
                     class="stock"
                 >
-
                     Selecione um tamanho
-
                 </div>
-
 
                 <label class="label">
                     QUANTIDADE
                 </label>
-
 
                 <div class="quantity">
 
@@ -1330,24 +1002,18 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="add-button"
                     onclick="adicionarProduto('Glory','Frente.png')"
                 >
-
                     ADICIONAR AO CARRINHO →
-
                 </button>
 
             </div>
 
         </div>
 
-
-        <!-- =====================================================
-             FRASSATI
-        ===================================================== -->
+        <!-- FRASSATI -->
 
         <div class="product">
 
@@ -1361,40 +1027,30 @@ footer p {
 
             </div>
 
-
             <div class="product-thumbnails">
 
                 <button
                     class="thumb active"
                     onclick="trocarImagem('frassatiImage','Frente2.png',this)"
                 >
-
                     <img src="Frente2.png">
-
                 </button>
-
 
                 <button
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Trás2.png',this)"
                 >
-
                     <img src="Trás2.png">
-
                 </button>
-
 
                 <button
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
                 >
-
                     <img src="Chuva2.png">
-
                 </button>
 
             </div>
-
 
             <div class="product-info">
 
@@ -1406,25 +1062,19 @@ footer p {
                     FRASSATI
                 </h3>
 
-
                 <p class="description">
-
                     “Subir sempre mais alto, não apenas pelas montanhas,
                     mas em direção a Deus, onde encontramos a verdadeira
                     felicidade.”
-
                 </p>
-
 
                 <div class="price">
                     R$ 109,90
                 </div>
 
-
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
-
 
                 <div class="sizes">
 
@@ -1454,31 +1104,23 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
-
                     TABELA DE MEDIDAS →
-
                 </button>
-
 
                 <div
                     id="FrassatiSelectedSize"
                     class="stock"
                 >
-
                     Selecione um tamanho
-
                 </div>
-
 
                 <label class="label">
                     QUANTIDADE
                 </label>
-
 
                 <div class="quantity">
 
@@ -1496,14 +1138,11 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="add-button"
                     onclick="adicionarProduto('Frassati','Frente2.png')"
                 >
-
                     ADICIONAR AO CARRINHO →
-
                 </button>
 
             </div>
@@ -1513,7 +1152,6 @@ footer p {
     </div>
 
 </section>
-
 
 <section class="images-section">
 
@@ -1526,7 +1164,6 @@ footer p {
 
     </div>
 
-
     <div>
 
         <img
@@ -1538,7 +1175,6 @@ footer p {
 
 </section>
 
-
 <footer>
 
     <div class="footer-logo">
@@ -1546,15 +1182,12 @@ footer p {
     </div>
 
     <p>
-
         Ao contemplarmos a presença de Deus,
         somos transformados progressivamente
         à imagem de Cristo pelo Espírito Santo.
-
     </p>
 
 </footer>
-
 
 <!-- =====================================================
      CARRINHO
@@ -1583,16 +1216,13 @@ footer p {
 
         </div>
 
-
         <div id="cartItems"></div>
-
 
         <div class="cart-coupon">
 
             <label>
                 CUPOM DE DESCONTO
             </label>
-
 
             <div class="cart-coupon-input">
 
@@ -1602,13 +1232,11 @@ footer p {
                     placeholder="DIGITE SEU CUPOM"
                 >
 
-
                 <button onclick="aplicarCupom()">
                     APLICAR
                 </button>
 
             </div>
-
 
             <div
                 id="couponMessage"
@@ -1616,7 +1244,6 @@ footer p {
             ></div>
 
         </div>
-
 
         <div class="cart-total">
 
@@ -1630,11 +1257,9 @@ footer p {
 
         </div>
 
-
         <div class="payment-title">
             MÉTODO DE PAGAMENTO
         </div>
-
 
         <div class="payments">
 
@@ -1652,29 +1277,24 @@ footer p {
 
         </div>
 
-
         <div
             id="cartError"
             class="cart-error"
         ></div>
 
-
         <button
             class="checkout"
             onclick="finalizarCompra()"
         >
-
             FINALIZAR PEDIDO → WHATSAPP
-
         </button>
 
     </div>
 
 </div>
 
-
 <!-- =====================================================
-     MODAL TABELA
+     MODAL
 ===================================================== -->
 
 <div
@@ -1692,11 +1312,8 @@ footer p {
             class="close-measure"
             onclick="fecharTabelaMedidas()"
         >
-
             ×
-
         </button>
-
 
         <img
             src="medida.png"
@@ -1708,23 +1325,14 @@ footer p {
 
 </div>
 
-
 <!-- =====================================================
      FIREBASE + JAVASCRIPT
 ===================================================== -->
 
 <script type="module">
 
-/* =====================================================
-   FIREBASE
-===================================================== */
-
-import {
-    initializeApp
-}
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-
+import { initializeApp }
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 import {
     getFirestore,
@@ -1735,9 +1343,12 @@ import {
     addDoc,
     serverTimestamp
 }
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
+
+/* =====================================================
+   FIREBASE
+===================================================== */
 
 const firebaseConfig = {
 
@@ -1764,10 +1375,8 @@ const firebaseConfig = {
 
 };
 
-
 const app =
     initializeApp(firebaseConfig);
-
 
 const db =
     getFirestore(app);
@@ -1783,7 +1392,7 @@ const WHATSAPP = "5533998019698";
 
 
 /* =====================================================
-   ESTOQUE
+   ESTOQUE LOCAL
 ===================================================== */
 
 let estoque = {
@@ -1870,7 +1479,7 @@ function dinheiro(valor) {
 
 
 /* =====================================================
-   CARREGAR ESTOQUE
+   CARREGAR ESTOQUE FIREBASE
 ===================================================== */
 
 async function carregarEstoque() {
@@ -1878,36 +1487,21 @@ async function carregarEstoque() {
     try {
 
         const gloryRef =
-            doc(
-                db,
-                "estoque",
-                "Glory"
-            );
-
+            doc(db, "estoque", "Glory");
 
         const frassatiRef =
-            doc(
-                db,
-                "estoque",
-                "Frassati"
-            );
+            doc(db, "estoque", "Frassati");
 
 
         const glorySnap =
-            await getDoc(
-                gloryRef
-            );
+            await getDoc(gloryRef);
 
 
         const frassatiSnap =
-            await getDoc(
-                frassatiRef
-            );
+            await getDoc(frassatiRef);
 
 
-        if (
-            glorySnap.exists()
-        ) {
+        if (glorySnap.exists()) {
 
             estoque.Glory =
                 glorySnap.data();
@@ -1915,9 +1509,7 @@ async function carregarEstoque() {
         }
 
 
-        if (
-            frassatiSnap.exists()
-        ) {
+        if (frassatiSnap.exists()) {
 
             estoque.Frassati =
                 frassatiSnap.data();
@@ -1946,7 +1538,6 @@ async function carregarEstoque() {
 
 function observarEstoque() {
 
-
     onSnapshot(
 
         doc(
@@ -1957,9 +1548,7 @@ function observarEstoque() {
 
         function(snapshot) {
 
-            if (
-                snapshot.exists()
-            ) {
+            if (snapshot.exists()) {
 
                 estoque.Glory =
                     snapshot.data();
@@ -1967,15 +1556,6 @@ function observarEstoque() {
                 atualizarTamanhosDisponiveis();
 
             }
-
-        },
-
-        function(erro) {
-
-            console.error(
-                "Erro ao observar Glory:",
-                erro
-            );
 
         }
 
@@ -1992,9 +1572,7 @@ function observarEstoque() {
 
         function(snapshot) {
 
-            if (
-                snapshot.exists()
-            ) {
+            if (snapshot.exists()) {
 
                 estoque.Frassati =
                     snapshot.data();
@@ -2002,15 +1580,6 @@ function observarEstoque() {
                 atualizarTamanhosDisponiveis();
 
             }
-
-        },
-
-        function(erro) {
-
-            console.error(
-                "Erro ao observar Frassati:",
-                erro
-            );
 
         }
 
@@ -2035,24 +1604,18 @@ function trocarImagem(
 
 
     const produto =
-        botao.closest(
-            ".product"
-        );
+        botao.closest(".product");
 
 
     produto
-        .querySelectorAll(
-            ".thumb"
-        )
-        .forEach(
-            function(item) {
+        .querySelectorAll(".thumb")
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "active"
-                );
+            item.classList.remove(
+                "active"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2087,15 +1650,12 @@ function selecionarTamanho(
         tamanho;
 
 
-    quantidades[produto] =
-        1;
+    quantidades[produto] = 1;
 
 
     document.getElementById(
-        produto +
-        "Quantity"
-    ).innerText =
-        "1";
+        produto + "Quantity"
+    ).innerText = "1";
 
 
     const container =
@@ -2103,18 +1663,14 @@ function selecionarTamanho(
 
 
     container
-        .querySelectorAll(
-            "button"
-        )
-        .forEach(
-            function(item) {
+        .querySelectorAll("button")
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "selected"
-                );
+            item.classList.remove(
+                "selected"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2150,97 +1706,91 @@ function selecionarTamanho(
 function atualizarTamanhosDisponiveis() {
 
     document
-        .querySelectorAll(
-            ".product"
-        )
-        .forEach(
-            function(produtoElemento) {
+        .querySelectorAll(".product")
+        .forEach(function(produtoElemento) {
 
 
-                const nomeProduto =
-                    produtoElemento
-                        .querySelector("h3")
-                        .innerText
-                        .trim()
-                        .toLowerCase();
+            const nomeProduto =
+                produtoElemento
+                    .querySelector("h3")
+                    .innerText
+                    .trim()
+                    .toLowerCase();
 
 
-                let produtoEstoque;
+            let produtoEstoque;
 
 
-                if (
-                    nomeProduto ===
-                    "glory"
-                ) {
+            if (
+                nomeProduto === "glory"
+            ) {
 
-                    produtoEstoque =
-                        estoque.Glory;
-
-                }
-
-                else if (
-                    nomeProduto ===
-                    "frassati"
-                ) {
-
-                    produtoEstoque =
-                        estoque.Frassati;
-
-                }
-
-                else {
-
-                    return;
-
-                }
-
-
-                const botoes =
-                    produtoElemento
-                        .querySelectorAll(
-                            ".sizes button"
-                        );
-
-
-                botoes.forEach(
-                    function(botao) {
-
-                        const tamanho =
-                            botao.innerText
-                                .trim()
-                                .toUpperCase();
-
-
-                        if (
-                            !produtoEstoque[tamanho] ||
-                            produtoEstoque[tamanho] <= 0
-                        ) {
-
-                            botao.classList.add(
-                                "unavailable"
-                            );
-
-                            botao.disabled =
-                                true;
-
-                        }
-
-                        else {
-
-                            botao.classList.remove(
-                                "unavailable"
-                            );
-
-                            botao.disabled =
-                                false;
-
-                        }
-
-                    }
-                );
+                produtoEstoque =
+                    estoque.Glory;
 
             }
-        );
+
+            else if (
+                nomeProduto === "frassati"
+            ) {
+
+                produtoEstoque =
+                    estoque.Frassati;
+
+            }
+
+            else {
+
+                return;
+
+            }
+
+
+            const botoes =
+                produtoElemento
+                    .querySelectorAll(
+                        ".sizes button"
+                    );
+
+
+            botoes.forEach(
+                function(botao) {
+
+                    const tamanho =
+                        botao.innerText
+                            .trim()
+                            .toUpperCase();
+
+
+                    if (
+                        !produtoEstoque[tamanho] ||
+                        produtoEstoque[tamanho] <= 0
+                    ) {
+
+                        botao.classList.add(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            true;
+
+                    }
+
+                    else {
+
+                        botao.classList.remove(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            false;
+
+                    }
+
+                }
+            );
+
+        });
 
 }
 
@@ -2312,8 +1862,7 @@ function alterarQuantidade(
 
 
     document.getElementById(
-        produto +
-        "Quantity"
+        produto + "Quantity"
     ).innerText =
         novaQuantidade;
 
@@ -2405,20 +1954,15 @@ function adicionarProduto(
 
         carrinho.push({
 
-            nome:
-                nome,
+            nome: nome,
 
-            imagem:
-                imagem,
+            imagem: imagem,
 
-            tamanho:
-                tamanho,
+            tamanho: tamanho,
 
-            quantidade:
-                quantidade,
+            quantidade: quantidade,
 
-            preco:
-                PRECO
+            preco: PRECO
 
         });
 
@@ -2618,8 +2162,7 @@ function atualizarCarrinho() {
     }
 
 
-    container.innerHTML =
-        "";
+    container.innerHTML = "";
 
 
     carrinho.forEach(
@@ -2723,7 +2266,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER PRODUTO
+   REMOVER
 ===================================================== */
 
 function removerProduto(index) {
@@ -2740,7 +2283,7 @@ function removerProduto(index) {
 
 
 /* =====================================================
-   ABRIR CARRINHO
+   CARRINHO
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2759,10 +2302,6 @@ function abrirCarrinho() {
 }
 
 
-/* =====================================================
-   FECHAR CARRINHO
-===================================================== */
-
 function fecharCarrinho() {
 
     document
@@ -2775,10 +2314,6 @@ function fecharCarrinho() {
 
 }
 
-
-/* =====================================================
-   FECHAR CARRINHO FORA
-===================================================== */
 
 function fecharCarrinhoFora(event) {
 
@@ -2829,14 +2364,116 @@ function selecionarPagamento(
 
     document.getElementById(
         "cartError"
-    ).innerText =
-        "";
+    ).innerText = "";
 
 }
 
 
 /* =====================================================
-   FINALIZAR COMPRA
+   SALVAR PEDIDO NO FIREBASE
+===================================================== */
+
+async function salvarPedidoFirebase() {
+
+    try {
+
+        const subtotal =
+            calcularSubtotal();
+
+        const total =
+            calcularTotal();
+
+
+        const itens =
+            carrinho.map(
+                function(item) {
+
+                    return {
+
+                        produto:
+                            item.nome,
+
+                        tamanho:
+                            item.tamanho,
+
+                        quantidade:
+                            item.quantidade,
+
+                        precoUnitario:
+                            item.preco,
+
+                        subtotal:
+                            item.preco *
+                            item.quantidade
+
+                    };
+
+                }
+            );
+
+
+        const pedido = {
+
+            itens: itens,
+
+            subtotal: subtotal,
+
+            desconto:
+                descontoAtual,
+
+            cupom:
+                cupomAtual,
+
+            total: total,
+
+            pagamento:
+                pagamentoSelecionado,
+
+            status:
+                "novo",
+
+            criadoEm:
+                serverTimestamp()
+
+        };
+
+
+        const documento =
+            await addDoc(
+                collection(
+                    db,
+                    "pedidos"
+                ),
+                pedido
+            );
+
+
+        console.log(
+            "Pedido salvo no Firebase:",
+            documento.id
+        );
+
+
+        return documento.id;
+
+
+    } catch (erro) {
+
+        console.error(
+            "Erro ao salvar pedido:",
+            erro
+        );
+
+
+        return null;
+
+    }
+
+}
+
+
+/* =====================================================
+   FINALIZAR WHATSAPP
 ===================================================== */
 
 async function finalizarCompra() {
@@ -2847,12 +2484,12 @@ async function finalizarCompra() {
         );
 
 
+    erro.innerText = "";
+
+
     if (
         carrinho.length === 0
     ) {
-
-        erro.style.color =
-            "#b00000";
 
         erro.innerText =
             "Seu carrinho está vazio.";
@@ -2866,9 +2503,6 @@ async function finalizarCompra() {
         pagamentoSelecionado === ""
     ) {
 
-        erro.style.color =
-            "#b00000";
-
         erro.innerText =
             "Selecione um método de pagamento.";
 
@@ -2877,212 +2511,107 @@ async function finalizarCompra() {
     }
 
 
-    erro.style.color =
-        "#777";
+    /* =================================================
+       SALVA O PEDIDO NO FIREBASE
+    ================================================= */
+
+    const pedidoId =
+        await salvarPedidoFirebase();
 
 
-    erro.innerText =
-        "Registrando seu pedido...";
+    /*
+       Mesmo se houver algum problema
+       no Firebase, o cliente ainda
+       consegue mandar o pedido pelo WhatsApp.
+    */
 
 
     const total =
         calcularTotal();
 
 
-    /* =====================================================
-       PRODUTOS
-    ===================================================== */
-
-    const produtosPedido =
-        carrinho.map(
-            function(item) {
-
-                return {
-
-                    nome:
-                        item.nome,
-
-                    tamanho:
-                        item.tamanho,
-
-                    quantidade:
-                        item.quantidade,
-
-                    preco:
-                        item.preco
-
-                };
-
-            }
-        );
+    let mensagem =
+        "Olá! 👋" +
+        "\n" +
+        "Quero fazer meu pedido da HOLINESS! 🔥" +
+        "\n\n";
 
 
-    /* =====================================================
-       SALVAR PEDIDO
-    ===================================================== */
-
-    try {
-
-        const pedidoRef =
-            await addDoc(
-                collection(
-                    db,
-                    "pedidos"
-                ),
-                {
-
-                    produtos:
-                        produtosPedido,
-
-                    subtotal:
-                        calcularSubtotal(),
-
-                    desconto:
-                        descontoAtual,
-
-                    cupom:
-                        cupomAtual,
-
-                    total:
-                        total,
-
-                    pagamento:
-                        pagamentoSelecionado,
-
-                    status:
-                        "aguardando confirmação",
-
-                    data:
-                        serverTimestamp()
-
-                }
-            );
-
-
-        console.log(
-            "Pedido salvo:",
-            pedidoRef.id
-        );
-
-
-        /* =====================================================
-           MENSAGEM WHATSAPP
-        ===================================================== */
-
-        let mensagem =
-            "Olá! 👋" +
-            "\n" +
-            "Quero fazer meu pedido da HOLINESS! 🔥" +
-            "\n\n";
-
-
-        carrinho.forEach(
-            function(item) {
-
-                mensagem +=
-
-                    "👕 " +
-                    item.nome +
-                    "\n" +
-
-                    "📏 Tamanho: " +
-                    item.tamanho +
-                    "\n" +
-
-                    "🔢 Quantidade: " +
-                    item.quantidade +
-                    "\n" +
-
-                    "💵 Valor: " +
-                    dinheiro(
-                        item.preco *
-                        item.quantidade
-                    ) +
-                    "\n\n";
-
-            }
-        );
-
-
-        mensagem +=
-            "💳 Pagamento: " +
-            pagamentoSelecionado;
-
-
-        mensagem +=
-            "\n💰 Total: " +
-            dinheiro(total);
-
-
-        if (
-            cupomAtual !== ""
-        ) {
+    carrinho.forEach(
+        function(item) {
 
             mensagem +=
-                "\n🎟️ Cupom: " +
-                cupomAtual;
+                "👕 " +
+                item.nome +
+                "\n" +
+
+                "📏 Tamanho: " +
+                item.tamanho +
+                "\n" +
+
+                "🔢 Quantidade: " +
+                item.quantidade +
+                "\n\n";
 
         }
+    );
 
+
+    mensagem +=
+        "💳 Pagamento: " +
+        pagamentoSelecionado;
+
+
+    mensagem +=
+        "\n💰 Total: " +
+        dinheiro(total);
+
+
+    if (
+        cupomAtual !== ""
+    ) {
 
         mensagem +=
-            "\n\n🧾 Pedido: " +
-            pedidoRef.id;
-
-
-        mensagem +=
-            "\n\nQuero finalizar meu pedido! 🙌";
-
-
-        /* =====================================================
-           ABRIR WHATSAPP
-        ===================================================== */
-
-        const url =
-            "https://wa.me/" +
-            WHATSAPP +
-            "?text=" +
-            encodeURIComponent(
-                mensagem
-            );
-
-
-        erro.style.color =
-            "#16833b";
-
-
-        erro.innerText =
-            "Pedido registrado! Abrindo WhatsApp...";
-
-
-        window.open(
-            url,
-            "_blank"
-        );
-
-
-    } catch (erroFirebase) {
-
-        console.error(
-            "Erro ao salvar pedido:",
-            erroFirebase
-        );
-
-
-        erro.style.color =
-            "#b00000";
-
-
-        erro.innerText =
-            "Não foi possível registrar o pedido. Tente novamente.";
+            "\n🎟️ Cupom: " +
+            cupomAtual;
 
     }
+
+
+    if (
+        pedidoId
+    ) {
+
+        mensagem +=
+            "\n🧾 Pedido: #" +
+            pedidoId.substring(0, 6).toUpperCase();
+
+    }
+
+
+    mensagem +=
+        "\n\nQuero finalizar meu pedido! 🙌";
+
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(
+            mensagem
+        );
+
+
+    window.open(
+        url,
+        "_blank"
+    );
 
 }
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 function abrirTabelaMedidas() {
@@ -3134,8 +2663,7 @@ document.addEventListener(
     function(event) {
 
         if (
-            event.key ===
-            "Escape"
+            event.key === "Escape"
         ) {
 
             fecharTabelaMedidas();
@@ -3149,7 +2677,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   DISPONIBILIZAR FUNÇÕES
+   DISPONIBILIZA FUNÇÕES PARA O HTML
 ===================================================== */
 
 window.trocarImagem =
@@ -3206,7 +2734,6 @@ observarEstoque();
 atualizarCarrinho();
 
 </script>
-
 
 </body>
 
