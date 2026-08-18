@@ -1690,8 +1690,8 @@ import {
     onSnapshot,
     collection,
     setDoc,
-    serverTimestamp,
-    runTransaction
+    runTransaction,
+    serverTimestamp
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
@@ -2060,7 +2060,6 @@ function atualizarTamanhosDisponiveis() {
     document
         .querySelectorAll(".product")
         .forEach(function(produtoElemento) {
-
 
             const nomeProduto =
                 produtoElemento
@@ -2722,8 +2721,76 @@ function selecionarPagamento(
 
 
 /* =====================================================
+   GERAR NÚMERO PROGRESSIVO DO PEDIDO
+===================================================== */
+
+async function gerarNumeroPedido() {
+
+    const contadorRef =
+        doc(
+            db,
+            "configuracoes",
+            "pedidos"
+        );
+
+
+    const numero =
+        await runTransaction(
+            db,
+            async function(transaction) {
+
+                const contadorSnapshot =
+                    await transaction.get(
+                        contadorRef
+                    );
+
+
+                let proximoNumero = 1;
+
+
+                if (
+                    contadorSnapshot.exists()
+                ) {
+
+                    const dados =
+                        contadorSnapshot.data();
+
+
+                    proximoNumero =
+                        Number(
+                            dados.ultimoNumero || 0
+                        ) + 1;
+
+                }
+
+
+                transaction.set(
+                    contadorRef,
+                    {
+                        ultimoNumero:
+                            proximoNumero
+                    },
+                    {
+                        merge: true
+                    }
+                );
+
+
+                return proximoNumero;
+
+            }
+        );
+
+
+    return "#" +
+        String(numero)
+            .padStart(3, "0");
+
+}
+
+
+/* =====================================================
    SALVAR PEDIDO NO FIREBASE
-   DOCUMENTOS: #001, #002, #003...
 ===================================================== */
 
 async function salvarPedidoFirebase() {
@@ -2733,8 +2800,22 @@ async function salvarPedidoFirebase() {
         const subtotal =
             calcularSubtotal();
 
+
         const total =
             calcularTotal();
+
+
+        /*
+         * Gera o número progressivo:
+         *
+         * #001
+         * #002
+         * #003
+         * etc.
+         */
+
+        const numeroPedido =
+            await gerarNumeroPedido();
 
 
         const itens =
@@ -2765,85 +2846,10 @@ async function salvarPedidoFirebase() {
             );
 
 
-        /*
-         * Documento que controla
-         * o último número utilizado.
-         */
-        const contadorRef =
-            doc(
-                db,
-                "configuracoes",
-                "contadorPedidos"
-            );
-
-
-        /*
-         * A transação impede que
-         * dois clientes recebam
-         * o mesmo número.
-         */
-        const numeroPedido =
-            await runTransaction(
-                db,
-                async function(transaction) {
-
-                    const contadorSnap =
-                        await transaction.get(
-                            contadorRef
-                        );
-
-
-                    let proximoNumero = 1;
-
-
-                    if (
-                        contadorSnap.exists()
-                    ) {
-
-                        proximoNumero =
-                            (
-                                contadorSnap.data().ultimoNumero || 0
-                            ) + 1;
-
-                    }
-
-
-                    transaction.set(
-                        contadorRef,
-                        {
-
-                            ultimoNumero:
-                                proximoNumero
-
-                        }
-                    );
-
-
-                    return proximoNumero;
-
-                }
-            );
-
-
-        /*
-         * Formatação:
-         *
-         * 1   → #001
-         * 2   → #002
-         * 10  → #010
-         * 99  → #099
-         * 100 → #100
-         */
-        const numeroFormatado =
-            "#" +
-            String(numeroPedido)
-                .padStart(3, "0");
-
-
         const pedido = {
 
             numeroPedido:
-                numeroFormatado,
+                numeroPedido,
 
             itens:
                 itens,
@@ -2873,17 +2879,22 @@ async function salvarPedidoFirebase() {
 
 
         /*
-         * O ID do documento será:
+         * O próprio número do pedido
+         * será o ID do documento.
          *
-         * #001
-         * #002
-         * #003
+         * Exemplo:
+         *
+         * pedidos
+         *   ├── #001
+         *   ├── #002
+         *   ├── #003
          */
+
         const pedidoRef =
             doc(
                 db,
                 "pedidos",
-                numeroFormatado
+                numeroPedido
             );
 
 
@@ -2894,12 +2905,12 @@ async function salvarPedidoFirebase() {
 
 
         console.log(
-            "Pedido salvo no Firebase:",
-            numeroFormatado
+            "Pedido salvo:",
+            numeroPedido
         );
 
 
-        return numeroFormatado;
+        return numeroPedido;
 
 
     } catch (erro) {
@@ -2961,12 +2972,12 @@ async function finalizarCompra() {
 
 
     /*
-     * PRIMEIRO:
-     * salva o pedido no Firebase.
+     * Primeiro registra o pedido
+     * no Firebase.
      *
-     * O estoque NÃO é alterado aqui.
+     * O número NÃO será enviado
+     * para o WhatsApp.
      */
-
 
     let pedidoId;
 
@@ -2975,6 +2986,7 @@ async function finalizarCompra() {
 
         erro.style.color =
             "#777";
+
 
         erro.innerText =
             "Registrando seu pedido...";
@@ -2994,8 +3006,10 @@ async function finalizarCompra() {
         erro.style.color =
             "#b00000";
 
+
         erro.innerText =
             "Não foi possível registrar o pedido. Tente novamente.";
+
 
         return;
 
@@ -3003,10 +3017,10 @@ async function finalizarCompra() {
 
 
     /*
-     * Depois que o pedido foi salvo,
-     * abre o WhatsApp.
+     * MENSAGEM DO WHATSAPP
+     *
+     * NÃO coloca o número do pedido.
      */
-
 
     let mensagem =
         "Olá! 👋" +
@@ -3073,11 +3087,6 @@ async function finalizarCompra() {
             cupomAtual;
 
     }
-
-
-    mensagem +=
-        "\n\n🧾 Pedido: " +
-        pedidoId;
 
 
     mensagem +=
