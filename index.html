@@ -1179,7 +1179,9 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- GLORY -->
+        <!-- =====================================================
+             GLORY
+        ===================================================== -->
 
         <div class="product">
 
@@ -1200,7 +1202,9 @@ footer p {
                     class="thumb active"
                     onclick="trocarImagem('gloryImage','Frente.png',this)"
                 >
+
                     <img src="Frente.png">
+
                 </button>
 
 
@@ -1208,7 +1212,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Costa.png',this)"
                 >
+
                     <img src="Costa.png">
+
                 </button>
 
 
@@ -1216,7 +1222,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Chuva.png',this)"
                 >
+
                     <img src="Chuva.png">
+
                 </button>
 
             </div>
@@ -1234,9 +1242,11 @@ footer p {
 
 
                 <p class="description">
+
                     “Acredito que, buscando incansavelmente a Deus,
                     chegaremos à manifestação visível da presença,
                     do poder e de todas as perfeições — à Glória.”
+
                 </p>
 
 
@@ -1283,7 +1293,9 @@ footer p {
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
+
                     TABELA DE MEDIDAS →
+
                 </button>
 
 
@@ -1291,7 +1303,9 @@ footer p {
                     id="GlorySelectedSize"
                     class="stock"
                 >
+
                     Selecione um tamanho
+
                 </div>
 
 
@@ -1321,7 +1335,9 @@ footer p {
                     class="add-button"
                     onclick="adicionarProduto('Glory','Frente.png')"
                 >
+
                     ADICIONAR AO CARRINHO →
+
                 </button>
 
             </div>
@@ -1329,7 +1345,9 @@ footer p {
         </div>
 
 
-        <!-- FRASSATI -->
+        <!-- =====================================================
+             FRASSATI
+        ===================================================== -->
 
         <div class="product">
 
@@ -1350,7 +1368,9 @@ footer p {
                     class="thumb active"
                     onclick="trocarImagem('frassatiImage','Frente2.png',this)"
                 >
+
                     <img src="Frente2.png">
+
                 </button>
 
 
@@ -1358,7 +1378,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Trás2.png',this)"
                 >
+
                     <img src="Trás2.png">
+
                 </button>
 
 
@@ -1366,7 +1388,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
                 >
+
                     <img src="Chuva2.png">
+
                 </button>
 
             </div>
@@ -1384,9 +1408,11 @@ footer p {
 
 
                 <p class="description">
+
                     “Subir sempre mais alto, não apenas pelas montanhas,
                     mas em direção a Deus, onde encontramos a verdadeira
                     felicidade.”
+
                 </p>
 
 
@@ -1433,7 +1459,9 @@ footer p {
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
+
                     TABELA DE MEDIDAS →
+
                 </button>
 
 
@@ -1441,7 +1469,9 @@ footer p {
                     id="FrassatiSelectedSize"
                     class="stock"
                 >
+
                     Selecione um tamanho
+
                 </div>
 
 
@@ -1471,7 +1501,9 @@ footer p {
                     class="add-button"
                     onclick="adicionarProduto('Frassati','Frente2.png')"
                 >
+
                     ADICIONAR AO CARRINHO →
+
                 </button>
 
             </div>
@@ -1514,9 +1546,11 @@ footer p {
     </div>
 
     <p>
+
         Ao contemplarmos a presença de Deus,
         somos transformados progressivamente
         à imagem de Cristo pelo Espírito Santo.
+
     </p>
 
 </footer>
@@ -1629,7 +1663,9 @@ footer p {
             class="checkout"
             onclick="finalizarCompra()"
         >
+
             FINALIZAR PEDIDO → WHATSAPP
+
         </button>
 
     </div>
@@ -1638,7 +1674,7 @@ footer p {
 
 
 <!-- =====================================================
-     MODAL
+     MODAL TABELA
 ===================================================== -->
 
 <div
@@ -1656,7 +1692,9 @@ footer p {
             class="close-measure"
             onclick="fecharTabelaMedidas()"
         >
+
             ×
+
         </button>
 
 
@@ -1677,21 +1715,29 @@ footer p {
 
 <script type="module">
 
-import { initializeApp }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+/* =====================================================
+   FIREBASE
+===================================================== */
+
+import {
+    initializeApp
+}
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+
 
 import {
     getFirestore,
     doc,
     getDoc,
-    onSnapshot
+    onSnapshot,
+    collection,
+    addDoc,
+    serverTimestamp
 }
-from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from
+"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
-
-/* =====================================================
-   FIREBASE
-===================================================== */
 
 const firebaseConfig = {
 
@@ -1737,7 +1783,7 @@ const WHATSAPP = "5533998019698";
 
 
 /* =====================================================
-   ESTOQUE LOCAL
+   ESTOQUE
 ===================================================== */
 
 let estoque = {
@@ -1824,7 +1870,7 @@ function dinheiro(valor) {
 
 
 /* =====================================================
-   CARREGAR ESTOQUE FIREBASE
+   CARREGAR ESTOQUE
 ===================================================== */
 
 async function carregarEstoque() {
@@ -1832,21 +1878,36 @@ async function carregarEstoque() {
     try {
 
         const gloryRef =
-            doc(db, "estoque", "Glory");
+            doc(
+                db,
+                "estoque",
+                "Glory"
+            );
+
 
         const frassatiRef =
-            doc(db, "estoque", "Frassati");
+            doc(
+                db,
+                "estoque",
+                "Frassati"
+            );
 
 
         const glorySnap =
-            await getDoc(gloryRef);
+            await getDoc(
+                gloryRef
+            );
 
 
         const frassatiSnap =
-            await getDoc(frassatiRef);
+            await getDoc(
+                frassatiRef
+            );
 
 
-        if (glorySnap.exists()) {
+        if (
+            glorySnap.exists()
+        ) {
 
             estoque.Glory =
                 glorySnap.data();
@@ -1854,7 +1915,9 @@ async function carregarEstoque() {
         }
 
 
-        if (frassatiSnap.exists()) {
+        if (
+            frassatiSnap.exists()
+        ) {
 
             estoque.Frassati =
                 frassatiSnap.data();
@@ -1883,6 +1946,7 @@ async function carregarEstoque() {
 
 function observarEstoque() {
 
+
     onSnapshot(
 
         doc(
@@ -1893,7 +1957,9 @@ function observarEstoque() {
 
         function(snapshot) {
 
-            if (snapshot.exists()) {
+            if (
+                snapshot.exists()
+            ) {
 
                 estoque.Glory =
                     snapshot.data();
@@ -1901,6 +1967,15 @@ function observarEstoque() {
                 atualizarTamanhosDisponiveis();
 
             }
+
+        },
+
+        function(erro) {
+
+            console.error(
+                "Erro ao observar Glory:",
+                erro
+            );
 
         }
 
@@ -1917,7 +1992,9 @@ function observarEstoque() {
 
         function(snapshot) {
 
-            if (snapshot.exists()) {
+            if (
+                snapshot.exists()
+            ) {
 
                 estoque.Frassati =
                     snapshot.data();
@@ -1925,6 +2002,15 @@ function observarEstoque() {
                 atualizarTamanhosDisponiveis();
 
             }
+
+        },
+
+        function(erro) {
+
+            console.error(
+                "Erro ao observar Frassati:",
+                erro
+            );
 
         }
 
@@ -1949,18 +2035,24 @@ function trocarImagem(
 
 
     const produto =
-        botao.closest(".product");
+        botao.closest(
+            ".product"
+        );
 
 
     produto
-        .querySelectorAll(".thumb")
-        .forEach(function(item) {
+        .querySelectorAll(
+            ".thumb"
+        )
+        .forEach(
+            function(item) {
 
-            item.classList.remove(
-                "active"
-            );
+                item.classList.remove(
+                    "active"
+                );
 
-        });
+            }
+        );
 
 
     botao.classList.add(
@@ -1995,12 +2087,15 @@ function selecionarTamanho(
         tamanho;
 
 
-    quantidades[produto] = 1;
+    quantidades[produto] =
+        1;
 
 
     document.getElementById(
-        produto + "Quantity"
-    ).innerText = "1";
+        produto +
+        "Quantity"
+    ).innerText =
+        "1";
 
 
     const container =
@@ -2008,14 +2103,18 @@ function selecionarTamanho(
 
 
     container
-        .querySelectorAll("button")
-        .forEach(function(item) {
+        .querySelectorAll(
+            "button"
+        )
+        .forEach(
+            function(item) {
 
-            item.classList.remove(
-                "selected"
-            );
+                item.classList.remove(
+                    "selected"
+                );
 
-        });
+            }
+        );
 
 
     botao.classList.add(
@@ -2051,91 +2150,97 @@ function selecionarTamanho(
 function atualizarTamanhosDisponiveis() {
 
     document
-        .querySelectorAll(".product")
-        .forEach(function(produtoElemento) {
+        .querySelectorAll(
+            ".product"
+        )
+        .forEach(
+            function(produtoElemento) {
 
 
-            const nomeProduto =
-                produtoElemento
-                    .querySelector("h3")
-                    .innerText
-                    .trim()
-                    .toLowerCase();
+                const nomeProduto =
+                    produtoElemento
+                        .querySelector("h3")
+                        .innerText
+                        .trim()
+                        .toLowerCase();
 
 
-            let produtoEstoque;
+                let produtoEstoque;
 
 
-            if (
-                nomeProduto === "glory"
-            ) {
+                if (
+                    nomeProduto ===
+                    "glory"
+                ) {
 
-                produtoEstoque =
-                    estoque.Glory;
-
-            }
-
-            else if (
-                nomeProduto === "frassati"
-            ) {
-
-                produtoEstoque =
-                    estoque.Frassati;
-
-            }
-
-            else {
-
-                return;
-
-            }
-
-
-            const botoes =
-                produtoElemento
-                    .querySelectorAll(
-                        ".sizes button"
-                    );
-
-
-            botoes.forEach(
-                function(botao) {
-
-                    const tamanho =
-                        botao.innerText
-                            .trim()
-                            .toUpperCase();
-
-
-                    if (
-                        !produtoEstoque[tamanho] ||
-                        produtoEstoque[tamanho] <= 0
-                    ) {
-
-                        botao.classList.add(
-                            "unavailable"
-                        );
-
-                        botao.disabled =
-                            true;
-
-                    }
-
-                    else {
-
-                        botao.classList.remove(
-                            "unavailable"
-                        );
-
-                        botao.disabled =
-                            false;
-
-                    }
+                    produtoEstoque =
+                        estoque.Glory;
 
                 }
-            );
 
-        });
+                else if (
+                    nomeProduto ===
+                    "frassati"
+                ) {
+
+                    produtoEstoque =
+                        estoque.Frassati;
+
+                }
+
+                else {
+
+                    return;
+
+                }
+
+
+                const botoes =
+                    produtoElemento
+                        .querySelectorAll(
+                            ".sizes button"
+                        );
+
+
+                botoes.forEach(
+                    function(botao) {
+
+                        const tamanho =
+                            botao.innerText
+                                .trim()
+                                .toUpperCase();
+
+
+                        if (
+                            !produtoEstoque[tamanho] ||
+                            produtoEstoque[tamanho] <= 0
+                        ) {
+
+                            botao.classList.add(
+                                "unavailable"
+                            );
+
+                            botao.disabled =
+                                true;
+
+                        }
+
+                        else {
+
+                            botao.classList.remove(
+                                "unavailable"
+                            );
+
+                            botao.disabled =
+                                false;
+
+                        }
+
+                    }
+                );
+
+            }
+        );
 
 }
 
@@ -2207,7 +2312,8 @@ function alterarQuantidade(
 
 
     document.getElementById(
-        produto + "Quantity"
+        produto +
+        "Quantity"
     ).innerText =
         novaQuantidade;
 
@@ -2299,15 +2405,20 @@ function adicionarProduto(
 
         carrinho.push({
 
-            nome: nome,
+            nome:
+                nome,
 
-            imagem: imagem,
+            imagem:
+                imagem,
 
-            tamanho: tamanho,
+            tamanho:
+                tamanho,
 
-            quantidade: quantidade,
+            quantidade:
+                quantidade,
 
-            preco: PRECO
+            preco:
+                PRECO
 
         });
 
@@ -2507,7 +2618,8 @@ function atualizarCarrinho() {
     }
 
 
-    container.innerHTML = "";
+    container.innerHTML =
+        "";
 
 
     carrinho.forEach(
@@ -2611,7 +2723,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER
+   REMOVER PRODUTO
 ===================================================== */
 
 function removerProduto(index) {
@@ -2628,7 +2740,7 @@ function removerProduto(index) {
 
 
 /* =====================================================
-   CARRINHO
+   ABRIR CARRINHO
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2647,6 +2759,10 @@ function abrirCarrinho() {
 }
 
 
+/* =====================================================
+   FECHAR CARRINHO
+===================================================== */
+
 function fecharCarrinho() {
 
     document
@@ -2659,6 +2775,10 @@ function fecharCarrinho() {
 
 }
 
+
+/* =====================================================
+   FECHAR CARRINHO FORA
+===================================================== */
 
 function fecharCarrinhoFora(event) {
 
@@ -2709,16 +2829,17 @@ function selecionarPagamento(
 
     document.getElementById(
         "cartError"
-    ).innerText = "";
+    ).innerText =
+        "";
 
 }
 
 
 /* =====================================================
-   FINALIZAR WHATSAPP
+   FINALIZAR COMPRA
 ===================================================== */
 
-function finalizarCompra() {
+async function finalizarCompra() {
 
     const erro =
         document.getElementById(
@@ -2729,6 +2850,9 @@ function finalizarCompra() {
     if (
         carrinho.length === 0
     ) {
+
+        erro.style.color =
+            "#b00000";
 
         erro.innerText =
             "Seu carrinho está vazio.";
@@ -2742,6 +2866,9 @@ function finalizarCompra() {
         pagamentoSelecionado === ""
     ) {
 
+        erro.style.color =
+            "#b00000";
+
         erro.innerText =
             "Selecione um método de pagamento.";
 
@@ -2750,81 +2877,212 @@ function finalizarCompra() {
     }
 
 
+    erro.style.color =
+        "#777";
+
+
+    erro.innerText =
+        "Registrando seu pedido...";
+
+
     const total =
         calcularTotal();
 
 
-    let mensagem =
-        "Olá! 👋" +
-        "\n" +
-        "Quero fazer meu pedido da HOLINESS! 🔥" +
-        "\n\n";
+    /* =====================================================
+       PRODUTOS
+    ===================================================== */
 
+    const produtosPedido =
+        carrinho.map(
+            function(item) {
 
-    carrinho.forEach(
-        function(item) {
+                return {
 
-            mensagem +=
-                "👕 " +
-                item.nome +
-                "\n" +
+                    nome:
+                        item.nome,
 
-                "📏 Tamanho: " +
-                item.tamanho +
-                "\n" +
+                    tamanho:
+                        item.tamanho,
 
-                "🔢 Quantidade: " +
-                item.quantidade +
-                "\n\n";
+                    quantidade:
+                        item.quantidade,
 
-        }
-    );
+                    preco:
+                        item.preco
 
+                };
 
-    mensagem +=
-        "💳 Pagamento: " +
-        pagamentoSelecionado;
-
-
-    mensagem +=
-        "\n💰 Total: " +
-        dinheiro(total);
-
-
-    if (
-        cupomAtual !== ""
-    ) {
-
-        mensagem +=
-            "\n🎟️ Cupom: " +
-            cupomAtual;
-
-    }
-
-
-    mensagem +=
-        "\n\nQuero finalizar meu pedido! 🙌";
-
-
-    const url =
-        "https://wa.me/" +
-        WHATSAPP +
-        "?text=" +
-        encodeURIComponent(
-            mensagem
+            }
         );
 
 
-    window.open(
-        url,
-        "_blank"
-    );
+    /* =====================================================
+       SALVAR PEDIDO
+    ===================================================== */
+
+    try {
+
+        const pedidoRef =
+            await addDoc(
+                collection(
+                    db,
+                    "pedidos"
+                ),
+                {
+
+                    produtos:
+                        produtosPedido,
+
+                    subtotal:
+                        calcularSubtotal(),
+
+                    desconto:
+                        descontoAtual,
+
+                    cupom:
+                        cupomAtual,
+
+                    total:
+                        total,
+
+                    pagamento:
+                        pagamentoSelecionado,
+
+                    status:
+                        "aguardando confirmação",
+
+                    data:
+                        serverTimestamp()
+
+                }
+            );
+
+
+        console.log(
+            "Pedido salvo:",
+            pedidoRef.id
+        );
+
+
+        /* =====================================================
+           MENSAGEM WHATSAPP
+        ===================================================== */
+
+        let mensagem =
+            "Olá! 👋" +
+            "\n" +
+            "Quero fazer meu pedido da HOLINESS! 🔥" +
+            "\n\n";
+
+
+        carrinho.forEach(
+            function(item) {
+
+                mensagem +=
+
+                    "👕 " +
+                    item.nome +
+                    "\n" +
+
+                    "📏 Tamanho: " +
+                    item.tamanho +
+                    "\n" +
+
+                    "🔢 Quantidade: " +
+                    item.quantidade +
+                    "\n" +
+
+                    "💵 Valor: " +
+                    dinheiro(
+                        item.preco *
+                        item.quantidade
+                    ) +
+                    "\n\n";
+
+            }
+        );
+
+
+        mensagem +=
+            "💳 Pagamento: " +
+            pagamentoSelecionado;
+
+
+        mensagem +=
+            "\n💰 Total: " +
+            dinheiro(total);
+
+
+        if (
+            cupomAtual !== ""
+        ) {
+
+            mensagem +=
+                "\n🎟️ Cupom: " +
+                cupomAtual;
+
+        }
+
+
+        mensagem +=
+            "\n\n🧾 Pedido: " +
+            pedidoRef.id;
+
+
+        mensagem +=
+            "\n\nQuero finalizar meu pedido! 🙌";
+
+
+        /* =====================================================
+           ABRIR WHATSAPP
+        ===================================================== */
+
+        const url =
+            "https://wa.me/" +
+            WHATSAPP +
+            "?text=" +
+            encodeURIComponent(
+                mensagem
+            );
+
+
+        erro.style.color =
+            "#16833b";
+
+
+        erro.innerText =
+            "Pedido registrado! Abrindo WhatsApp...";
+
+
+        window.open(
+            url,
+            "_blank"
+        );
+
+
+    } catch (erroFirebase) {
+
+        console.error(
+            "Erro ao salvar pedido:",
+            erroFirebase
+        );
+
+
+        erro.style.color =
+            "#b00000";
+
+
+        erro.innerText =
+            "Não foi possível registrar o pedido. Tente novamente.";
+
+    }
 
 }
 
 
 /* =====================================================
-   TABELA
+   TABELA DE MEDIDAS
 ===================================================== */
 
 function abrirTabelaMedidas() {
@@ -2876,7 +3134,8 @@ document.addEventListener(
     function(event) {
 
         if (
-            event.key === "Escape"
+            event.key ===
+            "Escape"
         ) {
 
             fecharTabelaMedidas();
@@ -2890,7 +3149,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   DISPONIBILIZA FUNÇÕES PARA O HTML
+   DISPONIBILIZAR FUNÇÕES
 ===================================================== */
 
 window.trocarImagem =
@@ -2947,6 +3206,7 @@ observarEstoque();
 atualizarCarrinho();
 
 </script>
+
 
 </body>
 
