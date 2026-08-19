@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -34,20 +35,29 @@ body {
     font-family: Arial, sans-serif;
 }
 
+/* =====================================================
+   BANNER DO CUPOM
+===================================================== */
+
 .topbar {
-    display: none !important;
-    height: 0 !important;
+    height: 32px;
     background: #000;
     color: #fff;
+    display: flex;
     align-items: center;
     justify-content: center;
     font-size: 10px;
     letter-spacing: 1px;
+    text-align: center;
 }
 
 .topbar strong {
     margin-left: 5px;
 }
+
+/* =====================================================
+   HEADER
+===================================================== */
 
 header {
     height: 75px;
@@ -96,6 +106,10 @@ header {
     font-size: 10px;
 }
 
+/* =====================================================
+   BANNER DA COLEÇÃO
+===================================================== */
+
 .collection-banner {
     width: 100%;
     margin: 0;
@@ -110,6 +124,10 @@ header {
     display: block;
     object-fit: cover;
 }
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
 
 .products {
     padding: 90px 5%;
@@ -358,6 +376,10 @@ header {
     color: #000;
 }
 
+/* =====================================================
+   IMAGENS
+===================================================== */
+
 .images-section {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -374,6 +396,10 @@ header {
     object-fit: cover;
     display: block;
 }
+
+/* =====================================================
+   FOOTER
+===================================================== */
 
 footer {
     min-height: 170px;
@@ -398,6 +424,10 @@ footer p {
     font-size: 12px;
     line-height: 1.6;
 }
+
+/* =====================================================
+   CARRINHO
+===================================================== */
 
 .cart-overlay {
     position: fixed;
@@ -611,6 +641,10 @@ footer p {
     cursor: wait;
 }
 
+/* =====================================================
+   TABELA DE MEDIDAS
+===================================================== */
+
 .measure-overlay {
     position: fixed;
     inset: 0;
@@ -660,6 +694,10 @@ footer p {
     cursor: pointer;
 }
 
+/* =====================================================
+   RESPONSIVO
+===================================================== */
+
 @media (max-width: 900px) {
 
     header {
@@ -701,6 +739,25 @@ footer p {
 
 @media (max-width: 500px) {
 
+    .topbar {
+        height: 30px;
+        font-size: 9px;
+        letter-spacing: .7px;
+        padding: 0 8px;
+    }
+
+    header {
+        height: 68px;
+    }
+
+    .logo {
+        font-size: 27px;
+    }
+
+    .cart-button {
+        font-size: 12px;
+    }
+
     .section-title h2 {
         font-size: 45px;
     }
@@ -736,10 +793,18 @@ footer p {
 
 <body>
 
+<!-- =====================================================
+     BANNER DO CUPOM
+===================================================== -->
+
 <div class="topbar">
     PRIMEIRA COMPRA?
     USE O CUPOM <strong>GLORY10</strong>
 </div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -757,6 +822,10 @@ footer p {
 
 </header>
 
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
 <section class="collection-banner">
 
     <img
@@ -765,6 +834,10 @@ footer p {
     >
 
 </section>
+
+<!-- =====================================================
+     PRODUTOS
+===================================================== -->
 
 <section class="products">
 
@@ -1058,6 +1131,10 @@ footer p {
 
 </section>
 
+<!-- =====================================================
+     IMAGENS FINAIS
+===================================================== -->
+
 <section class="images-section">
 
     <div>
@@ -1076,6 +1153,10 @@ footer p {
 
 </section>
 
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
 <footer>
 
     <div class="footer-logo">
@@ -1090,7 +1171,9 @@ footer p {
 
 </footer>
 
-<!-- CARRINHO -->
+<!-- =====================================================
+     CARRINHO
+===================================================== -->
 
 <div
     id="cartOverlay"
@@ -1192,7 +1275,9 @@ footer p {
 
 </div>
 
-<!-- TABELA DE MEDIDAS -->
+<!-- =====================================================
+     TABELA DE MEDIDAS
+===================================================== -->
 
 <div
     id="measureOverlay"
@@ -1245,10 +1330,6 @@ import {
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
-/* =====================================================
-   FIREBASE
-===================================================== */
-
 const firebaseConfig = {
 
     apiKey:
@@ -1282,18 +1363,10 @@ const db =
     getFirestore(app);
 
 
-/* =====================================================
-   CONFIGURAÇÕES
-===================================================== */
-
 const PRECO = 109.90;
 
 const WHATSAPP = "5533998019698";
 
-
-/* =====================================================
-   ESTOQUE PADRÃO
-===================================================== */
 
 let estoque = {
 
@@ -1322,10 +1395,6 @@ let estoque = {
 };
 
 
-/* =====================================================
-   CUPONS
-===================================================== */
-
 const cupons = {
 
     GLORY10: 10,
@@ -1334,10 +1403,6 @@ const cupons = {
 
 };
 
-
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
 
 let carrinho = [];
 
@@ -1364,10 +1429,6 @@ let cupomAtual = "";
 let pagamentoSelecionado = "";
 
 
-/* =====================================================
-   DINHEIRO
-===================================================== */
-
 function dinheiro(valor) {
 
     return "R$ " +
@@ -1377,10 +1438,6 @@ function dinheiro(valor) {
 
 }
 
-
-/* =====================================================
-   CARREGAR ESTOQUE
-===================================================== */
 
 async function carregarEstoque() {
 
@@ -1431,10 +1488,6 @@ async function carregarEstoque() {
 
 }
 
-
-/* =====================================================
-   OBSERVAR ESTOQUE
-===================================================== */
 
 function observarEstoque() {
 
@@ -1502,10 +1555,6 @@ function observarEstoque() {
 }
 
 
-/* =====================================================
-   TROCAR IMAGEM
-===================================================== */
-
 function trocarImagem(
     idImagem,
     arquivo,
@@ -1530,7 +1579,9 @@ function trocarImagem(
         .querySelectorAll(".thumb")
         .forEach(function(item) {
 
-            item.classList.remove("active");
+            item.classList.remove(
+                "active"
+            );
 
         });
 
@@ -1539,10 +1590,6 @@ function trocarImagem(
 
 }
 
-
-/* =====================================================
-   SELECIONAR TAMANHO
-===================================================== */
 
 function selecionarTamanho(
     produto,
@@ -1596,9 +1643,7 @@ function selecionarTamanho(
         });
 
 
-    botao.classList.add(
-        "selected"
-    );
+    botao.classList.add("selected");
 
 
     const texto =
@@ -1626,10 +1671,6 @@ function selecionarTamanho(
 
 }
 
-
-/* =====================================================
-   ATUALIZAR TAMANHOS
-===================================================== */
 
 function atualizarTamanhosDisponiveis() {
 
@@ -1724,10 +1765,6 @@ function atualizarTamanhosDisponiveis() {
 }
 
 
-/* =====================================================
-   ALTERAR QUANTIDADE
-===================================================== */
-
 function alterarQuantidade(
     produto,
     valor
@@ -1799,10 +1836,6 @@ function alterarQuantidade(
 
 }
 
-
-/* =====================================================
-   ADICIONAR PRODUTO
-===================================================== */
 
 function adicionarProduto(
     nome,
@@ -1912,10 +1945,6 @@ function adicionarProduto(
 }
 
 
-/* =====================================================
-   SUBTOTAL
-===================================================== */
-
 function calcularSubtotal() {
 
     let subtotal = 0;
@@ -1935,10 +1964,6 @@ function calcularSubtotal() {
 }
 
 
-/* =====================================================
-   TOTAL
-===================================================== */
-
 function calcularTotal() {
 
     const subtotal =
@@ -1954,10 +1979,6 @@ function calcularTotal() {
 
 }
 
-
-/* =====================================================
-   CUPOM
-===================================================== */
 
 function aplicarCupom() {
 
@@ -2041,10 +2062,6 @@ function aplicarCupom() {
 }
 
 
-/* =====================================================
-   ATUALIZAR CARRINHO
-===================================================== */
-
 function atualizarCarrinho() {
 
     const container =
@@ -2114,9 +2131,7 @@ function atualizarCarrinho() {
         function(item, index) {
 
             const div =
-                document.createElement(
-                    "div"
-                );
+                document.createElement("div");
 
 
             div.className =
@@ -2164,9 +2179,7 @@ function atualizarCarrinho() {
                 '</div>';
 
 
-            container.appendChild(
-                div
-            );
+            container.appendChild(div);
 
         }
     );
@@ -2210,10 +2223,6 @@ function atualizarCarrinho() {
 }
 
 
-/* =====================================================
-   REMOVER
-===================================================== */
-
 function removerProduto(index) {
 
     carrinho.splice(
@@ -2227,19 +2236,11 @@ function removerProduto(index) {
 }
 
 
-/* =====================================================
-   CARRINHO
-===================================================== */
-
 function abrirCarrinho() {
 
     document
-        .getElementById(
-            "cartOverlay"
-        )
-        .classList.add(
-            "active"
-        );
+        .getElementById("cartOverlay")
+        .classList.add("active");
 
 
     atualizarCarrinho();
@@ -2250,12 +2251,8 @@ function abrirCarrinho() {
 function fecharCarrinho() {
 
     document
-        .getElementById(
-            "cartOverlay"
-        )
-        .classList.remove(
-            "active"
-        );
+        .getElementById("cartOverlay")
+        .classList.remove("active");
 
 }
 
@@ -2274,10 +2271,6 @@ function fecharCarrinhoFora(event) {
 }
 
 
-/* =====================================================
-   PAGAMENTO
-===================================================== */
-
 function selecionarPagamento(
     pagamento,
     botao
@@ -2288,21 +2281,15 @@ function selecionarPagamento(
 
 
     document
-        .querySelectorAll(
-            ".payments button"
-        )
+        .querySelectorAll(".payments button")
         .forEach(function(item) {
 
-            item.classList.remove(
-                "selected"
-            );
+            item.classList.remove("selected");
 
         });
 
 
-    botao.classList.add(
-        "selected"
-    );
+    botao.classList.add("selected");
 
 
     document.getElementById(
@@ -2311,23 +2298,6 @@ function selecionarPagamento(
 
 }
 
-
-/* =====================================================
-   NÚMERO PROGRESSIVO
-=====================================================
-
-   FIRESTORE:
-
-   contador
-       └── pedidos
-             └── proximoNumero
-
-   pedidos
-       ├── #001
-       ├── #002
-       └── #003
-
-===================================================== */
 
 async function gerarNumeroPedido() {
 
@@ -2350,8 +2320,7 @@ async function gerarNumeroPedido() {
                     );
 
 
-                let proximoNumero =
-                    1;
+                let proximoNumero = 1;
 
 
                 if (
@@ -2369,9 +2338,7 @@ async function gerarNumeroPedido() {
 
 
                     if (
-                        Number.isInteger(
-                            numeroSalvo
-                        ) &&
+                        Number.isInteger(numeroSalvo) &&
                         numeroSalvo >= 1
                     ) {
 
@@ -2414,10 +2381,6 @@ async function gerarNumeroPedido() {
 
 }
 
-
-/* =====================================================
-   SALVAR PEDIDO
-===================================================== */
 
 async function salvarPedidoFirebase() {
 
@@ -2474,17 +2437,9 @@ async function salvarPedidoFirebase() {
         });
 
 
-    /*
-     * Gera o número progressivo.
-     */
-
     const numeroPedido =
         await gerarNumeroPedido();
 
-
-    /*
-     * O número do pedido é o ID.
-     */
 
     const pedidoRef =
         doc(
@@ -2548,10 +2503,6 @@ async function salvarPedidoFirebase() {
 
 }
 
-
-/* =====================================================
-   FINALIZAR COMPRA
-===================================================== */
 
 async function finalizarCompra() {
 
@@ -2641,38 +2592,11 @@ async function finalizarCompra() {
             await salvarPedidoFirebase();
 
 
-        console.log(
-            "Pedido registrado:",
-            pedidoId
-        );
-
-
     } catch (firebaseErro) {
 
         console.error(
-            "================================"
-        );
-
-        console.error(
-            "ERRO AO REGISTRAR PEDIDO"
-        );
-
-        console.error(
+            "ERRO AO REGISTRAR PEDIDO",
             firebaseErro
-        );
-
-        console.error(
-            "Código:",
-            firebaseErro.code
-        );
-
-        console.error(
-            "Mensagem:",
-            firebaseErro.message
-        );
-
-        console.error(
-            "================================"
         );
 
 
@@ -2718,13 +2642,6 @@ async function finalizarCompra() {
         return;
 
     }
-
-
-    /*
-     * IMPORTANTE:
-     *
-     * pedidoId NÃO é colocado no WhatsApp.
-     */
 
 
     const total =
@@ -2806,9 +2723,7 @@ async function finalizarCompra() {
         "https://wa.me/" +
         WHATSAPP +
         "?text=" +
-        encodeURIComponent(
-            mensagem
-        );
+        encodeURIComponent(mensagem);
 
 
     erro.style.color =
@@ -2819,30 +2734,17 @@ async function finalizarCompra() {
         "Pedido registrado! Abrindo o WhatsApp...";
 
 
-    /*
-     * Não usamos window.open(),
-     * para evitar bloqueio de pop-up.
-     */
-
     window.location.href =
         url;
 
 }
 
 
-/* =====================================================
-   TABELA
-===================================================== */
-
 function abrirTabelaMedidas() {
 
     document
-        .getElementById(
-            "measureOverlay"
-        )
-        .classList.add(
-            "active"
-        );
+        .getElementById("measureOverlay")
+        .classList.add("active");
 
 }
 
@@ -2850,12 +2752,8 @@ function abrirTabelaMedidas() {
 function fecharTabelaMedidas() {
 
     document
-        .getElementById(
-            "measureOverlay"
-        )
-        .classList.remove(
-            "active"
-        );
+        .getElementById("measureOverlay")
+        .classList.remove("active");
 
 }
 
@@ -2874,10 +2772,6 @@ function fecharTabelaFora(event) {
 }
 
 
-/* =====================================================
-   ESC
-===================================================== */
-
 document.addEventListener(
     "keydown",
     function(event) {
@@ -2895,10 +2789,6 @@ document.addEventListener(
     }
 );
 
-
-/* =====================================================
-   DISPONIBILIZAR FUNÇÕES
-===================================================== */
 
 window.trocarImagem =
     trocarImagem;
@@ -2943,10 +2833,6 @@ window.fecharTabelaFora =
     fecharTabelaFora;
 
 
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
-
 atualizarCarrinho();
 
 carregarEstoque();
@@ -2957,3 +2843,4 @@ observarEstoque();
 
 </body>
 </html>
+```
