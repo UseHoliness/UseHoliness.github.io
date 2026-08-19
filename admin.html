@@ -700,6 +700,46 @@ body {
 
 }
 
+.order-status-select {
+
+    min-width: 190px;
+
+    padding: 10px 12px;
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 9px;
+
+    letter-spacing: 1px;
+
+    cursor: pointer;
+
+    outline: none;
+
+}
+
+.order-status-select:focus {
+
+    border-color: #000;
+
+}
+
+.order-status-select.status-whatsapp {
+    background: #fff3c4;
+}
+
+.order-status-select.status-confirmed {
+    background: #dff5e5;
+}
+
+.order-status-select.status-cancelled {
+    background: #f8dddd;
+}
+
 .order-content {
 
     padding-top: 20px;
@@ -1471,6 +1511,7 @@ import {
     getDocs,
     onSnapshot,
     setDoc,
+    updateDoc,
     deleteDoc
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
@@ -2500,6 +2541,77 @@ function extrairNumero(valor) {
 
 
 /* =====================================================
+   ATUALIZAR STATUS DO PEDIDO
+===================================================== */
+
+async function alterarStatusPedido(id, novoStatus, select) {
+
+    if (!id || !novoStatus) {
+        return;
+    }
+
+    const statusAnterior = select.dataset.statusAnterior || "aguardando_whatsapp";
+
+    select.disabled = true;
+
+    try {
+
+        await updateDoc(
+            doc(db, "pedidos", id),
+            {
+                status: novoStatus,
+                statusAtualizadoEm: new Date()
+            }
+        );
+
+        select.dataset.statusAnterior = novoStatus;
+        aplicarClasseStatus(select, novoStatus);
+        mostrarToast("Status atualizado com sucesso.");
+
+    } catch (erro) {
+
+        console.error("Erro ao atualizar status:", erro);
+
+        select.value = statusAnterior;
+        aplicarClasseStatus(select, statusAnterior);
+
+        alert(
+            "Não foi possível atualizar o status. Verifique as regras do Firebase."
+        );
+
+    } finally {
+
+        select.disabled = false;
+
+    }
+
+}
+
+
+function aplicarClasseStatus(select, status) {
+
+    select.classList.remove(
+        "status-whatsapp",
+        "status-confirmed",
+        "status-cancelled"
+    );
+
+    if (status === "aguardando_whatsapp") {
+        select.classList.add("status-whatsapp");
+    }
+
+    else if (status === "pedido_confirmado") {
+        select.classList.add("status-confirmed");
+    }
+
+    else if (status === "cancelado") {
+        select.classList.add("status-cancelled");
+    }
+
+}
+
+
+/* =====================================================
    RENDERIZAR PEDIDOS
 ===================================================== */
 
@@ -2674,14 +2786,25 @@ function renderizarPedidos() {
 
                 '</div>' +
 
-                '<div class="order-status">' +
+                '<select class="order-status-select" data-status-anterior="' +
+                escapeHTML(status) +
+                '" data-id="' +
+                escapeHTML(pedido.id) +
+                '">' +
 
-                status.replace(
-                    /_/g,
-                    " "
-                ).toUpperCase() +
+                '<option value="aguardando_whatsapp" ' +
+                (status === "aguardando_whatsapp" ? "selected" : "") +
+                '>🟡 Aguardando WhatsApp</option>' +
 
-                '</div>' +
+                '<option value="pedido_confirmado" ' +
+                (status === "pedido_confirmado" ? "selected" : "") +
+                '>🟢 Pedido confirmado</option>' +
+
+                '<option value="cancelado" ' +
+                (status === "cancelado" ? "selected" : "") +
+                '>🔴 Cancelado</option>' +
+
+                '</select>' +
 
                 '</div>' +
 
@@ -2792,6 +2915,32 @@ function renderizarPedidos() {
                 '</div>' +
 
                 '</div>';
+
+
+            const statusSelect =
+                card.querySelector(
+                    ".order-status-select"
+                );
+
+
+            aplicarClasseStatus(
+                statusSelect,
+                status
+            );
+
+
+            statusSelect.addEventListener(
+                "change",
+                function() {
+
+                    alterarStatusPedido(
+                        pedido.id,
+                        statusSelect.value,
+                        statusSelect
+                    );
+
+                }
+            );
 
 
             const deleteButton =
