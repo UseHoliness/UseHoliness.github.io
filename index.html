@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HOLINESS</title>
@@ -16,6 +18,10 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
+
+/* =====================================================
+   RESET
+===================================================== */
 
 * {
     margin: 0;
@@ -39,18 +45,29 @@ body {
 ===================================================== */
 
 .topbar {
+
     height: 30px;
+
     background: #000;
+
     color: #fff;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-size: 10px;
+
     letter-spacing: 1px;
+
 }
 
 .topbar strong {
+
     margin-left: 5px;
+
 }
 
 
@@ -59,50 +76,89 @@ body {
 ===================================================== */
 
 header {
+
     height: 75px;
+
     background: #fff;
+
     display: flex;
+
     align-items: center;
+
     justify-content: space-between;
+
     padding: 0 45px;
+
     border-bottom: 1px solid #ddd;
+
     position: sticky;
+
     top: 0;
+
     z-index: 100;
+
 }
 
 .logo {
+
     color: #000;
+
     text-decoration: none;
+
     font-family: "Anton", sans-serif;
+
     font-size: 31px;
+
     letter-spacing: 1px;
+
 }
 
 .cart-button {
+
     border: none;
+
     background: transparent;
+
     cursor: pointer;
+
     font-family: "Anton", sans-serif;
+
     font-size: 14px;
+
     letter-spacing: 1px;
+
     position: relative;
+
 }
 
 .cart-button span {
+
     position: absolute;
+
     top: -13px;
+
     right: -17px;
+
     width: 21px;
+
     height: 21px;
+
     border-radius: 50%;
+
     background: #000;
+
     color: #fff;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-family: Arial, sans-serif;
+
     font-size: 10px;
+
 }
 
 
@@ -111,23 +167,37 @@ header {
 ===================================================== */
 
 .hero {
+
     width: 100%;
+
     margin: 0;
+
     padding: 0;
+
     background: #111;
+
     overflow: hidden;
+
 }
 
 .hero-picture {
+
     display: block;
+
     width: 100%;
+
     line-height: 0;
+
 }
 
 .hero-banner {
+
     display: block;
+
     width: 100%;
+
     height: auto;
+
 }
 
 
@@ -136,24 +206,37 @@ header {
 ===================================================== */
 
 .products {
+
     padding: 90px 5%;
+
 }
 
 .section-title {
+
     margin-bottom: 45px;
+
 }
 
 .section-title span {
+
     font-family: "Anton", sans-serif;
+
     font-size: 12px;
+
     letter-spacing: 3px;
+
     color: #777;
+
 }
 
 .section-title h2 {
+
     font-family: "Anton", sans-serif;
+
     font-size: 60px;
+
     font-weight: 400;
+
 }
 
 
@@ -162,10 +245,16 @@ header {
 ===================================================== */
 
 .products-grid {
+
     display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+
+    grid-template-columns:
+        repeat(2, minmax(0, 1fr));
+
     gap: 30px;
+
     align-items: start;
+
 }
 
 
@@ -174,32 +263,50 @@ header {
 ===================================================== */
 
 .product {
+
     width: 100%;
+
     background: #fff;
+
     overflow: hidden;
+
     min-width: 0;
+
 }
 
 
 /* =====================================================
-   IMAGEM
+   IMAGEM PRINCIPAL
 ===================================================== */
 
 .product-image {
+
     width: 100%;
+
     height: 550px;
+
     background: #e6e2dd;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     overflow: hidden;
+
 }
 
 .product-image img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: contain;
+
     display: block;
+
 }
 
 
@@ -208,33 +315,55 @@ header {
 ===================================================== */
 
 .product-thumbnails {
+
     display: flex;
+
     gap: 8px;
+
     padding: 10px 15px;
+
     background: #e6e2dd;
+
 }
 
 .thumb {
+
     width: 65px;
+
     height: 65px;
+
     padding: 0;
+
     border: 1px solid #aaa;
+
     background: #ddd;
+
     cursor: pointer;
+
     opacity: .6;
+
     overflow: hidden;
+
 }
 
 .thumb.active {
+
     opacity: 1;
+
     border: 2px solid #000;
+
 }
 
 .thumb img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
 }
 
 
@@ -243,35 +372,57 @@ header {
 ===================================================== */
 
 .product-info {
+
     padding: 30px 32px 32px;
+
 }
 
 .product-number {
+
     color: #999;
+
     font-size: 10px;
+
     letter-spacing: 3px;
+
 }
 
 .product-info h3 {
+
     font-family: "Anton", sans-serif;
+
     font-size: 45px;
+
     font-weight: 400;
+
     margin: 5px 0 15px;
+
 }
 
 .description {
+
     font-family: Georgia, serif;
+
     color: #444;
+
     font-size: 14px;
+
     line-height: 1.6;
+
     margin-bottom: 18px;
+
     min-height: 46px;
+
 }
 
 .price {
+
     font-family: "Anton", sans-serif;
+
     font-size: 30px;
+
     margin-bottom: 25px;
+
 }
 
 
@@ -280,47 +431,81 @@ header {
 ===================================================== */
 
 .label {
+
     display: block;
+
     font-family: "Anton", sans-serif;
+
     font-size: 11px;
+
     letter-spacing: 2px;
+
     margin-bottom: 10px;
+
 }
 
 .sizes {
+
     display: flex;
+
     gap: 10px;
+
     margin-bottom: 8px;
+
     flex-wrap: wrap;
+
 }
 
 .sizes button {
+
     pointer-events: auto;
+
     position: relative;
+
     width: 54px;
+
     height: 54px;
+
     min-width: 54px;
+
     border: 1px solid #aaa;
+
     background: #fff;
+
     cursor: pointer;
+
     font-family: "Anton", sans-serif;
+
     font-size: 13px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     transition: .2s;
+
 }
 
 .sizes button:hover:not(.unavailable) {
+
     background: #000;
+
     color: #fff;
+
     border-color: #000;
+
 }
 
 .sizes button.selected {
+
     background: #000;
+
     color: #fff;
+
     border-color: #000;
+
 }
 
 
@@ -329,48 +514,80 @@ header {
 ===================================================== */
 
 .sizes button.unavailable {
+
     background: #f5f5f5;
+
     color: #999;
+
     cursor: not-allowed;
+
 }
 
 .sizes button.unavailable::after {
+
     content: "×";
+
     position: absolute;
+
     inset: 0;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     font-family: Arial, sans-serif;
+
     font-size: 31px;
+
     font-weight: 300;
+
     line-height: 1;
+
     color: #999;
+
     pointer-events: none;
+
 }
 
 
 /* =====================================================
-   TABELA
+   TABELA DE MEDIDAS
 ===================================================== */
 
 .measure-button {
+
     display: block;
+
     background: transparent;
+
     border: none;
+
     border-bottom: 1px solid #111;
+
     padding: 5px 0;
+
     margin-top: 2px;
+
     margin-bottom: 18px;
+
     font-family: "Anton", sans-serif;
+
     font-size: 10px;
+
     letter-spacing: 1.5px;
+
     cursor: pointer;
+
     color: #111;
+
 }
 
 .measure-button:hover {
+
     opacity: .55;
+
 }
 
 
@@ -379,10 +596,15 @@ header {
 ===================================================== */
 
 .stock {
+
     min-height: 25px;
+
     font-size: 10px;
+
     color: #777;
+
     margin-bottom: 17px;
+
 }
 
 
@@ -391,29 +613,49 @@ header {
 ===================================================== */
 
 .quantity {
+
     width: 135px;
+
     height: 43px;
+
     display: flex;
+
     margin-bottom: 20px;
+
 }
 
 .quantity button {
+
     width: 43px;
+
     border: 1px solid #aaa;
+
     background: #fff;
+
     font-size: 18px;
+
     cursor: pointer;
+
 }
 
 .quantity span {
+
     width: 49px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     border-top: 1px solid #aaa;
+
     border-bottom: 1px solid #aaa;
+
     background: #fff;
+
     font-weight: bold;
+
 }
 
 
@@ -422,20 +664,33 @@ header {
 ===================================================== */
 
 .add-button {
+
     width: 100%;
+
     height: 58px;
+
     border: none;
+
     background: #000;
+
     color: #fff;
+
     font-family: "Anton", sans-serif;
+
     letter-spacing: 2px;
+
     cursor: pointer;
+
     transition: .2s;
+
 }
 
 .add-button:hover {
+
     background: #d49a19;
+
     color: #000;
+
 }
 
 
@@ -444,20 +699,31 @@ header {
 ===================================================== */
 
 .images-section {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     height: 550px;
+
 }
 
 .images-section div {
+
     overflow: hidden;
+
 }
 
 .images-section img {
+
     width: 100%;
+
     height: 100%;
+
     object-fit: cover;
+
     display: block;
+
 }
 
 
@@ -466,27 +732,45 @@ header {
 ===================================================== */
 
 footer {
+
     min-height: 170px;
+
     background: #f3f1ed;
+
     border-top: 1px solid #ddd;
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding: 30px 50px;
+
 }
 
 .footer-logo {
+
     font-family: "Anton", sans-serif;
+
     font-size: 35px;
+
 }
 
 footer p {
+
     max-width: 500px;
+
     text-align: right;
+
     color: #777;
+
     font-family: Georgia, serif;
+
     font-size: 12px;
+
     line-height: 1.6;
+
 }
 
 
@@ -495,107 +779,178 @@ footer p {
 ===================================================== */
 
 .cart-overlay {
+
     position: fixed;
+
     inset: 0;
+
     background: rgba(0,0,0,.55);
+
     z-index: 999;
+
     opacity: 0;
+
     visibility: hidden;
+
     transition: .3s;
+
 }
 
 .cart-overlay.active {
+
     opacity: 1;
+
     visibility: visible;
+
 }
 
 .cart {
+
     position: absolute;
+
     right: 0;
+
     top: 0;
+
     width: 440px;
+
     max-width: 100%;
+
     height: 100%;
+
     background: #f3f1ed;
+
     padding: 30px;
+
     overflow-y: auto;
+
     transform: translateX(100%);
+
     transition: .3s;
+
 }
 
 .cart-overlay.active .cart {
+
     transform: translateX(0);
+
 }
 
 .cart-header {
+
     display: flex;
+
     justify-content: space-between;
+
     align-items: center;
+
     padding-bottom: 18px;
+
     border-bottom: 1px solid #ddd;
+
 }
 
 .cart-header h2 {
+
     font-family: "Anton", sans-serif;
+
     font-size: 28px;
+
     font-weight: 400;
+
 }
 
 .cart-header button {
+
     background: transparent;
+
     border: none;
+
     font-size: 28px;
+
     cursor: pointer;
+
 }
 
 
 /* =====================================================
-   ITEM
+   ITEM CARRINHO
 ===================================================== */
 
 .cart-item {
+
     display: flex;
+
     gap: 13px;
+
     padding: 15px 0;
+
     border-bottom: 1px solid #ddd;
+
 }
 
 .cart-item img {
+
     width: 80px;
+
     height: 90px;
+
     object-fit: contain;
+
     background: #e6e2dd;
+
 }
 
 .cart-item-info {
+
     flex: 1;
+
 }
 
 .cart-item-info h3 {
+
     font-family: "Anton", sans-serif;
+
     font-size: 20px;
+
     font-weight: 400;
+
 }
 
 .cart-item-info p {
+
     font-size: 10px;
+
     color: #666;
+
     margin-top: 5px;
+
 }
 
 .remove {
+
     margin-top: 8px;
+
     border: none;
+
     background: transparent;
+
     color: #999;
+
     font-size: 9px;
+
     cursor: pointer;
+
 }
 
 .empty {
+
     text-align: center;
+
     padding: 50px 0;
+
     color: #777;
+
 }
 
 
@@ -604,51 +959,85 @@ footer p {
 ===================================================== */
 
 .cart-coupon {
+
     margin-top: 20px;
+
     margin-bottom: 20px;
+
 }
 
 .cart-coupon label {
+
     display: block;
+
     font-family: "Anton", sans-serif;
+
     font-size: 11px;
+
     letter-spacing: 2px;
+
     margin-bottom: 9px;
+
 }
 
 .cart-coupon-input {
+
     display: flex;
+
 }
 
 .cart-coupon-input input {
+
     flex: 1;
+
     height: 45px;
+
     border: 1px solid #aaa;
+
     border-right: none;
+
     outline: none;
+
     padding: 0 13px;
+
     background: #fff;
+
     text-transform: uppercase;
+
 }
 
 .cart-coupon-input button {
+
     width: 100px;
+
     border: none;
+
     background: #000;
+
     color: #fff;
+
     font-family: "Anton", sans-serif;
+
     cursor: pointer;
+
 }
 
 .cart-coupon-input button:hover {
+
     background: #d49a19;
+
     color: #000;
+
 }
 
 .coupon-message {
+
     min-height: 18px;
+
     margin-top: 7px;
+
     font-size: 11px;
+
 }
 
 
@@ -657,12 +1046,19 @@ footer p {
 ===================================================== */
 
 .cart-total {
+
     display: flex;
+
     justify-content: space-between;
+
     padding: 22px 0;
+
     font-family: "Anton", sans-serif;
+
     font-size: 22px;
+
     border-top: 1px solid #ddd;
+
 }
 
 
@@ -671,108 +1067,182 @@ footer p {
 ===================================================== */
 
 .payment-title {
+
     font-family: "Anton", sans-serif;
+
     font-size: 11px;
+
     letter-spacing: 2px;
+
     margin-bottom: 10px;
+
 }
 
 .payments {
+
     display: flex;
+
     gap: 7px;
+
     flex-wrap: wrap;
+
     margin-bottom: 15px;
+
 }
 
 .payments button {
+
     padding: 10px 15px;
+
     border: 1px solid #aaa;
+
     background: #fff;
+
     font-family: "Anton", sans-serif;
+
     cursor: pointer;
+
 }
 
 .payments button.selected {
+
     background: #000;
+
     color: #fff;
+
     border-color: #000;
+
 }
 
 .cart-error {
+
     min-height: 20px;
+
     color: #b00000;
+
     font-size: 11px;
-    margin-bottom: 8px;
+
 }
 
 .checkout {
+
     width: 100%;
+
     height: 57px;
+
     background: #000;
+
     color: #fff;
+
     border: none;
+
     font-family: "Anton", sans-serif;
+
     letter-spacing: 2px;
+
     cursor: pointer;
+
 }
 
 .checkout:hover {
+
     background: #d49a19;
+
     color: #000;
+
 }
 
 
 /* =====================================================
-   MODAL
+   MODAL TABELA
 ===================================================== */
 
 .measure-overlay {
+
     position: fixed;
+
     inset: 0;
+
     background: rgba(0,0,0,.65);
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
     padding: 20px;
+
     z-index: 2000;
+
     opacity: 0;
+
     visibility: hidden;
+
     transition: .25s;
+
 }
 
 .measure-overlay.active {
+
     opacity: 1;
+
     visibility: visible;
+
 }
 
 .measure-modal {
+
     position: relative;
+
     max-width: 90vw;
+
     max-height: 90vh;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
 }
 
 .measure-image {
+
     display: block;
+
     max-width: 90vw;
+
     max-height: 85vh;
+
     width: auto;
+
     height: auto;
+
     object-fit: contain;
+
 }
 
 .close-measure {
+
     position: absolute;
+
     top: -45px;
+
     right: 0;
+
     border: none;
+
     background: transparent;
+
     color: #fff;
+
     font-size: 35px;
+
     line-height: 1;
+
     cursor: pointer;
+
 }
 
 
@@ -783,38 +1253,57 @@ footer p {
 @media (max-width: 900px) {
 
     header {
+
         padding: 0 20px;
+
     }
 
     .products {
+
         padding: 60px 20px;
+
     }
 
     .products-grid {
+
         grid-template-columns: 1fr;
+
     }
 
     .product-image {
+
         height: 500px;
+
     }
 
     .images-section {
+
         grid-template-columns: 1fr;
+
         height: auto;
+
     }
 
     .images-section div {
+
         height: 450px;
+
     }
 
     footer {
+
         flex-direction: column;
+
         gap: 20px;
+
         text-align: center;
+
     }
 
     footer p {
+
         text-align: center;
+
     }
 
 }
@@ -823,30 +1312,45 @@ footer p {
 @media (max-width: 500px) {
 
     .section-title h2 {
+
         font-size: 45px;
+
     }
 
     .product-info {
+
         padding: 25px;
+
     }
 
     .product-info h3 {
+
         font-size: 38px;
+
     }
 
     .sizes {
+
         gap: 7px;
+
     }
 
     .sizes button {
+
         width: 48px;
+
         height: 48px;
+
         min-width: 48px;
+
     }
 
     .measure-image {
+
         max-width: 94vw;
+
         max-height: 80vh;
+
     }
 
 }
@@ -859,6 +1363,10 @@ footer p {
 <body>
 
 
+<!-- =====================================================
+     TOPO
+===================================================== -->
+
 <div class="topbar">
 
     PRIMEIRA COMPRA?
@@ -866,6 +1374,10 @@ footer p {
 
 </div>
 
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -887,6 +1399,10 @@ footer p {
 </header>
 
 
+<!-- =====================================================
+     HERO
+===================================================== -->
+
 <section class="hero">
 
     <picture class="hero-picture">
@@ -907,6 +1423,10 @@ footer p {
 </section>
 
 
+<!-- =====================================================
+     PRODUTOS
+===================================================== -->
+
 <section class="products">
 
     <div class="section-title">
@@ -925,7 +1445,9 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- GLORY -->
+        <!-- =================================================
+             GLORY
+        ================================================== -->
 
         <div class="product">
 
@@ -998,11 +1520,13 @@ footer p {
 
 
                 <p class="description">
+
                     Acreditamos que, buscando
                     incansavelmente à Deus,
                     chegaremos a manifestação visível
                     da presença, do poder e de todas
                     as perfeições.
+
                 </p>
 
 
@@ -1030,6 +1554,7 @@ footer p {
                         PP
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1041,6 +1566,7 @@ footer p {
                     >
                         P
                     </button>
+
 
                     <button
                         onclick="
@@ -1054,6 +1580,7 @@ footer p {
                         M
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1066,6 +1593,7 @@ footer p {
                         G
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1077,6 +1605,7 @@ footer p {
                     >
                         GG
                     </button>
+
 
                     <button
                         onclick="
@@ -1127,9 +1656,11 @@ footer p {
                         −
                     </button>
 
+
                     <span id="GloryQuantity">
                         1
                     </span>
+
 
                     <button
                         onclick="
@@ -1162,7 +1693,9 @@ footer p {
         </div>
 
 
-        <!-- FRASSATI -->
+        <!-- =================================================
+             FRASSATI
+        ================================================== -->
 
         <div class="product">
 
@@ -1235,10 +1768,12 @@ footer p {
 
 
                 <p class="description">
+
                     Como Frassati se expressa,
                     "Ir o mais alto para escutar
                     Aquele que com tanto amor
                     nos escolheu"
+
                 </p>
 
 
@@ -1266,6 +1801,7 @@ footer p {
                         PP
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1277,6 +1813,7 @@ footer p {
                     >
                         P
                     </button>
+
 
                     <button
                         onclick="
@@ -1290,6 +1827,7 @@ footer p {
                         M
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1302,6 +1840,7 @@ footer p {
                         G
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1313,6 +1852,7 @@ footer p {
                     >
                         GG
                     </button>
+
 
                     <button
                         onclick="
@@ -1363,9 +1903,11 @@ footer p {
                         −
                     </button>
 
+
                     <span id="FrassatiQuantity">
                         1
                     </span>
+
 
                     <button
                         onclick="
@@ -1402,24 +1944,37 @@ footer p {
 </section>
 
 
+<!-- =====================================================
+     IMAGENS INFERIORES
+===================================================== -->
+
 <section class="images-section">
 
     <div>
+
         <img
             src="Obrigado.png"
             alt="Holiness"
         >
+
     </div>
 
+
     <div>
+
         <img
             src="fig.png"
             alt="Coleção Holiness"
         >
+
     </div>
 
 </section>
 
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1428,9 +1983,11 @@ footer p {
     </div>
 
     <p>
+
         Ao contemplarmos a presença de Deus,
         somos transformados progressivamente
         à imagem de Cristo pelo Espírito Santo.
+
     </p>
 
 </footer>
@@ -1469,11 +2026,14 @@ footer p {
         <div id="cartItems"></div>
 
 
+        <!-- CUPOM -->
+
         <div class="cart-coupon">
 
             <label>
                 CUPOM DE DESCONTO
             </label>
+
 
             <div class="cart-coupon-input">
 
@@ -1483,6 +2043,7 @@ footer p {
                     placeholder="DIGITE SEU CUPOM"
                 >
 
+
                 <button
                     onclick="aplicarCupom()"
                 >
@@ -1491,6 +2052,7 @@ footer p {
 
             </div>
 
+
             <div
                 id="couponMessage"
                 class="coupon-message"
@@ -1498,6 +2060,8 @@ footer p {
 
         </div>
 
+
+        <!-- TOTAL -->
 
         <div class="cart-total">
 
@@ -1511,6 +2075,8 @@ footer p {
 
         </div>
 
+
+        <!-- PAGAMENTO -->
 
         <div class="payment-title">
             MÉTODO DE PAGAMENTO
@@ -1530,6 +2096,7 @@ footer p {
                 PIX
             </button>
 
+
             <button
                 onclick="
                     selecionarPagamento(
@@ -1540,6 +2107,7 @@ footer p {
             >
                 CARTÃO
             </button>
+
 
             <button
                 onclick="
@@ -1574,7 +2142,7 @@ footer p {
 
 
 <!-- =====================================================
-     MODAL
+     MODAL TABELA
 ===================================================== -->
 
 <div
@@ -1594,6 +2162,7 @@ footer p {
         >
             ×
         </button>
+
 
         <img
             src="medida.png"
@@ -1750,6 +2319,7 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
+
         Number(valor)
             .toFixed(2)
             .replace(".", ",");
@@ -1857,6 +2427,7 @@ function selecionarTamanho(
 
 
     texto.innerHTML =
+
         "Tamanho <strong>" +
         tamanho +
         "</strong> — " +
@@ -1896,6 +2467,7 @@ function atualizarTamanhosDisponiveis() {
 
             }
 
+
             else if (
                 nomeProduto === "frassati"
             ) {
@@ -1904,6 +2476,7 @@ function atualizarTamanhosDisponiveis() {
                     estoque.Frassati;
 
             }
+
 
             else {
 
@@ -1940,6 +2513,7 @@ function atualizarTamanhosDisponiveis() {
                         botao.disabled = true;
 
                     }
+
 
                     else {
 
@@ -2114,19 +2688,25 @@ function adicionarProduto(
 
     }
 
+
     else {
 
         carrinho.push({
 
-            nome: nome,
+            nome:
+                nome,
 
-            imagem: imagem,
+            imagem:
+                imagem,
 
-            tamanho: tamanho,
+            tamanho:
+                tamanho,
 
-            quantidade: quantidade,
+            quantidade:
+                quantidade,
 
-            preco: PRECO
+            preco:
+                PRECO
 
         });
 
@@ -2153,8 +2733,8 @@ function calcularSubtotal() {
         function(item) {
 
             subtotal +=
-                item.preco *
-                item.quantidade;
+                Number(item.preco) *
+                Number(item.quantidade);
 
         }
     );
@@ -2248,6 +2828,7 @@ function aplicarCupom() {
 
     }
 
+
     else {
 
         descontoAtual = 0;
@@ -2301,7 +2882,7 @@ function atualizarCarrinho() {
         function(item) {
 
             quantidadeTotal +=
-                item.quantidade;
+                Number(item.quantidade);
 
         }
     );
@@ -2323,6 +2904,7 @@ function atualizarCarrinho() {
 
         total.innerText =
             dinheiro(0);
+
 
         return;
 
@@ -2422,6 +3004,7 @@ function atualizarCarrinho() {
 
     }
 
+
     else {
 
         total.innerText =
@@ -2450,7 +3033,7 @@ function removerProduto(index) {
 
 
 /* =====================================================
-   CARRINHO
+   ABRIR CARRINHO
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2468,6 +3051,10 @@ function abrirCarrinho() {
 
 }
 
+
+/* =====================================================
+   FECHAR CARRINHO
+===================================================== */
 
 function fecharCarrinho() {
 
@@ -2537,7 +3124,7 @@ function selecionarPagamento(
 
 
 /* =====================================================
-   NÚMERO DO PEDIDO
+   GERAR NÚMERO DO PEDIDO
 ===================================================== */
 
 async function gerarNumeroPedido() {
@@ -2580,11 +3167,15 @@ async function gerarNumeroPedido() {
                 transaction.set(
                     contadorRef,
                     {
+
                         ultimoNumero:
                             proximoNumero
+
                     },
                     {
+
                         merge: true
+
                     }
                 );
 
@@ -2698,6 +3289,7 @@ async function finalizarCompra() {
 
     try {
 
+
         /* =================================================
            GERA NÚMERO
         ================================================= */
@@ -2754,34 +3346,37 @@ async function finalizarCompra() {
 
 
         /* =================================================
-           EMOJIS EM UNICODE
+           EMOJIS UNICODE
         ================================================= */
 
-        const emojiOla =
+        const ola =
             "\u{1F44B}";
 
-        const emojiPedido =
+        const fogo =
+            "\u{1F525}";
+
+        const pedidoEmoji =
             "\u{1F9FE}";
 
-        const emojiCamisa =
+        const camisa =
             "\u{1F455}";
 
-        const emojiTamanho =
+        const tamanhoEmoji =
             "\u{1F4CF}";
 
-        const emojiQuantidade =
+        const quantidadeEmoji =
             "\u{1F522}";
 
-        const emojiDinheiro =
+        const dinheiroEmoji =
             "\u{1F4B0}";
 
-        const emojiCupom =
-            "\u{1F39F}\u{FE0F}";
+        const cupomEmoji =
+            "\u{1F3AB}";
 
-        const emojiPagamento =
+        const pagamentoEmoji =
             "\u{1F4B3}";
 
-        const emojiFinalizar =
+        const finalizarEmoji =
             "\u{1F64C}";
 
 
@@ -2792,16 +3387,16 @@ async function finalizarCompra() {
         let mensagem =
 
             "Olá! " +
-            emojiOla +
-
-            "\n" +
-
-            "Quero fazer meu pedido da HOLINESS! " +
-            emojiCamisa +
+            ola +
 
             "\n\n" +
 
-            emojiPedido +
+            "Quero fazer meu pedido da HOLINESS! " +
+            fogo +
+
+            "\n\n" +
+
+            pedidoEmoji +
             " Pedido: " +
             numeroPedido +
 
@@ -2813,19 +3408,19 @@ async function finalizarCompra() {
 
                 mensagem +=
 
-                    emojiCamisa +
+                    camisa +
                     " " +
                     item.nome +
 
                     "\n" +
 
-                    emojiTamanho +
+                    tamanhoEmoji +
                     " Tamanho: " +
                     item.tamanho +
 
                     "\n" +
 
-                    emojiQuantidade +
+                    quantidadeEmoji +
                     " Quantidade: " +
                     item.quantidade +
 
@@ -2837,7 +3432,7 @@ async function finalizarCompra() {
 
         mensagem +=
 
-            emojiDinheiro +
+            dinheiroEmoji +
             " Total: " +
             dinheiro(total);
 
@@ -2850,7 +3445,7 @@ async function finalizarCompra() {
 
                 "\n" +
 
-                emojiCupom +
+                cupomEmoji +
                 " Cupom: " +
                 cupomAtual +
 
@@ -2865,14 +3460,14 @@ async function finalizarCompra() {
 
             "\n" +
 
-            emojiPagamento +
+            pagamentoEmoji +
             " Pagamento: " +
             pagamentoSelecionado +
 
             "\n\n" +
 
             "Quero finalizar meu pedido! " +
-            emojiFinalizar;
+            finalizarEmoji;
 
 
         /* =================================================
@@ -2890,27 +3485,15 @@ async function finalizarCompra() {
 
 
         /* =================================================
-           ABRIR WHATSAPP
+           ABRE WHATSAPP
+           
+           window.location.href funciona melhor
+           no Chrome mobile.
         ================================================= */
 
-        const novaAba =
-            window.open(
-                url,
-                "_blank"
-            );
+        window.location.href =
+            url;
 
-
-        if (!novaAba) {
-
-            window.location.href =
-                url;
-
-        }
-
-
-        /* =================================================
-           SUCESSO
-        ================================================= */
 
         erro.style.color =
             "#16833b";
@@ -2925,12 +3508,13 @@ async function finalizarCompra() {
 
     }
 
+
     catch (
         firebaseError
     ) {
 
         console.error(
-            "ERRO COMPLETO DO FIREBASE:",
+            "ERRO COMPLETO:",
             firebaseError
         );
 
@@ -2939,9 +3523,30 @@ async function finalizarCompra() {
             "#b00000";
 
 
-        erro.innerText =
+        /*
+        Mostra o erro real no site
+        para facilitar a identificação
+        */
 
-            "Não foi possível registrar o pedido. Tente novamente.";
+        if (
+            firebaseError &&
+            firebaseError.code
+        ) {
+
+            erro.innerText =
+                "Erro Firebase (" +
+                firebaseError.code +
+                "). Verifique as regras do Firestore.";
+
+        }
+
+
+        else {
+
+            erro.innerText =
+                "Não foi possível registrar o pedido. Tente novamente.";
+
+        }
 
     }
 
@@ -2959,7 +3564,7 @@ async function finalizarCompra() {
 
 
 /* =====================================================
-   TABELA
+   TABELA DE MEDIDAS
 ===================================================== */
 
 function abrirTabelaMedidas() {
