@@ -15,10 +15,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
 
@@ -49,7 +46,6 @@ body {
 
 .topbar {
     height: 30px;
-
     background: #000;
     color: #fff;
 
@@ -91,7 +87,6 @@ header {
 
 .logo {
     color: #000;
-
     text-decoration: none;
 
     font-family: "Anton", sans-serif;
@@ -103,7 +98,6 @@ header {
 
 .cart-button {
     border: none;
-
     background: transparent;
 
     cursor: pointer;
@@ -147,26 +141,20 @@ header {
 
 .hero {
     width: 100%;
-
     margin: 0;
     padding: 0;
-
     background: #111;
-
     overflow: hidden;
 }
 
 .hero-picture {
     display: block;
-
     width: 100%;
-
     line-height: 0;
 }
 
 .hero-banner {
     display: block;
-
     width: 100%;
     height: auto;
 }
@@ -386,7 +374,6 @@ header {
 
 .sizes button {
     pointer-events: auto;
-
     position: relative;
 
     width: 54px;
@@ -413,7 +400,6 @@ header {
 
 .sizes button:hover:not(.unavailable) {
     background: #000;
-
     color: #fff;
 
     border-color: #000;
@@ -466,7 +452,7 @@ header {
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 .measure-button {
@@ -559,7 +545,7 @@ header {
 
 
 /* =====================================================
-   BOTÃO ADICIONAR
+   ADICIONAR
 ===================================================== */
 
 .add-button {
@@ -741,7 +727,7 @@ footer p {
 
 
 /* =====================================================
-   ITEM CARRINHO
+   ITEM
 ===================================================== */
 
 .cart-item {
@@ -948,8 +934,6 @@ footer p {
     color: #b00000;
 
     font-size: 11px;
-
-    margin-bottom: 10px;
 }
 
 .checkout {
@@ -978,7 +962,7 @@ footer p {
 
 
 /* =====================================================
-   MODAL TABELA
+   MODAL
 ===================================================== */
 
 .measure-overlay {
@@ -1109,6 +1093,10 @@ footer p {
 
 @media (max-width: 500px) {
 
+    .hero h1 {
+        font-size: 70px;
+    }
+
     .section-title h2 {
         font-size: 45px;
     }
@@ -1171,7 +1159,6 @@ footer p {
         HOLINESS
     </a>
 
-
     <button
         class="cart-button"
         onclick="abrirCarrinho()"
@@ -1179,9 +1166,7 @@ footer p {
 
         CARRINHO
 
-        <span id="cartCount">
-            0
-        </span>
+        <span id="cartCount">0</span>
 
     </button>
 
@@ -1234,9 +1219,7 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- =================================================
-             GLORY
-        ================================================== -->
+        <!-- GLORY -->
 
         <div class="product">
 
@@ -1263,7 +1246,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Frente.png" alt="">
+                    <img src="Frente.png">
                 </button>
 
 
@@ -1277,7 +1260,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Costa.png" alt="">
+                    <img src="Costa.png">
                 </button>
 
 
@@ -1291,7 +1274,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Chuva.png" alt="">
+                    <img src="Chuva.png">
                 </button>
 
             </div>
@@ -1309,11 +1292,13 @@ footer p {
 
 
                 <p class="description">
+
                     Acreditamos que, buscando
                     incansavelmente à Deus,
                     chegaremos a manifestação visível
                     da presença, do poder e de todas
                     as perfeições.
+
                 </p>
 
 
@@ -1341,6 +1326,7 @@ footer p {
                         PP
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1352,6 +1338,7 @@ footer p {
                     >
                         P
                     </button>
+
 
                     <button
                         onclick="
@@ -1365,6 +1352,7 @@ footer p {
                         M
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1377,6 +1365,7 @@ footer p {
                         G
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1388,6 +1377,7 @@ footer p {
                     >
                         GG
                     </button>
+
 
                     <button
                         onclick="
@@ -1438,9 +1428,11 @@ footer p {
                         −
                     </button>
 
+
                     <span id="GloryQuantity">
                         1
                     </span>
+
 
                     <button
                         onclick="
@@ -1473,9 +1465,7 @@ footer p {
         </div>
 
 
-        <!-- =================================================
-             FRASSATI
-        ================================================== -->
+        <!-- FRASSATI -->
 
         <div class="product">
 
@@ -1502,7 +1492,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Frente2.png" alt="">
+                    <img src="Frente2.png">
                 </button>
 
 
@@ -1516,7 +1506,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Trás2.png" alt="">
+                    <img src="Trás2.png">
                 </button>
 
 
@@ -1530,7 +1520,7 @@ footer p {
                         )
                     "
                 >
-                    <img src="Chuva2.png" alt="">
+                    <img src="Chuva2.png">
                 </button>
 
             </div>
@@ -1548,10 +1538,12 @@ footer p {
 
 
                 <p class="description">
+
                     Como Frassati se expressa,
                     "Ir o mais alto para escutar
                     Aquele que com tanto amor
                     nos escolheu"
+
                 </p>
 
 
@@ -1579,6 +1571,7 @@ footer p {
                         PP
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1590,6 +1583,7 @@ footer p {
                     >
                         P
                     </button>
+
 
                     <button
                         onclick="
@@ -1603,6 +1597,7 @@ footer p {
                         M
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1615,6 +1610,7 @@ footer p {
                         G
                     </button>
 
+
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1626,6 +1622,7 @@ footer p {
                     >
                         GG
                     </button>
+
 
                     <button
                         onclick="
@@ -1676,9 +1673,11 @@ footer p {
                         −
                     </button>
 
+
                     <span id="FrassatiQuantity">
                         1
                     </span>
+
 
                     <button
                         onclick="
@@ -1722,18 +1721,22 @@ footer p {
 <section class="images-section">
 
     <div>
+
         <img
             src="Obrigado.png"
             alt="Holiness"
         >
+
     </div>
 
 
     <div>
+
         <img
             src="fig.png"
             alt="Coleção Holiness"
         >
+
     </div>
 
 </section>
@@ -1750,9 +1753,11 @@ footer p {
     </div>
 
     <p>
+
         Ao contemplarmos a presença de Deus,
         somos transformados progressivamente
         à imagem de Cristo pelo Espírito Santo.
+
     </p>
 
 </footer>
@@ -2020,7 +2025,6 @@ const estoque = {
 
     },
 
-
     Frassati: {
 
         PP: 3,
@@ -2084,7 +2088,7 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
-        Number(valor)
+        valor
             .toFixed(2)
             .replace(".", ",");
 
@@ -2112,15 +2116,13 @@ function trocarImagem(
 
     produto
         .querySelectorAll(".thumb")
-        .forEach(
-            function(item) {
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "active"
-                );
+            item.classList.remove(
+                "active"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2168,15 +2170,13 @@ function selecionarTamanho(
 
     container
         .querySelectorAll("button")
-        .forEach(
-            function(item) {
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "selected"
-                );
+            item.classList.remove(
+                "selected"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2191,8 +2191,7 @@ function selecionarTamanho(
         );
 
 
-    texto.style.color =
-        "#777";
+    texto.style.color = "#777";
 
 
     texto.innerHTML =
@@ -2213,92 +2212,87 @@ function atualizarTamanhosDisponiveis() {
 
     document
         .querySelectorAll(".product")
-        .forEach(
-            function(produtoElemento) {
+        .forEach(function(produtoElemento) {
 
-                const nomeProduto =
-                    produtoElemento
-                        .querySelector("h3")
-                        .innerText
-                        .trim()
-                        .toLowerCase();
-
-
-                let produtoEstoque;
+            const nomeProduto =
+                produtoElemento
+                    .querySelector("h3")
+                    .innerText
+                    .trim()
+                    .toLowerCase();
 
 
-                if (
-                    nomeProduto === "glory"
-                ) {
-
-                    produtoEstoque =
-                        estoque.Glory;
-
-                }
+            let produtoEstoque;
 
 
-                else if (
-                    nomeProduto === "frassati"
-                ) {
+            if (
+                nomeProduto === "glory"
+            ) {
 
-                    produtoEstoque =
-                        estoque.Frassati;
-
-                }
-
-
-                else {
-
-                    return;
-
-                }
-
-
-                const botoes =
-                    produtoElemento
-                        .querySelectorAll(
-                            ".sizes button"
-                        );
-
-
-                botoes.forEach(
-                    function(botao) {
-
-                        const tamanho =
-                            botao.innerText
-                                .trim()
-                                .toUpperCase();
-
-
-                        if (
-                            !produtoEstoque[tamanho] ||
-                            produtoEstoque[tamanho] <= 0
-                        ) {
-
-                            botao.classList.add(
-                                "unavailable"
-                            );
-
-                            botao.disabled = true;
-
-                        }
-
-
-                        else {
-
-                            botao.classList.remove(
-                                "unavailable"
-                            );
-
-                            botao.disabled = false;
-
-                        }
-
-                    }
-                );
+                produtoEstoque =
+                    estoque.Glory;
 
             }
-        );
+
+            else if (
+                nomeProduto === "frassati"
+            ) {
+
+                produtoEstoque =
+                    estoque.Frassati;
+
+            }
+
+            else {
+
+                return;
+
+            }
+
+
+            const botoes =
+                produtoElemento
+                    .querySelectorAll(
+                        ".sizes button"
+                    );
+
+
+            botoes.forEach(
+                function(botao) {
+
+                    const tamanho =
+                        botao.innerText
+                            .trim()
+                            .toUpperCase();
+
+
+                    if (
+                        !produtoEstoque[tamanho] ||
+                        produtoEstoque[tamanho] <= 0
+                    ) {
+
+                        botao.classList.add(
+                            "unavailable"
+                        );
+
+                        botao.disabled = true;
+
+                    }
+
+                    else {
+
+                        botao.classList.remove(
+                            "unavailable"
+                        );
+
+                        botao.disabled = false;
+
+                    }
+
+                }
+            );
+
+        });
 
 }
 
@@ -2458,7 +2452,6 @@ function adicionarProduto(
 
     }
 
-
     else {
 
         carrinho.push({
@@ -2592,7 +2585,6 @@ function aplicarCupom() {
         atualizarCarrinho();
 
     }
-
 
     else {
 
@@ -2768,7 +2760,6 @@ function atualizarCarrinho() {
 
     }
 
-
     else {
 
         total.innerText =
@@ -2780,7 +2771,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER PRODUTO
+   REMOVER
 ===================================================== */
 
 function removerProduto(index) {
@@ -2931,11 +2922,15 @@ async function gerarNumeroPedido() {
                 transaction.set(
                     contadorRef,
                     {
+
                         ultimoNumero:
                             proximoNumero
+
                     },
                     {
+
                         merge: true
+
                     }
                 );
 
@@ -2955,7 +2950,6 @@ async function gerarNumeroPedido() {
 
 /* =====================================================
    FINALIZAR COMPRA
-   WHATSAPP ABRE IMEDIATAMENTE
 ===================================================== */
 
 async function finalizarCompra() {
@@ -2966,16 +2960,9 @@ async function finalizarCompra() {
         );
 
 
-    /* =================================================
-       VALIDAÇÕES
-    ================================================= */
-
     if (
         carrinho.length === 0
     ) {
-
-        erro.style.color =
-            "#b00000";
 
         erro.innerText =
             "Seu carrinho está vazio.";
@@ -2989,53 +2976,12 @@ async function finalizarCompra() {
         pagamentoSelecionado === ""
     ) {
 
-        erro.style.color =
-            "#b00000";
-
         erro.innerText =
             "Selecione um método de pagamento.";
 
         return;
 
     }
-
-
-    /* =================================================
-       ABRE A NOVA ABA IMEDIATAMENTE
-
-       IMPORTANTE:
-       Isso acontece ANTES do Firebase.
-
-       Assim o Chrome do celular não bloqueia
-       ou demora para abrir o WhatsApp.
-    ================================================== */
-
-    let whatsappWindow = null;
-
-
-    try {
-
-        whatsappWindow =
-            window.open(
-                "about:blank",
-                "_blank"
-            );
-
-    }
-
-    catch (e) {
-
-        whatsappWindow = null;
-
-    }
-
-
-    /* =================================================
-       PREPARA DADOS
-    ================================================= */
-
-    const subtotal =
-        calcularSubtotal();
 
 
     const total =
@@ -3099,8 +3045,11 @@ async function finalizarCompra() {
     try {
 
         /* =================================================
-           GERA NÚMERO
-        ================================================= */
+           GERA NÚMERO INTERNO
+
+           Continua existindo no Firebase.
+           Não será enviado para o WhatsApp.
+        ================================================== */
 
         const numeroPedido =
             await gerarNumeroPedido();
@@ -3108,7 +3057,7 @@ async function finalizarCompra() {
 
         /* =================================================
            SALVA NO FIREBASE
-        ================================================= */
+        ================================================== */
 
         await db
             .collection("pedidos")
@@ -3128,7 +3077,7 @@ async function finalizarCompra() {
 
                 subtotal:
                     Number(
-                        subtotal.toFixed(2)
+                        calcularSubtotal()
                     ),
 
                 desconto:
@@ -3141,7 +3090,7 @@ async function finalizarCompra() {
 
                 total:
                     Number(
-                        total.toFixed(2)
+                        total
                     ),
 
                 pagamento:
@@ -3154,19 +3103,20 @@ async function finalizarCompra() {
 
 
         /* =================================================
-           MONTA MENSAGEM
-        ================================================= */
+           MENSAGEM WHATSAPP
+           
+           SEM:
+           - NÚMERO DO PEDIDO
+           - CUPOM
+           - DESCONTO
+        ================================================== */
 
         let mensagem =
 
             "Olá! 👋" +
-            "\n\n" +
+            "\n" +
 
             "Quero fazer meu pedido da HOLINESS! 🔥" +
-            "\n\n" +
-
-            "🧾 Pedido: " +
-            numeroPedido +
             "\n\n";
 
 
@@ -3185,14 +3135,6 @@ async function finalizarCompra() {
 
                     "🔢 Quantidade: " +
                     item.quantidade +
-                    "\n" +
-
-                    "💰 " +
-                    dinheiro(
-                        item.preco *
-                        item.quantidade
-                    ) +
-
                     "\n\n";
 
             }
@@ -3201,32 +3143,12 @@ async function finalizarCompra() {
 
         mensagem +=
 
-            "💵 Subtotal: " +
-            dinheiro(subtotal);
-
-
-        if (
-            descontoAtual > 0
-        ) {
-
-            mensagem +=
-
-                "\n🎟️ Cupom: " +
-                cupomAtual +
-
-                "\n🏷️ Desconto: " +
-                descontoAtual +
-                "%";
-
-        }
-
-
-        mensagem +=
-
-            "\n💰 Total: " +
+            "💰 Total: " +
             dinheiro(total) +
 
-            "\n💳 Pagamento: " +
+            "\n" +
+
+            "💳 Pagamento: " +
             pagamentoSelecionado +
 
             "\n\n" +
@@ -3235,13 +3157,11 @@ async function finalizarCompra() {
 
 
         /* =================================================
-           LINK WHATSAPP
-
-           encodeURIComponent preserva os emojis
-           corretamente.
+           WHATSAPP
         ================================================== */
 
         const url =
+
             "https://wa.me/" +
             WHATSAPP +
             "?text=" +
@@ -3250,52 +3170,41 @@ async function finalizarCompra() {
             );
 
 
-        /* =================================================
-           ENVIA PARA WHATSAPP
+        /*
+         * Abre imediatamente uma nova aba.
+         * O encodeURIComponent preserva os emojis.
+         */
 
-           Se a aba foi aberta:
-           direciona a aba para o WhatsApp.
-
-           Se o navegador bloqueou:
-           tenta abrir normalmente.
-        ================================================= */
-
-        if (
-            whatsappWindow &&
-            !whatsappWindow.closed
-        ) {
-
-            whatsappWindow.location.href =
-                url;
-
-        }
-
-        else {
-
+        const novaAba =
             window.open(
                 url,
                 "_blank"
             );
 
+
+        /*
+         * Caso o navegador bloqueie a nova aba,
+         * tentamos redirecionar a aba atual.
+         */
+
+        if (!novaAba) {
+
+            window.location.href =
+                url;
+
         }
 
-
-        /* =================================================
-           SUCESSO
-        ================================================= */
 
         erro.style.color =
             "#16833b";
 
 
         erro.innerText =
-            "Pedido " +
-            numeroPedido +
-            " registrado com sucesso!";
+
+            "Pedido registrado com sucesso!";
 
 
     }
-
 
     catch (
         firebaseError
@@ -3307,51 +3216,13 @@ async function finalizarCompra() {
         );
 
 
-        /* =================================================
-           FECHA ABA EM CASO DE ERRO
-        ================================================= */
-
-        if (
-            whatsappWindow &&
-            !whatsappWindow.closed
-        ) {
-
-            try {
-
-                whatsappWindow.close();
-
-            }
-
-            catch (e) {}
-
-        }
-
-
         erro.style.color =
             "#b00000";
 
 
-        /* =================================================
-           MOSTRA ERRO MAIS ESPECÍFICO
-        ================================================= */
+        erro.innerText =
 
-        if (
-            firebaseError &&
-            firebaseError.code ===
-            "permission-denied"
-        ) {
-
-            erro.innerText =
-                "O Firebase bloqueou o registro do pedido. Verifique as regras do Firestore.";
-
-        }
-
-        else {
-
-            erro.innerText =
-                "Não foi possível registrar o pedido. Tente novamente.";
-
-        }
+            "Não foi possível registrar o pedido. Tente novamente.";
 
     }
 
@@ -3413,7 +3284,7 @@ function fecharTabelaFora(event) {
 
 
 /* =====================================================
-   ESC FECHA MODAIS
+   ESC
 ===================================================== */
 
 document.addEventListener(
