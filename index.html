@@ -1283,7 +1283,7 @@ footer p {
             <div class="product-info">
 
                 <span class="product-number">
-                    001
+                    #001
                 </span>
 
                 <h3>
@@ -1529,7 +1529,7 @@ footer p {
             <div class="product-info">
 
                 <span class="product-number">
-                    002
+                    #002
                 </span>
 
                 <h3>
@@ -1947,20 +1947,35 @@ footer p {
 ===================================================== */
 
 const firebaseConfig = {
+
     apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+
     authDomain: "holiness-e6ec3.firebaseapp.com",
+
     projectId: "holiness-e6ec3",
+
     storageBucket: "holiness-e6ec3.firebasestorage.app",
+
     messagingSenderId: "842822716544",
+
     appId: "1:842822716544:web:d24b1835fa9f4289ce2a65",
+
     measurementId: "G-ZTL2W77QFT"
+
 };
 
+
 if (!firebase.apps.length) {
-    firebase.initializeApp(firebaseConfig);
+
+    firebase.initializeApp(
+        firebaseConfig
+    );
+
 }
 
-const db = firebase.firestore();
+
+const db =
+    firebase.firestore();
 
 
 /* =====================================================
@@ -2860,8 +2875,9 @@ function selecionarPagamento(
 async function gerarNumeroPedido() {
 
     const contadorRef =
-        db.collection("config")
-          .doc("contadorPedidos");
+        db
+            .collection("config")
+            .doc("contadorPedidos");
 
 
     const numeroGerado =
@@ -3015,30 +3031,39 @@ async function finalizarCompra() {
     try {
 
 
-        /*
-         =================================================
-         GERA O PRÓXIMO NÚMERO
+        /* =================================================
+           GERA O PRÓXIMO NÚMERO
 
-         #001
-         #002
-         #003
-         #004...
-         =================================================
-        */
+           #001
+           #002
+           #003
+           #004...
+        ================================================== */
 
         const numeroPedido =
             await gerarNumeroPedido();
 
 
-        /*
-         =================================================
-         SALVA O PEDIDO NO FIREBASE
-         =================================================
-        */
+        /* =================================================
+           SALVA O PEDIDO NO FIREBASE
+
+           IMPORTANTE:
+           O ID DO DOCUMENTO AGORA SERÁ O PRÓPRIO
+           NÚMERO DO PEDIDO.
+
+           Exemplo:
+
+           pedidos
+           ├── #001
+           ├── #002
+           ├── #003
+           └── #004
+        ================================================== */
 
         await db
             .collection("pedidos")
-            .add({
+            .doc(numeroPedido)
+            .set({
 
                 numeroPedido:
                     numeroPedido,
@@ -3078,11 +3103,9 @@ async function finalizarCompra() {
             });
 
 
-        /*
-         =================================================
-         MENSAGEM WHATSAPP
-         =================================================
-        */
+        /* =================================================
+           MENSAGEM WHATSAPP
+        ================================================== */
 
         let mensagem =
 
