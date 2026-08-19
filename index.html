@@ -1179,13 +1179,11 @@ footer p {
 
     <picture class="hero-picture">
 
-        <!-- No celular: 1080 x 1350 -->
         <source
             media="(max-width: 767px)"
             srcset="banner-mobile.png"
         >
 
-        <!-- No PC/tablet: 1920 x 700 -->
         <img
             class="hero-banner"
             src="banner-desktop.png"
@@ -1906,7 +1904,7 @@ footer p {
 
 
 <!-- =====================================================
-     MODAL MEDIDAS
+     MODAL TABELA
 ===================================================== -->
 
 <div
@@ -1964,25 +1962,12 @@ if (!firebase.apps.length) {
 
 const db = firebase.firestore();
 
+
 /* =====================================================
    CONFIGURAÇÕES
 ===================================================== */
 
 const PRECO = 109.90;
-
-
-/*
-   COLOQUE AQUI O SEU WHATSAPP.
-
-   Exemplo:
-   5533999999999
-
-   Sem:
-   +
-   espaços
-   parênteses
-   hífen
-*/
 
 const WHATSAPP = "5533998019698";
 
@@ -1996,15 +1981,10 @@ const estoque = {
     Glory: {
 
         PP: 6,
-
         P: 4,
-
         M: 4,
-
         G: 5,
-
         GG: 3,
-
         XG: 0
 
     },
@@ -2013,15 +1993,10 @@ const estoque = {
     Frassati: {
 
         PP: 3,
-
         P: 2,
-
         M: 2,
-
         G: 2,
-
         GG: 1,
-
         XG: 0
 
     }
@@ -2048,7 +2023,6 @@ const cupons = {
 
 let carrinho = [];
 
-
 let tamanhosSelecionados = {
 
     Glory: "",
@@ -2056,7 +2030,6 @@ let tamanhosSelecionados = {
     Frassati: ""
 
 };
-
 
 let quantidades = {
 
@@ -2066,12 +2039,9 @@ let quantidades = {
 
 };
 
-
 let descontoAtual = 0;
 
-
 let cupomAtual = "";
-
 
 let pagamentoSelecionado = "";
 
@@ -2151,11 +2121,6 @@ function selecionarTamanho(
         tamanho;
 
 
-    /*
-       Quando muda de tamanho,
-       volta a quantidade para 1.
-    */
-
     quantidades[produto] = 1;
 
 
@@ -2214,13 +2179,6 @@ function atualizarTamanhosDisponiveis() {
         .querySelectorAll(".product")
         .forEach(function(produtoElemento) {
 
-
-            /*
-               Aqui usamos toLowerCase()
-               para que GLORY e Glory
-               sejam tratados da mesma forma.
-            */
-
             const nomeProduto =
                 produtoElemento
                     .querySelector("h3")
@@ -2269,17 +2227,11 @@ function atualizarTamanhosDisponiveis() {
             botoes.forEach(
                 function(botao) {
 
-
                     const tamanho =
                         botao.innerText
                             .trim()
                             .toUpperCase();
 
-
-                    /*
-                       Se for 0 ou não existir,
-                       fica indisponível.
-                    */
 
                     if (
                         !produtoEstoque[tamanho] ||
@@ -2325,11 +2277,6 @@ function alterarQuantidade(
     const tamanho =
         tamanhosSelecionados[produto];
 
-
-    /*
-       Se não escolheu tamanho,
-       não permite aumentar.
-    */
 
     if (!tamanho) {
 
@@ -2907,109 +2854,360 @@ function selecionarPagamento(
 
 
 /* =====================================================
+   GERAR NÚMERO SEQUENCIAL DO PEDIDO
+===================================================== */
+
+async function gerarNumeroPedido() {
+
+    const contadorRef =
+        db.collection("config")
+          .doc("contadorPedidos");
+
+
+    const numeroGerado =
+        await db.runTransaction(
+            async function(transaction) {
+
+                const contadorDoc =
+                    await transaction.get(
+                        contadorRef
+                    );
+
+
+                let proximoNumero = 1;
+
+
+                if (
+                    contadorDoc.exists
+                ) {
+
+                    const dados =
+                        contadorDoc.data();
+
+
+                    proximoNumero =
+                        Number(
+                            dados.ultimoNumero || 0
+                        ) + 1;
+
+                }
+
+
+                transaction.set(
+                    contadorRef,
+                    {
+                        ultimoNumero:
+                            proximoNumero
+                    },
+                    {
+                        merge: true
+                    }
+                );
+
+
+                return proximoNumero;
+
+            }
+        );
+
+
+    return "#" +
+        String(numeroGerado)
+            .padStart(3, "0");
+
+}
+
+
+/* =====================================================
    FINALIZAR PELO WHATSAPP
 ===================================================== */
 
 async function finalizarCompra() {
 
     const erro =
-        document.getElementById("cartError");
+        document.getElementById(
+            "cartError"
+        );
 
-    if (carrinho.length === 0) {
-        erro.innerText = "Seu carrinho está vazio.";
+
+    if (
+        carrinho.length === 0
+    ) {
+
+        erro.innerText =
+            "Seu carrinho está vazio.";
+
         return;
+
     }
 
-    if (pagamentoSelecionado === "") {
-        erro.innerText = "Selecione um método de pagamento.";
+
+    if (
+        pagamentoSelecionado === ""
+    ) {
+
+        erro.innerText =
+            "Selecione um método de pagamento.";
+
         return;
+
     }
 
-    const total = calcularTotal();
 
-    const numeroPedido = "#" + Date.now();
+    const total =
+        calcularTotal();
 
-    const itens = carrinho.map(function(item) {
-        return {
-            produto: item.nome,
-            tamanho: item.tamanho,
-            quantidade: item.quantidade,
-            precoUnitario: Number(item.preco),
-            subtotal: Number(item.preco * item.quantidade)
-        };
-    });
 
-    const botao = document.querySelector(".checkout");
-    const textoOriginal = botao.innerText;
+    const itens =
+        carrinho.map(
+            function(item) {
+
+                return {
+
+                    produto:
+                        item.nome,
+
+                    tamanho:
+                        item.tamanho,
+
+                    quantidade:
+                        item.quantidade,
+
+                    precoUnitario:
+                        Number(
+                            item.preco
+                        ),
+
+                    subtotal:
+                        Number(
+                            item.preco *
+                            item.quantidade
+                        )
+
+                };
+
+            }
+        );
+
+
+    const botao =
+        document.querySelector(
+            ".checkout"
+        );
+
+
+    const textoOriginal =
+        botao.innerText;
+
 
     botao.disabled = true;
-    botao.innerText = "REGISTRANDO PEDIDO...";
+
+    botao.innerText =
+        "REGISTRANDO PEDIDO...";
+
+
     erro.innerText = "";
+
+    erro.style.color =
+        "#b00000";
+
 
     try {
 
-        await db.collection("pedidos").add({
-            numeroPedido: numeroPedido,
-            criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
-            itens: itens,
-            subtotal: Number(calcularSubtotal()),
-            desconto: Number(descontoAtual),
-            cupom: cupomAtual || "",
-            total: Number(total),
-            pagamento: pagamentoSelecionado,
-            status: "aguardando_whatsapp"
-        });
+
+        /*
+         =================================================
+         GERA O PRÓXIMO NÚMERO
+
+         #001
+         #002
+         #003
+         #004...
+         =================================================
+        */
+
+        const numeroPedido =
+            await gerarNumeroPedido();
+
+
+        /*
+         =================================================
+         SALVA O PEDIDO NO FIREBASE
+         =================================================
+        */
+
+        await db
+            .collection("pedidos")
+            .add({
+
+                numeroPedido:
+                    numeroPedido,
+
+                criadoEm:
+                    firebase.firestore
+                        .FieldValue
+                        .serverTimestamp(),
+
+                itens:
+                    itens,
+
+                subtotal:
+                    Number(
+                        calcularSubtotal()
+                    ),
+
+                desconto:
+                    Number(
+                        descontoAtual
+                    ),
+
+                cupom:
+                    cupomAtual || "",
+
+                total:
+                    Number(
+                        total
+                    ),
+
+                pagamento:
+                    pagamentoSelecionado,
+
+                status:
+                    "aguardando_whatsapp"
+
+            });
+
+
+        /*
+         =================================================
+         MENSAGEM WHATSAPP
+         =================================================
+        */
 
         let mensagem =
+
             "Olá! 👋" +
             "\n" +
             "Quero fazer meu pedido da HOLINESS! 🔥" +
             "\n\n" +
-            "🧾 Pedido: " + numeroPedido + "\n\n";
 
-        carrinho.forEach(function(item) {
-            mensagem +=
-                "👕 " + item.nome + "\n" +
-                "📏 Tamanho: " + item.tamanho + "\n" +
-                "🔢 Quantidade: " + item.quantidade + "\n\n";
-        });
+            "🧾 Pedido: " +
+            numeroPedido +
+            "\n\n";
 
-        mensagem += "💰 Total: " + dinheiro(total);
 
-        if (cupomAtual !== "") {
-            mensagem +=
-                "\n🎟️ Cupom: " + cupomAtual +
-                " (" + descontoAtual + "% de desconto)";
-        }
+        carrinho.forEach(
+            function(item) {
+
+                mensagem +=
+
+                    "👕 " +
+                    item.nome +
+                    "\n" +
+
+                    "📏 Tamanho: " +
+                    item.tamanho +
+                    "\n" +
+
+                    "🔢 Quantidade: " +
+                    item.quantidade +
+                    "\n\n";
+
+            }
+        );
+
 
         mensagem +=
-            "\n💳 Pagamento: " + pagamentoSelecionado +
-            "\n\nQuero finalizar meu pedido! 🙌";
+            "💰 Total: " +
+            dinheiro(total);
+
+
+        if (
+            cupomAtual !== ""
+        ) {
+
+            mensagem +=
+
+                "\n🎟️ Cupom: " +
+                cupomAtual +
+
+                " (" +
+                descontoAtual +
+                "% de desconto)";
+
+        }
+
+
+        mensagem +=
+
+            "\n💳 Pagamento: " +
+            pagamentoSelecionado +
+
+            "\n\n" +
+
+            "Quero finalizar meu pedido! 🙌";
+
 
         const url =
+
             "https://wa.me/" +
             WHATSAPP +
             "?text=" +
-            encodeURIComponent(mensagem);
+            encodeURIComponent(
+                mensagem
+            );
 
-        window.open(url, "_blank");
 
-        erro.style.color = "#16833b";
+        window.open(
+            url,
+            "_blank"
+        );
+
+
+        erro.style.color =
+            "#16833b";
+
+
         erro.innerText =
-            "Pedido " + numeroPedido + " registrado com sucesso!";
 
-    } catch (firebaseError) {
+            "Pedido " +
+            numeroPedido +
+            " registrado com sucesso!";
 
-        console.error("Erro ao salvar pedido no Firebase:", firebaseError);
 
-        erro.style.color = "#b00000";
+    }
+
+
+    catch (
+        firebaseError
+    ) {
+
+        console.error(
+            "Erro ao salvar pedido no Firebase:",
+            firebaseError
+        );
+
+
+        erro.style.color =
+            "#b00000";
+
+
         erro.innerText =
+
             "Não foi possível registrar o pedido. Tente novamente.";
 
-    } finally {
-        botao.disabled = false;
-        botao.innerText = textoOriginal;
     }
+
+
+    finally {
+
+        botao.disabled = false;
+
+        botao.innerText =
+            textoOriginal;
+
+    }
+
 }
 
 
