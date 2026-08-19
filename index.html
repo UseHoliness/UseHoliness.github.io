@@ -1181,9 +1181,9 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- =====================================================
+        <!-- =================================================
              GLORY
-        ====================================================== -->
+        ================================================== -->
 
         <div class="product">
 
@@ -1204,7 +1204,9 @@ footer p {
                     class="thumb active"
                     onclick="trocarImagem('gloryImage','Frente.png',this)"
                 >
-                    <img src="Frente.png" alt="">
+
+                    <img src="Frente.png">
+
                 </button>
 
 
@@ -1212,7 +1214,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Costa.png',this)"
                 >
-                    <img src="Costa.png" alt="">
+
+                    <img src="Costa.png">
+
                 </button>
 
 
@@ -1220,7 +1224,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('gloryImage','Chuva.png',this)"
                 >
-                    <img src="Chuva.png" alt="">
+
+                    <img src="Chuva.png">
+
                 </button>
 
             </div>
@@ -1333,9 +1339,9 @@ footer p {
         </div>
 
 
-        <!-- =====================================================
+        <!-- =================================================
              FRASSATI
-        ====================================================== -->
+        ================================================== -->
 
         <div class="product">
 
@@ -1356,7 +1362,9 @@ footer p {
                     class="thumb active"
                     onclick="trocarImagem('frassatiImage','Frente2.png',this)"
                 >
-                    <img src="Frente2.png" alt="">
+
+                    <img src="Frente2.png">
+
                 </button>
 
 
@@ -1364,7 +1372,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Trás2.png',this)"
                 >
-                    <img src="Trás2.png" alt="">
+
+                    <img src="Trás2.png">
+
                 </button>
 
 
@@ -1372,7 +1382,9 @@ footer p {
                     class="thumb"
                     onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
                 >
-                    <img src="Chuva2.png" alt="">
+
+                    <img src="Chuva2.png">
+
                 </button>
 
             </div>
@@ -1644,7 +1656,7 @@ footer p {
 
 
 <!-- =====================================================
-     MODAL TABELA
+     MODAL
 ===================================================== -->
 
 <div
@@ -1683,20 +1695,11 @@ footer p {
 
 <script type="module">
 
-
-/* =====================================================
-   FIREBASE APP
-===================================================== */
-
 import {
     initializeApp
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
-
-/* =====================================================
-   FIRESTORE
-===================================================== */
 
 import {
     getFirestore,
@@ -1705,14 +1708,14 @@ import {
     onSnapshot,
     collection,
     setDoc,
-    serverTimestamp,
-    runTransaction
+    runTransaction,
+    serverTimestamp
 }
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 /* =====================================================
-   CONFIGURAÇÃO FIREBASE
+   FIREBASE
 ===================================================== */
 
 const firebaseConfig = {
@@ -1838,7 +1841,7 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
-        Number(valor)
+        valor
             .toFixed(2)
             .replace(".", ",");
 
@@ -1854,31 +1857,19 @@ async function carregarEstoque() {
     try {
 
         const gloryRef =
-            doc(
-                db,
-                "estoque",
-                "Glory"
-            );
+            doc(db, "estoque", "Glory");
 
 
         const frassatiRef =
-            doc(
-                db,
-                "estoque",
-                "Frassati"
-            );
+            doc(db, "estoque", "Frassati");
 
 
         const glorySnap =
-            await getDoc(
-                gloryRef
-            );
+            await getDoc(gloryRef);
 
 
         const frassatiSnap =
-            await getDoc(
-                frassatiRef
-            );
+            await getDoc(frassatiRef);
 
 
         if (glorySnap.exists()) {
@@ -1918,7 +1909,6 @@ async function carregarEstoque() {
 
 function observarEstoque() {
 
-
     onSnapshot(
 
         doc(
@@ -1940,11 +1930,11 @@ function observarEstoque() {
 
         },
 
-        function(erro) {
+        function(error) {
 
             console.error(
-                "Erro ao observar estoque Glory:",
-                erro
+                "Erro no estoque Glory:",
+                error
             );
 
         }
@@ -1973,11 +1963,11 @@ function observarEstoque() {
 
         },
 
-        function(erro) {
+        function(error) {
 
             console.error(
-                "Erro ao observar estoque Frassati:",
-                erro
+                "Erro no estoque Frassati:",
+                error
             );
 
         }
@@ -2003,24 +1993,18 @@ function trocarImagem(
 
 
     const produto =
-        botao.closest(
-            ".product"
-        );
+        botao.closest(".product");
 
 
     produto
-        .querySelectorAll(
-            ".thumb"
-        )
-        .forEach(
-            function(item) {
+        .querySelectorAll(".thumb")
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "active"
-                );
+            item.classList.remove(
+                "active"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2055,15 +2039,12 @@ function selecionarTamanho(
         tamanho;
 
 
-    quantidades[produto] =
-        1;
+    quantidades[produto] = 1;
 
 
     document.getElementById(
-        produto +
-        "Quantity"
-    ).innerText =
-        "1";
+        produto + "Quantity"
+    ).innerText = "1";
 
 
     const container =
@@ -2071,18 +2052,14 @@ function selecionarTamanho(
 
 
     container
-        .querySelectorAll(
-            "button"
-        )
-        .forEach(
-            function(item) {
+        .querySelectorAll("button")
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "selected"
-                );
+            item.classList.remove(
+                "selected"
+            );
 
-            }
-        );
+        });
 
 
     botao.classList.add(
@@ -2112,103 +2089,96 @@ function selecionarTamanho(
 
 
 /* =====================================================
-   ATUALIZAR TAMANHOS DISPONÍVEIS
+   ATUALIZAR TAMANHOS
 ===================================================== */
 
 function atualizarTamanhosDisponiveis() {
 
     document
-        .querySelectorAll(
-            ".product"
-        )
-        .forEach(
-            function(produtoElemento) {
+        .querySelectorAll(".product")
+        .forEach(function(produtoElemento) {
+
+            const nomeProduto =
+                produtoElemento
+                    .querySelector("h3")
+                    .innerText
+                    .trim()
+                    .toLowerCase();
 
 
-                const nomeProduto =
-                    produtoElemento
-                        .querySelector("h3")
-                        .innerText
-                        .trim()
-                        .toLowerCase();
+            let produtoEstoque;
 
 
-                let produtoEstoque;
+            if (
+                nomeProduto === "glory"
+            ) {
 
-
-                if (
-                    nomeProduto ===
-                    "glory"
-                ) {
-
-                    produtoEstoque =
-                        estoque.Glory;
-
-                }
-
-                else if (
-                    nomeProduto ===
-                    "frassati"
-                ) {
-
-                    produtoEstoque =
-                        estoque.Frassati;
-
-                }
-
-                else {
-
-                    return;
-
-                }
-
-
-                const botoes =
-                    produtoElemento
-                        .querySelectorAll(
-                            ".sizes button"
-                        );
-
-
-                botoes.forEach(
-                    function(botao) {
-
-                        const tamanho =
-                            botao.innerText
-                                .trim()
-                                .toUpperCase();
-
-
-                        if (
-                            !produtoEstoque[tamanho] ||
-                            produtoEstoque[tamanho] <= 0
-                        ) {
-
-                            botao.classList.add(
-                                "unavailable"
-                            );
-
-                            botao.disabled =
-                                true;
-
-                        }
-
-                        else {
-
-                            botao.classList.remove(
-                                "unavailable"
-                            );
-
-                            botao.disabled =
-                                false;
-
-                        }
-
-                    }
-                );
+                produtoEstoque =
+                    estoque.Glory;
 
             }
-        );
+
+            else if (
+                nomeProduto === "frassati"
+            ) {
+
+                produtoEstoque =
+                    estoque.Frassati;
+
+            }
+
+            else {
+
+                return;
+
+            }
+
+
+            const botoes =
+                produtoElemento
+                    .querySelectorAll(
+                        ".sizes button"
+                    );
+
+
+            botoes.forEach(
+                function(botao) {
+
+                    const tamanho =
+                        botao.innerText
+                            .trim()
+                            .toUpperCase();
+
+
+                    if (
+                        !produtoEstoque[tamanho] ||
+                        produtoEstoque[tamanho] <= 0
+                    ) {
+
+                        botao.classList.add(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            true;
+
+                    }
+
+                    else {
+
+                        botao.classList.remove(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            false;
+
+                    }
+
+                }
+            );
+
+        });
 
 }
 
@@ -2254,8 +2224,7 @@ function alterarQuantidade(
         novaQuantidade < 1
     ) {
 
-        novaQuantidade =
-            1;
+        novaQuantidade = 1;
 
     }
 
@@ -2281,8 +2250,7 @@ function alterarQuantidade(
 
 
     document.getElementById(
-        produto +
-        "Quantity"
+        produto + "Quantity"
     ).innerText =
         novaQuantidade;
 
@@ -2374,20 +2342,15 @@ function adicionarProduto(
 
         carrinho.push({
 
-            nome:
-                nome,
+            nome: nome,
 
-            imagem:
-                imagem,
+            imagem: imagem,
 
-            tamanho:
-                tamanho,
+            tamanho: tamanho,
 
-            quantidade:
-                quantidade,
+            quantidade: quantidade,
 
-            preco:
-                PRECO
+            preco: PRECO
 
         });
 
@@ -2509,11 +2472,9 @@ function aplicarCupom() {
 
     else {
 
-        descontoAtual =
-            0;
+        descontoAtual = 0;
 
-        cupomAtual =
-            "";
+        cupomAtual = "";
 
 
         mensagem.innerText =
@@ -2554,8 +2515,7 @@ function atualizarCarrinho() {
         );
 
 
-    let quantidadeTotal =
-        0;
+    let quantidadeTotal = 0;
 
 
     carrinho.forEach(
@@ -2590,8 +2550,7 @@ function atualizarCarrinho() {
     }
 
 
-    container.innerHTML =
-        "";
+    container.innerHTML = "";
 
 
     carrinho.forEach(
@@ -2695,7 +2654,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER PRODUTO
+   REMOVER
 ===================================================== */
 
 function removerProduto(index) {
@@ -2712,7 +2671,7 @@ function removerProduto(index) {
 
 
 /* =====================================================
-   ABRIR CARRINHO
+   CARRINHO
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2731,10 +2690,6 @@ function abrirCarrinho() {
 }
 
 
-/* =====================================================
-   FECHAR CARRINHO
-===================================================== */
-
 function fecharCarrinho() {
 
     document
@@ -2747,10 +2702,6 @@ function fecharCarrinho() {
 
 }
 
-
-/* =====================================================
-   FECHAR CARRINHO FORA
-===================================================== */
 
 function fecharCarrinhoFora(event) {
 
@@ -2799,18 +2750,93 @@ function selecionarPagamento(
     );
 
 
-    const erro =
-        document.getElementById(
-            "cartError"
+    document.getElementById(
+        "cartError"
+    ).innerText = "";
+
+}
+
+
+/* =====================================================
+   GERAR NÚMERO PROGRESSIVO DO PEDIDO
+=====================================================
+
+   Estrutura criada automaticamente:
+
+   contador
+       └── pedidos
+             proximoNumero: 2
+
+   pedidos
+       └── #001
+       └── #002
+       └── #003
+
+===================================================== */
+
+async function gerarNumeroPedido() {
+
+    const contadorRef =
+        doc(
+            db,
+            "contador",
+            "pedidos"
         );
 
 
-    erro.innerText =
-        "";
+    const numeroPedido =
+        await runTransaction(
+            db,
+            async function(transaction) {
+
+                const contadorSnap =
+                    await transaction.get(
+                        contadorRef
+                    );
 
 
-    erro.style.color =
-        "#b00000";
+                let proximoNumero = 1;
+
+
+                if (
+                    contadorSnap.exists()
+                ) {
+
+                    const dados =
+                        contadorSnap.data();
+
+
+                    if (
+                        typeof dados.proximoNumero ===
+                        "number"
+                    ) {
+
+                        proximoNumero =
+                            dados.proximoNumero;
+
+                    }
+
+                }
+
+
+                transaction.set(
+                    contadorRef,
+                    {
+                        proximoNumero:
+                            proximoNumero + 1
+                    }
+                );
+
+
+                return proximoNumero;
+
+            }
+        );
+
+
+    return "#" +
+        String(numeroPedido)
+            .padStart(3, "0");
 
 }
 
@@ -2819,254 +2845,115 @@ function selecionarPagamento(
    SALVAR PEDIDO NO FIREBASE
 ===================================================== */
 
-/*
- *
- * AQUI ESTÁ A PARTE NOVA.
- *
- * Os documentos serão:
- *
- * pedidos/#001
- * pedidos/#002
- * pedidos/#003
- *
- * E assim por diante.
- *
- * O contador fica em:
- *
- * config/contadorPedidos
- *
- */
-
 async function salvarPedidoFirebase() {
 
-    try {
+    const subtotal =
+        calcularSubtotal();
 
-        const subtotal =
-            calcularSubtotal();
 
+    const total =
+        calcularTotal();
 
-        const total =
-            calcularTotal();
 
+    const itens =
+        carrinho.map(
+            function(item) {
 
-        const itens =
-            carrinho.map(
-                function(item) {
+                return {
 
-                    return {
+                    produto:
+                        item.nome,
 
-                        produto:
-                            item.nome,
+                    tamanho:
+                        item.tamanho,
 
-                        tamanho:
-                            item.tamanho,
+                    quantidade:
+                        item.quantidade,
 
-                        quantidade:
-                            item.quantidade,
+                    precoUnitario:
+                        item.preco,
 
-                        precoUnitario:
-                            item.preco,
+                    subtotal:
+                        item.preco *
+                        item.quantidade
 
-                        subtotal:
-                            item.preco *
-                            item.quantidade
+                };
 
-                    };
-
-                }
-            );
-
-
-        /*
-         * Referência do contador
-         */
-
-        const contadorRef =
-            doc(
-                db,
-                "config",
-                "contadorPedidos"
-            );
-
-
-        /*
-         * A transação garante que dois
-         * clientes não recebam o mesmo número.
-         */
-
-        const nomeDocumento =
-            await runTransaction(
-                db,
-                async function(transaction) {
-
-
-                    /*
-                     * PRIMEIRO LÊ O CONTADOR
-                     */
-
-                    const contadorSnap =
-                        await transaction.get(
-                            contadorRef
-                        );
-
-
-                    let ultimoNumero =
-                        0;
-
-
-                    if (
-                        contadorSnap.exists()
-                    ) {
-
-                        const dados =
-                            contadorSnap.data();
-
-
-                        ultimoNumero =
-                            Number(
-                                dados.ultimoNumero || 0
-                            );
-
-                    }
-
-
-                    /*
-                     * PRÓXIMO NÚMERO
-                     */
-
-                    const proximoNumero =
-                        ultimoNumero + 1;
-
-
-                    /*
-                     * FORMATA:
-                     *
-                     * 1  -> #001
-                     * 2  -> #002
-                     * 9  -> #009
-                     * 10 -> #010
-                     */
-
-                    const numeroFormatado =
-                        "#" +
-                        String(
-                            proximoNumero
-                        ).padStart(
-                            3,
-                            "0"
-                        );
-
-
-                    /*
-                     * REFERÊNCIA DO PEDIDO
-                     */
-
-                    const pedidoRef =
-                        doc(
-                            db,
-                            "pedidos",
-                            numeroFormatado
-                        );
-
-
-                    /*
-                     * DADOS DO PEDIDO
-                     */
-
-                    const pedido = {
-
-                        itens:
-                            itens,
-
-                        subtotal:
-                            subtotal,
-
-                        desconto:
-                            descontoAtual,
-
-                        cupom:
-                            cupomAtual || null,
-
-                        total:
-                            total,
-
-                        pagamento:
-                            pagamentoSelecionado,
-
-                        status:
-                            "aguardando_confirmacao",
-
-                        criadoEm:
-                            serverTimestamp()
-
-                    };
-
-
-                    /*
-                     * ATUALIZA O CONTADOR
-                     */
-
-                    transaction.set(
-                        contadorRef,
-                        {
-
-                            ultimoNumero:
-                                proximoNumero
-
-                        },
-                        {
-
-                            merge:
-                                true
-
-                        }
-                    );
-
-
-                    /*
-                     * CRIA O PEDIDO
-                     */
-
-                    transaction.set(
-                        pedidoRef,
-                        pedido
-                    );
-
-
-                    /*
-                     * RETORNA:
-                     *
-                     * #001
-                     * #002
-                     * etc.
-                     */
-
-                    return numeroFormatado;
-
-                }
-            );
-
-
-        console.log(
-            "Pedido salvo com sucesso:",
-            nomeDocumento
+            }
         );
 
 
-        return nomeDocumento;
+    /*
+     * Gera o número:
+     *
+     * #001
+     * #002
+     * #003
+     *
+     */
+
+    const numeroPedido =
+        await gerarNumeroPedido();
 
 
-    } catch (erro) {
+    /*
+     * O próprio número progressivo
+     * será o ID do documento.
+     */
 
-        console.error(
-            "ERRO COMPLETO AO SALVAR PEDIDO:",
-            erro
+    const pedidoRef =
+        doc(
+            db,
+            "pedidos",
+            numeroPedido
         );
 
 
-        throw erro;
+    const pedido = {
 
-    }
+        numeroPedido:
+            numeroPedido,
+
+        itens:
+            itens,
+
+        subtotal:
+            subtotal,
+
+        desconto:
+            descontoAtual,
+
+        cupom:
+            cupomAtual || null,
+
+        total:
+            total,
+
+        pagamento:
+            pagamentoSelecionado,
+
+        status:
+            "aguardando_confirmacao",
+
+        criadoEm:
+            serverTimestamp()
+
+    };
+
+
+    await setDoc(
+        pedidoRef,
+        pedido
+    );
+
+
+    console.log(
+        "Pedido salvo:",
+        numeroPedido
+    );
+
+
+    return numeroPedido;
 
 }
 
@@ -3083,21 +2970,24 @@ async function finalizarCompra() {
         );
 
 
+    erro.style.color =
+        "#777";
+
+
     erro.innerText =
         "";
 
 
-    erro.style.color =
-        "#b00000";
-
-
-    /*
-     * VERIFICA CARRINHO
-     */
+    /* =================================================
+       VERIFICAÇÕES
+    ================================================= */
 
     if (
         carrinho.length === 0
     ) {
+
+        erro.style.color =
+            "#b00000";
 
         erro.innerText =
             "Seu carrinho está vazio.";
@@ -3107,13 +2997,12 @@ async function finalizarCompra() {
     }
 
 
-    /*
-     * VERIFICA PAGAMENTO
-     */
-
     if (
         pagamentoSelecionado === ""
     ) {
+
+        erro.style.color =
+            "#b00000";
 
         erro.innerText =
             "Selecione um método de pagamento.";
@@ -3123,40 +3012,40 @@ async function finalizarCompra() {
     }
 
 
-    /*
-     * CALCULA TOTAL
-     */
-
     const total =
         calcularTotal();
 
 
-    /*
-     * SALVA NO FIREBASE
-     *
-     * IMPORTANTE:
-     *
-     * O número gerado aqui NÃO será
-     * colocado na mensagem do WhatsApp.
-     */
+    let pedidoId;
+
+
+    /* =================================================
+       SALVAR NO FIREBASE
+    ================================================= */
 
     try {
 
         erro.style.color =
             "#777";
 
-
         erro.innerText =
             "Registrando seu pedido...";
 
 
-        await salvarPedidoFirebase();
+        pedidoId =
+            await salvarPedidoFirebase();
+
+
+        console.log(
+            "Pedido registrado com sucesso:",
+            pedidoId
+        );
 
 
     } catch (firebaseErro) {
 
         console.error(
-            "Erro ao registrar pedido:",
+            "ERRO COMPLETO AO SALVAR PEDIDO:",
             firebaseErro
         );
 
@@ -3174,11 +3063,12 @@ async function finalizarCompra() {
     }
 
 
-    /*
-     * MENSAGEM WHATSAPP
-     *
-     * NÃO possui número do pedido.
-     */
+    /* =================================================
+       MENSAGEM DO WHATSAPP
+       
+       IMPORTANTE:
+       O pedidoId NÃO é colocado aqui.
+    ================================================= */
 
     let mensagem =
         "Olá! 👋" +
@@ -3187,15 +3077,10 @@ async function finalizarCompra() {
         "\n\n";
 
 
-    /*
-     * PRODUTOS
-     */
-
     carrinho.forEach(
         function(item) {
 
             mensagem +=
-
                 "👕 " +
                 item.nome +
                 "\n" +
@@ -3219,27 +3104,15 @@ async function finalizarCompra() {
     );
 
 
-    /*
-     * PAGAMENTO
-     */
-
     mensagem +=
         "💳 Pagamento: " +
         pagamentoSelecionado;
 
 
-    /*
-     * TOTAL
-     */
-
     mensagem +=
         "\n💰 Total: " +
         dinheiro(total);
 
-
-    /*
-     * DESCONTO
-     */
 
     if (
         descontoAtual > 0
@@ -3253,10 +3126,6 @@ async function finalizarCompra() {
     }
 
 
-    /*
-     * CUPOM
-     */
-
     if (
         cupomAtual !== ""
     ) {
@@ -3268,17 +3137,13 @@ async function finalizarCompra() {
     }
 
 
-    /*
-     * MENSAGEM FINAL
-     */
-
     mensagem +=
         "\n\nQuero finalizar meu pedido! 🙌";
 
 
-    /*
-     * WHATSAPP
-     */
+    /* =================================================
+       URL WHATSAPP
+    ================================================= */
 
     const url =
         "https://wa.me/" +
@@ -3298,19 +3163,20 @@ async function finalizarCompra() {
 
 
     /*
-     * ABRE O WHATSAPP
+     * Usamos location.href em vez de window.open().
+     *
+     * Isso evita que o navegador bloqueie
+     * a abertura do WhatsApp como pop-up.
      */
 
-    window.open(
-        url,
-        "_blank"
-    );
+    window.location.href =
+        url;
 
 }
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 function abrirTabelaMedidas() {
@@ -3362,8 +3228,7 @@ document.addEventListener(
     function(event) {
 
         if (
-            event.key ===
-            "Escape"
+            event.key === "Escape"
         ) {
 
             fecharTabelaMedidas();
@@ -3377,7 +3242,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   DISPONIBILIZAR FUNÇÕES PARA HTML
+   DISPONIBILIZA FUNÇÕES PARA O HTML
 ===================================================== */
 
 window.trocarImagem =
@@ -3432,7 +3297,6 @@ carregarEstoque();
 observarEstoque();
 
 atualizarCarrinho();
-
 
 </script>
 
