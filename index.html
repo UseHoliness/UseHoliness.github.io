@@ -2,9 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HOLINESS</title>
@@ -18,10 +16,6 @@
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -39,7 +33,6 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
 /* =====================================================
    TOPO
 ===================================================== */
@@ -48,11 +41,9 @@ body {
     height: 30px;
     background: #000;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-size: 10px;
     letter-spacing: 1px;
 }
@@ -61,79 +52,56 @@ body {
     margin-left: 5px;
 }
 
-
 /* =====================================================
    HEADER
 ===================================================== */
 
 header {
     height: 75px;
-
     background: #fff;
-
     display: flex;
     align-items: center;
     justify-content: space-between;
-
     padding: 0 45px;
-
     border-bottom: 1px solid #ddd;
-
     position: sticky;
     top: 0;
-
     z-index: 100;
 }
 
 .logo {
     color: #000;
     text-decoration: none;
-
     font-family: "Anton", sans-serif;
-
     font-size: 31px;
-
     letter-spacing: 1px;
 }
 
 .cart-button {
     border: none;
     background: transparent;
-
     cursor: pointer;
-
     font-family: "Anton", sans-serif;
-
     font-size: 14px;
-
     letter-spacing: 1px;
-
     position: relative;
 }
 
 .cart-button span {
     position: absolute;
-
     top: -13px;
     right: -17px;
-
     width: 21px;
     height: 21px;
-
     border-radius: 50%;
-
     background: #000;
     color: #fff;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: Arial, sans-serif;
-
     font-size: 10px;
 }
-
 
 /* =====================================================
    BANNER
@@ -159,7 +127,6 @@ header {
     height: auto;
 }
 
-
 /* =====================================================
    PRODUTOS
 ===================================================== */
@@ -174,22 +141,16 @@ header {
 
 .section-title span {
     font-family: "Anton", sans-serif;
-
     font-size: 12px;
-
     letter-spacing: 3px;
-
     color: #777;
 }
 
 .section-title h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 60px;
-
     font-weight: 400;
 }
-
 
 /* =====================================================
    GRID
@@ -197,15 +158,10 @@ header {
 
 .products-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-
     align-items: start;
 }
-
 
 /* =====================================================
    PRODUTO
@@ -213,14 +169,10 @@ header {
 
 .product {
     width: 100%;
-
     background: #fff;
-
     overflow: hidden;
-
     min-width: 0;
 }
-
 
 /* =====================================================
    IMAGEM
@@ -228,27 +180,20 @@ header {
 
 .product-image {
     width: 100%;
-
     height: 550px;
-
     background: #e6e2dd;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     overflow: hidden;
 }
 
 .product-image img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     display: block;
 }
-
 
 /* =====================================================
    MINIATURAS
@@ -256,46 +201,33 @@ header {
 
 .product-thumbnails {
     display: flex;
-
     gap: 8px;
-
     padding: 10px 15px;
-
     background: #e6e2dd;
 }
 
 .thumb {
     width: 65px;
     height: 65px;
-
     padding: 0;
-
     border: 1px solid #aaa;
-
     background: #ddd;
-
     cursor: pointer;
-
     opacity: .6;
-
     overflow: hidden;
 }
 
 .thumb.active {
     opacity: 1;
-
     border: 2px solid #000;
 }
 
 .thumb img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-
 
 /* =====================================================
    INFORMAÇÕES
@@ -307,44 +239,31 @@ header {
 
 .product-number {
     color: #999;
-
     font-size: 10px;
-
     letter-spacing: 3px;
 }
 
 .product-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 45px;
-
     font-weight: 400;
-
     margin: 5px 0 15px;
 }
 
 .description {
     font-family: Georgia, serif;
-
     color: #444;
-
     font-size: 14px;
-
     line-height: 1.6;
-
     margin-bottom: 18px;
-
     min-height: 46px;
 }
 
 .price {
     font-family: "Anton", sans-serif;
-
     font-size: 30px;
-
     margin-bottom: 25px;
 }
-
 
 /* =====================================================
    TAMANHOS
@@ -352,67 +271,47 @@ header {
 
 .label {
     display: block;
-
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 10px;
 }
 
 .sizes {
     display: flex;
-
     gap: 10px;
-
     margin-bottom: 8px;
-
     flex-wrap: wrap;
 }
 
 .sizes button {
     pointer-events: auto;
     position: relative;
-
     width: 54px;
     height: 54px;
-
     min-width: 54px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     cursor: pointer;
-
     font-family: "Anton", sans-serif;
-
     font-size: 13px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     transition: .2s;
 }
 
 .sizes button:hover:not(.unavailable) {
     background: #000;
     color: #fff;
-
     border-color: #000;
 }
 
 .sizes button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
-
 
 /* =====================================================
    SEM ESTOQUE
@@ -420,36 +319,24 @@ header {
 
 .sizes button.unavailable {
     background: #f5f5f5;
-
     color: #999;
-
     cursor: not-allowed;
 }
 
 .sizes button.unavailable::after {
     content: "×";
-
     position: absolute;
-
     inset: 0;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     font-family: Arial, sans-serif;
-
     font-size: 31px;
-
     font-weight: 300;
-
     line-height: 1;
-
     color: #999;
-
     pointer-events: none;
 }
-
 
 /* =====================================================
    TABELA
@@ -457,27 +344,16 @@ header {
 
 .measure-button {
     display: block;
-
     background: transparent;
-
     border: none;
-
     border-bottom: 1px solid #111;
-
     padding: 5px 0;
-
     margin-top: 2px;
-
     margin-bottom: 18px;
-
     font-family: "Anton", sans-serif;
-
     font-size: 10px;
-
     letter-spacing: 1.5px;
-
     cursor: pointer;
-
     color: #111;
 }
 
@@ -485,21 +361,16 @@ header {
     opacity: .55;
 }
 
-
 /* =====================================================
    ESTOQUE
 ===================================================== */
 
 .stock {
     min-height: 25px;
-
     font-size: 10px;
-
     color: #777;
-
     margin-bottom: 17px;
 }
-
 
 /* =====================================================
    QUANTIDADE
@@ -507,73 +378,50 @@ header {
 
 .quantity {
     width: 135px;
-
     height: 43px;
-
     display: flex;
-
     margin-bottom: 20px;
 }
 
 .quantity button {
     width: 43px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     font-size: 18px;
-
     cursor: pointer;
 }
 
 .quantity span {
     width: 49px;
-
     display: flex;
     align-items: center;
     justify-content: center;
-
     border-top: 1px solid #aaa;
-
     border-bottom: 1px solid #aaa;
-
     background: #fff;
-
     font-weight: bold;
 }
 
-
 /* =====================================================
-   ADICIONAR
+   BOTÃO
 ===================================================== */
 
 .add-button {
     width: 100%;
-
     height: 58px;
-
     border: none;
-
     background: #000;
-
     color: #fff;
-
     font-family: "Anton", sans-serif;
-
     letter-spacing: 2px;
-
     cursor: pointer;
-
     transition: .2s;
 }
 
 .add-button:hover {
     background: #d49a19;
-
     color: #000;
 }
-
 
 /* =====================================================
    IMAGENS INFERIORES
@@ -581,9 +429,7 @@ header {
 
 .images-section {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     height: 550px;
 }
 
@@ -594,12 +440,9 @@ header {
 .images-section img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
-
 
 /* =====================================================
    FOOTER
@@ -607,40 +450,27 @@ header {
 
 footer {
     min-height: 170px;
-
     background: #f3f1ed;
-
     border-top: 1px solid #ddd;
-
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding: 30px 50px;
 }
 
 .footer-logo {
     font-family: "Anton", sans-serif;
-
     font-size: 35px;
 }
 
 footer p {
     max-width: 500px;
-
     text-align: right;
-
     color: #777;
-
     font-family: Georgia, serif;
-
     font-size: 12px;
-
     line-height: 1.6;
 }
-
 
 /* =====================================================
    CARRINHO
@@ -648,46 +478,30 @@ footer p {
 
 .cart-overlay {
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.55);
-
     z-index: 999;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: .3s;
 }
 
 .cart-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 .cart {
     position: absolute;
-
     right: 0;
     top: 0;
-
     width: 440px;
-
     max-width: 100%;
-
     height: 100%;
-
     background: #f3f1ed;
-
     padding: 30px;
-
     overflow-y: auto;
-
     transform: translateX(100%);
-
     transition: .3s;
 }
 
@@ -697,55 +511,40 @@ footer p {
 
 .cart-header {
     display: flex;
-
     justify-content: space-between;
-
     align-items: center;
-
     padding-bottom: 18px;
-
     border-bottom: 1px solid #ddd;
 }
 
 .cart-header h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 28px;
-
     font-weight: 400;
 }
 
 .cart-header button {
     background: transparent;
-
     border: none;
-
     font-size: 28px;
-
     cursor: pointer;
 }
 
-
 /* =====================================================
-   ITEM
+   ITEM CARRINHO
 ===================================================== */
 
 .cart-item {
     display: flex;
-
     gap: 13px;
-
     padding: 15px 0;
-
     border-bottom: 1px solid #ddd;
 }
 
 .cart-item img {
     width: 80px;
     height: 90px;
-
     object-fit: contain;
-
     background: #e6e2dd;
 }
 
@@ -755,42 +554,30 @@ footer p {
 
 .cart-item-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 20px;
-
     font-weight: 400;
 }
 
 .cart-item-info p {
     font-size: 10px;
-
     color: #666;
-
     margin-top: 5px;
 }
 
 .remove {
     margin-top: 8px;
-
     border: none;
-
     background: transparent;
-
     color: #999;
-
     font-size: 9px;
-
     cursor: pointer;
 }
 
 .empty {
     text-align: center;
-
     padding: 50px 0;
-
     color: #777;
 }
-
 
 /* =====================================================
    CUPOM
@@ -798,19 +585,14 @@ footer p {
 
 .cart-coupon {
     margin-top: 20px;
-
     margin-bottom: 20px;
 }
 
 .cart-coupon label {
     display: block;
-
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 9px;
 }
 
@@ -820,50 +602,34 @@ footer p {
 
 .cart-coupon-input input {
     flex: 1;
-
     height: 45px;
-
     border: 1px solid #aaa;
-
     border-right: none;
-
     outline: none;
-
     padding: 0 13px;
-
     background: #fff;
-
     text-transform: uppercase;
 }
 
 .cart-coupon-input button {
     width: 100px;
-
     border: none;
-
     background: #000;
-
     color: #fff;
-
     font-family: "Anton", sans-serif;
-
     cursor: pointer;
 }
 
 .cart-coupon-input button:hover {
     background: #d49a19;
-
     color: #000;
 }
 
 .coupon-message {
     min-height: 18px;
-
     margin-top: 7px;
-
     font-size: 11px;
 }
-
 
 /* =====================================================
    TOTAL
@@ -871,18 +637,12 @@ footer p {
 
 .cart-total {
     display: flex;
-
     justify-content: space-between;
-
     padding: 22px 0;
-
     font-family: "Anton", sans-serif;
-
     font-size: 22px;
-
     border-top: 1px solid #ddd;
 }
-
 
 /* =====================================================
    PAGAMENTO
@@ -890,76 +650,53 @@ footer p {
 
 .payment-title {
     font-family: "Anton", sans-serif;
-
     font-size: 11px;
-
     letter-spacing: 2px;
-
     margin-bottom: 10px;
 }
 
 .payments {
     display: flex;
-
     gap: 7px;
-
     flex-wrap: wrap;
-
     margin-bottom: 15px;
 }
 
 .payments button {
     padding: 10px 15px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     font-family: "Anton", sans-serif;
-
     cursor: pointer;
 }
 
 .payments button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
 
 .cart-error {
     min-height: 20px;
-
     color: #b00000;
-
     font-size: 11px;
 }
 
 .checkout {
     width: 100%;
-
     height: 57px;
-
     background: #000;
-
     color: #fff;
-
     border: none;
-
     font-family: "Anton", sans-serif;
-
     letter-spacing: 2px;
-
     cursor: pointer;
 }
 
 .checkout:hover {
     background: #d49a19;
-
     color: #000;
 }
-
 
 /* =====================================================
    MODAL
@@ -967,82 +704,52 @@ footer p {
 
 .measure-overlay {
     position: fixed;
-
     inset: 0;
-
     background: rgba(0,0,0,.65);
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
     padding: 20px;
-
     z-index: 2000;
-
     opacity: 0;
-
     visibility: hidden;
-
     transition: .25s;
 }
 
 .measure-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
 .measure-modal {
     position: relative;
-
     max-width: 90vw;
-
     max-height: 90vh;
-
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 }
 
 .measure-image {
     display: block;
-
     max-width: 90vw;
-
     max-height: 85vh;
-
     width: auto;
-
     height: auto;
-
     object-fit: contain;
 }
 
 .close-measure {
     position: absolute;
-
     top: -45px;
-
     right: 0;
-
     border: none;
-
     background: transparent;
-
     color: #fff;
-
     font-size: 35px;
-
     line-height: 1;
-
     cursor: pointer;
 }
-
 
 /* =====================================================
    RESPONSIVO
@@ -1068,7 +775,6 @@ footer p {
 
     .images-section {
         grid-template-columns: 1fr;
-
         height: auto;
     }
 
@@ -1078,18 +784,14 @@ footer p {
 
     footer {
         flex-direction: column;
-
         gap: 20px;
-
         text-align: center;
     }
 
     footer p {
         text-align: center;
     }
-
 }
-
 
 @media (max-width: 500px) {
 
@@ -1115,15 +817,12 @@ footer p {
 
     .sizes button {
         width: 48px;
-
         height: 48px;
-
         min-width: 48px;
     }
 
     .measure-image {
         max-width: 94vw;
-
         max-height: 80vh;
     }
 
@@ -1133,21 +832,16 @@ footer p {
 
 </head>
 
-
 <body>
-
 
 <!-- =====================================================
      TOPO
 ===================================================== -->
 
 <div class="topbar">
-
     PRIMEIRA COMPRA?
     USE O CUPOM <strong>GLORY10</strong>
-
 </div>
-
 
 <!-- =====================================================
      HEADER
@@ -1163,15 +857,11 @@ footer p {
         class="cart-button"
         onclick="abrirCarrinho()"
     >
-
         CARRINHO
-
         <span id="cartCount">0</span>
-
     </button>
 
 </header>
-
 
 <!-- =====================================================
      HERO
@@ -1196,7 +886,6 @@ footer p {
 
 </section>
 
-
 <!-- =====================================================
      PRODUTOS
 ===================================================== -->
@@ -1215,9 +904,7 @@ footer p {
 
     </div>
 
-
     <div class="products-grid">
-
 
         <!-- GLORY -->
 
@@ -1232,7 +919,6 @@ footer p {
                 >
 
             </div>
-
 
             <div class="product-thumbnails">
 
@@ -1249,7 +935,6 @@ footer p {
                     <img src="Frente.png">
                 </button>
 
-
                 <button
                     class="thumb"
                     onclick="
@@ -1262,7 +947,6 @@ footer p {
                 >
                     <img src="Costa.png">
                 </button>
-
 
                 <button
                     class="thumb"
@@ -1279,7 +963,6 @@ footer p {
 
             </div>
 
-
             <div class="product-info">
 
                 <span class="product-number">
@@ -1290,27 +973,21 @@ footer p {
                     GLORY
                 </h3>
 
-
                 <p class="description">
-
                     Acreditamos que, buscando
                     incansavelmente à Deus,
                     chegaremos a manifestação visível
                     da presença, do poder e de todas
                     as perfeições.
-
                 </p>
-
 
                 <div class="price">
                     R$ 109,90
                 </div>
 
-
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
-
 
                 <div class="sizes">
 
@@ -1326,7 +1003,6 @@ footer p {
                         PP
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1338,7 +1014,6 @@ footer p {
                     >
                         P
                     </button>
-
 
                     <button
                         onclick="
@@ -1352,7 +1027,6 @@ footer p {
                         M
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1365,7 +1039,6 @@ footer p {
                         G
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1377,7 +1050,6 @@ footer p {
                     >
                         GG
                     </button>
-
 
                     <button
                         onclick="
@@ -1393,14 +1065,12 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
                     TABELA DE MEDIDAS →
                 </button>
-
 
                 <div
                     id="GlorySelectedSize"
@@ -1409,11 +1079,9 @@ footer p {
                     Selecione um tamanho
                 </div>
 
-
                 <label class="label">
                     QUANTIDADE
                 </label>
-
 
                 <div class="quantity">
 
@@ -1428,11 +1096,9 @@ footer p {
                         −
                     </button>
 
-
                     <span id="GloryQuantity">
                         1
                     </span>
-
 
                     <button
                         onclick="
@@ -1446,7 +1112,6 @@ footer p {
                     </button>
 
                 </div>
-
 
                 <button
                     class="add-button"
@@ -1464,7 +1129,6 @@ footer p {
 
         </div>
 
-
         <!-- FRASSATI -->
 
         <div class="product">
@@ -1478,7 +1142,6 @@ footer p {
                 >
 
             </div>
-
 
             <div class="product-thumbnails">
 
@@ -1495,7 +1158,6 @@ footer p {
                     <img src="Frente2.png">
                 </button>
 
-
                 <button
                     class="thumb"
                     onclick="
@@ -1508,7 +1170,6 @@ footer p {
                 >
                     <img src="Trás2.png">
                 </button>
-
 
                 <button
                     class="thumb"
@@ -1525,7 +1186,6 @@ footer p {
 
             </div>
 
-
             <div class="product-info">
 
                 <span class="product-number">
@@ -1536,26 +1196,20 @@ footer p {
                     FRASSATI
                 </h3>
 
-
                 <p class="description">
-
                     Como Frassati se expressa,
                     "Ir o mais alto para escutar
                     Aquele que com tanto amor
                     nos escolheu"
-
                 </p>
-
 
                 <div class="price">
                     R$ 109,90
                 </div>
 
-
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
-
 
                 <div class="sizes">
 
@@ -1571,7 +1225,6 @@ footer p {
                         PP
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1583,7 +1236,6 @@ footer p {
                     >
                         P
                     </button>
-
 
                     <button
                         onclick="
@@ -1597,7 +1249,6 @@ footer p {
                         M
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1610,7 +1261,6 @@ footer p {
                         G
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1622,7 +1272,6 @@ footer p {
                     >
                         GG
                     </button>
-
 
                     <button
                         onclick="
@@ -1638,14 +1287,12 @@ footer p {
 
                 </div>
 
-
                 <button
                     class="measure-button"
                     onclick="abrirTabelaMedidas()"
                 >
                     TABELA DE MEDIDAS →
                 </button>
-
 
                 <div
                     id="FrassatiSelectedSize"
@@ -1654,11 +1301,9 @@ footer p {
                     Selecione um tamanho
                 </div>
 
-
                 <label class="label">
                     QUANTIDADE
                 </label>
-
 
                 <div class="quantity">
 
@@ -1673,11 +1318,9 @@ footer p {
                         −
                     </button>
 
-
                     <span id="FrassatiQuantity">
                         1
                     </span>
-
 
                     <button
                         onclick="
@@ -1691,7 +1334,6 @@ footer p {
                     </button>
 
                 </div>
-
 
                 <button
                     class="add-button"
@@ -1713,7 +1355,6 @@ footer p {
 
 </section>
 
-
 <!-- =====================================================
      IMAGENS INFERIORES
 ===================================================== -->
@@ -1721,26 +1362,20 @@ footer p {
 <section class="images-section">
 
     <div>
-
         <img
             src="Obrigado.png"
             alt="Holiness"
         >
-
     </div>
 
-
     <div>
-
         <img
             src="fig.png"
             alt="Coleção Holiness"
         >
-
     </div>
 
 </section>
-
 
 <!-- =====================================================
      FOOTER
@@ -1753,15 +1388,12 @@ footer p {
     </div>
 
     <p>
-
         Ao contemplarmos a presença de Deus,
         somos transformados progressivamente
         à imagem de Cristo pelo Espírito Santo.
-
     </p>
 
 </footer>
-
 
 <!-- =====================================================
      CARRINHO
@@ -1792,9 +1424,7 @@ footer p {
 
         </div>
 
-
         <div id="cartItems"></div>
-
 
         <!-- CUPOM -->
 
@@ -1804,7 +1434,6 @@ footer p {
                 CUPOM DE DESCONTO
             </label>
 
-
             <div class="cart-coupon-input">
 
                 <input
@@ -1812,7 +1441,6 @@ footer p {
                     id="couponInput"
                     placeholder="DIGITE SEU CUPOM"
                 >
-
 
                 <button
                     onclick="aplicarCupom()"
@@ -1822,14 +1450,12 @@ footer p {
 
             </div>
 
-
             <div
                 id="couponMessage"
                 class="coupon-message"
             ></div>
 
         </div>
-
 
         <!-- TOTAL -->
 
@@ -1845,13 +1471,11 @@ footer p {
 
         </div>
 
-
         <!-- PAGAMENTO -->
 
         <div class="payment-title">
             MÉTODO DE PAGAMENTO
         </div>
-
 
         <div class="payments">
 
@@ -1866,7 +1490,6 @@ footer p {
                 PIX
             </button>
 
-
             <button
                 onclick="
                     selecionarPagamento(
@@ -1877,7 +1500,6 @@ footer p {
             >
                 CARTÃO
             </button>
-
 
             <button
                 onclick="
@@ -1892,12 +1514,10 @@ footer p {
 
         </div>
 
-
         <div
             id="cartError"
             class="cart-error"
         ></div>
-
 
         <button
             class="checkout"
@@ -1909,7 +1529,6 @@ footer p {
     </div>
 
 </div>
-
 
 <!-- =====================================================
      MODAL TABELA
@@ -1933,7 +1552,6 @@ footer p {
             ×
         </button>
 
-
         <img
             src="medida.png"
             alt="Tabela de medidas"
@@ -1944,15 +1562,12 @@ footer p {
 
 </div>
 
-
 <!-- =====================================================
      FIREBASE
 ===================================================== -->
 
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore-compat.js"></script>
-
 
 <script>
 
@@ -1962,42 +1577,29 @@ footer p {
 
 const firebaseConfig = {
 
-    apiKey:
-        "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+    apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
 
-    authDomain:
-        "holiness-e6ec3.firebaseapp.com",
+    authDomain: "holiness-e6ec3.firebaseapp.com",
 
-    projectId:
-        "holiness-e6ec3",
+    projectId: "holiness-e6ec3",
 
-    storageBucket:
-        "holiness-e6ec3.firebasestorage.app",
+    storageBucket: "holiness-e6ec3.firebasestorage.app",
 
-    messagingSenderId:
-        "842822716544",
+    messagingSenderId: "842822716544",
 
-    appId:
-        "1:842822716544:web:d24b1835fa9f4289ce2a65",
+    appId: "1:842822716544:web:d24b1835fa9f4289ce2a65",
 
-    measurementId:
-        "G-ZTL2W77QFT"
+    measurementId: "G-ZTL2W77QFT"
 
 };
 
-
 if (!firebase.apps.length) {
 
-    firebase.initializeApp(
-        firebaseConfig
-    );
+    firebase.initializeApp(firebaseConfig);
 
 }
 
-
-const db =
-    firebase.firestore();
-
+const db = firebase.firestore();
 
 /* =====================================================
    CONFIGURAÇÕES
@@ -2006,7 +1608,6 @@ const db =
 const PRECO = 109.90;
 
 const WHATSAPP = "5533998019698";
-
 
 /* =====================================================
    ESTOQUE
@@ -2038,7 +1639,6 @@ const estoque = {
 
 };
 
-
 /* =====================================================
    CUPONS
 ===================================================== */
@@ -2050,7 +1650,6 @@ const cupons = {
     ALTAR20: 20
 
 };
-
 
 /* =====================================================
    VARIÁVEIS
@@ -2080,7 +1679,6 @@ let cupomAtual = "";
 
 let pagamentoSelecionado = "";
 
-
 /* =====================================================
    DINHEIRO
 ===================================================== */
@@ -2093,7 +1691,6 @@ function dinheiro(valor) {
             .replace(".", ",");
 
 }
-
 
 /* =====================================================
    TROCAR IMAGEM
@@ -2109,28 +1706,20 @@ function trocarImagem(
         idImagem
     ).src = arquivo;
 
-
     const produto =
         botao.closest(".product");
-
 
     produto
         .querySelectorAll(".thumb")
         .forEach(function(item) {
 
-            item.classList.remove(
-                "active"
-            );
+            item.classList.remove("active");
 
         });
 
-
-    botao.classList.add(
-        "active"
-    );
+    botao.classList.add("active");
 
 }
-
 
 /* =====================================================
    SELECIONAR TAMANHO
@@ -2151,48 +1740,34 @@ function selecionarTamanho(
 
     }
 
-
     tamanhosSelecionados[produto] =
         tamanho;
 
-
     quantidades[produto] = 1;
-
 
     document.getElementById(
         produto + "Quantity"
     ).innerText = "1";
 
-
     const container =
         botao.parentElement;
-
 
     container
         .querySelectorAll("button")
         .forEach(function(item) {
 
-            item.classList.remove(
-                "selected"
-            );
+            item.classList.remove("selected");
 
         });
 
-
-    botao.classList.add(
-        "selected"
-    );
-
+    botao.classList.add("selected");
 
     const texto =
         document.getElementById(
-            produto +
-            "SelectedSize"
+            produto + "SelectedSize"
         );
 
-
     texto.style.color = "#777";
-
 
     texto.innerHTML =
         "Tamanho <strong>" +
@@ -2202,7 +1777,6 @@ function selecionarTamanho(
         " disponíveis";
 
 }
-
 
 /* =====================================================
    ATUALIZAR TAMANHOS
@@ -2221,22 +1795,16 @@ function atualizarTamanhosDisponiveis() {
                     .trim()
                     .toLowerCase();
 
-
             let produtoEstoque;
 
-
-            if (
-                nomeProduto === "glory"
-            ) {
+            if (nomeProduto === "glory") {
 
                 produtoEstoque =
                     estoque.Glory;
 
             }
 
-            else if (
-                nomeProduto === "frassati"
-            ) {
+            else if (nomeProduto === "frassati") {
 
                 produtoEstoque =
                     estoque.Frassati;
@@ -2249,53 +1817,41 @@ function atualizarTamanhosDisponiveis() {
 
             }
 
-
             const botoes =
                 produtoElemento
-                    .querySelectorAll(
-                        ".sizes button"
-                    );
+                    .querySelectorAll(".sizes button");
 
+            botoes.forEach(function(botao) {
 
-            botoes.forEach(
-                function(botao) {
+                const tamanho =
+                    botao.innerText
+                        .trim()
+                        .toUpperCase();
 
-                    const tamanho =
-                        botao.innerText
-                            .trim()
-                            .toUpperCase();
+                if (
+                    !produtoEstoque[tamanho] ||
+                    produtoEstoque[tamanho] <= 0
+                ) {
 
+                    botao.classList.add("unavailable");
 
-                    if (
-                        !produtoEstoque[tamanho] ||
-                        produtoEstoque[tamanho] <= 0
-                    ) {
-
-                        botao.classList.add(
-                            "unavailable"
-                        );
-
-                        botao.disabled = true;
-
-                    }
-
-                    else {
-
-                        botao.classList.remove(
-                            "unavailable"
-                        );
-
-                        botao.disabled = false;
-
-                    }
+                    botao.disabled = true;
 
                 }
-            );
+
+                else {
+
+                    botao.classList.remove("unavailable");
+
+                    botao.disabled = false;
+
+                }
+
+            });
 
         });
 
 }
-
 
 /* =====================================================
    QUANTIDADE
@@ -2308,7 +1864,6 @@ function alterarQuantidade(
 
     const tamanho =
         tamanhosSelecionados[produto];
-
 
     if (!tamanho) {
 
@@ -2324,24 +1879,17 @@ function alterarQuantidade(
 
     }
 
-
     const estoqueDisponivel =
         estoque[produto][tamanho];
 
-
     let novaQuantidade =
-        quantidades[produto] +
-        valor;
+        quantidades[produto] + valor;
 
-
-    if (
-        novaQuantidade < 1
-    ) {
+    if (novaQuantidade < 1) {
 
         novaQuantidade = 1;
 
     }
-
 
     if (
         novaQuantidade >
@@ -2351,17 +1899,14 @@ function alterarQuantidade(
         novaQuantidade =
             estoqueDisponivel;
 
-
         alert(
             "Você atingiu o estoque disponível desse tamanho."
         );
 
     }
 
-
     quantidades[produto] =
         novaQuantidade;
-
 
     document.getElementById(
         produto + "Quantity"
@@ -2369,7 +1914,6 @@ function alterarQuantidade(
         novaQuantidade;
 
 }
-
 
 /* =====================================================
    ADICIONAR PRODUTO
@@ -2383,10 +1927,8 @@ function adicionarProduto(
     const tamanho =
         tamanhosSelecionados[nome];
 
-
     const quantidade =
         quantidades[nome];
-
 
     if (!tamanho) {
 
@@ -2398,10 +1940,8 @@ function adicionarProduto(
 
     }
 
-
     const estoqueDisponivel =
         estoque[nome][tamanho];
-
 
     if (
         quantidade >
@@ -2416,19 +1956,15 @@ function adicionarProduto(
 
     }
 
-
     const existente =
-        carrinho.find(
-            function(item) {
+        carrinho.find(function(item) {
 
-                return (
-                    item.nome === nome &&
-                    item.tamanho === tamanho
-                );
+            return (
+                item.nome === nome &&
+                item.tamanho === tamanho
+            );
 
-            }
-        );
-
+        });
 
     if (existente) {
 
@@ -2445,7 +1981,6 @@ function adicionarProduto(
             return;
 
         }
-
 
         existente.quantidade +=
             quantidade;
@@ -2470,13 +2005,11 @@ function adicionarProduto(
 
     }
 
-
     atualizarCarrinho();
 
     abrirCarrinho();
 
 }
-
 
 /* =====================================================
    SUBTOTAL
@@ -2486,22 +2019,17 @@ function calcularSubtotal() {
 
     let subtotal = 0;
 
+    carrinho.forEach(function(item) {
 
-    carrinho.forEach(
-        function(item) {
+        subtotal +=
+            item.preco *
+            item.quantidade;
 
-            subtotal +=
-                item.preco *
-                item.quantidade;
-
-        }
-    );
-
+    });
 
     return subtotal;
 
 }
-
 
 /* =====================================================
    TOTAL
@@ -2512,7 +2040,6 @@ function calcularTotal() {
     const subtotal =
         calcularSubtotal();
 
-
     return subtotal -
         (
             subtotal *
@@ -2521,7 +2048,6 @@ function calcularTotal() {
         );
 
 }
-
 
 /* =====================================================
    CUPOM
@@ -2534,18 +2060,15 @@ function aplicarCupom() {
             "couponInput"
         );
 
-
     const mensagem =
         document.getElementById(
             "couponMessage"
         );
 
-
     const codigo =
         input.value
             .trim()
             .toUpperCase();
-
 
     if (!codigo) {
 
@@ -2559,28 +2082,21 @@ function aplicarCupom() {
 
     }
 
-
-    if (
-        cupons[codigo]
-    ) {
+    if (cupons[codigo]) {
 
         descontoAtual =
             cupons[codigo];
 
-
         cupomAtual =
             codigo;
-
 
         mensagem.innerText =
             "Cupom aplicado! " +
             descontoAtual +
             "% de desconto.";
 
-
         mensagem.style.color =
             "#16833b";
-
 
         atualizarCarrinho();
 
@@ -2592,21 +2108,17 @@ function aplicarCupom() {
 
         cupomAtual = "";
 
-
         mensagem.innerText =
             "Cupom inválido.";
 
-
         mensagem.style.color =
             "#b00000";
-
 
         atualizarCarrinho();
 
     }
 
 }
-
 
 /* =====================================================
    ATUALIZAR CARRINHO
@@ -2619,45 +2131,34 @@ function atualizarCarrinho() {
             "cartItems"
         );
 
-
     const total =
         document.getElementById(
             "cartTotal"
         );
-
 
     const contador =
         document.getElementById(
             "cartCount"
         );
 
-
     let quantidadeTotal = 0;
 
+    carrinho.forEach(function(item) {
 
-    carrinho.forEach(
-        function(item) {
+        quantidadeTotal +=
+            item.quantidade;
 
-            quantidadeTotal +=
-                item.quantidade;
-
-        }
-    );
-
+    });
 
     contador.innerText =
         quantidadeTotal;
 
-
-    if (
-        carrinho.length === 0
-    ) {
+    if (carrinho.length === 0) {
 
         container.innerHTML =
             '<div class="empty">' +
             'Seu carrinho está vazio.' +
             '</div>';
-
 
         total.innerText =
             dinheiro(0);
@@ -2666,83 +2167,67 @@ function atualizarCarrinho() {
 
     }
 
-
     container.innerHTML = "";
 
+    carrinho.forEach(function(item, index) {
 
-    carrinho.forEach(
-        function(item, index) {
+        const div =
+            document.createElement("div");
 
-            const div =
-                document.createElement(
-                    "div"
-                );
+        div.className =
+            "cart-item";
 
+        div.innerHTML =
 
-            div.className =
-                "cart-item";
+            '<img src="' +
+            item.imagem +
+            '" alt="' +
+            item.nome +
+            '">' +
 
+            '<div class="cart-item-info">' +
 
-            div.innerHTML =
+            '<h3>' +
+            item.nome +
+            '</h3>' +
 
-                '<img src="' +
-                item.imagem +
-                '" alt="' +
-                item.nome +
-                '">' +
+            '<p>Tamanho: ' +
+            item.tamanho +
+            '</p>' +
 
-                '<div class="cart-item-info">' +
+            '<p>Quantidade: ' +
+            item.quantidade +
+            '</p>' +
 
-                '<h3>' +
-                item.nome +
-                '</h3>' +
+            '<p>' +
+            dinheiro(
+                item.preco *
+                item.quantidade
+            ) +
+            '</p>' +
 
-                '<p>Tamanho: ' +
-                item.tamanho +
-                '</p>' +
+            '<button class="remove" ' +
+            'onclick="removerProduto(' +
+            index +
+            ')">' +
 
-                '<p>Quantidade: ' +
-                item.quantidade +
-                '</p>' +
+            'REMOVER' +
 
-                '<p>' +
-                dinheiro(
-                    item.preco *
-                    item.quantidade
-                ) +
-                '</p>' +
+            '</button>' +
 
-                '<button class="remove" ' +
-                'onclick="removerProduto(' +
-                index +
-                ')">' +
+            '</div>';
 
-                'REMOVER' +
+        container.appendChild(div);
 
-                '</button>' +
-
-                '</div>';
-
-
-            container.appendChild(
-                div
-            );
-
-        }
-    );
-
+    });
 
     const subtotal =
         calcularSubtotal();
 
-
     const totalFinal =
         calcularTotal();
 
-
-    if (
-        descontoAtual > 0
-    ) {
+    if (descontoAtual > 0) {
 
         total.innerHTML =
 
@@ -2769,7 +2254,6 @@ function atualizarCarrinho() {
 
 }
 
-
 /* =====================================================
    REMOVER
 ===================================================== */
@@ -2781,11 +2265,9 @@ function removerProduto(index) {
         1
     );
 
-
     atualizarCarrinho();
 
 }
-
 
 /* =====================================================
    ABRIR CARRINHO
@@ -2794,35 +2276,24 @@ function removerProduto(index) {
 function abrirCarrinho() {
 
     document
-        .getElementById(
-            "cartOverlay"
-        )
-        .classList.add(
-            "active"
-        );
-
+        .getElementById("cartOverlay")
+        .classList.add("active");
 
     atualizarCarrinho();
 
 }
 
-
 /* =====================================================
-   FECHAR CARRINHO
+   FECHAR
 ===================================================== */
 
 function fecharCarrinho() {
 
     document
-        .getElementById(
-            "cartOverlay"
-        )
-        .classList.remove(
-            "active"
-        );
+        .getElementById("cartOverlay")
+        .classList.remove("active");
 
 }
-
 
 function fecharCarrinhoFora(event) {
 
@@ -2837,7 +2308,6 @@ function fecharCarrinhoFora(event) {
 
 }
 
-
 /* =====================================================
    PAGAMENTO
 ===================================================== */
@@ -2850,26 +2320,15 @@ function selecionarPagamento(
     pagamentoSelecionado =
         pagamento;
 
-
     document
-        .querySelectorAll(
-            ".payments button"
-        )
-        .forEach(
-            function(item) {
+        .querySelectorAll(".payments button")
+        .forEach(function(item) {
 
-                item.classList.remove(
-                    "selected"
-                );
+            item.classList.remove("selected");
 
-            }
-        );
+        });
 
-
-    botao.classList.add(
-        "selected"
-    );
-
+    botao.classList.add("selected");
 
     document.getElementById(
         "cartError"
@@ -2877,9 +2336,8 @@ function selecionarPagamento(
 
 }
 
-
 /* =====================================================
-   GERAR NÚMERO DO PEDIDO
+   GERAR NÚMERO SEQUENCIAL
 ===================================================== */
 
 async function gerarNumeroPedido() {
@@ -2888,7 +2346,6 @@ async function gerarNumeroPedido() {
         db
             .collection("config")
             .doc("contadorPedidos");
-
 
     const numeroGerado =
         await db.runTransaction(
@@ -2899,17 +2356,12 @@ async function gerarNumeroPedido() {
                         contadorRef
                     );
 
-
                 let proximoNumero = 1;
 
-
-                if (
-                    contadorDoc.exists
-                ) {
+                if (contadorDoc.exists) {
 
                     const dados =
                         contadorDoc.data();
-
 
                     proximoNumero =
                         Number(
@@ -2918,35 +2370,27 @@ async function gerarNumeroPedido() {
 
                 }
 
-
                 transaction.set(
                     contadorRef,
                     {
-
                         ultimoNumero:
                             proximoNumero
-
                     },
                     {
-
                         merge: true
-
                     }
                 );
-
 
                 return proximoNumero;
 
             }
         );
 
-
     return "#" +
         String(numeroGerado)
             .padStart(3, "0");
 
 }
-
 
 /* =====================================================
    FINALIZAR COMPRA
@@ -2959,10 +2403,7 @@ async function finalizarCompra() {
             "cartError"
         );
 
-
-    if (
-        carrinho.length === 0
-    ) {
+    if (carrinho.length === 0) {
 
         erro.innerText =
             "Seu carrinho está vazio.";
@@ -2971,10 +2412,7 @@ async function finalizarCompra() {
 
     }
 
-
-    if (
-        pagamentoSelecionado === ""
-    ) {
+    if (pagamentoSelecionado === "") {
 
         erro.innerText =
             "Selecione um método de pagamento.";
@@ -2983,81 +2421,59 @@ async function finalizarCompra() {
 
     }
 
-
     const total =
         calcularTotal();
 
-
     const itens =
-        carrinho.map(
-            function(item) {
+        carrinho.map(function(item) {
 
-                return {
+            return {
 
-                    produto:
-                        item.nome,
+                produto:
+                    item.nome,
 
-                    tamanho:
-                        item.tamanho,
+                tamanho:
+                    item.tamanho,
 
-                    quantidade:
-                        item.quantidade,
+                quantidade:
+                    item.quantidade,
 
-                    precoUnitario:
-                        Number(
-                            item.preco
-                        ),
+                precoUnitario:
+                    Number(item.preco),
 
-                    subtotal:
-                        Number(
-                            item.preco *
-                            item.quantidade
-                        )
+                subtotal:
+                    Number(
+                        item.preco *
+                        item.quantidade
+                    )
 
-                };
+            };
 
-            }
-        );
-
+        });
 
     const botao =
         document.querySelector(
             ".checkout"
         );
 
-
     const textoOriginal =
         botao.innerText;
-
 
     botao.disabled = true;
 
     botao.innerText =
-        "REGISTRANDO PEDIDO...";
-
+        "ENVIANDO...";
 
     erro.innerText = "";
-
-    erro.style.color =
-        "#b00000";
-
 
     try {
 
         /* =================================================
-           GERA NÚMERO INTERNO
-
-           Continua existindo no Firebase.
-           Não será enviado para o WhatsApp.
+           REGISTRA NO FIREBASE
         ================================================== */
 
         const numeroPedido =
             await gerarNumeroPedido();
-
-
-        /* =================================================
-           SALVA NO FIREBASE
-        ================================================== */
 
         await db
             .collection("pedidos")
@@ -3104,45 +2520,40 @@ async function finalizarCompra() {
 
         /* =================================================
            MENSAGEM WHATSAPP
-           
-           SEM:
+
+           IMPORTANTE:
+           NÃO ENVIA:
            - NÚMERO DO PEDIDO
            - CUPOM
            - DESCONTO
         ================================================== */
 
         let mensagem =
-
             "Olá! 👋" +
-            "\n" +
-
+            "\n\n" +
             "Quero fazer meu pedido da HOLINESS! 🔥" +
             "\n\n";
 
 
-        carrinho.forEach(
-            function(item) {
+        carrinho.forEach(function(item) {
 
-                mensagem +=
+            mensagem +=
+                "👕 " +
+                item.nome +
+                "\n" +
 
-                    "👕 " +
-                    item.nome +
-                    "\n" +
+                "📏 Tamanho: " +
+                item.tamanho +
+                "\n" +
 
-                    "📏 Tamanho: " +
-                    item.tamanho +
-                    "\n" +
+                "🔢 Quantidade: " +
+                item.quantidade +
+                "\n\n";
 
-                    "🔢 Quantidade: " +
-                    item.quantidade +
-                    "\n\n";
-
-            }
-        );
+        });
 
 
         mensagem +=
-
             "💰 Total: " +
             dinheiro(total) +
 
@@ -3157,87 +2568,44 @@ async function finalizarCompra() {
 
 
         /* =================================================
-           WHATSAPP
+           ABRIR WHATSAPP
         ================================================== */
 
         const url =
-
             "https://wa.me/" +
             WHATSAPP +
             "?text=" +
-            encodeURIComponent(
-                mensagem
-            );
+            encodeURIComponent(mensagem);
 
 
-        /*
-         * Abre imediatamente uma nova aba.
-         * O encodeURIComponent preserva os emojis.
-         */
-
-        const novaAba =
-            window.open(
-                url,
-                "_blank"
-            );
-
-
-        /*
-         * Caso o navegador bloqueie a nova aba,
-         * tentamos redirecionar a aba atual.
-         */
-
-        if (!novaAba) {
-
-            window.location.href =
-                url;
-
-        }
-
-
-        erro.style.color =
-            "#16833b";
-
-
-        erro.innerText =
-
-            "Pedido registrado com sucesso!";
+        window.location.href = url;
 
 
     }
 
-    catch (
-        firebaseError
-    ) {
+    catch (firebaseError) {
 
         console.error(
             "Erro ao salvar pedido no Firebase:",
             firebaseError
         );
 
-
         erro.style.color =
             "#b00000";
 
-
         erro.innerText =
-
             "Não foi possível registrar o pedido. Tente novamente.";
-
-    }
-
-
-    finally {
 
         botao.disabled = false;
 
         botao.innerText =
             textoOriginal;
 
+        return;
+
     }
 
 }
-
 
 /* =====================================================
    TABELA DE MEDIDAS
@@ -3249,12 +2617,9 @@ function abrirTabelaMedidas() {
         .getElementById(
             "measureOverlay"
         )
-        .classList.add(
-            "active"
-        );
+        .classList.add("active");
 
 }
-
 
 function fecharTabelaMedidas() {
 
@@ -3262,12 +2627,9 @@ function fecharTabelaMedidas() {
         .getElementById(
             "measureOverlay"
         )
-        .classList.remove(
-            "active"
-        );
+        .classList.remove("active");
 
 }
-
 
 function fecharTabelaFora(event) {
 
@@ -3282,7 +2644,6 @@ function fecharTabelaFora(event) {
 
 }
 
-
 /* =====================================================
    ESC
 ===================================================== */
@@ -3291,9 +2652,7 @@ document.addEventListener(
     "keydown",
     function(event) {
 
-        if (
-            event.key === "Escape"
-        ) {
+        if (event.key === "Escape") {
 
             fecharTabelaMedidas();
 
@@ -3303,7 +2662,6 @@ document.addEventListener(
 
     }
 );
-
 
 /* =====================================================
    INICIALIZAÇÃO
