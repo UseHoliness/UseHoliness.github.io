@@ -1329,6 +1329,10 @@ import {
 from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
+/* =====================================================
+   FIREBASE CONFIG
+===================================================== */
+
 const firebaseConfig = {
 
     apiKey:
@@ -1358,14 +1362,23 @@ const firebaseConfig = {
 const app =
     initializeApp(firebaseConfig);
 
+
 const db =
     getFirestore(app);
 
+
+/* =====================================================
+   CONFIGURAÇÕES
+===================================================== */
 
 const PRECO = 109.90;
 
 const WHATSAPP = "5533998019698";
 
+
+/* =====================================================
+   ESTOQUE INICIAL
+===================================================== */
 
 let estoque = {
 
@@ -1394,6 +1407,10 @@ let estoque = {
 };
 
 
+/* =====================================================
+   CUPONS
+===================================================== */
+
 const cupons = {
 
     GLORY10: 10,
@@ -1402,6 +1419,10 @@ const cupons = {
 
 };
 
+
+/* =====================================================
+   VARIÁVEIS
+===================================================== */
 
 let carrinho = [];
 
@@ -1455,6 +1476,7 @@ async function carregarEstoque() {
                 doc(db, "estoque", "Glory")
             );
 
+
         const frassatiSnap =
             await getDoc(
                 doc(db, "estoque", "Frassati")
@@ -1464,8 +1486,11 @@ async function carregarEstoque() {
         if (glorySnap.exists()) {
 
             estoque.Glory = {
+
                 ...estoque.Glory,
+
                 ...glorySnap.data()
+
             };
 
         }
@@ -1474,8 +1499,11 @@ async function carregarEstoque() {
         if (frassatiSnap.exists()) {
 
             estoque.Frassati = {
+
                 ...estoque.Frassati,
+
                 ...frassatiSnap.data()
+
             };
 
         }
@@ -1511,9 +1539,13 @@ function observarEstoque() {
             if (snapshot.exists()) {
 
                 estoque.Glory = {
+
                     ...estoque.Glory,
+
                     ...snapshot.data()
+
                 };
+
 
                 atualizarTamanhosDisponiveis();
 
@@ -1542,9 +1574,13 @@ function observarEstoque() {
             if (snapshot.exists()) {
 
                 estoque.Frassati = {
+
                     ...estoque.Frassati,
+
                     ...snapshot.data()
+
                 };
+
 
                 atualizarTamanhosDisponiveis();
 
@@ -1579,13 +1615,16 @@ function trocarImagem(
     const imagem =
         document.getElementById(idImagem);
 
+
     if (!imagem) return;
+
 
     imagem.src = arquivo;
 
 
     const produto =
         botao.closest(".product");
+
 
     if (!produto) return;
 
@@ -1594,9 +1633,7 @@ function trocarImagem(
         .querySelectorAll(".thumb")
         .forEach(function(item) {
 
-            item.classList.remove(
-                "active"
-            );
+            item.classList.remove("active");
 
         });
 
@@ -1638,6 +1675,7 @@ function selecionarTamanho(
         document.getElementById(
             produto + "Quantity"
         );
+
 
     if (quantidadeElemento) {
 
@@ -1703,6 +1741,7 @@ function atualizarTamanhosDisponiveis() {
 
             const titulo =
                 produtoElemento.querySelector("h3");
+
 
             if (!titulo) return;
 
@@ -1865,7 +1904,7 @@ function alterarQuantidade(
 
 
 /* =====================================================
-   ADICIONAR AO CARRINHO
+   ADICIONAR PRODUTO
 ===================================================== */
 
 function adicionarProduto(
@@ -2030,6 +2069,7 @@ function aplicarCupom() {
             "couponInput"
         );
 
+
     const mensagem =
         document.getElementById(
             "couponMessage"
@@ -2047,8 +2087,10 @@ function aplicarCupom() {
         mensagem.innerText =
             "Digite um cupom.";
 
+
         mensagem.style.color =
             "#b00000";
+
 
         return;
 
@@ -2065,6 +2107,7 @@ function aplicarCupom() {
         descontoAtual =
             cupons[codigo];
 
+
         cupomAtual =
             codigo;
 
@@ -2073,6 +2116,7 @@ function aplicarCupom() {
             "Cupom aplicado! " +
             descontoAtual +
             "% de desconto.";
+
 
         mensagem.style.color =
             "#16833b";
@@ -2087,12 +2131,14 @@ function aplicarCupom() {
         descontoAtual =
             0;
 
+
         cupomAtual =
             "";
 
 
         mensagem.innerText =
             "Cupom inválido.";
+
 
         mensagem.style.color =
             "#b00000";
@@ -2116,10 +2162,12 @@ function atualizarCarrinho() {
             "cartItems"
         );
 
+
     const total =
         document.getElementById(
             "cartTotal"
         );
+
 
     const contador =
         document.getElementById(
@@ -2165,6 +2213,7 @@ function atualizarCarrinho() {
 
         total.innerText =
             dinheiro(0);
+
 
         return;
 
@@ -2317,7 +2366,7 @@ function fecharCarrinho() {
 
 
 /* =====================================================
-   FECHAR CARRINHO CLICANDO FORA
+   FECHAR CARRINHO FORA
 ===================================================== */
 
 function fecharCarrinhoFora(event) {
@@ -2594,9 +2643,14 @@ async function finalizarCompra() {
     erro.style.color =
         "#777";
 
+
     erro.innerText =
         "";
 
+
+    /* -------------------------------------------------
+       VERIFICAR CARRINHO
+    ------------------------------------------------- */
 
     if (
         carrinho.length === 0
@@ -2605,13 +2659,19 @@ async function finalizarCompra() {
         erro.style.color =
             "#b00000";
 
+
         erro.innerText =
             "Seu carrinho está vazio.";
+
 
         return;
 
     }
 
+
+    /* -------------------------------------------------
+       VERIFICAR PAGAMENTO
+    ------------------------------------------------- */
 
     if (
         pagamentoSelecionado === ""
@@ -2620,13 +2680,19 @@ async function finalizarCompra() {
         erro.style.color =
             "#b00000";
 
+
         erro.innerText =
             "Selecione um método de pagamento.";
+
 
         return;
 
     }
 
+
+    /* -------------------------------------------------
+       BOTÃO
+    ------------------------------------------------- */
 
     const botaoCheckout =
         document.querySelector(
@@ -2658,10 +2724,15 @@ async function finalizarCompra() {
     let pedidoId;
 
 
+    /* -------------------------------------------------
+       SALVAR NO FIREBASE
+    ------------------------------------------------- */
+
     try {
 
         erro.style.color =
             "#777";
+
 
         erro.innerText =
             "Registrando seu pedido...";
@@ -2681,6 +2752,7 @@ async function finalizarCompra() {
 
         botaoCheckout.disabled =
             false;
+
 
         botaoCheckout.innerText =
             textoOriginal;
@@ -2723,24 +2795,22 @@ async function finalizarCompra() {
     }
 
 
+    /* -------------------------------------------------
+       CALCULAR TOTAL
+    ------------------------------------------------- */
+
     const total =
         calcularTotal();
 
 
-    /*
-    =====================================================
-    MENSAGEM DO WHATSAPP
-
-    OS EMOJIS SÃO INSERIDOS ATRAVÉS DE UNICODE.
-    ISSO EVITA O CARACTERE "�".
-    =====================================================
-    */
-
+    /* -------------------------------------------------
+       MONTAR MENSAGEM
+    ------------------------------------------------- */
 
     let mensagem =
-        "Ol\u00E1! \uD83D\uDC4B" +
+        "Olá! 👋" +
         "\n" +
-        "Quero fazer meu pedido da HOLINESS! \uD83D\uDD25" +
+        "Quero fazer meu pedido da HOLINESS! 🔥" +
         "\n\n";
 
 
@@ -2748,19 +2818,19 @@ async function finalizarCompra() {
 
         mensagem +=
 
-            "\uD83D\uDC55 " +
+            "👕 " +
             item.nome +
             "\n" +
 
-            "\uD83D\uDCCF Tamanho: " +
+            "📏 Tamanho: " +
             item.tamanho +
             "\n" +
 
-            "\uD83D\uDD22 Quantidade: " +
+            "🔢 Quantidade: " +
             item.quantidade +
             "\n" +
 
-            "\uD83D\uDCB0 " +
+            "💰 " +
             dinheiro(
                 item.preco *
                 item.quantidade
@@ -2772,42 +2842,42 @@ async function finalizarCompra() {
 
 
     mensagem +=
-        "\uD83D\uDCB3 Pagamento: " +
+        "💳 Pagamento: " +
         pagamentoSelecionado;
 
 
     mensagem +=
-        "\n\uD83D\uDCB0 Total: " +
+        "\n💰 Total: " +
         dinheiro(total);
 
 
-    /*
-    =====================================================
-    MOSTRA SOMENTE O CUPOM
-    NÃO MOSTRA "DESCONTO: 10%"
-    =====================================================
-    */
+    /* -------------------------------------------------
+       MOSTRAR SOMENTE O CUPOM
+       NÃO MOSTRA "DESCONTO: 10%"
+    ------------------------------------------------- */
 
     if (
         cupomAtual !== ""
     ) {
 
         mensagem +=
-            "\n\uD83C\uDF9F\uFE0F Cupom: " +
+            "\n🎟️ Cupom: " +
             cupomAtual;
 
     }
 
 
+    /* -------------------------------------------------
+       FINAL DA MENSAGEM
+    ------------------------------------------------- */
+
     mensagem +=
-        "\n\nQuero finalizar meu pedido! \uD83D\uDE4C";
+        "\n\nQuero finalizar meu pedido! 🙌";
 
 
-    /*
-    =====================================================
-    CRIAR LINK DO WHATSAPP
-    =====================================================
-    */
+    /* -------------------------------------------------
+       URL DO WHATSAPP
+    ------------------------------------------------- */
 
     const url =
         "https://wa.me/" +
@@ -2824,33 +2894,71 @@ async function finalizarCompra() {
         "Pedido registrado! Abrindo o WhatsApp...";
 
 
-    /*
-    =====================================================
-    ABRIR WHATSAPP
-    =====================================================
-    */
+    /* -------------------------------------------------
+       ABRIR WHATSAPP
+    ------------------------------------------------- */
 
-    window.open(
-        url,
-        "_blank"
-    );
+    let novaAba = null;
 
 
-    /*
-    =====================================================
-    LIBERAR BOTÃO NOVAMENTE
-    =====================================================
-    */
+    try {
+
+        novaAba =
+            window.open(
+                url,
+                "_blank"
+            );
+
+    } catch (erroWhatsApp) {
+
+        console.error(
+            "Erro ao abrir WhatsApp:",
+            erroWhatsApp
+        );
+
+    }
+
+
+    /* -------------------------------------------------
+       FALLBACK
+    ------------------------------------------------- */
+
+    if (!novaAba) {
+
+        window.location.href =
+            url;
+
+    }
+
+
+    /* -------------------------------------------------
+       CASO O NAVEGADOR NÃO ABRA
+    ------------------------------------------------- */
 
     setTimeout(function() {
+
+        erro.innerHTML =
+            "Se o WhatsApp não abriu, " +
+            "<a href=\"" +
+            url +
+            "\" target=\"_blank\" " +
+            "style=\"" +
+            "color:#111;" +
+            "font-weight:bold;" +
+            "text-decoration:underline;" +
+            "\">" +
+            "clique aqui para enviar seu pedido" +
+            "</a>.";
+
 
         botaoCheckout.disabled =
             false;
 
+
         botaoCheckout.innerText =
             textoOriginal;
 
-    }, 1500);
+    }, 2500);
 
 }
 
@@ -2920,41 +3028,54 @@ document.addEventListener(
 window.trocarImagem =
     trocarImagem;
 
+
 window.selecionarTamanho =
     selecionarTamanho;
+
 
 window.alterarQuantidade =
     alterarQuantidade;
 
+
 window.adicionarProduto =
     adicionarProduto;
+
 
 window.aplicarCupom =
     aplicarCupom;
 
+
 window.removerProduto =
     removerProduto;
+
 
 window.abrirCarrinho =
     abrirCarrinho;
 
+
 window.fecharCarrinho =
     fecharCarrinho;
+
 
 window.fecharCarrinhoFora =
     fecharCarrinhoFora;
 
+
 window.selecionarPagamento =
     selecionarPagamento;
+
 
 window.finalizarCompra =
     finalizarCompra;
 
+
 window.abrirTabelaMedidas =
     abrirTabelaMedidas;
 
+
 window.fecharTabelaMedidas =
     fecharTabelaMedidas;
+
 
 window.fecharTabelaFora =
     fecharTabelaFora;
@@ -2973,4 +3094,5 @@ observarEstoque();
 </script>
 
 </body>
+
 </html>
