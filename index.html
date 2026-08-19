@@ -119,11 +119,9 @@ header {
 .hero-picture {
     display: block;
     width: 100%;
-    height: auto;
     margin: 0;
     padding: 0;
     line-height: 0;
-    font-size: 0;
 }
 
 .hero-banner {
@@ -133,7 +131,6 @@ header {
     margin: 0;
     padding: 0;
     border: 0;
-    vertical-align: top;
 }
 
 /* =====================================================
@@ -873,21 +870,16 @@ footer p {
 </header>
 
 <!-- =====================================================
-     HERO
+     HERO / BANNER
 ===================================================== -->
 
 <section class="hero">
 
     <picture class="hero-picture">
 
-        <source
-            media="(max-width: 767px)"
-            srcset="banner-mobile.png"
-        >
-
         <img
             class="hero-banner"
-            src="banner-desktop.png"
+            src="banner2.png"
             alt="Banner HOLINESS"
         >
 
@@ -1089,21 +1081,39 @@ footer p {
 
                 <button
                     class="thumb active"
-                    onclick="trocarImagem('frassatiImage','Frente2.png',this)"
+                    onclick="
+                        trocarImagem(
+                            'frassatiImage',
+                            'Frente2.png',
+                            this
+                        )
+                    "
                 >
                     <img src="Frente2.png">
                 </button>
 
                 <button
                     class="thumb"
-                    onclick="trocarImagem('frassatiImage','Trás2.png',this)"
+                    onclick="
+                        trocarImagem(
+                            'frassatiImage',
+                            'Trás2.png',
+                            this
+                        )
+                    "
                 >
                     <img src="Trás2.png">
                 </button>
 
                 <button
                     class="thumb"
-                    onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
+                    onclick="
+                        trocarImagem(
+                            'frassatiImage',
+                            'Chuva2.png',
+                            this
+                        )
+                    "
                 >
                     <img src="Chuva2.png">
                 </button>
@@ -1428,21 +1438,25 @@ const WHATSAPP = "5533998019698";
 const estoque = {
 
     Glory: {
+
         PP: 6,
         P: 4,
         M: 4,
         G: 5,
         GG: 3,
         XG: 0
+
     },
 
     Frassati: {
+
         PP: 3,
         P: 2,
         M: 2,
         G: 2,
         GG: 1,
         XG: 0
+
     }
 
 };
@@ -1479,6 +1493,10 @@ let cupomAtual = "";
 
 let pagamentoSelecionado = "";
 
+/* =====================================================
+   DINHEIRO
+===================================================== */
+
 function dinheiro(valor) {
 
     return "R$ " +
@@ -1488,18 +1506,15 @@ function dinheiro(valor) {
 
 }
 
-function trocarImagem(
-    idImagem,
-    arquivo,
-    botao
-) {
+/* =====================================================
+   TROCAR IMAGEM
+===================================================== */
 
-    document.getElementById(
-        idImagem
-    ).src = arquivo;
+function trocarImagem(idImagem, arquivo, botao) {
 
-    const produto =
-        botao.closest(".product");
+    document.getElementById(idImagem).src = arquivo;
+
+    const produto = botao.closest(".product");
 
     produto
         .querySelectorAll(".thumb")
@@ -1513,21 +1528,22 @@ function trocarImagem(
 
 }
 
-function selecionarTamanho(
-    produto,
-    tamanho,
-    botao
-) {
+/* =====================================================
+   SELECIONAR TAMANHO
+===================================================== */
+
+function selecionarTamanho(produto, tamanho, botao) {
 
     if (
         !estoque[produto] ||
         estoque[produto][tamanho] <= 0
     ) {
+
         return;
+
     }
 
-    tamanhosSelecionados[produto] =
-        tamanho;
+    tamanhosSelecionados[produto] = tamanho;
 
     quantidades[produto] = 1;
 
@@ -1535,8 +1551,7 @@ function selecionarTamanho(
         produto + "Quantity"
     ).innerText = "1";
 
-    const container =
-        botao.parentElement;
+    const container = botao.parentElement;
 
     container
         .querySelectorAll("button")
@@ -1548,10 +1563,9 @@ function selecionarTamanho(
 
     botao.classList.add("selected");
 
-    const texto =
-        document.getElementById(
-            produto + "SelectedSize"
-        );
+    const texto = document.getElementById(
+        produto + "SelectedSize"
+    );
 
     texto.style.color = "#777";
 
@@ -1563,6 +1577,10 @@ function selecionarTamanho(
         " disponíveis";
 
 }
+
+/* =====================================================
+   ATUALIZAR TAMANHOS
+===================================================== */
 
 function atualizarTamanhosDisponiveis() {
 
@@ -1580,20 +1598,27 @@ function atualizarTamanhosDisponiveis() {
             let produtoEstoque;
 
             if (nomeProduto === "glory") {
+
                 produtoEstoque = estoque.Glory;
+
             }
 
             else if (nomeProduto === "frassati") {
+
                 produtoEstoque = estoque.Frassati;
+
             }
 
             else {
+
                 return;
+
             }
 
             const botoes =
-                produtoElemento
-                    .querySelectorAll(".sizes button");
+                produtoElemento.querySelectorAll(
+                    ".sizes button"
+                );
 
             botoes.forEach(function(botao) {
 
@@ -1607,7 +1632,9 @@ function atualizarTamanhosDisponiveis() {
                     produtoEstoque[tamanho] <= 0
                 ) {
 
-                    botao.classList.add("unavailable");
+                    botao.classList.add(
+                        "unavailable"
+                    );
 
                     botao.disabled = true;
 
@@ -1615,7 +1642,9 @@ function atualizarTamanhosDisponiveis() {
 
                 else {
 
-                    botao.classList.remove("unavailable");
+                    botao.classList.remove(
+                        "unavailable"
+                    );
 
                     botao.disabled = false;
 
@@ -1627,10 +1656,11 @@ function atualizarTamanhosDisponiveis() {
 
 }
 
-function alterarQuantidade(
-    produto,
-    valor
-) {
+/* =====================================================
+   QUANTIDADE
+===================================================== */
+
+function alterarQuantidade(produto, valor) {
 
     const tamanho =
         tamanhosSelecionados[produto];
@@ -1656,7 +1686,9 @@ function alterarQuantidade(
         quantidades[produto] + valor;
 
     if (novaQuantidade < 1) {
+
         novaQuantidade = 1;
+
     }
 
     if (
@@ -1683,10 +1715,11 @@ function alterarQuantidade(
 
 }
 
-function adicionarProduto(
-    nome,
-    imagem
-) {
+/* =====================================================
+   ADICIONAR PRODUTO
+===================================================== */
+
+function adicionarProduto(nome, imagem) {
 
     const tamanho =
         tamanhosSelecionados[nome];
@@ -1775,6 +1808,10 @@ function adicionarProduto(
 
 }
 
+/* =====================================================
+   SUBTOTAL
+===================================================== */
+
 function calcularSubtotal() {
 
     let subtotal = 0;
@@ -1791,6 +1828,10 @@ function calcularSubtotal() {
 
 }
 
+/* =====================================================
+   TOTAL
+===================================================== */
+
 function calcularTotal() {
 
     const subtotal =
@@ -1804,6 +1845,10 @@ function calcularTotal() {
         );
 
 }
+
+/* =====================================================
+   CUPOM
+===================================================== */
 
 function aplicarCupom() {
 
@@ -1871,6 +1916,10 @@ function aplicarCupom() {
     }
 
 }
+
+/* =====================================================
+   ATUALIZAR CARRINHO
+===================================================== */
 
 function atualizarCarrinho() {
 
@@ -2002,6 +2051,10 @@ function atualizarCarrinho() {
 
 }
 
+/* =====================================================
+   REMOVER
+===================================================== */
+
 function removerProduto(index) {
 
     carrinho.splice(
@@ -2013,6 +2066,10 @@ function removerProduto(index) {
 
 }
 
+/* =====================================================
+   ABRIR CARRINHO
+===================================================== */
+
 function abrirCarrinho() {
 
     document
@@ -2022,6 +2079,10 @@ function abrirCarrinho() {
     atualizarCarrinho();
 
 }
+
+/* =====================================================
+   FECHAR
+===================================================== */
 
 function fecharCarrinho() {
 
@@ -2043,6 +2104,10 @@ function fecharCarrinhoFora(event) {
     }
 
 }
+
+/* =====================================================
+   PAGAMENTO
+===================================================== */
 
 function selecionarPagamento(
     pagamento,
@@ -2067,6 +2132,10 @@ function selecionarPagamento(
     ).innerText = "";
 
 }
+
+/* =====================================================
+   GERAR NÚMERO SEQUENCIAL
+===================================================== */
 
 async function gerarNumeroPedido() {
 
@@ -2119,6 +2188,10 @@ async function gerarNumeroPedido() {
             .padStart(3, "0");
 
 }
+
+/* =====================================================
+   FINALIZAR COMPRA
+===================================================== */
 
 async function finalizarCompra() {
 
@@ -2237,6 +2310,10 @@ async function finalizarCompra() {
 
             });
 
+        /* =================================================
+           MENSAGEM WHATSAPP
+        ================================================== */
+
         let mensagem =
             "Olá! 👋" +
             "\n\n" +
@@ -2273,6 +2350,10 @@ async function finalizarCompra() {
 
             "Quero finalizar meu pedido! 🙌";
 
+        /* =================================================
+           WHATSAPP
+        ================================================== */
+
         const url =
             "https://wa.me/" +
             WHATSAPP +
@@ -2307,6 +2388,10 @@ async function finalizarCompra() {
 
 }
 
+/* =====================================================
+   TABELA DE MEDIDAS
+===================================================== */
+
 function abrirTabelaMedidas() {
 
     document
@@ -2340,6 +2425,10 @@ function fecharTabelaFora(event) {
 
 }
 
+/* =====================================================
+   ESC
+===================================================== */
+
 document.addEventListener(
     "keydown",
     function(event) {
@@ -2354,6 +2443,10 @@ document.addEventListener(
 
     }
 );
+
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
 
 atualizarTamanhosDisponiveis();
 
