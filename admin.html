@@ -4,26 +4,19 @@
 <head>
 
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>HOLINESS — Admin</title>
+<title>HOLINESS</title>
 
 <link rel="icon" type="image/png" href="Logo.png">
+<link rel="shortcut icon" type="image/png" href="Logo.png">
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<link
-    href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
-    rel="stylesheet"
->
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -36,13 +29,31 @@ html {
 }
 
 body {
-
     background: #f3f1ed;
-
     color: #111;
-
     font-family: Arial, sans-serif;
+}
 
+
+/* =====================================================
+   TOPO
+===================================================== */
+
+.topbar {
+    display: none !important;
+    height: 0 !important;
+    background: #000;
+    color: #fff;
+
+    align-items: center;
+    justify-content: center;
+
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+
+.topbar strong {
+    margin-left: 5px;
 }
 
 
@@ -51,41 +62,107 @@ body {
 ===================================================== */
 
 header {
-
-    height: 80px;
+    height: 75px;
 
     background: #fff;
 
-    border-bottom: 1px solid #ddd;
-
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     padding: 0 45px;
 
-    position: sticky;
+    border-bottom: 1px solid #ddd;
 
+    position: sticky;
     top: 0;
 
     z-index: 100;
-
 }
 
 .logo {
+    color: #000;
+    text-decoration: none;
 
     font-family: "Anton", sans-serif;
 
-    font-size: 30px;
+    font-size: 31px;
+
+    letter-spacing: 1px;
+}
+
+.cart-button {
+    border: none;
+    background: transparent;
+
+    cursor: pointer;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 14px;
 
     letter-spacing: 1px;
 
+    position: relative;
 }
 
-.admin-label {
+.cart-button span {
+    position: absolute;
 
+    top: -13px;
+    right: -17px;
+
+    width: 21px;
+    height: 21px;
+
+    border-radius: 50%;
+
+    background: #000;
+    color: #fff;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 10px;
+}
+
+
+/* =====================================================
+   BANNER
+===================================================== */
+
+.collection-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.collection-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   PRODUTOS
+===================================================== */
+
+.products {
+    padding: 90px 5%;
+}
+
+.section-title {
+    margin-bottom: 45px;
+}
+
+.section-title span {
     font-family: "Anton", sans-serif;
 
     font-size: 12px;
@@ -93,159 +170,377 @@ header {
     letter-spacing: 3px;
 
     color: #777;
-
 }
 
-
-/* =====================================================
-   CONTAINER
-===================================================== */
-
-.container {
-
-    width: 90%;
-
-    max-width: 1400px;
-
-    margin: auto;
-
-    padding: 55px 0 80px;
-
-}
-
-
-/* =====================================================
-   TITULO
-===================================================== */
-
-.page-title {
-
-    margin-bottom: 35px;
-
-}
-
-.page-title span {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 3px;
-
-    color: #777;
-
-}
-
-.page-title h1 {
-
+.section-title h2 {
     font-family: "Anton", sans-serif;
 
     font-size: 60px;
 
     font-weight: 400;
-
-    line-height: 1;
-
-    margin-top: 5px;
-
 }
 
 
 /* =====================================================
-   DASHBOARD
+   GRID
 ===================================================== */
 
-.dashboard {
-
+.products-grid {
     display: grid;
 
     grid-template-columns:
-        repeat(4, minmax(0, 1fr));
+        repeat(2, minmax(0, 1fr));
 
-    gap: 15px;
+    gap: 30px;
 
-    margin-bottom: 40px;
-
-}
-
-.card {
-
-    background: #fff;
-
-    border: 1px solid #ddd;
-
-    padding: 25px;
-
-}
-
-.card-label {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 2px;
-
-    color: #777;
-
-    margin-bottom: 10px;
-
-}
-
-.card-value {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 35px;
-
-    font-weight: 400;
-
+    align-items: start;
 }
 
 
 /* =====================================================
-   BARRA DE CONTROLE
+   PRODUTO
 ===================================================== */
 
-.controls {
+.product {
+    width: 100%;
 
+    background: #fff;
+
+    overflow: hidden;
+
+    min-width: 0;
+}
+
+
+/* =====================================================
+   IMAGEM
+===================================================== */
+
+.product-image {
+    width: 100%;
+
+    height: 550px;
+
+    background: #e6e2dd;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =====================================================
+   MINIATURAS
+===================================================== */
+
+.product-thumbnails {
+    display: flex;
+
+    gap: 8px;
+
+    padding: 10px 15px;
+
+    background: #e6e2dd;
+}
+
+.thumb {
+    width: 65px;
+    height: 65px;
+
+    padding: 0;
+
+    border: 1px solid #aaa;
+
+    background: #ddd;
+
+    cursor: pointer;
+
+    opacity: .6;
+
+    overflow: hidden;
+}
+
+.thumb.active {
+    opacity: 1;
+
+    border: 2px solid #000;
+}
+
+.thumb img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+/* =====================================================
+   INFORMAÇÕES
+===================================================== */
+
+.product-info {
+    padding: 30px 32px 32px;
+}
+
+.product-number {
+    color: #999;
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+}
+
+.product-info h3 {
+    font-family: "Anton", sans-serif;
+
+    font-size: 45px;
+
+    font-weight: 400;
+
+    margin: 5px 0 15px;
+}
+
+.description {
+    font-family: Georgia, serif;
+
+    color: #444;
+
+    font-size: 14px;
+
+    line-height: 1.6;
+
+    margin-bottom: 18px;
+
+    min-height: 46px;
+}
+
+.price {
+    font-family: "Anton", sans-serif;
+
+    font-size: 30px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =====================================================
+   TAMANHOS
+===================================================== */
+
+.label {
+    display: block;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.sizes {
     display: flex;
 
     gap: 10px;
 
-    margin-bottom: 20px;
+    margin-bottom: 8px;
 
-    align-items: stretch;
-
+    flex-wrap: wrap;
 }
 
-.search {
+.sizes button {
+    position: relative;
 
-    flex: 1;
+    width: 54px;
+    height: 54px;
 
-}
-
-.search input {
-
-    width: 100%;
-
-    height: 50px;
+    min-width: 54px;
 
     border: 1px solid #aaa;
 
     background: #fff;
 
-    padding: 0 15px;
+    cursor: pointer;
 
-    outline: none;
+    font-family: "Anton", sans-serif;
 
     font-size: 13px;
 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: .2s;
 }
 
-.refresh-button {
+.sizes button:hover:not(.unavailable) {
+    background: #000;
+    color: #fff;
 
-    width: 150px;
+    border-color: #000;
+}
+
+.sizes button.selected {
+    background: #000;
+
+    color: #fff;
+
+    border-color: #000;
+}
+
+
+/* =====================================================
+   SEM ESTOQUE
+===================================================== */
+
+.sizes button.unavailable {
+    background: #f5f5f5;
+
+    color: #999;
+
+    cursor: not-allowed;
+}
+
+.sizes button.unavailable::after {
+    content: "×";
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-family: Arial, sans-serif;
+
+    font-size: 31px;
+
+    font-weight: 300;
+
+    line-height: 1;
+
+    color: #999;
+
+    pointer-events: none;
+}
+
+
+/* =====================================================
+   TABELA
+===================================================== */
+
+.measure-button {
+    display: block;
+
+    background: transparent;
+
+    border: none;
+
+    border-bottom: 1px solid #111;
+
+    padding: 5px 0;
+
+    margin-top: 2px;
+
+    margin-bottom: 18px;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 10px;
+
+    letter-spacing: 1.5px;
+
+    cursor: pointer;
+
+    color: #111;
+}
+
+.measure-button:hover {
+    opacity: .55;
+}
+
+
+/* =====================================================
+   ESTOQUE
+===================================================== */
+
+.stock {
+    min-height: 25px;
+
+    font-size: 10px;
+
+    color: #777;
+
+    margin-bottom: 17px;
+}
+
+
+/* =====================================================
+   QUANTIDADE
+===================================================== */
+
+.quantity {
+    width: 135px;
+
+    height: 43px;
+
+    display: flex;
+
+    margin-bottom: 20px;
+}
+
+.quantity button {
+    width: 43px;
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.quantity span {
+    width: 49px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-top: 1px solid #aaa;
+
+    border-bottom: 1px solid #aaa;
+
+    background: #fff;
+
+    font-weight: bold;
+}
+
+
+/* =====================================================
+   ADICIONAR
+===================================================== */
+
+.add-button {
+    width: 100%;
+
+    height: 58px;
 
     border: none;
 
@@ -255,399 +550,43 @@ header {
 
     font-family: "Anton", sans-serif;
 
-    letter-spacing: 1px;
+    letter-spacing: 2px;
 
     cursor: pointer;
 
+    transition: .2s;
 }
 
-.refresh-button:hover {
-
+.add-button:hover {
     background: #d49a19;
 
     color: #000;
-
 }
 
 
 /* =====================================================
-   STATUS
+   IMAGENS INFERIORES
 ===================================================== */
 
-.connection {
-
-    min-height: 25px;
-
-    margin-bottom: 15px;
-
-    font-size: 11px;
-
-    color: #777;
-
-}
-
-
-/* =====================================================
-   PEDIDOS
-===================================================== */
-
-.orders {
-
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 12px;
-
-}
-
-
-/* =====================================================
-   PEDIDO
-===================================================== */
-
-.order {
-
-    background: #fff;
-
-    border: 1px solid #ddd;
-
-    transition: .2s;
-
-}
-
-.order:hover {
-
-    border-color: #aaa;
-
-}
-
-
-/* =====================================================
-   CABEÇALHO DO PEDIDO
-===================================================== */
-
-.order-header {
-
-    min-height: 80px;
-
-    padding: 18px 22px;
-
+.images-section {
     display: grid;
 
-    grid-template-columns:
-        130px
-        1fr
-        150px
-        150px
-        120px;
+    grid-template-columns: 1fr 1fr;
 
-    gap: 15px;
-
-    align-items: center;
-
+    height: 550px;
 }
 
-.order-number {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 25px;
-
+.images-section div {
+    overflow: hidden;
 }
 
-.order-info {
+.images-section img {
+    width: 100%;
+    height: 100%;
 
-    display: flex;
-
-    flex-direction: column;
-
-    gap: 4px;
-
-}
-
-.order-date {
-
-    font-size: 11px;
-
-    color: #777;
-
-}
-
-.order-payment {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 1px;
-
-}
-
-.order-total {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 20px;
-
-}
-
-.view-button {
-
-    height: 38px;
-
-    border: 1px solid #111;
-
-    background: #fff;
-
-    cursor: pointer;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1px;
-
-}
-
-.view-button:hover {
-
-    background: #000;
-
-    color: #fff;
-
-}
-
-
-/* =====================================================
-   DETALHES
-===================================================== */
-
-.order-details {
-
-    display: none;
-
-    border-top: 1px solid #ddd;
-
-    padding: 25px;
-
-    background: #faf9f7;
-
-}
-
-.order-details.active {
+    object-fit: cover;
 
     display: block;
-
-}
-
-
-/* =====================================================
-   PRODUTOS
-===================================================== */
-
-.items-title {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 12px;
-
-}
-
-.item {
-
-    background: #fff;
-
-    border: 1px solid #ddd;
-
-    padding: 15px;
-
-    display: grid;
-
-    grid-template-columns:
-        1fr
-        100px
-        100px
-        130px;
-
-    gap: 15px;
-
-    align-items: center;
-
-    margin-bottom: 8px;
-
-}
-
-.item-name {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 18px;
-
-}
-
-.item-info {
-
-    font-size: 11px;
-
-    color: #666;
-
-}
-
-.item-quantity {
-
-    font-size: 12px;
-
-}
-
-.item-price {
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 16px;
-
-    text-align: right;
-
-}
-
-
-/* =====================================================
-   RESUMO DO PEDIDO
-===================================================== */
-
-.order-summary {
-
-    display: flex;
-
-    justify-content: flex-end;
-
-    margin-top: 20px;
-
-}
-
-.summary-box {
-
-    width: 300px;
-
-}
-
-.summary-row {
-
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 8px 0;
-
-    font-size: 12px;
-
-    border-bottom: 1px solid #ddd;
-
-}
-
-.summary-row.discount {
-
-    color: #16833b;
-
-}
-
-.summary-row.total {
-
-    border-top: 1px solid #111;
-
-    border-bottom: none;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 21px;
-
-    margin-top: 5px;
-
-    padding-top: 15px;
-
-}
-
-
-/* =====================================================
-   CUPOM
-===================================================== */
-
-.coupon {
-
-    display: inline-block;
-
-    margin-top: 10px;
-
-    padding: 6px 9px;
-
-    background: #eee;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 9px;
-
-    letter-spacing: 1px;
-
-}
-
-
-/* =====================================================
-   VAZIO
-===================================================== */
-
-.empty {
-
-    background: #fff;
-
-    border: 1px solid #ddd;
-
-    padding: 70px 20px;
-
-    text-align: center;
-
-    color: #777;
-
-}
-
-.empty strong {
-
-    display: block;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 25px;
-
-    color: #111;
-
-    margin-bottom: 8px;
-
-}
-
-
-/* =====================================================
-   LOADING
-===================================================== */
-
-.loading {
-
-    background: #fff;
-
-    border: 1px solid #ddd;
-
-    padding: 50px;
-
-    text-align: center;
-
-    font-family: "Anton", sans-serif;
-
-    letter-spacing: 2px;
-
-    color: #777;
-
 }
 
 
@@ -656,10 +595,11 @@ header {
 ===================================================== */
 
 footer {
+    min-height: 170px;
+
+    background: #f3f1ed;
 
     border-top: 1px solid #ddd;
-
-    padding: 30px 45px;
 
     display: flex;
 
@@ -667,20 +607,432 @@ footer {
 
     align-items: center;
 
-    color: #777;
-
-    font-size: 10px;
-
+    padding: 30px 50px;
 }
 
 .footer-logo {
+    font-family: "Anton", sans-serif;
+
+    font-size: 35px;
+}
+
+footer p {
+    max-width: 500px;
+
+    text-align: right;
+
+    color: #777;
+
+    font-family: Georgia, serif;
+
+    font-size: 12px;
+
+    line-height: 1.6;
+}
+
+
+/* =====================================================
+   CARRINHO
+===================================================== */
+
+.cart-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.55);
+
+    z-index: 999;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .3s;
+}
+
+.cart-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.cart {
+    position: absolute;
+
+    right: 0;
+
+    top: 0;
+
+    width: 440px;
+
+    max-width: 100%;
+
+    height: 100%;
+
+    background: #f3f1ed;
+
+    padding: 30px;
+
+    overflow-y: auto;
+
+    transform: translateX(100%);
+
+    transition: .3s;
+}
+
+.cart-overlay.active .cart {
+    transform: translateX(0);
+}
+
+.cart-header {
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    padding-bottom: 18px;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-header h2 {
+    font-family: "Anton", sans-serif;
+
+    font-size: 28px;
+
+    font-weight: 400;
+}
+
+.cart-header button {
+    background: transparent;
+
+    border: none;
+
+    font-size: 28px;
+
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   ITEM CARRINHO
+===================================================== */
+
+.cart-item {
+    display: flex;
+
+    gap: 13px;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item img {
+    width: 80px;
+    height: 90px;
+
+    object-fit: contain;
+
+    background: #e6e2dd;
+}
+
+.cart-item-info {
+    flex: 1;
+}
+
+.cart-item-info h3 {
+    font-family: "Anton", sans-serif;
+
+    font-size: 20px;
+
+    font-weight: 400;
+}
+
+.cart-item-info p {
+    font-size: 10px;
+
+    color: #666;
+
+    margin-top: 5px;
+}
+
+.remove {
+    margin-top: 8px;
+
+    border: none;
+
+    background: transparent;
+
+    color: #999;
+
+    font-size: 9px;
+
+    cursor: pointer;
+}
+
+.empty {
+    text-align: center;
+
+    padding: 50px 0;
+
+    color: #777;
+}
+
+
+/* =====================================================
+   CUPOM
+===================================================== */
+
+.cart-coupon {
+    margin-top: 20px;
+
+    margin-bottom: 20px;
+}
+
+.cart-coupon label {
+    display: block;
 
     font-family: "Anton", sans-serif;
 
-    font-size: 25px;
+    font-size: 11px;
 
-    color: #111;
+    letter-spacing: 2px;
 
+    margin-bottom: 9px;
+}
+
+.cart-coupon-input {
+    display: flex;
+}
+
+.cart-coupon-input input {
+    flex: 1;
+
+    height: 45px;
+
+    border: 1px solid #aaa;
+
+    border-right: none;
+
+    outline: none;
+
+    padding: 0 13px;
+
+    background: #fff;
+
+    text-transform: uppercase;
+}
+
+.cart-coupon-input button {
+    width: 100px;
+
+    border: none;
+
+    background: #000;
+
+    color: #fff;
+
+    font-family: "Anton", sans-serif;
+
+    cursor: pointer;
+}
+
+.cart-coupon-input button:hover {
+    background: #d49a19;
+
+    color: #000;
+}
+
+.coupon-message {
+    min-height: 18px;
+
+    margin-top: 7px;
+
+    font-size: 11px;
+}
+
+
+/* =====================================================
+   TOTAL
+===================================================== */
+
+.cart-total {
+    display: flex;
+
+    justify-content: space-between;
+
+    padding: 22px 0;
+
+    font-family: "Anton", sans-serif;
+
+    font-size: 22px;
+
+    border-top: 1px solid #ddd;
+}
+
+
+/* =====================================================
+   PAGAMENTO
+===================================================== */
+
+.payment-title {
+    font-family: "Anton", sans-serif;
+
+    font-size: 11px;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 10px;
+}
+
+.payments {
+    display: flex;
+
+    gap: 7px;
+
+    flex-wrap: wrap;
+
+    margin-bottom: 15px;
+}
+
+.payments button {
+    padding: 10px 15px;
+
+    border: 1px solid #aaa;
+
+    background: #fff;
+
+    font-family: "Anton", sans-serif;
+
+    cursor: pointer;
+}
+
+.payments button.selected {
+    background: #000;
+
+    color: #fff;
+
+    border-color: #000;
+}
+
+.cart-error {
+    min-height: 20px;
+
+    color: #b00000;
+
+    font-size: 11px;
+
+    margin-bottom: 10px;
+}
+
+.checkout {
+    width: 100%;
+
+    height: 57px;
+
+    background: #000;
+
+    color: #fff;
+
+    border: none;
+
+    font-family: "Anton", sans-serif;
+
+    letter-spacing: 2px;
+
+    cursor: pointer;
+}
+
+.checkout:hover {
+    background: #d49a19;
+
+    color: #000;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.measure-overlay {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0,0,0,.65);
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding: 20px;
+
+    z-index: 2000;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: .25s;
+}
+
+.measure-overlay.active {
+    opacity: 1;
+
+    visibility: visible;
+}
+
+.measure-modal {
+    position: relative;
+
+    max-width: 90vw;
+
+    max-height: 90vh;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+}
+
+.measure-image {
+    display: block;
+
+    max-width: 90vw;
+
+    max-height: 85vh;
+
+    width: auto;
+
+    height: auto;
+
+    object-fit: contain;
+}
+
+.close-measure {
+    position: absolute;
+
+    top: -45px;
+
+    right: 0;
+
+    border: none;
+
+    background: transparent;
+
+    color: #fff;
+
+    font-size: 35px;
+
+    line-height: 1;
+
+    cursor: pointer;
 }
 
 
@@ -688,159 +1040,79 @@ footer {
    RESPONSIVO
 ===================================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
 
-    .dashboard {
-
-        grid-template-columns:
-            repeat(2, 1fr);
-
+    header {
+        padding: 0 20px;
     }
 
-    .order-header {
-
-        grid-template-columns:
-            100px
-            1fr
-            120px;
-
+    .products {
+        padding: 60px 20px;
     }
 
-    .order-payment {
-
-        display: none;
-
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 
-    .order-total {
-
-        text-align: right;
-
+    .product-image {
+        height: 500px;
     }
 
-    .view-button {
+    .images-section {
+        grid-template-columns: 1fr;
 
-        grid-column: 1 / -1;
+        height: auto;
+    }
 
+    .images-section div {
+        height: 450px;
+    }
+
+    footer {
+        flex-direction: column;
+
+        gap: 20px;
+
+        text-align: center;
+    }
+
+    footer p {
+        text-align: center;
     }
 
 }
 
 
-@media (max-width: 650px) {
+@media (max-width: 500px) {
 
-    header {
-
-        padding: 0 20px;
-
-    }
-
-    .admin-label {
-
-        font-size: 9px;
-
-    }
-
-    .container {
-
-        width: 92%;
-
-        padding-top: 40px;
-
-    }
-
-    .page-title h1 {
-
+    .section-title h2 {
         font-size: 45px;
-
     }
 
-    .dashboard {
-
-        grid-template-columns: 1fr 1fr;
-
+    .product-info {
+        padding: 25px;
     }
 
-    .card {
-
-        padding: 18px;
-
+    .product-info h3 {
+        font-size: 38px;
     }
 
-    .card-value {
-
-        font-size: 27px;
-
+    .sizes {
+        gap: 7px;
     }
 
-    .controls {
-
-        flex-direction: column;
-
-    }
-
-    .refresh-button {
-
-        width: 100%;
+    .sizes button {
+        width: 48px;
 
         height: 48px;
 
+        min-width: 48px;
     }
 
-    .order-header {
+    .measure-image {
+        max-width: 94vw;
 
-        display: grid;
-
-        grid-template-columns: 1fr 1fr;
-
-        gap: 12px;
-
-    }
-
-    .order-total {
-
-        text-align: left;
-
-    }
-
-    .view-button {
-
-        grid-column: 1 / -1;
-
-    }
-
-    .item {
-
-        grid-template-columns: 1fr 1fr;
-
-    }
-
-    .item-price {
-
-        text-align: left;
-
-    }
-
-    .order-summary {
-
-        justify-content: stretch;
-
-    }
-
-    .summary-box {
-
-        width: 100%;
-
-    }
-
-    footer {
-
-        flex-direction: column;
-
-        gap: 10px;
-
-        text-align: center;
-
+        max-height: 80vh;
     }
 
 }
@@ -853,172 +1125,389 @@ footer {
 <body>
 
 
-<!-- =====================================================
-     HEADER
-===================================================== -->
+<div class="topbar">
+
+    PRIMEIRA COMPRA?
+    USE O CUPOM <strong>GLORY10</strong>
+
+</div>
+
 
 <header>
 
-    <div class="logo">
+    <a href="#" class="logo">
         HOLINESS
-    </div>
+    </a>
 
-    <div class="admin-label">
-        PAINEL ADMINISTRATIVO
-    </div>
+    <button
+        class="cart-button"
+        onclick="abrirCarrinho()"
+    >
+
+        CARRINHO
+
+        <span id="cartCount">0</span>
+
+    </button>
 
 </header>
 
 
-<!-- =====================================================
-     CONTEÚDO
-===================================================== -->
+<section class="collection-banner">
 
-<main class="container">
+    <img
+        src="banner2.png"
+        alt="Nova coleção HOLINESS"
+    >
+
+</section>
 
 
-    <div class="page-title">
+<section class="products">
+
+    <div class="section-title">
 
         <span>
-            ADMINISTRAÇÃO
+            NOVA COLEÇÃO
         </span>
 
-        <h1>
-            PEDIDOS
-        </h1>
+        <h2>
+            CAMISAS
+        </h2>
 
     </div>
 
 
-    <!-- =================================================
-         DASHBOARD
-    ================================================== -->
-
-    <section class="dashboard">
+    <div class="products-grid">
 
 
-        <div class="card">
+        <!-- GLORY -->
 
-            <div class="card-label">
-                PEDIDOS
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    id="gloryImage"
+                    src="Frente.png"
+                    alt="Camisa Glory"
+                >
+
             </div>
 
-            <div
-                class="card-value"
-                id="totalPedidos"
-            >
-                0
+
+            <div class="product-thumbnails">
+
+                <button
+                    class="thumb active"
+                    onclick="trocarImagem('gloryImage','Frente.png',this)"
+                >
+                    <img src="Frente.png" alt="">
+                </button>
+
+
+                <button
+                    class="thumb"
+                    onclick="trocarImagem('gloryImage','Costa.png',this)"
+                >
+                    <img src="Costa.png" alt="">
+                </button>
+
+
+                <button
+                    class="thumb"
+                    onclick="trocarImagem('gloryImage','Chuva.png',this)"
+                >
+                    <img src="Chuva.png" alt="">
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <span class="product-number">
+                    001
+                </span>
+
+                <h3>
+                    GLORY
+                </h3>
+
+
+                <p class="description">
+                    “Acredito que, buscando incansavelmente a Deus,
+                    chegaremos à manifestação visível da presença,
+                    do poder e de todas as perfeições — à Glória.”
+                </p>
+
+
+                <div class="price">
+                    R$ 109,90
+                </div>
+
+
+                <label class="label">
+                    ESCOLHA O TAMANHO
+                </label>
+
+
+                <div class="sizes">
+
+                    <button onclick="selecionarTamanho('Glory','PP',this)">
+                        PP
+                    </button>
+
+                    <button onclick="selecionarTamanho('Glory','P',this)">
+                        P
+                    </button>
+
+                    <button onclick="selecionarTamanho('Glory','M',this)">
+                        M
+                    </button>
+
+                    <button onclick="selecionarTamanho('Glory','G',this)">
+                        G
+                    </button>
+
+                    <button onclick="selecionarTamanho('Glory','GG',this)">
+                        GG
+                    </button>
+
+                    <button onclick="selecionarTamanho('Glory','XG',this)">
+                        XG
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="measure-button"
+                    onclick="abrirTabelaMedidas()"
+                >
+                    TABELA DE MEDIDAS →
+                </button>
+
+
+                <div
+                    id="GlorySelectedSize"
+                    class="stock"
+                >
+                    Selecione um tamanho
+                </div>
+
+
+                <label class="label">
+                    QUANTIDADE
+                </label>
+
+
+                <div class="quantity">
+
+                    <button onclick="alterarQuantidade('Glory',-1)">
+                        −
+                    </button>
+
+                    <span id="GloryQuantity">
+                        1
+                    </span>
+
+                    <button onclick="alterarQuantidade('Glory',1)">
+                        +
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="add-button"
+                    onclick="adicionarProduto('Glory','Frente.png')"
+                >
+                    ADICIONAR AO CARRINHO →
+                </button>
+
             </div>
 
         </div>
 
 
-        <div class="card">
+        <!-- FRASSATI -->
 
-            <div class="card-label">
-                FATURAMENTO
+        <div class="product">
+
+            <div class="product-image">
+
+                <img
+                    id="frassatiImage"
+                    src="Frente2.png"
+                    alt="Camisa Frassati"
+                >
+
             </div>
 
-            <div
-                class="card-value"
-                id="faturamento"
-            >
-                R$ 0,00
+
+            <div class="product-thumbnails">
+
+                <button
+                    class="thumb active"
+                    onclick="trocarImagem('frassatiImage','Frente2.png',this)"
+                >
+                    <img src="Frente2.png" alt="">
+                </button>
+
+
+                <button
+                    class="thumb"
+                    onclick="trocarImagem('frassatiImage','Trás2.png',this)"
+                >
+                    <img src="Trás2.png" alt="">
+                </button>
+
+
+                <button
+                    class="thumb"
+                    onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
+                >
+                    <img src="Chuva2.png" alt="">
+                </button>
+
+            </div>
+
+
+            <div class="product-info">
+
+                <span class="product-number">
+                    002
+                </span>
+
+                <h3>
+                    FRASSATI
+                </h3>
+
+
+                <p class="description">
+                    “Subir sempre mais alto, não apenas pelas montanhas,
+                    mas em direção a Deus, onde encontramos a verdadeira
+                    felicidade.”
+                </p>
+
+
+                <div class="price">
+                    R$ 109,90
+                </div>
+
+
+                <label class="label">
+                    ESCOLHA O TAMANHO
+                </label>
+
+
+                <div class="sizes">
+
+                    <button onclick="selecionarTamanho('Frassati','PP',this)">
+                        PP
+                    </button>
+
+                    <button onclick="selecionarTamanho('Frassati','P',this)">
+                        P
+                    </button>
+
+                    <button onclick="selecionarTamanho('Frassati','M',this)">
+                        M
+                    </button>
+
+                    <button onclick="selecionarTamanho('Frassati','G',this)">
+                        G
+                    </button>
+
+                    <button onclick="selecionarTamanho('Frassati','GG',this)">
+                        GG
+                    </button>
+
+                    <button onclick="selecionarTamanho('Frassati','XG',this)">
+                        XG
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="measure-button"
+                    onclick="abrirTabelaMedidas()"
+                >
+                    TABELA DE MEDIDAS →
+                </button>
+
+
+                <div
+                    id="FrassatiSelectedSize"
+                    class="stock"
+                >
+                    Selecione um tamanho
+                </div>
+
+
+                <label class="label">
+                    QUANTIDADE
+                </label>
+
+
+                <div class="quantity">
+
+                    <button onclick="alterarQuantidade('Frassati',-1)">
+                        −
+                    </button>
+
+                    <span id="FrassatiQuantity">
+                        1
+                    </span>
+
+                    <button onclick="alterarQuantidade('Frassati',1)">
+                        +
+                    </button>
+
+                </div>
+
+
+                <button
+                    class="add-button"
+                    onclick="adicionarProduto('Frassati','Frente2.png')"
+                >
+                    ADICIONAR AO CARRINHO →
+                </button>
+
             </div>
 
         </div>
 
+    </div>
 
-        <div class="card">
-
-            <div class="card-label">
-                CAMISAS VENDIDAS
-            </div>
-
-            <div
-                class="card-value"
-                id="totalCamisas"
-            >
-                0
-            </div>
-
-        </div>
+</section>
 
 
-        <div class="card">
+<section class="images-section">
 
-            <div class="card-label">
-                TICKET MÉDIO
-            </div>
+    <div>
 
-            <div
-                class="card-value"
-                id="ticketMedio"
-            >
-                R$ 0,00
-            </div>
-
-        </div>
-
-
-    </section>
-
-
-    <!-- =================================================
-         CONTROLES
-    ================================================== -->
-
-    <section class="controls">
-
-        <div class="search">
-
-            <input
-                type="text"
-                id="searchInput"
-                placeholder="BUSCAR POR PEDIDO, PRODUTO, TAMANHO OU CUPOM..."
-                oninput="filtrarPedidos()"
-            >
-
-        </div>
-
-
-        <button
-            class="refresh-button"
-            onclick="carregarPedidosNovamente()"
+        <img
+            src="Obrigado.png"
+            alt="Holiness"
         >
-            ATUALIZAR
-        </button>
 
-    </section>
-
-
-    <div
-        id="connection"
-        class="connection"
-    >
-        Conectando ao Firebase...
     </div>
 
 
-    <!-- =================================================
-         PEDIDOS
-    ================================================== -->
+    <div>
 
-    <section id="orders">
+        <img
+            src="fig.png"
+            alt="Coleção Holiness"
+        >
 
-        <div class="loading">
-            CARREGANDO PEDIDOS...
-        </div>
+    </div>
 
-    </section>
+</section>
 
-
-</main>
-
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -1026,54 +1515,190 @@ footer {
         HOLINESS
     </div>
 
-    <div>
-        PAINEL ADMINISTRATIVO
-    </div>
+    <p>
+        Ao contemplarmos a presença de Deus,
+        somos transformados progressivamente
+        à imagem de Cristo pelo Espírito Santo.
+    </p>
 
 </footer>
 
 
 <!-- =====================================================
-     FIREBASE
+     CARRINHO
+===================================================== -->
+
+<div
+    id="cartOverlay"
+    class="cart-overlay"
+    onclick="fecharCarrinhoFora(event)"
+>
+
+    <div
+        class="cart"
+        onclick="event.stopPropagation()"
+    >
+
+        <div class="cart-header">
+
+            <h2>
+                CARRINHO
+            </h2>
+
+            <button onclick="fecharCarrinho()">
+                ×
+            </button>
+
+        </div>
+
+
+        <div id="cartItems"></div>
+
+
+        <div class="cart-coupon">
+
+            <label>
+                CUPOM DE DESCONTO
+            </label>
+
+
+            <div class="cart-coupon-input">
+
+                <input
+                    type="text"
+                    id="couponInput"
+                    placeholder="DIGITE SEU CUPOM"
+                >
+
+
+                <button onclick="aplicarCupom()">
+                    APLICAR
+                </button>
+
+            </div>
+
+
+            <div
+                id="couponMessage"
+                class="coupon-message"
+            ></div>
+
+        </div>
+
+
+        <div class="cart-total">
+
+            <span>
+                TOTAL
+            </span>
+
+            <strong id="cartTotal">
+                R$ 0,00
+            </strong>
+
+        </div>
+
+
+        <div class="payment-title">
+            MÉTODO DE PAGAMENTO
+        </div>
+
+
+        <div class="payments">
+
+            <button onclick="selecionarPagamento('PIX',this)">
+                PIX
+            </button>
+
+            <button onclick="selecionarPagamento('Cartão',this)">
+                CARTÃO
+            </button>
+
+            <button onclick="selecionarPagamento('Dinheiro',this)">
+                DINHEIRO
+            </button>
+
+        </div>
+
+
+        <div
+            id="cartError"
+            class="cart-error"
+        ></div>
+
+
+        <button
+            class="checkout"
+            onclick="finalizarCompra()"
+        >
+            FINALIZAR PEDIDO → WHATSAPP
+        </button>
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     MODAL
+===================================================== -->
+
+<div
+    id="measureOverlay"
+    class="measure-overlay"
+    onclick="fecharTabelaFora(event)"
+>
+
+    <div
+        class="measure-modal"
+        onclick="event.stopPropagation()"
+    >
+
+        <button
+            class="close-measure"
+            onclick="fecharTabelaMedidas()"
+        >
+            ×
+        </button>
+
+
+        <img
+            src="medida.png"
+            alt="Tabela de medidas"
+            class="measure-image"
+        >
+
+    </div>
+
+</div>
+
+
+<!-- =====================================================
+     FIREBASE + JAVASCRIPT
 ===================================================== -->
 
 <script type="module">
 
-
-/* =====================================================
-   IMPORTS
-===================================================== */
-
 import {
-
     initializeApp
-
 }
-
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
 
 
 import {
-
     getFirestore,
-
+    doc,
+    getDoc,
+    onSnapshot,
     collection,
-
-    query,
-
-    orderBy,
-
-    onSnapshot
-
+    serverTimestamp,
+    runTransaction
 }
-
-from
-"https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
+from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 
 /* =====================================================
-   CONFIGURAÇÃO FIREBASE
+   FIREBASE
 ===================================================== */
 
 const firebaseConfig = {
@@ -1102,10 +1727,6 @@ const firebaseConfig = {
 };
 
 
-/* =====================================================
-   FIREBASE
-===================================================== */
-
 const app =
     initializeApp(firebaseConfig);
 
@@ -1115,14 +1736,85 @@ const db =
 
 
 /* =====================================================
+   CONFIGURAÇÕES
+===================================================== */
+
+const PRECO = 109.90;
+
+const WHATSAPP = "5533998019698";
+
+
+/* =====================================================
+   ESTOQUE LOCAL
+===================================================== */
+
+let estoque = {
+
+    Glory: {
+
+        PP: 3,
+        P: 2,
+        M: 2,
+        G: 3,
+        GG: 1,
+        XG: 1
+
+    },
+
+    Frassati: {
+
+        PP: 3,
+        P: 2,
+        M: 2,
+        G: 2,
+        GG: 0,
+        XG: 1
+
+    }
+
+};
+
+
+/* =====================================================
+   CUPONS
+===================================================== */
+
+const cupons = {
+
+    GLORY10: 10,
+
+    ALTAR20: 20
+
+};
+
+
+/* =====================================================
    VARIÁVEIS
 ===================================================== */
 
-let pedidos = [];
+let carrinho = [];
 
-let pedidosFiltrados = [];
+let tamanhosSelecionados = {
 
-let unsubscribe = null;
+    Glory: "",
+
+    Frassati: ""
+
+};
+
+let quantidades = {
+
+    Glory: 1,
+
+    Frassati: 1
+
+};
+
+let descontoAtual = 0;
+
+let cupomAtual = "";
+
+let pagamentoSelecionado = "";
 
 
 /* =====================================================
@@ -1131,10 +1823,7 @@ let unsubscribe = null;
 
 function dinheiro(valor) {
 
-    valor = Number(valor) || 0;
-
     return "R$ " +
-
         valor
             .toFixed(2)
             .replace(".", ",");
@@ -1143,463 +1832,692 @@ function dinheiro(valor) {
 
 
 /* =====================================================
-   DATA
+   CARREGAR ESTOQUE FIREBASE
 ===================================================== */
 
-function formatarData(timestamp) {
-
-    if (!timestamp) {
-
-        return "Data não disponível";
-
-    }
-
+async function carregarEstoque() {
 
     try {
 
-        let data;
-
-
-        if (
-            timestamp.toDate
-        ) {
-
-            data =
-                timestamp.toDate();
-
-        }
-
-        else if (
-            timestamp.seconds
-        ) {
-
-            data =
-                new Date(
-                    timestamp.seconds *
-                    1000
-                );
-
-        }
-
-        else {
-
-            data =
-                new Date(timestamp);
-
-        }
-
-
-        return data.toLocaleString(
-            "pt-BR",
-            {
-
-                day: "2-digit",
-
-                month: "2-digit",
-
-                year: "numeric",
-
-                hour: "2-digit",
-
-                minute: "2-digit"
-
-            }
-        );
-
-    }
-
-    catch (erro) {
-
-        return "Data inválida";
-
-    }
-
-}
-
-
-/* =====================================================
-   NÚMERO DO PEDIDO
-===================================================== */
-
-function numeroPedido(pedido, index) {
-
-    /*
-     * Se o documento já tiver
-     * numeroPedido, usamos ele.
-     */
-
-    if (
-        pedido.numeroPedido
-    ) {
-
-        return String(
-            pedido.numeroPedido
-        );
-
-    }
-
-
-    /*
-     * Caso os pedidos antigos não
-     * tenham numeroPedido, criamos
-     * uma numeração visual baseada
-     * na posição.
-     *
-     * O mais antigo será #001.
-     */
-
-    return "#" +
-        String(
-            pedidos.length - index
-        )
-        .padStart(3, "0");
-
-}
-
-
-/* =====================================================
-   CARREGAR PEDIDOS
-===================================================== */
-
-function carregarPedidos() {
-
-    const connection =
-        document.getElementById(
-            "connection"
-        );
-
-
-    connection.innerText =
-        "Conectado ao Firebase • Atualização em tempo real";
-
-
-    try {
-
-        const pedidosRef =
-            collection(
+        const gloryRef =
+            doc(
                 db,
-                "pedidos"
+                "estoque",
+                "Glory"
             );
 
 
-        /*
-         * Tentamos ordenar pela data.
-         */
-
-        const pedidosQuery =
-            query(
-                pedidosRef,
-                orderBy(
-                    "criadoEm",
-                    "desc"
-                )
+        const frassatiRef =
+            doc(
+                db,
+                "estoque",
+                "Frassati"
             );
 
 
-        unsubscribe =
-            onSnapshot(
-
-                pedidosQuery,
-
-                function(snapshot) {
-
-                    pedidos =
-                        snapshot.docs.map(
-                            function(doc) {
-
-                                return {
-
-                                    id:
-                                        doc.id,
-
-                                    ...doc.data()
-
-                                };
-
-                            }
-                        );
+        const glorySnap =
+            await getDoc(gloryRef);
 
 
-                    pedidosFiltrados =
-                        [...pedidos];
+        const frassatiSnap =
+            await getDoc(frassatiRef);
 
 
-                    atualizarDashboard();
+        if (glorySnap.exists()) {
 
-                    renderizarPedidos();
+            estoque.Glory =
+                glorySnap.data();
 
-                },
-
-                function(erro) {
-
-                    console.error(
-                        "Erro Firebase:",
-                        erro
-                    );
+        }
 
 
-                    /*
-                     * Se houver problema
-                     * com índice ou ordenação,
-                     * tenta buscar sem orderBy.
-                     */
+        if (frassatiSnap.exists()) {
 
-                    carregarSemOrdenacao();
+            estoque.Frassati =
+                frassatiSnap.data();
 
-                }
+        }
 
-            );
 
-    }
+        atualizarTamanhosDisponiveis();
 
-    catch (erro) {
+
+    } catch (erro) {
 
         console.error(
+            "Erro ao carregar estoque:",
             erro
         );
 
-        carregarSemOrdenacao();
-
     }
 
 }
 
 
 /* =====================================================
-   FALLBACK
+   ESTOQUE EM TEMPO REAL
 ===================================================== */
 
-function carregarSemOrdenacao() {
+function observarEstoque() {
 
-    const pedidosRef =
-        collection(
+    onSnapshot(
+
+        doc(
             db,
-            "pedidos"
-        );
+            "estoque",
+            "Glory"
+        ),
 
+        function(snapshot) {
 
-    unsubscribe =
-        onSnapshot(
+            if (snapshot.exists()) {
 
-            pedidosRef,
+                estoque.Glory =
+                    snapshot.data();
 
-            function(snapshot) {
-
-                pedidos =
-                    snapshot.docs.map(
-                        function(doc) {
-
-                            return {
-
-                                id:
-                                    doc.id,
-
-                                ...doc.data()
-
-                            };
-
-                        }
-                    );
-
-
-                /*
-                 * Ordena no navegador
-                 */
-
-                pedidos.sort(
-                    function(a,b) {
-
-                        const dataA =
-                            obterData(a.criadoEm);
-
-                        const dataB =
-                            obterData(b.criadoEm);
-
-                        return dataB - dataA;
-
-                    }
-                );
-
-
-                pedidosFiltrados =
-                    [...pedidos];
-
-
-                atualizarDashboard();
-
-                renderizarPedidos();
-
-            },
-
-            function(erro) {
-
-                console.error(
-                    erro
-                );
-
-
-                document.getElementById(
-                    "connection"
-                ).innerText =
-                    "Erro ao conectar ao Firebase.";
+                atualizarTamanhosDisponiveis();
 
             }
 
+        }
+
+    );
+
+
+    onSnapshot(
+
+        doc(
+            db,
+            "estoque",
+            "Frassati"
+        ),
+
+        function(snapshot) {
+
+            if (snapshot.exists()) {
+
+                estoque.Frassati =
+                    snapshot.data();
+
+                atualizarTamanhosDisponiveis();
+
+            }
+
+        }
+
+    );
+
+}
+
+
+/* =====================================================
+   TROCAR IMAGEM
+===================================================== */
+
+function trocarImagem(
+    idImagem,
+    arquivo,
+    botao
+) {
+
+    document.getElementById(
+        idImagem
+    ).src = arquivo;
+
+
+    const produto =
+        botao.closest(".product");
+
+
+    produto
+        .querySelectorAll(".thumb")
+        .forEach(function(item) {
+
+            item.classList.remove(
+                "active"
+            );
+
+        });
+
+
+    botao.classList.add(
+        "active"
+    );
+
+}
+
+
+/* =====================================================
+   SELECIONAR TAMANHO
+===================================================== */
+
+function selecionarTamanho(
+    produto,
+    tamanho,
+    botao
+) {
+
+    if (
+        !estoque[produto] ||
+        !estoque[produto][tamanho] ||
+        estoque[produto][tamanho] <= 0
+    ) {
+
+        return;
+
+    }
+
+
+    tamanhosSelecionados[produto] =
+        tamanho;
+
+
+    quantidades[produto] = 1;
+
+
+    document.getElementById(
+        produto + "Quantity"
+    ).innerText = "1";
+
+
+    const container =
+        botao.parentElement;
+
+
+    container
+        .querySelectorAll("button")
+        .forEach(function(item) {
+
+            item.classList.remove(
+                "selected"
+            );
+
+        });
+
+
+    botao.classList.add(
+        "selected"
+    );
+
+
+    const texto =
+        document.getElementById(
+            produto +
+            "SelectedSize"
         );
 
-}
+
+    texto.style.color =
+        "#777";
 
 
-/* =====================================================
-   DATA PARA ORDENAÇÃO
-===================================================== */
-
-function obterData(timestamp) {
-
-    if (!timestamp) {
-
-        return 0;
-
-    }
-
-
-    if (
-        timestamp.toDate
-    ) {
-
-        return timestamp
-            .toDate()
-            .getTime();
-
-    }
-
-
-    if (
-        timestamp.seconds
-    ) {
-
-        return timestamp.seconds *
-            1000;
-
-    }
-
-
-    const data =
-        new Date(timestamp);
-
-
-    return data.getTime() || 0;
+    texto.innerHTML =
+        "Tamanho <strong>" +
+        tamanho +
+        "</strong> — " +
+        estoque[produto][tamanho] +
+        " disponíveis";
 
 }
 
 
 /* =====================================================
-   DASHBOARD
+   ATUALIZAR TAMANHOS
 ===================================================== */
 
-function atualizarDashboard() {
+function atualizarTamanhosDisponiveis() {
 
-    let faturamento = 0;
+    document
+        .querySelectorAll(".product")
+        .forEach(function(produtoElemento) {
 
-    let camisas = 0;
+
+            const nomeProduto =
+                produtoElemento
+                    .querySelector("h3")
+                    .innerText
+                    .trim()
+                    .toLowerCase();
 
 
-    pedidos.forEach(
-        function(pedido) {
-
-            faturamento +=
-                Number(
-                    pedido.total
-                ) || 0;
+            let produtoEstoque;
 
 
             if (
-                Array.isArray(
-                    pedido.itens
-                )
+                nomeProduto === "glory"
             ) {
 
-                pedido.itens.forEach(
-                    function(item) {
+                produtoEstoque =
+                    estoque.Glory;
 
-                        camisas +=
-                            Number(
-                                item.quantidade
-                            ) || 0;
+            }
+
+            else if (
+                nomeProduto === "frassati"
+            ) {
+
+                produtoEstoque =
+                    estoque.Frassati;
+
+            }
+
+            else {
+
+                return;
+
+            }
+
+
+            const botoes =
+                produtoElemento
+                    .querySelectorAll(
+                        ".sizes button"
+                    );
+
+
+            botoes.forEach(
+                function(botao) {
+
+                    const tamanho =
+                        botao.innerText
+                            .trim()
+                            .toUpperCase();
+
+
+                    if (
+                        !produtoEstoque[tamanho] ||
+                        produtoEstoque[tamanho] <= 0
+                    ) {
+
+                        botao.classList.add(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            true;
 
                     }
+
+                    else {
+
+                        botao.classList.remove(
+                            "unavailable"
+                        );
+
+                        botao.disabled =
+                            false;
+
+                    }
+
+                }
+            );
+
+        });
+
+}
+
+
+/* =====================================================
+   QUANTIDADE
+===================================================== */
+
+function alterarQuantidade(
+    produto,
+    valor
+) {
+
+    const tamanho =
+        tamanhosSelecionados[produto];
+
+
+    if (!tamanho) {
+
+        if (valor > 0) {
+
+            alert(
+                "Escolha o tamanho primeiro."
+            );
+
+        }
+
+        return;
+
+    }
+
+
+    const estoqueDisponivel =
+        estoque[produto][tamanho];
+
+
+    let novaQuantidade =
+        quantidades[produto] +
+        valor;
+
+
+    if (
+        novaQuantidade < 1
+    ) {
+
+        novaQuantidade = 1;
+
+    }
+
+
+    if (
+        novaQuantidade >
+        estoqueDisponivel
+    ) {
+
+        novaQuantidade =
+            estoqueDisponivel;
+
+
+        alert(
+            "Você atingiu o estoque disponível desse tamanho."
+        );
+
+    }
+
+
+    quantidades[produto] =
+        novaQuantidade;
+
+
+    document.getElementById(
+        produto + "Quantity"
+    ).innerText =
+        novaQuantidade;
+
+}
+
+
+/* =====================================================
+   ADICIONAR PRODUTO
+===================================================== */
+
+function adicionarProduto(
+    nome,
+    imagem
+) {
+
+    const tamanho =
+        tamanhosSelecionados[nome];
+
+
+    const quantidade =
+        quantidades[nome];
+
+
+    if (!tamanho) {
+
+        alert(
+            "Selecione um tamanho antes de adicionar a camisa."
+        );
+
+        return;
+
+    }
+
+
+    const estoqueDisponivel =
+        estoque[nome][tamanho];
+
+
+    if (
+        quantidade >
+        estoqueDisponivel
+    ) {
+
+        alert(
+            "Quantidade maior que o estoque disponível."
+        );
+
+        return;
+
+    }
+
+
+    const existente =
+        carrinho.find(
+            function(item) {
+
+                return (
+                    item.nome === nome &&
+                    item.tamanho === tamanho
                 );
 
             }
+        );
+
+
+    if (existente) {
+
+        if (
+            existente.quantidade +
+            quantidade >
+            estoqueDisponivel
+        ) {
+
+            alert(
+                "Você ultrapassou o estoque disponível."
+            );
+
+            return;
+
+        }
+
+
+        existente.quantidade +=
+            quantidade;
+
+    }
+
+    else {
+
+        carrinho.push({
+
+            nome: nome,
+
+            imagem: imagem,
+
+            tamanho: tamanho,
+
+            quantidade: quantidade,
+
+            preco: PRECO
+
+        });
+
+    }
+
+
+    atualizarCarrinho();
+
+    abrirCarrinho();
+
+}
+
+
+/* =====================================================
+   SUBTOTAL
+===================================================== */
+
+function calcularSubtotal() {
+
+    let subtotal = 0;
+
+
+    carrinho.forEach(
+        function(item) {
+
+            subtotal +=
+                item.preco *
+                item.quantidade;
 
         }
     );
 
 
-    const quantidadePedidos =
-        pedidos.length;
-
-
-    const ticket =
-        quantidadePedidos > 0
-
-            ? faturamento /
-              quantidadePedidos
-
-            : 0;
-
-
-    document.getElementById(
-        "totalPedidos"
-    ).innerText =
-        quantidadePedidos;
-
-
-    document.getElementById(
-        "faturamento"
-    ).innerText =
-        dinheiro(faturamento);
-
-
-    document.getElementById(
-        "totalCamisas"
-    ).innerText =
-        camisas;
-
-
-    document.getElementById(
-        "ticketMedio"
-    ).innerText =
-        dinheiro(ticket);
+    return subtotal;
 
 }
 
 
 /* =====================================================
-   RENDERIZAR PEDIDOS
+   TOTAL
 ===================================================== */
 
-function renderizarPedidos() {
+function calcularTotal() {
 
-    const container =
+    const subtotal =
+        calcularSubtotal();
+
+
+    return subtotal -
+        (
+            subtotal *
+            descontoAtual /
+            100
+        );
+
+}
+
+
+/* =====================================================
+   CUPOM
+===================================================== */
+
+function aplicarCupom() {
+
+    const input =
         document.getElementById(
-            "orders"
+            "couponInput"
         );
 
 
+    const mensagem =
+        document.getElementById(
+            "couponMessage"
+        );
+
+
+    const codigo =
+        input.value
+            .trim()
+            .toUpperCase();
+
+
+    if (!codigo) {
+
+        mensagem.innerText =
+            "Digite um cupom.";
+
+        mensagem.style.color =
+            "#b00000";
+
+        return;
+
+    }
+
+
     if (
-        pedidosFiltrados.length === 0
+        cupons[codigo]
+    ) {
+
+        descontoAtual =
+            cupons[codigo];
+
+        cupomAtual =
+            codigo;
+
+
+        mensagem.innerText =
+            "Cupom aplicado! " +
+            descontoAtual +
+            "% de desconto.";
+
+        mensagem.style.color =
+            "#16833b";
+
+
+        atualizarCarrinho();
+
+    }
+
+    else {
+
+        descontoAtual = 0;
+
+        cupomAtual = "";
+
+
+        mensagem.innerText =
+            "Cupom inválido.";
+
+        mensagem.style.color =
+            "#b00000";
+
+
+        atualizarCarrinho();
+
+    }
+
+}
+
+
+/* =====================================================
+   ATUALIZAR CARRINHO
+===================================================== */
+
+function atualizarCarrinho() {
+
+    const container =
+        document.getElementById(
+            "cartItems"
+        );
+
+
+    const total =
+        document.getElementById(
+            "cartTotal"
+        );
+
+
+    const contador =
+        document.getElementById(
+            "cartCount"
+        );
+
+
+    let quantidadeTotal = 0;
+
+
+    carrinho.forEach(
+        function(item) {
+
+            quantidadeTotal +=
+                item.quantidade;
+
+        }
+    );
+
+
+    contador.innerText =
+        quantidadeTotal;
+
+
+    if (
+        carrinho.length === 0
     ) {
 
         container.innerHTML =
-
             '<div class="empty">' +
-
-            '<strong>NENHUM PEDIDO</strong>' +
-
-            'Não encontramos nenhum pedido.' +
-
+            'Seu carrinho está vazio.' +
             '</div>';
+
+
+        total.innerText =
+            dinheiro(0);
 
         return;
 
@@ -1609,605 +2527,776 @@ function renderizarPedidos() {
     container.innerHTML = "";
 
 
-    pedidosFiltrados.forEach(
-        function(pedido) {
+    carrinho.forEach(
+        function(item, index) {
 
-            const index =
-                pedidos.indexOf(
-                    pedido
-                );
-
-
-            const numero =
-                numeroPedido(
-                    pedido,
-                    index
-                );
-
-
-            const total =
-                Number(
-                    pedido.total
-                ) || 0;
-
-
-            const pagamento =
-                pedido.pagamento ||
-                "Não informado";
-
-
-            const data =
-                formatarData(
-                    pedido.criadoEm
-                );
-
-
-            const itens =
-                Array.isArray(
-                    pedido.itens
-                )
-                    ? pedido.itens
-                    : [];
-
-
-            let quantidadeItens = 0;
-
-
-            itens.forEach(
-                function(item) {
-
-                    quantidadeItens +=
-                        Number(
-                            item.quantidade
-                        ) || 0;
-
-                }
-            );
-
-
-            const order =
-                document.createElement(
-                    "article"
-                );
-
-
-            order.className =
-                "order";
-
-
-            const header =
+            const div =
                 document.createElement(
                     "div"
                 );
 
 
-            header.className =
-                "order-header";
+            div.className =
+                "cart-item";
 
 
-            header.innerHTML =
+            div.innerHTML =
 
-                '<div class="order-number">' +
+                '<img src="' +
+                item.imagem +
+                '" alt="' +
+                item.nome +
+                '">' +
 
-                numero +
+                '<div class="cart-item-info">' +
 
-                '</div>' +
+                '<h3>' +
+                item.nome +
+                '</h3>' +
 
+                '<p>Tamanho: ' +
+                item.tamanho +
+                '</p>' +
 
-                '<div class="order-info">' +
+                '<p>Quantidade: ' +
+                item.quantidade +
+                '</p>' +
 
-                '<strong>' +
-
-                quantidadeItens +
-
-                (
-                    quantidadeItens === 1
-                        ? " camisa"
-                        : " camisas"
+                '<p>' +
+                dinheiro(
+                    item.preco *
+                    item.quantidade
                 ) +
+                '</p>' +
 
-                '</strong>' +
+                '<button class="remove" ' +
+                'onclick="removerProduto(' +
+                index +
+                ')">' +
 
-                '<span class="order-date">' +
+                'REMOVER' +
 
-                data +
+                '</button>' +
 
-                '</span>' +
-
-                '</div>' +
-
-
-                '<div class="order-payment">' +
-
-                pagamento +
-
-                '</div>' +
-
-
-                '<div class="order-total">' +
-
-                dinheiro(total) +
-
-                '</div>' +
-
-
-                '<button class="view-button">' +
-
-                'VER DETALHES' +
-
-                '</button>';
-
-
-            const details =
-                document.createElement(
-                    "div"
-                );
-
-
-            details.className =
-                "order-details";
-
-
-            details.innerHTML =
-                criarDetalhes(
-                    pedido,
-                    numero
-                );
-
-
-            const button =
-                header.querySelector(
-                    ".view-button"
-                );
-
-
-            button.addEventListener(
-                "click",
-                function() {
-
-                    details.classList.toggle(
-                        "active"
-                    );
-
-
-                    button.innerText =
-                        details.classList.contains(
-                            "active"
-                        )
-                            ? "FECHAR"
-                            : "VER DETALHES";
-
-                }
-            );
-
-
-            order.appendChild(
-                header
-            );
-
-
-            order.appendChild(
-                details
-            );
+                '</div>';
 
 
             container.appendChild(
-                order
+                div
             );
-
-        }
-    );
-
-}
-
-
-/* =====================================================
-   DETALHES
-===================================================== */
-
-function criarDetalhes(
-    pedido,
-    numero
-) {
-
-    const itens =
-        Array.isArray(
-            pedido.itens
-        )
-            ? pedido.itens
-            : [];
-
-
-    let html =
-
-        '<div class="items-title">' +
-
-        'PRODUTOS DO PEDIDO ' +
-
-        numero +
-
-        '</div>';
-
-
-    if (
-        itens.length === 0
-    ) {
-
-        html +=
-
-            '<div class="empty">' +
-
-            'Nenhum item encontrado neste pedido.' +
-
-            '</div>';
-
-    }
-
-
-    itens.forEach(
-        function(item) {
-
-            const nome =
-                item.produto ||
-                "Produto";
-
-
-            const tamanho =
-                item.tamanho ||
-                "-";
-
-
-            const quantidade =
-                Number(
-                    item.quantidade
-                ) || 0;
-
-
-            const preco =
-                Number(
-                    item.precoUnitario
-                ) || 0;
-
-
-            const subtotal =
-                Number(
-                    item.subtotal
-                ) ||
-
-                (
-                    preco *
-                    quantidade
-                );
-
-
-            html +=
-
-                '<div class="item">' +
-
-                '<div>' +
-
-                '<div class="item-name">' +
-
-                nome +
-
-                '</div>' +
-
-                '<div class="item-info">' +
-
-                'Tamanho: ' +
-
-                tamanho +
-
-                '</div>' +
-
-                '</div>' +
-
-
-                '<div class="item-info">' +
-
-                dinheiro(preco) +
-
-                ' / un.' +
-
-                '</div>' +
-
-
-                '<div class="item-quantity">' +
-
-                'Qtd: ' +
-
-                quantidade +
-
-                '</div>' +
-
-
-                '<div class="item-price">' +
-
-                dinheiro(subtotal) +
-
-                '</div>' +
-
-                '</div>';
 
         }
     );
 
 
     const subtotal =
-        Number(
-            pedido.subtotal
-        ) || 0;
+        calcularSubtotal();
 
 
-    const desconto =
-        Number(
-            pedido.desconto
-        ) || 0;
-
-
-    const total =
-        Number(
-            pedido.total
-        ) || 0;
-
-
-    const cupom =
-        pedido.cupom ||
-        "";
-
-
-    html +=
-
-        '<div class="order-summary">' +
-
-        '<div class="summary-box">' +
-
-
-        '<div class="summary-row">' +
-
-        '<span>Subtotal</span>' +
-
-        '<strong>' +
-
-        dinheiro(subtotal) +
-
-        '</strong>' +
-
-        '</div>';
+    const totalFinal =
+        calcularTotal();
 
 
     if (
-        desconto > 0
+        descontoAtual > 0
     ) {
 
-        html +=
+        total.innerHTML =
 
-            '<div class="summary-row discount">' +
+            '<span style="' +
+            'font-size:11px;' +
+            'color:#999;' +
+            'text-decoration:line-through;' +
+            'margin-right:7px;">' +
 
-            '<span>Desconto</span>' +
+            dinheiro(subtotal) +
 
-            '<strong>' +
+            '</span>' +
 
-            desconto +
-
-            '%</strong>' +
-
-            '</div>';
+            dinheiro(totalFinal);
 
     }
 
+    else {
 
-    if (
-        cupom !== ""
-    ) {
-
-        html +=
-
-            '<div class="coupon">' +
-
-            'CUPOM: ' +
-
-            cupom +
-
-            '</div>';
+        total.innerText =
+            dinheiro(totalFinal);
 
     }
-
-
-    html +=
-
-        '<div class="summary-row total">' +
-
-        '<span>TOTAL</span>' +
-
-        '<strong>' +
-
-        dinheiro(total) +
-
-        '</strong>' +
-
-        '</div>' +
-
-
-        '</div>' +
-
-        '</div>';
-
-
-    return html;
 
 }
 
 
 /* =====================================================
-   BUSCA
+   REMOVER
 ===================================================== */
 
-function filtrarPedidos() {
+function removerProduto(index) {
 
-    const texto =
-        document.getElementById(
-            "searchInput"
+    carrinho.splice(
+        index,
+        1
+    );
+
+
+    atualizarCarrinho();
+
+}
+
+
+/* =====================================================
+   CARRINHO
+===================================================== */
+
+function abrirCarrinho() {
+
+    document
+        .getElementById(
+            "cartOverlay"
         )
-        .value
-        .trim()
-        .toLowerCase();
+        .classList.add(
+            "active"
+        );
 
 
-    if (!texto) {
+    atualizarCarrinho();
 
-        pedidosFiltrados =
-            [...pedidos];
+}
 
-        renderizarPedidos();
 
-        return;
+function fecharCarrinho() {
+
+    document
+        .getElementById(
+            "cartOverlay"
+        )
+        .classList.remove(
+            "active"
+        );
+
+}
+
+
+function fecharCarrinhoFora(event) {
+
+    if (
+        event.target.id ===
+        "cartOverlay"
+    ) {
+
+        fecharCarrinho();
 
     }
 
-
-    pedidosFiltrados =
-        pedidos.filter(
-            function(pedido) {
-
-                const index =
-                    pedidos.indexOf(
-                        pedido
-                    );
+}
 
 
-                const numero =
-                    numeroPedido(
-                        pedido,
-                        index
-                    )
-                    .toLowerCase();
+/* =====================================================
+   PAGAMENTO
+===================================================== */
+
+function selecionarPagamento(
+    pagamento,
+    botao
+) {
+
+    pagamentoSelecionado =
+        pagamento;
 
 
-                const pagamento =
-                    (
-                        pedido.pagamento ||
-                        ""
-                    )
-                    .toLowerCase();
+    document
+        .querySelectorAll(
+            ".payments button"
+        )
+        .forEach(
+            function(item) {
 
-
-                const cupom =
-                    (
-                        pedido.cupom ||
-                        ""
-                    )
-                    .toLowerCase();
-
-
-                let produtos = "";
-
-
-                if (
-                    Array.isArray(
-                        pedido.itens
-                    )
-                ) {
-
-                    pedido.itens.forEach(
-                        function(item) {
-
-                            produtos +=
-
-                                " " +
-
-                                (
-                                    item.produto ||
-                                    ""
-                                ) +
-
-                                " " +
-
-                                (
-                                    item.tamanho ||
-                                    ""
-                                );
-
-                        }
-                    );
-
-                }
-
-
-                produtos =
-                    produtos.toLowerCase();
-
-
-                return (
-
-                    numero.includes(texto) ||
-
-                    pagamento.includes(texto) ||
-
-                    cupom.includes(texto) ||
-
-                    produtos.includes(texto)
-
+                item.classList.remove(
+                    "selected"
                 );
 
             }
         );
 
 
-    renderizarPedidos();
+    botao.classList.add(
+        "selected"
+    );
+
+
+    document.getElementById(
+        "cartError"
+    ).innerText = "";
 
 }
 
 
 /* =====================================================
-   ATUALIZAR MANUALMENTE
+   SALVAR PEDIDO NO FIREBASE
 ===================================================== */
 
-function carregarPedidosNovamente() {
+async function salvarPedidoFirebase() {
+
+    try {
+
+        const subtotal =
+            calcularSubtotal();
+
+
+        const total =
+            calcularTotal();
+
+
+        const itens =
+            carrinho.map(
+                function(item) {
+
+                    return {
+
+                        produto:
+                            item.nome,
+
+                        tamanho:
+                            item.tamanho,
+
+                        quantidade:
+                            item.quantidade,
+
+                        precoUnitario:
+                            item.preco,
+
+                        subtotal:
+                            item.preco *
+                            item.quantidade
+
+                    };
+
+                }
+            );
+
+
+        /*
+         * =================================================
+         * REFERÊNCIA DO CONTADOR
+         * =================================================
+         *
+         * Firestore:
+         *
+         * configuracoes
+         *     └── pedidos
+         *
+         * Campo:
+         *
+         * ultimoNumero: 0
+         *
+         */
+
+
+        const contadorRef =
+            doc(
+                db,
+                "configuracoes",
+                "pedidos"
+            );
+
+
+        /*
+         * =================================================
+         * TRANSAÇÃO
+         * =================================================
+         *
+         * A transação faz duas coisas juntas:
+         *
+         * 1. Pega o último número
+         * 2. Cria o próximo pedido
+         *
+         * Isso evita duplicidade.
+         */
+
+
+        const numeroFormatado =
+            await runTransaction(
+                db,
+                async function(transaction) {
+
+                    const contadorSnap =
+                        await transaction.get(
+                            contadorRef
+                        );
+
+
+                    let ultimoNumero = 0;
+
+
+                    if (
+                        contadorSnap.exists()
+                    ) {
+
+                        const dados =
+                            contadorSnap.data();
+
+
+                        ultimoNumero =
+                            Number(
+                                dados.ultimoNumero
+                            ) || 0;
+
+                    }
+
+
+                    const novoNumero =
+                        ultimoNumero + 1;
+
+
+                    const numeroPedido =
+                        "#" +
+                        String(novoNumero)
+                            .padStart(3, "0");
+
+
+                    /*
+                     * Atualiza o contador
+                     */
+
+
+                    transaction.set(
+                        contadorRef,
+                        {
+
+                            ultimoNumero:
+                                novoNumero
+
+                        },
+                        {
+
+                            merge: true
+
+                        }
+                    );
+
+
+                    /*
+                     * Cria o documento do pedido
+                     *
+                     * O ID será:
+                     *
+                     * #001
+                     * #002
+                     * #003
+                     */
+
+
+                    const pedidoRef =
+                        doc(
+                            db,
+                            "pedidos",
+                            numeroPedido
+                        );
+
+
+                    const pedido = {
+
+                        numero:
+                            numeroPedido,
+
+                        numeroSequencial:
+                            novoNumero,
+
+                        itens:
+                            itens,
+
+                        subtotal:
+                            subtotal,
+
+                        desconto:
+                            descontoAtual,
+
+                        cupom:
+                            cupomAtual || null,
+
+                        total:
+                            total,
+
+                        pagamento:
+                            pagamentoSelecionado,
+
+                        status:
+                            "aguardando_confirmacao",
+
+                        criadoEm:
+                            serverTimestamp()
+
+                    };
+
+
+                    transaction.set(
+                        pedidoRef,
+                        pedido
+                    );
+
+
+                    return numeroPedido;
+
+                }
+            );
+
+
+        console.log(
+            "Pedido registrado:",
+            numeroFormatado
+        );
+
+
+        return numeroFormatado;
+
+
+    } catch (erro) {
+
+        console.error(
+            "ERRO COMPLETO AO SALVAR PEDIDO:",
+            erro
+        );
+
+
+        throw erro;
+
+    }
+
+}
+
+
+/* =====================================================
+   FINALIZAR WHATSAPP
+===================================================== */
+
+async function finalizarCompra() {
+
+    const erro =
+        document.getElementById(
+            "cartError"
+        );
+
+
+    erro.innerText = "";
+
+
+    erro.style.color =
+        "#b00000";
+
 
     if (
-        unsubscribe
+        carrinho.length === 0
     ) {
 
-        unsubscribe();
+        erro.innerText =
+            "Seu carrinho está vazio.";
+
+        return;
 
     }
 
 
-    document.getElementById(
-        "orders"
-    ).innerHTML =
+    if (
+        pagamentoSelecionado === ""
+    ) {
 
-        '<div class="loading">' +
+        erro.innerText =
+            "Selecione um método de pagamento.";
 
-        'ATUALIZANDO...' +
+        return;
 
-        '</div>';
+    }
 
 
-    carregarPedidos();
+    const total =
+        calcularTotal();
+
+
+    /*
+     * =================================================
+     * PRIMEIRO:
+     * salva o pedido no Firebase.
+     * =================================================
+     */
+
+
+    let pedidoId;
+
+
+    try {
+
+        erro.style.color =
+            "#777";
+
+
+        erro.innerText =
+            "Registrando seu pedido...";
+
+
+        pedidoId =
+            await salvarPedidoFirebase();
+
+
+    } catch (firebaseErro) {
+
+        console.error(
+            "Erro ao registrar pedido:",
+            firebaseErro
+        );
+
+
+        erro.style.color =
+            "#b00000";
+
+
+        erro.innerText =
+            "Não foi possível registrar seu pedido. Verifique sua conexão e tente novamente.";
+
+
+        return;
+
+    }
+
+
+    /*
+     * =================================================
+     * WHATSAPP
+     * =================================================
+     *
+     * IMPORTANTE:
+     * O número do pedido NÃO é colocado aqui.
+     */
+
+
+    let mensagem =
+        "Olá! 👋" +
+        "\n" +
+        "Quero fazer meu pedido da HOLINESS! 🔥" +
+        "\n\n";
+
+
+    carrinho.forEach(
+        function(item) {
+
+            mensagem +=
+                "👕 " +
+                item.nome +
+                "\n" +
+
+                "📏 Tamanho: " +
+                item.tamanho +
+                "\n" +
+
+                "🔢 Quantidade: " +
+                item.quantidade +
+                "\n" +
+
+                "💰 " +
+                dinheiro(
+                    item.preco *
+                    item.quantidade
+                ) +
+                "\n\n";
+
+        }
+    );
+
+
+    mensagem +=
+        "💳 Pagamento: " +
+        pagamentoSelecionado;
+
+
+    mensagem +=
+        "\n💰 Total: " +
+        dinheiro(total);
+
+
+    if (
+        descontoAtual > 0
+    ) {
+
+        mensagem +=
+            "\n🏷️ Desconto: " +
+            descontoAtual +
+            "%";
+
+    }
+
+
+    if (
+        cupomAtual !== ""
+    ) {
+
+        mensagem +=
+            "\n🎟️ Cupom: " +
+            cupomAtual;
+
+    }
+
+
+    /*
+     * NÃO COLOCAMOS pedidoId NO WHATSAPP.
+     */
+
+
+    mensagem +=
+        "\n\nQuero finalizar meu pedido! 🙌";
+
+
+    const url =
+        "https://wa.me/" +
+        WHATSAPP +
+        "?text=" +
+        encodeURIComponent(
+            mensagem
+        );
+
+
+    erro.style.color =
+        "#16833b";
+
+
+    erro.innerText =
+        "Pedido registrado! Abrindo o WhatsApp...";
+
+
+    /*
+     * Abre o WhatsApp somente depois
+     * que o Firebase confirmou o pedido.
+     */
+
+
+    window.open(
+        url,
+        "_blank"
+    );
 
 }
 
 
 /* =====================================================
-   FUNÇÕES GLOBAIS
+   TABELA
 ===================================================== */
 
-window.filtrarPedidos =
-    filtrarPedidos;
+function abrirTabelaMedidas() {
+
+    document
+        .getElementById(
+            "measureOverlay"
+        )
+        .classList.add(
+            "active"
+        );
+
+}
 
 
-window.carregarPedidosNovamente =
-    carregarPedidosNovamente;
+function fecharTabelaMedidas() {
+
+    document
+        .getElementById(
+            "measureOverlay"
+        )
+        .classList.remove(
+            "active"
+        );
+
+}
+
+
+function fecharTabelaFora(event) {
+
+    if (
+        event.target.id ===
+        "measureOverlay"
+    ) {
+
+        fecharTabelaMedidas();
+
+    }
+
+}
+
+
+/* =====================================================
+   ESC
+===================================================== */
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            fecharTabelaMedidas();
+
+            fecharCarrinho();
+
+        }
+
+    }
+);
+
+
+/* =====================================================
+   DISPONIBILIZA FUNÇÕES PARA O HTML
+===================================================== */
+
+window.trocarImagem =
+    trocarImagem;
+
+window.selecionarTamanho =
+    selecionarTamanho;
+
+window.alterarQuantidade =
+    alterarQuantidade;
+
+window.adicionarProduto =
+    adicionarProduto;
+
+window.aplicarCupom =
+    aplicarCupom;
+
+window.removerProduto =
+    removerProduto;
+
+window.abrirCarrinho =
+    abrirCarrinho;
+
+window.fecharCarrinho =
+    fecharCarrinho;
+
+window.fecharCarrinhoFora =
+    fecharCarrinhoFora;
+
+window.selecionarPagamento =
+    selecionarPagamento;
+
+window.finalizarCompra =
+    finalizarCompra;
+
+window.abrirTabelaMedidas =
+    abrirTabelaMedidas;
+
+window.fecharTabelaMedidas =
+    fecharTabelaMedidas;
+
+window.fecharTabelaFora =
+    fecharTabelaFora;
 
 
 /* =====================================================
    INICIALIZAÇÃO
 ===================================================== */
 
-carregarPedidos();
+carregarEstoque();
 
+observarEstoque();
+
+atualizarCarrinho();
 
 </script>
 
