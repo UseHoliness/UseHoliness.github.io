@@ -2,9 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-
 <meta charset="UTF-8">
-
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HOLINESS</title>
@@ -17,12 +15,7 @@
 
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
 
-
 <style>
-
-/* =====================================================
-   RESET
-===================================================== */
 
 * {
     margin: 0;
@@ -40,10 +33,7 @@ body {
     font-family: Arial, sans-serif;
 }
 
-
-/* =====================================================
-   TOPO
-===================================================== */
+/* TOPO */
 
 .topbar {
     height: 30px;
@@ -62,10 +52,7 @@ body {
     margin-left: 5px;
 }
 
-
-/* =====================================================
-   HEADER
-===================================================== */
+/* HEADER */
 
 header {
     height: 75px;
@@ -135,15 +122,10 @@ header {
     font-size: 10px;
 }
 
-
-/* =====================================================
-   BANNER
-===================================================== */
+/* BANNER */
 
 .hero {
     width: 100%;
-    margin: 0;
-    padding: 0;
     background: #111;
     overflow: hidden;
 }
@@ -160,10 +142,7 @@ header {
     height: auto;
 }
 
-
-/* =====================================================
-   PRODUTOS
-===================================================== */
+/* PRODUTOS */
 
 .products {
     padding: 90px 5%;
@@ -175,61 +154,33 @@ header {
 
 .section-title span {
     font-family: "Anton", sans-serif;
-
     font-size: 12px;
-
     letter-spacing: 3px;
-
     color: #777;
 }
 
 .section-title h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 60px;
-
     font-weight: 400;
 }
 
-
-/* =====================================================
-   GRID
-===================================================== */
-
 .products-grid {
     display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 30px;
-
     align-items: start;
 }
 
-
-/* =====================================================
-   PRODUTO
-===================================================== */
-
 .product {
     width: 100%;
-
     background: #fff;
-
     overflow: hidden;
-
     min-width: 0;
 }
 
-
-/* =====================================================
-   IMAGEM
-===================================================== */
-
 .product-image {
     width: 100%;
-
     height: 550px;
 
     background: #e6e2dd;
@@ -244,24 +195,16 @@ header {
 .product-image img {
     width: 100%;
     height: 100%;
-
     object-fit: contain;
-
     display: block;
 }
 
-
-/* =====================================================
-   MINIATURAS
-===================================================== */
+/* MINIATURAS */
 
 .product-thumbnails {
     display: flex;
-
     gap: 8px;
-
     padding: 10px 15px;
-
     background: #e6e2dd;
 }
 
@@ -284,23 +227,17 @@ header {
 
 .thumb.active {
     opacity: 1;
-
     border: 2px solid #000;
 }
 
 .thumb img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
-
-/* =====================================================
-   INFORMAÇÕES
-===================================================== */
+/* INFORMAÇÕES */
 
 .product-info {
     padding: 30px 32px 32px;
@@ -308,48 +245,33 @@ header {
 
 .product-number {
     color: #999;
-
     font-size: 10px;
-
     letter-spacing: 3px;
 }
 
 .product-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 45px;
-
     font-weight: 400;
-
     margin: 5px 0 15px;
 }
 
 .description {
     font-family: Georgia, serif;
-
     color: #444;
-
     font-size: 14px;
-
     line-height: 1.6;
-
     margin-bottom: 18px;
-
     min-height: 46px;
 }
 
 .price {
     font-family: "Anton", sans-serif;
-
     font-size: 30px;
-
     margin-bottom: 25px;
 }
 
-
-/* =====================================================
-   TAMANHOS
-===================================================== */
+/* TAMANHOS */
 
 .label {
     display: block;
@@ -365,11 +287,8 @@ header {
 
 .sizes {
     display: flex;
-
     gap: 10px;
-
     margin-bottom: 8px;
-
     flex-wrap: wrap;
 }
 
@@ -402,28 +321,18 @@ header {
 .sizes button:hover:not(.unavailable) {
     background: #000;
     color: #fff;
-
     border-color: #000;
 }
 
 .sizes button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
 
-
-/* =====================================================
-   SEM ESTOQUE
-===================================================== */
-
 .sizes button.unavailable {
     background: #f5f5f5;
-
     color: #999;
-
     cursor: not-allowed;
 }
 
@@ -444,17 +353,12 @@ header {
 
     font-weight: 300;
 
-    line-height: 1;
-
     color: #999;
 
     pointer-events: none;
 }
 
-
-/* =====================================================
-   TABELA DE MEDIDAS
-===================================================== */
+/* TABELA */
 
 .measure-button {
     display: block;
@@ -486,45 +390,29 @@ header {
     opacity: .55;
 }
 
-
-/* =====================================================
-   ESTOQUE
-===================================================== */
+/* ESTOQUE */
 
 .stock {
     min-height: 25px;
-
     font-size: 10px;
-
     color: #777;
-
     margin-bottom: 17px;
 }
 
-
-/* =====================================================
-   QUANTIDADE
-===================================================== */
+/* QUANTIDADE */
 
 .quantity {
     width: 135px;
-
     height: 43px;
-
     display: flex;
-
     margin-bottom: 20px;
 }
 
 .quantity button {
     width: 43px;
-
     border: 1px solid #aaa;
-
     background: #fff;
-
     font-size: 18px;
-
     cursor: pointer;
 }
 
@@ -536,7 +424,6 @@ header {
     justify-content: center;
 
     border-top: 1px solid #aaa;
-
     border-bottom: 1px solid #aaa;
 
     background: #fff;
@@ -544,10 +431,7 @@ header {
     font-weight: bold;
 }
 
-
-/* =====================================================
-   ADICIONAR
-===================================================== */
+/* ADICIONAR */
 
 .add-button {
     width: 100%;
@@ -571,20 +455,14 @@ header {
 
 .add-button:hover {
     background: #d49a19;
-
     color: #000;
 }
 
-
-/* =====================================================
-   IMAGENS INFERIORES
-===================================================== */
+/* IMAGENS */
 
 .images-section {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     height: 550px;
 }
 
@@ -595,16 +473,11 @@ header {
 .images-section img {
     width: 100%;
     height: 100%;
-
     object-fit: cover;
-
     display: block;
 }
 
-
-/* =====================================================
-   FOOTER
-===================================================== */
+/* FOOTER */
 
 footer {
     min-height: 170px;
@@ -624,7 +497,6 @@ footer {
 
 .footer-logo {
     font-family: "Anton", sans-serif;
-
     font-size: 35px;
 }
 
@@ -642,10 +514,7 @@ footer p {
     line-height: 1.6;
 }
 
-
-/* =====================================================
-   CARRINHO
-===================================================== */
+/* CARRINHO */
 
 .cart-overlay {
     position: fixed;
@@ -665,7 +534,6 @@ footer p {
 
 .cart-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
@@ -676,7 +544,6 @@ footer p {
     top: 0;
 
     width: 440px;
-
     max-width: 100%;
 
     height: 100%;
@@ -710,26 +577,16 @@ footer p {
 
 .cart-header h2 {
     font-family: "Anton", sans-serif;
-
     font-size: 28px;
-
     font-weight: 400;
 }
 
 .cart-header button {
     background: transparent;
-
     border: none;
-
     font-size: 28px;
-
     cursor: pointer;
 }
-
-
-/* =====================================================
-   ITEM
-===================================================== */
 
 .cart-item {
     display: flex;
@@ -756,17 +613,13 @@ footer p {
 
 .cart-item-info h3 {
     font-family: "Anton", sans-serif;
-
     font-size: 20px;
-
     font-weight: 400;
 }
 
 .cart-item-info p {
     font-size: 10px;
-
     color: #666;
-
     margin-top: 5px;
 }
 
@@ -786,20 +639,14 @@ footer p {
 
 .empty {
     text-align: center;
-
     padding: 50px 0;
-
     color: #777;
 }
 
-
-/* =====================================================
-   CUPOM
-===================================================== */
+/* CUPOM */
 
 .cart-coupon {
     margin-top: 20px;
-
     margin-bottom: 20px;
 }
 
@@ -853,22 +700,16 @@ footer p {
 
 .cart-coupon-input button:hover {
     background: #d49a19;
-
     color: #000;
 }
 
 .coupon-message {
     min-height: 18px;
-
     margin-top: 7px;
-
     font-size: 11px;
 }
 
-
-/* =====================================================
-   TOTAL
-===================================================== */
+/* TOTAL */
 
 .cart-total {
     display: flex;
@@ -884,10 +725,7 @@ footer p {
     border-top: 1px solid #ddd;
 }
 
-
-/* =====================================================
-   PAGAMENTO
-===================================================== */
+/* PAGAMENTO */
 
 .payment-title {
     font-family: "Anton", sans-serif;
@@ -923,9 +761,7 @@ footer p {
 
 .payments button.selected {
     background: #000;
-
     color: #fff;
-
     border-color: #000;
 }
 
@@ -935,6 +771,8 @@ footer p {
     color: #b00000;
 
     font-size: 11px;
+
+    margin-bottom: 8px;
 }
 
 .checkout {
@@ -957,14 +795,10 @@ footer p {
 
 .checkout:hover {
     background: #d49a19;
-
     color: #000;
 }
 
-
-/* =====================================================
-   MODAL
-===================================================== */
+/* MODAL */
 
 .measure-overlay {
     position: fixed;
@@ -992,7 +826,6 @@ footer p {
 
 .measure-overlay.active {
     opacity: 1;
-
     visibility: visible;
 }
 
@@ -1044,10 +877,7 @@ footer p {
     cursor: pointer;
 }
 
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
+/* RESPONSIVO */
 
 @media (max-width: 900px) {
 
@@ -1069,7 +899,6 @@ footer p {
 
     .images-section {
         grid-template-columns: 1fr;
-
         height: auto;
     }
 
@@ -1079,9 +908,7 @@ footer p {
 
     footer {
         flex-direction: column;
-
         gap: 20px;
-
         text-align: center;
     }
 
@@ -1091,12 +918,7 @@ footer p {
 
 }
 
-
 @media (max-width: 500px) {
-
-    .hero h1 {
-        font-size: 70px;
-    }
 
     .section-title h2 {
         font-size: 45px;
@@ -1116,15 +938,12 @@ footer p {
 
     .sizes button {
         width: 48px;
-
         height: 48px;
-
         min-width: 48px;
     }
 
     .measure-image {
         max-width: 94vw;
-
         max-height: 80vh;
     }
 
@@ -1134,17 +953,12 @@ footer p {
 
 </head>
 
-
 <body>
 
-
 <div class="topbar">
-
     PRIMEIRA COMPRA?
     USE O CUPOM <strong>GLORY10</strong>
-
 </div>
-
 
 <header>
 
@@ -1156,11 +970,8 @@ footer p {
         class="cart-button"
         onclick="abrirCarrinho()"
     >
-
         CARRINHO
-
         <span id="cartCount">0</span>
-
     </button>
 
 </header>
@@ -1190,13 +1001,9 @@ footer p {
 
     <div class="section-title">
 
-        <span>
-            NOVA COLEÇÃO
-        </span>
+        <span>NOVA COLEÇÃO</span>
 
-        <h2>
-            CAMISAS
-        </h2>
+        <h2>CAMISAS</h2>
 
     </div>
 
@@ -1223,41 +1030,21 @@ footer p {
 
                 <button
                     class="thumb active"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Frente.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Frente.png',this)"
                 >
                     <img src="Frente.png">
                 </button>
 
-
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Costa.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Costa.png',this)"
                 >
                     <img src="Costa.png">
                 </button>
 
-
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'gloryImage',
-                            'Chuva.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('gloryImage','Chuva.png',this)"
                 >
                     <img src="Chuva.png">
                 </button>
@@ -1271,10 +1058,7 @@ footer p {
                     #001
                 </span>
 
-                <h3>
-                    GLORY
-                </h3>
-
+                <h3>GLORY</h3>
 
                 <p class="description">
                     Acreditamos que, buscando
@@ -1284,93 +1068,41 @@ footer p {
                     as perfeições.
                 </p>
 
-
                 <div class="price">
                     R$ 109,90
                 </div>
-
 
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
 
-
                 <div class="sizes">
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'PP',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','PP',this)">
                         PP
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'P',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','P',this)">
                         P
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'M',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','M',this)">
                         M
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'G',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','G',this)">
                         G
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'GG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','GG',this)">
                         GG
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Glory',
-                                'XG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Glory','XG',this)">
                         XG
                     </button>
 
                 </div>
-
 
                 <button
                     class="measure-button"
@@ -1379,7 +1111,6 @@ footer p {
                     TABELA DE MEDIDAS →
                 </button>
 
-
                 <div
                     id="GlorySelectedSize"
                     class="stock"
@@ -1387,53 +1118,29 @@ footer p {
                     Selecione um tamanho
                 </div>
 
-
                 <label class="label">
                     QUANTIDADE
                 </label>
 
-
                 <div class="quantity">
 
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Glory',
-                                -1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Glory',-1)">
                         −
                     </button>
-
 
                     <span id="GloryQuantity">
                         1
                     </span>
 
-
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Glory',
-                                1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Glory',1)">
                         +
                     </button>
 
                 </div>
 
-
                 <button
                     class="add-button"
-                    onclick="
-                        adicionarProduto(
-                            'Glory',
-                            'Frente.png'
-                        )
-                    "
+                    onclick="adicionarProduto('Glory','Frente.png')"
                 >
                     ADICIONAR AO CARRINHO →
                 </button>
@@ -1462,41 +1169,21 @@ footer p {
 
                 <button
                     class="thumb active"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Frente2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Frente2.png',this)"
                 >
                     <img src="Frente2.png">
                 </button>
 
-
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Trás2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Trás2.png',this)"
                 >
                     <img src="Trás2.png">
                 </button>
 
-
                 <button
                     class="thumb"
-                    onclick="
-                        trocarImagem(
-                            'frassatiImage',
-                            'Chuva2.png',
-                            this
-                        )
-                    "
+                    onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
                 >
                     <img src="Chuva2.png">
                 </button>
@@ -1510,10 +1197,7 @@ footer p {
                     #002
                 </span>
 
-                <h3>
-                    FRASSATI
-                </h3>
-
+                <h3>FRASSATI</h3>
 
                 <p class="description">
                     Como Frassati se expressa,
@@ -1522,93 +1206,41 @@ footer p {
                     nos escolheu"
                 </p>
 
-
                 <div class="price">
                     R$ 109,90
                 </div>
-
 
                 <label class="label">
                     ESCOLHA O TAMANHO
                 </label>
 
-
                 <div class="sizes">
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'PP',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','PP',this)">
                         PP
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'P',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','P',this)">
                         P
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'M',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','M',this)">
                         M
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'G',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','G',this)">
                         G
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'GG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','GG',this)">
                         GG
                     </button>
 
-                    <button
-                        onclick="
-                            selecionarTamanho(
-                                'Frassati',
-                                'XG',
-                                this
-                            )
-                        "
-                    >
+                    <button onclick="selecionarTamanho('Frassati','XG',this)">
                         XG
                     </button>
 
                 </div>
-
 
                 <button
                     class="measure-button"
@@ -1617,7 +1249,6 @@ footer p {
                     TABELA DE MEDIDAS →
                 </button>
 
-
                 <div
                     id="FrassatiSelectedSize"
                     class="stock"
@@ -1625,53 +1256,29 @@ footer p {
                     Selecione um tamanho
                 </div>
 
-
                 <label class="label">
                     QUANTIDADE
                 </label>
 
-
                 <div class="quantity">
 
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Frassati',
-                                -1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Frassati',-1)">
                         −
                     </button>
-
 
                     <span id="FrassatiQuantity">
                         1
                     </span>
 
-
-                    <button
-                        onclick="
-                            alterarQuantidade(
-                                'Frassati',
-                                1
-                            )
-                        "
-                    >
+                    <button onclick="alterarQuantidade('Frassati',1)">
                         +
                     </button>
 
                 </div>
 
-
                 <button
                     class="add-button"
-                    onclick="
-                        adicionarProduto(
-                            'Frassati',
-                            'Frente2.png'
-                        )
-                    "
+                    onclick="adicionarProduto('Frassati','Frente2.png')"
                 >
                     ADICIONAR AO CARRINHO →
                 </button>
@@ -1688,22 +1295,17 @@ footer p {
 <section class="images-section">
 
     <div>
-
         <img
             src="Obrigado.png"
             alt="Holiness"
         >
-
     </div>
 
-
     <div>
-
         <img
             src="fig.png"
             alt="Coleção Holiness"
         >
-
     </div>
 
 </section>
@@ -1724,9 +1326,7 @@ footer p {
 </footer>
 
 
-<!-- =====================================================
-     CARRINHO
-===================================================== -->
+<!-- CARRINHO -->
 
 <div
     id="cartOverlay"
@@ -1741,13 +1341,9 @@ footer p {
 
         <div class="cart-header">
 
-            <h2>
-                CARRINHO
-            </h2>
+            <h2>CARRINHO</h2>
 
-            <button
-                onclick="fecharCarrinho()"
-            >
+            <button onclick="fecharCarrinho()">
                 ×
             </button>
 
@@ -1763,7 +1359,6 @@ footer p {
                 CUPOM DE DESCONTO
             </label>
 
-
             <div class="cart-coupon-input">
 
                 <input
@@ -1772,15 +1367,11 @@ footer p {
                     placeholder="DIGITE SEU CUPOM"
                 >
 
-
-                <button
-                    onclick="aplicarCupom()"
-                >
+                <button onclick="aplicarCupom()">
                     APLICAR
                 </button>
 
             </div>
-
 
             <div
                 id="couponMessage"
@@ -1792,9 +1383,7 @@ footer p {
 
         <div class="cart-total">
 
-            <span>
-                TOTAL
-            </span>
+            <span>TOTAL</span>
 
             <strong id="cartTotal">
                 R$ 0,00
@@ -1810,38 +1399,15 @@ footer p {
 
         <div class="payments">
 
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'PIX',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('PIX',this)">
                 PIX
             </button>
 
-
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'Cartão',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('Cartão',this)">
                 CARTÃO
             </button>
 
-
-            <button
-                onclick="
-                    selecionarPagamento(
-                        'Dinheiro',
-                        this
-                    )
-                "
-            >
+            <button onclick="selecionarPagamento('Dinheiro',this)">
                 DINHEIRO
             </button>
 
@@ -1866,9 +1432,7 @@ footer p {
 </div>
 
 
-<!-- =====================================================
-     MODAL TABELA
-===================================================== -->
+<!-- MODAL -->
 
 <div
     id="measureOverlay"
@@ -1888,7 +1452,6 @@ footer p {
             ×
         </button>
 
-
         <img
             src="medida.png"
             alt="Tabela de medidas"
@@ -1901,7 +1464,6 @@ footer p {
 
 
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
-
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore-compat.js"></script>
 
 
@@ -1913,26 +1475,19 @@ footer p {
 
 const firebaseConfig = {
 
-    apiKey:
-        "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+    apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
 
-    authDomain:
-        "holiness-e6ec3.firebaseapp.com",
+    authDomain: "holiness-e6ec3.firebaseapp.com",
 
-    projectId:
-        "holiness-e6ec3",
+    projectId: "holiness-e6ec3",
 
-    storageBucket:
-        "holiness-e6ec3.firebasestorage.app",
+    storageBucket: "holiness-e6ec3.firebasestorage.app",
 
-    messagingSenderId:
-        "842822716544",
+    messagingSenderId: "842822716544",
 
-    appId:
-        "1:842822716544:web:d24b1835fa9f4289ce2a65",
+    appId: "1:842822716544:web:d24b1835fa9f4289ce2a65",
 
-    measurementId:
-        "G-ZTL2W77QFT"
+    measurementId: "G-ZTL2W77QFT"
 
 };
 
@@ -1956,8 +1511,7 @@ const db =
 
 const PRECO = 109.90;
 
-const WHATSAPP =
-    "5533998019698";
+const WHATSAPP = "5533998019698";
 
 
 /* =====================================================
@@ -1976,7 +1530,6 @@ const estoque = {
         XG: 0
 
     },
-
 
     Frassati: {
 
@@ -2041,7 +1594,6 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
-
         Number(valor)
             .toFixed(2)
             .replace(".", ",");
@@ -2145,8 +1697,7 @@ function selecionarTamanho(
         );
 
 
-    texto.style.color =
-        "#777";
+    texto.style.color = "#777";
 
 
     texto.innerHTML =
@@ -2189,7 +1740,6 @@ function atualizarTamanhosDisponiveis() {
 
             }
 
-
             else if (
                 nomeProduto === "frassati"
             ) {
@@ -2198,7 +1748,6 @@ function atualizarTamanhosDisponiveis() {
                     estoque.Frassati;
 
             }
-
 
             else {
 
@@ -2235,7 +1784,6 @@ function atualizarTamanhosDisponiveis() {
                         botao.disabled = true;
 
                     }
-
 
                     else {
 
@@ -2330,7 +1878,7 @@ function alterarQuantidade(
 
 
 /* =====================================================
-   ADICIONAR PRODUTO
+   ADICIONAR
 ===================================================== */
 
 function adicionarProduto(
@@ -2410,25 +1958,19 @@ function adicionarProduto(
 
     }
 
-
     else {
 
         carrinho.push({
 
-            nome:
-                nome,
+            nome: nome,
 
-            imagem:
-                imagem,
+            imagem: imagem,
 
-            tamanho:
-                tamanho,
+            tamanho: tamanho,
 
-            quantidade:
-                quantidade,
+            quantidade: quantidade,
 
-            preco:
-                PRECO
+            preco: PRECO
 
         });
 
@@ -2549,7 +2091,6 @@ function aplicarCupom() {
         atualizarCarrinho();
 
     }
-
 
     else {
 
@@ -2725,7 +2266,6 @@ function atualizarCarrinho() {
 
     }
 
-
     else {
 
         total.innerText =
@@ -2747,14 +2287,13 @@ function removerProduto(index) {
         1
     );
 
-
     atualizarCarrinho();
 
 }
 
 
 /* =====================================================
-   ABRIR CARRINHO
+   ABRIR
 ===================================================== */
 
 function abrirCarrinho() {
@@ -2774,7 +2313,7 @@ function abrirCarrinho() {
 
 
 /* =====================================================
-   FECHAR CARRINHO
+   FECHAR
 ===================================================== */
 
 function fecharCarrinho() {
@@ -2947,22 +2486,21 @@ async function finalizarCompra() {
 
 
     /*
-       ==================================================
-       CORREÇÃO PARA CELULAR
+    =====================================================
+    IMPORTANTE
 
-       A ABA DO WHATSAPP É ABERTA IMEDIATAMENTE
-       NO CLIQUE DO USUÁRIO.
+    ABRE A ABA DO WHATSAPP IMEDIATAMENTE.
 
-       ASSIM O NAVEGADOR NÃO BLOQUEIA A NOVA ABA
-       ENQUANTO O FIREBASE ESTÁ REGISTRANDO O PEDIDO.
-       ==================================================
+    Isso acontece ANTES do Firebase porque celulares
+    podem bloquear window.open() depois de um await.
+    =====================================================
     */
 
-    let abaWhatsApp = null;
+    let janelaWhatsApp = null;
 
     try {
 
-        abaWhatsApp =
+        janelaWhatsApp =
             window.open(
                 "about:blank",
                 "_blank"
@@ -3040,17 +2578,21 @@ async function finalizarCompra() {
 
     try {
 
-        /* =================================================
-           GERA NÚMERO
-        ================================================= */
+        /*
+        =================================================
+        GERA O NÚMERO
+        =================================================
+        */
 
         const numeroPedido =
             await gerarNumeroPedido();
 
 
-        /* =================================================
-           SALVA NO FIREBASE
-        ================================================= */
+        /*
+        =================================================
+        SALVA NO FIREBASE
+        =================================================
+        */
 
         await db
             .collection("pedidos")
@@ -3095,9 +2637,11 @@ async function finalizarCompra() {
             });
 
 
-        /* =================================================
-           MENSAGEM WHATSAPP
-        ================================================= */
+        /*
+        =================================================
+        MENSAGEM
+        =================================================
+        */
 
         let mensagem =
 
@@ -3127,14 +2671,6 @@ async function finalizarCompra() {
 
                     "🔢 Quantidade: " +
                     item.quantidade +
-                    "\n" +
-
-                    "💰 " +
-                    dinheiro(
-                        item.preco *
-                        item.quantidade
-                    ) +
-
                     "\n\n";
 
             }
@@ -3173,7 +2709,7 @@ async function finalizarCompra() {
             "Quero finalizar meu pedido! 🙌";
 
 
-        const url =
+        const urlWhatsApp =
 
             "https://wa.me/" +
             WHATSAPP +
@@ -3184,31 +2720,30 @@ async function finalizarCompra() {
 
 
         /*
-           =================================================
-           MANDA A ABA QUE JÁ FOI ABERTA PARA O WHATSAPP
-           =================================================
+        =================================================
+        ENVIA A ABA QUE JÁ FOI ABERTA
+        =================================================
         */
 
         if (
-            abaWhatsApp &&
-            !abaWhatsApp.closed
+            janelaWhatsApp &&
+            !janelaWhatsApp.closed
         ) {
 
-            abaWhatsApp.location.href =
-                url;
+            janelaWhatsApp.location.href =
+                urlWhatsApp;
 
         }
-
 
         else {
 
             /*
-               CASO O NAVEGADOR TENHA BLOQUEADO A ABA,
-               TENTA REDIRECIONAR A PRÓPRIA PÁGINA.
+            Fallback para celulares/navegadores que
+            bloquearam a nova aba.
             */
 
             window.location.href =
-                url;
+                urlWhatsApp;
 
         }
 
@@ -3226,8 +2761,9 @@ async function finalizarCompra() {
 
     }
 
-
-    catch (firebaseError) {
+    catch (
+        firebaseError
+    ) {
 
         console.error(
             "ERRO COMPLETO DO FIREBASE:",
@@ -3236,16 +2772,16 @@ async function finalizarCompra() {
 
 
         /*
-           SE O FIREBASE DER ERRO,
-           FECHA A ABA EM BRANCO QUE FOI ABERTA.
+        Se o Firebase falhar, fecha a aba vazia
+        para não deixar uma página about:blank aberta.
         */
 
         if (
-            abaWhatsApp &&
-            !abaWhatsApp.closed
+            janelaWhatsApp &&
+            !janelaWhatsApp.closed
         ) {
 
-            abaWhatsApp.close();
+            janelaWhatsApp.close();
 
         }
 
@@ -3255,29 +2791,37 @@ async function finalizarCompra() {
 
 
         /*
-           MOSTRA O ERRO REAL NA TELA
-           PARA FICAR MAIS FÁCIL IDENTIFICAR
-           SE FOR REGRA DO FIREBASE.
+        Mostra uma mensagem mais específica
         */
-
-        let mensagemErro =
-            "Não foi possível registrar o pedido.";
-
 
         if (
             firebaseError &&
-            firebaseError.code
+            firebaseError.code ===
+            "permission-denied"
         ) {
 
-            mensagemErro +=
-                " Código: " +
-                firebaseError.code;
+            erro.innerText =
+                "O Firebase bloqueou o registro do pedido. Verifique as regras do Firestore.";
 
         }
 
+        else if (
+            firebaseError &&
+            firebaseError.code ===
+            "failed-precondition"
+        ) {
 
-        erro.innerText =
-            mensagemErro;
+            erro.innerText =
+                "O Firebase precisa de uma configuração do Firestore. Verifique o banco.";
+
+        }
+
+        else {
+
+            erro.innerText =
+                "Não foi possível registrar o pedido. Tente novamente.";
+
+        }
 
     }
 
@@ -3295,7 +2839,7 @@ async function finalizarCompra() {
 
 
 /* =====================================================
-   TABELA DE MEDIDAS
+   TABELA
 ===================================================== */
 
 function abrirTabelaMedidas() {
