@@ -1546,10 +1546,10 @@ footer p {
                 </h3>
 
                 <p class="description">
-    “Acredito que, buscando incansavelmente a Deus,
-    chegaremos à manifestação visível da presença,
-    do poder e de todas as perfeições — à Glória.”
-</p>
+                    “Acredito que, buscando incansavelmente a Deus,
+                    chegaremos à manifestação visível da presença,
+                    do poder e de todas as perfeições — à Glória.”
+                </p>
 
 
                 <div class="price">
@@ -1731,10 +1731,10 @@ footer p {
                 </h3>
 
                 <p class="description">
-    “Subir sempre mais alto, não apenas pelas montanhas,
-    mas em direção a Deus, onde encontramos a verdadeira
-    felicidade.”
-</p>
+                    “Subir sempre mais alto, não apenas pelas montanhas,
+                    mas em direção a Deus, onde encontramos a verdadeira
+                    felicidade.”
+                </p>
 
 
                 <div class="price">
@@ -2186,22 +2186,6 @@ let pagamentoSelecionado = "";
 
 /* =====================================================
    CARREGAR ESTOQUE DO FIREBASE
-=====================================================
-
-   IMPORTANTE:
-
-   O ADMIN USA:
-
-   estoque / Glory
-
-   estoque / Frassati
-
-   Portanto o site lê exatamente esses documentos.
-
-   O index.html NÃO altera o estoque.
-
-   O estoque só é alterado pelo ADMIN quando
-   você confirmar o pedido manualmente.
 ===================================================== */
 
 function ouvirEstoqueFirebase() {
@@ -3406,8 +3390,6 @@ async function finalizarCompra() {
 
     /* ================================================
        CONFERÊNCIA FINAL DO ESTOQUE
-       Antes de registrar o pedido,
-       verifica novamente no Firebase.
     ================================================ */
 
     try {
@@ -3546,9 +3528,21 @@ async function finalizarCompra() {
 
     try {
 
+        /* ============================================
+           GERA O NÚMERO DO PEDIDO
+           
+           O número continua sendo criado e salvo
+           no Firebase, mas NÃO será enviado
+           para o WhatsApp.
+        ============================================ */
+
         const numeroPedido =
             await gerarNumeroPedido();
 
+
+        /* ============================================
+           SALVA O PEDIDO NO FIREBASE
+        ============================================ */
 
         await db
             .collection("pedidos")
@@ -3595,26 +3589,28 @@ async function finalizarCompra() {
 
 
         /* ============================================
-           IMPORTANTE:
-
            NÃO ALTERAMOS O ESTOQUE AQUI.
-
+           
            O estoque será alterado somente pelo
            ADMIN quando você confirmar o pedido.
         ============================================ */
 
+
+        /* ============================================
+           MENSAGEM WHATSAPP
+           
+           IMPORTANTE:
+           
+           O número do pedido NÃO aparece aqui.
+           
+           Ele continua salvo no Firebase.
+        ============================================ */
 
         let mensagem =
             "Olá! 👋" +
             "\n\n" +
 
             "Quero fazer meu pedido da HOLINESS! 🔥" +
-            "\n\n";
-
-
-        mensagem +=
-            "📦 Pedido: " +
-            numeroPedido +
             "\n\n";
 
 
@@ -3770,13 +3766,6 @@ document.addEventListener(
 /* =====================================================
    INICIALIZAÇÃO
 ===================================================== */
-
-/*
-    NÃO colocamos mais estoque fixo aqui.
-
-    O site começa com estoque 0 e imediatamente
-    escuta a coleção "estoque" do Firebase.
-*/
 
 atualizarTamanhosDisponiveis();
 
