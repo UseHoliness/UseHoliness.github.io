@@ -371,6 +371,7 @@ header {
 }
 
 .sizes button {
+    pointer-events: auto;
     position: relative;
 
     width: 54px;
@@ -1938,14 +1939,14 @@ footer p {
 </div>
 
 
-<script type="module">
+<script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+<script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore-compat.js"></script>
+
+<script>
 
 /* =====================================================
    FIREBASE
 ===================================================== */
-
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-app.js";
-import { getFirestore, collection, addDoc } from "https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore.js";
 
 const firebaseConfig = {
     apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
@@ -1957,8 +1958,11 @@ const firebaseConfig = {
     measurementId: "G-ZTL2W77QFT"
 };
 
-const firebaseApp = initializeApp(firebaseConfig);
-const db = getFirestore(firebaseApp);
+if (!firebase.apps.length) {
+    firebase.initializeApp(firebaseConfig);
+}
+
+const db = firebase.firestore();
 
 /* =====================================================
    CONFIGURAÇÕES
@@ -2908,7 +2912,8 @@ function selecionarPagamento(
 
 async function finalizarCompra() {
 
-    const erro = document.getElementById("cartError");
+    const erro =
+        document.getElementById("cartError");
 
     if (carrinho.length === 0) {
         erro.innerText = "Seu carrinho está vazio.";
@@ -2920,68 +2925,87 @@ async function finalizarCompra() {
         return;
     }
 
+    const total = calcularTotal();
+
+    const numeroPedido = "#" + Date.now();
+
+    const itens = carrinho.map(function(item) {
+        return {
+            produto: item.nome,
+            tamanho: item.tamanho,
+            quantidade: item.quantidade,
+            precoUnitario: Number(item.preco),
+            subtotal: Number(item.preco * item.quantidade)
+        };
+    });
+
     const botao = document.querySelector(".checkout");
     const textoOriginal = botao.innerText;
+
     botao.disabled = true;
     botao.innerText = "REGISTRANDO PEDIDO...";
     erro.innerText = "";
 
     try {
-        const numeroPedido = "#" + Date.now();
-        const subtotal = calcularSubtotal();
-        const total = calcularTotal();
 
-        const itens = carrinho.map(function(item) {
-            return {
-                produto: item.nome,
-                tamanho: item.tamanho,
-                quantidade: Number(item.quantidade) || 0,
-                precoUnitario: Number(item.preco) || 0,
-                subtotal: (Number(item.preco) || 0) * (Number(item.quantidade) || 0)
-            };
-        });
-
-        await addDoc(collection(db, "pedidos"), {
+        await db.collection("pedidos").add({
             numeroPedido: numeroPedido,
-            criadoEm: new Date(),
+            criadoEm: firebase.firestore.FieldValue.serverTimestamp(),
             itens: itens,
-            subtotal: Number(subtotal) || 0,
-            desconto: Number(descontoAtual) || 0,
+            subtotal: Number(calcularSubtotal()),
+            desconto: Number(descontoAtual),
             cupom: cupomAtual || "",
-            total: Number(total) || 0,
+            total: Number(total),
             pagamento: pagamentoSelecionado,
             status: "aguardando_whatsapp"
         });
 
-        let mensagem = "Olá! 👋\n\n";
-        mensagem += "Quero fazer meu pedido da HOLINESS! 🔥\n\n";
-        mensagem += "🧾 Pedido: " + numeroPedido + "\n\n";
+        let mensagem =
+            "Olá! 👋" +
+            "\n" +
+            "Quero fazer meu pedido da HOLINESS! 🔥" +
+            "\n\n" +
+            "🧾 Pedido: " + numeroPedido + "\n\n";
 
         carrinho.forEach(function(item) {
-            mensagem += "👕 " + item.nome + "\n";
-            mensagem += "📏 Tamanho: " + item.tamanho + "\n";
-            mensagem += "🔢 Quantidade: " + item.quantidade + "\n\n";
+            mensagem +=
+                "👕 " + item.nome + "\n" +
+                "📏 Tamanho: " + item.tamanho + "\n" +
+                "🔢 Quantidade: " + item.quantidade + "\n\n";
         });
 
-        mensagem += "💰 Total: " + dinheiro(total) + "\n";
+        mensagem += "💰 Total: " + dinheiro(total);
 
-        if (cupomAtual) {
-            mensagem += "🎟️ Cupom: " + cupomAtual + " (" + descontoAtual + "% de desconto)\n";
+        if (cupomAtual !== "") {
+            mensagem +=
+                "\n🎟️ Cupom: " + cupomAtual +
+                " (" + descontoAtual + "% de desconto)";
         }
 
-        mensagem += "💳 Pagamento: " + pagamentoSelecionado + "\n\n";
-        mensagem += "Quero finalizar meu pedido! 🙌";
+        mensagem +=
+            "\n💳 Pagamento: " + pagamentoSelecionado +
+            "\n\nQuero finalizar meu pedido! 🙌";
 
-        const url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(mensagem);
+        const url =
+            "https://wa.me/" +
+            WHATSAPP +
+            "?text=" +
+            encodeURIComponent(mensagem);
+
         window.open(url, "_blank");
 
         erro.style.color = "#16833b";
-        erro.innerText = "Pedido " + numeroPedido + " registrado!";
+        erro.innerText =
+            "Pedido " + numeroPedido + " registrado com sucesso!";
 
-    } catch (erroFirebase) {
-        console.error("Erro ao registrar pedido:", erroFirebase);
+    } catch (firebaseError) {
+
+        console.error("Erro ao salvar pedido no Firebase:", firebaseError);
+
         erro.style.color = "#b00000";
-        erro.innerText = "Não foi possível registrar o pedido. Tente novamente.";
+        erro.innerText =
+            "Não foi possível registrar o pedido. Tente novamente.";
+
     } finally {
         botao.disabled = false;
         botao.innerText = textoOriginal;
