@@ -1,1698 +1,3 @@
-<!DOCTYPE html>
-<html lang="pt-BR">
-
-<head>
-
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>HOLINESS</title>
-
-<link rel="icon" type="image/png" href="Logo.png">
-<link rel="shortcut icon" type="image/png" href="Logo.png">
-
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
-
-<style>
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    background: #f3f1ed;
-    color: #111;
-    font-family: Arial, sans-serif;
-}
-
-
-/* =====================================================
-   TOPO
-===================================================== */
-
-.topbar {
-    display: none !important;
-    height: 0 !important;
-    background: #000;
-    color: #fff;
-
-    align-items: center;
-    justify-content: center;
-
-    font-size: 10px;
-    letter-spacing: 1px;
-}
-
-.topbar strong {
-    margin-left: 5px;
-}
-
-
-/* =====================================================
-   HEADER
-===================================================== */
-
-header {
-    height: 75px;
-
-    background: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-
-    padding: 0 45px;
-
-    border-bottom: 1px solid #ddd;
-
-    position: sticky;
-    top: 0;
-
-    z-index: 100;
-}
-
-.logo {
-    color: #000;
-    text-decoration: none;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 31px;
-
-    letter-spacing: 1px;
-}
-
-.cart-button {
-    border: none;
-    background: transparent;
-
-    cursor: pointer;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 14px;
-
-    letter-spacing: 1px;
-
-    position: relative;
-}
-
-.cart-button span {
-    position: absolute;
-
-    top: -13px;
-    right: -17px;
-
-    width: 21px;
-    height: 21px;
-
-    border-radius: 50%;
-
-    background: #000;
-    color: #fff;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 10px;
-}
-
-
-/* =====================================================
-   BANNER
-===================================================== */
-
-.collection-banner {
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    overflow: hidden;
-    line-height: 0;
-}
-
-.collection-banner img {
-    width: 100%;
-    height: auto;
-    display: block;
-    object-fit: cover;
-}
-
-
-/* =====================================================
-   PRODUTOS
-===================================================== */
-
-.products {
-    padding: 90px 5%;
-}
-
-.section-title {
-    margin-bottom: 45px;
-}
-
-.section-title span {
-    font-family: "Anton", sans-serif;
-
-    font-size: 12px;
-
-    letter-spacing: 3px;
-
-    color: #777;
-}
-
-.section-title h2 {
-    font-family: "Anton", sans-serif;
-
-    font-size: 60px;
-
-    font-weight: 400;
-}
-
-
-/* =====================================================
-   GRID
-===================================================== */
-
-.products-grid {
-    display: grid;
-
-    grid-template-columns:
-        repeat(2, minmax(0, 1fr));
-
-    gap: 30px;
-
-    align-items: start;
-}
-
-
-/* =====================================================
-   PRODUTO
-===================================================== */
-
-.product {
-    width: 100%;
-
-    background: #fff;
-
-    overflow: hidden;
-
-    min-width: 0;
-}
-
-
-/* =====================================================
-   IMAGEM
-===================================================== */
-
-.product-image {
-    width: 100%;
-
-    height: 550px;
-
-    background: #e6e2dd;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    overflow: hidden;
-}
-
-.product-image img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: contain;
-
-    display: block;
-}
-
-
-/* =====================================================
-   MINIATURAS
-===================================================== */
-
-.product-thumbnails {
-    display: flex;
-
-    gap: 8px;
-
-    padding: 10px 15px;
-
-    background: #e6e2dd;
-}
-
-.thumb {
-    width: 65px;
-    height: 65px;
-
-    padding: 0;
-
-    border: 1px solid #aaa;
-
-    background: #ddd;
-
-    cursor: pointer;
-
-    opacity: .6;
-
-    overflow: hidden;
-}
-
-.thumb.active {
-    opacity: 1;
-
-    border: 2px solid #000;
-}
-
-.thumb img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =====================================================
-   INFORMAÇÕES
-===================================================== */
-
-.product-info {
-    padding: 30px 32px 32px;
-}
-
-.product-number {
-    color: #999;
-
-    font-size: 10px;
-
-    letter-spacing: 3px;
-}
-
-.product-info h3 {
-    font-family: "Anton", sans-serif;
-
-    font-size: 45px;
-
-    font-weight: 400;
-
-    margin: 5px 0 15px;
-}
-
-.description {
-    font-family: Georgia, serif;
-
-    color: #444;
-
-    font-size: 14px;
-
-    line-height: 1.6;
-
-    margin-bottom: 18px;
-
-    min-height: 46px;
-}
-
-.price {
-    font-family: "Anton", sans-serif;
-
-    font-size: 30px;
-
-    margin-bottom: 25px;
-}
-
-
-/* =====================================================
-   TAMANHOS
-===================================================== */
-
-.label {
-    display: block;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-}
-
-.sizes {
-    display: flex;
-
-    gap: 10px;
-
-    margin-bottom: 8px;
-
-    flex-wrap: wrap;
-}
-
-.sizes button {
-    position: relative;
-
-    width: 54px;
-    height: 54px;
-
-    min-width: 54px;
-
-    border: 1px solid #aaa;
-
-    background: #fff;
-
-    cursor: pointer;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 13px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    transition: .2s;
-}
-
-.sizes button:hover:not(.unavailable) {
-    background: #000;
-    color: #fff;
-
-    border-color: #000;
-}
-
-.sizes button.selected {
-    background: #000;
-
-    color: #fff;
-
-    border-color: #000;
-}
-
-
-/* =====================================================
-   SEM ESTOQUE
-===================================================== */
-
-.sizes button.unavailable {
-    background: #f5f5f5;
-
-    color: #999;
-
-    cursor: not-allowed;
-}
-
-.sizes button.unavailable::after {
-    content: "×";
-
-    position: absolute;
-
-    inset: 0;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    font-family: Arial, sans-serif;
-
-    font-size: 31px;
-
-    font-weight: 300;
-
-    line-height: 1;
-
-    color: #999;
-
-    pointer-events: none;
-}
-
-
-/* =====================================================
-   TABELA
-===================================================== */
-
-.measure-button {
-    display: block;
-
-    background: transparent;
-
-    border: none;
-
-    border-bottom: 1px solid #111;
-
-    padding: 5px 0;
-
-    margin-top: 2px;
-
-    margin-bottom: 18px;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 10px;
-
-    letter-spacing: 1.5px;
-
-    cursor: pointer;
-
-    color: #111;
-}
-
-.measure-button:hover {
-    opacity: .55;
-}
-
-
-/* =====================================================
-   ESTOQUE
-===================================================== */
-
-.stock {
-    min-height: 25px;
-
-    font-size: 10px;
-
-    color: #777;
-
-    margin-bottom: 17px;
-}
-
-
-/* =====================================================
-   QUANTIDADE
-===================================================== */
-
-.quantity {
-    width: 135px;
-
-    height: 43px;
-
-    display: flex;
-
-    margin-bottom: 20px;
-}
-
-.quantity button {
-    width: 43px;
-
-    border: 1px solid #aaa;
-
-    background: #fff;
-
-    font-size: 18px;
-
-    cursor: pointer;
-}
-
-.quantity span {
-    width: 49px;
-
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    border-top: 1px solid #aaa;
-
-    border-bottom: 1px solid #aaa;
-
-    background: #fff;
-
-    font-weight: bold;
-}
-
-
-/* =====================================================
-   ADICIONAR
-===================================================== */
-
-.add-button {
-    width: 100%;
-
-    height: 58px;
-
-    border: none;
-
-    background: #000;
-
-    color: #fff;
-
-    font-family: "Anton", sans-serif;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-
-    transition: .2s;
-}
-
-.add-button:hover {
-    background: #d49a19;
-
-    color: #000;
-}
-
-
-/* =====================================================
-   IMAGENS INFERIORES
-===================================================== */
-
-.images-section {
-    display: grid;
-
-    grid-template-columns: 1fr 1fr;
-
-    height: 550px;
-}
-
-.images-section div {
-    overflow: hidden;
-}
-
-.images-section img {
-    width: 100%;
-    height: 100%;
-
-    object-fit: cover;
-
-    display: block;
-}
-
-
-/* =====================================================
-   FOOTER
-===================================================== */
-
-footer {
-    min-height: 170px;
-
-    background: #f3f1ed;
-
-    border-top: 1px solid #ddd;
-
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding: 30px 50px;
-}
-
-.footer-logo {
-    font-family: "Anton", sans-serif;
-
-    font-size: 35px;
-}
-
-footer p {
-    max-width: 500px;
-
-    text-align: right;
-
-    color: #777;
-
-    font-family: Georgia, serif;
-
-    font-size: 12px;
-
-    line-height: 1.6;
-}
-
-
-/* =====================================================
-   CARRINHO
-===================================================== */
-
-.cart-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.55);
-
-    z-index: 999;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: .3s;
-}
-
-.cart-overlay.active {
-    opacity: 1;
-
-    visibility: visible;
-}
-
-.cart {
-    position: absolute;
-
-    right: 0;
-
-    top: 0;
-
-    width: 440px;
-
-    max-width: 100%;
-
-    height: 100%;
-
-    background: #f3f1ed;
-
-    padding: 30px;
-
-    overflow-y: auto;
-
-    transform: translateX(100%);
-
-    transition: .3s;
-}
-
-.cart-overlay.active .cart {
-    transform: translateX(0);
-}
-
-.cart-header {
-    display: flex;
-
-    justify-content: space-between;
-
-    align-items: center;
-
-    padding-bottom: 18px;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.cart-header h2 {
-    font-family: "Anton", sans-serif;
-
-    font-size: 28px;
-
-    font-weight: 400;
-}
-
-.cart-header button {
-    background: transparent;
-
-    border: none;
-
-    font-size: 28px;
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   ITEM CARRINHO
-===================================================== */
-
-.cart-item {
-    display: flex;
-
-    gap: 13px;
-
-    padding: 15px 0;
-
-    border-bottom: 1px solid #ddd;
-}
-
-.cart-item img {
-    width: 80px;
-    height: 90px;
-
-    object-fit: contain;
-
-    background: #e6e2dd;
-}
-
-.cart-item-info {
-    flex: 1;
-}
-
-.cart-item-info h3 {
-    font-family: "Anton", sans-serif;
-
-    font-size: 20px;
-
-    font-weight: 400;
-}
-
-.cart-item-info p {
-    font-size: 10px;
-
-    color: #666;
-
-    margin-top: 5px;
-}
-
-.remove {
-    margin-top: 8px;
-
-    border: none;
-
-    background: transparent;
-
-    color: #999;
-
-    font-size: 9px;
-
-    cursor: pointer;
-}
-
-.empty {
-    text-align: center;
-
-    padding: 50px 0;
-
-    color: #777;
-}
-
-
-/* =====================================================
-   CUPOM
-===================================================== */
-
-.cart-coupon {
-    margin-top: 20px;
-
-    margin-bottom: 20px;
-}
-
-.cart-coupon label {
-    display: block;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 9px;
-}
-
-.cart-coupon-input {
-    display: flex;
-}
-
-.cart-coupon-input input {
-    flex: 1;
-
-    height: 45px;
-
-    border: 1px solid #aaa;
-
-    border-right: none;
-
-    outline: none;
-
-    padding: 0 13px;
-
-    background: #fff;
-
-    text-transform: uppercase;
-}
-
-.cart-coupon-input button {
-    width: 100px;
-
-    border: none;
-
-    background: #000;
-
-    color: #fff;
-
-    font-family: "Anton", sans-serif;
-
-    cursor: pointer;
-}
-
-.cart-coupon-input button:hover {
-    background: #d49a19;
-
-    color: #000;
-}
-
-.coupon-message {
-    min-height: 18px;
-
-    margin-top: 7px;
-
-    font-size: 11px;
-}
-
-
-/* =====================================================
-   TOTAL
-===================================================== */
-
-.cart-total {
-    display: flex;
-
-    justify-content: space-between;
-
-    padding: 22px 0;
-
-    font-family: "Anton", sans-serif;
-
-    font-size: 22px;
-
-    border-top: 1px solid #ddd;
-}
-
-
-/* =====================================================
-   PAGAMENTO
-===================================================== */
-
-.payment-title {
-    font-family: "Anton", sans-serif;
-
-    font-size: 11px;
-
-    letter-spacing: 2px;
-
-    margin-bottom: 10px;
-}
-
-.payments {
-    display: flex;
-
-    gap: 7px;
-
-    flex-wrap: wrap;
-
-    margin-bottom: 15px;
-}
-
-.payments button {
-    padding: 10px 15px;
-
-    border: 1px solid #aaa;
-
-    background: #fff;
-
-    font-family: "Anton", sans-serif;
-
-    cursor: pointer;
-}
-
-.payments button.selected {
-    background: #000;
-
-    color: #fff;
-
-    border-color: #000;
-}
-
-.cart-error {
-    min-height: 20px;
-
-    color: #b00000;
-
-    font-size: 11px;
-
-    margin-bottom: 8px;
-}
-
-.checkout {
-    width: 100%;
-
-    height: 57px;
-
-    background: #000;
-
-    color: #fff;
-
-    border: none;
-
-    font-family: "Anton", sans-serif;
-
-    letter-spacing: 2px;
-
-    cursor: pointer;
-}
-
-.checkout:hover {
-    background: #d49a19;
-
-    color: #000;
-}
-
-
-/* =====================================================
-   MODAL
-===================================================== */
-
-.measure-overlay {
-    position: fixed;
-
-    inset: 0;
-
-    background: rgba(0,0,0,.65);
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-
-    padding: 20px;
-
-    z-index: 2000;
-
-    opacity: 0;
-
-    visibility: hidden;
-
-    transition: .25s;
-}
-
-.measure-overlay.active {
-    opacity: 1;
-
-    visibility: visible;
-}
-
-.measure-modal {
-    position: relative;
-
-    max-width: 90vw;
-
-    max-height: 90vh;
-
-    display: flex;
-
-    align-items: center;
-
-    justify-content: center;
-}
-
-.measure-image {
-    display: block;
-
-    max-width: 90vw;
-
-    max-height: 85vh;
-
-    width: auto;
-
-    height: auto;
-
-    object-fit: contain;
-}
-
-.close-measure {
-    position: absolute;
-
-    top: -45px;
-
-    right: 0;
-
-    border: none;
-
-    background: transparent;
-
-    color: #fff;
-
-    font-size: 35px;
-
-    line-height: 1;
-
-    cursor: pointer;
-}
-
-
-/* =====================================================
-   RESPONSIVO
-===================================================== */
-
-@media (max-width: 900px) {
-
-    header {
-        padding: 0 20px;
-    }
-
-    .products {
-        padding: 60px 20px;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .product-image {
-        height: 500px;
-    }
-
-    .images-section {
-        grid-template-columns: 1fr;
-
-        height: auto;
-    }
-
-    .images-section div {
-        height: 450px;
-    }
-
-    footer {
-        flex-direction: column;
-
-        gap: 20px;
-
-        text-align: center;
-    }
-
-    footer p {
-        text-align: center;
-    }
-
-}
-
-
-@media (max-width: 500px) {
-
-    .section-title h2 {
-        font-size: 45px;
-    }
-
-    .product-info {
-        padding: 25px;
-    }
-
-    .product-info h3 {
-        font-size: 38px;
-    }
-
-    .sizes {
-        gap: 7px;
-    }
-
-    .sizes button {
-        width: 48px;
-
-        height: 48px;
-
-        min-width: 48px;
-    }
-
-    .measure-image {
-        max-width: 94vw;
-
-        max-height: 80vh;
-    }
-
-}
-
-</style>
-
-</head>
-
-
-<body>
-
-
-<div class="topbar">
-
-    PRIMEIRA COMPRA?
-    USE O CUPOM <strong>GLORY10</strong>
-
-</div>
-
-
-<header>
-
-    <a href="#" class="logo">
-        HOLINESS
-    </a>
-
-    <button
-        class="cart-button"
-        onclick="abrirCarrinho()"
-    >
-
-        CARRINHO
-
-        <span id="cartCount">0</span>
-
-    </button>
-
-</header>
-
-
-<section class="collection-banner">
-
-    <img
-        src="banner2.png"
-        alt="Nova coleção HOLINESS"
-    >
-
-</section>
-
-
-<section class="products">
-
-    <div class="section-title">
-
-        <span>
-            NOVA COLEÇÃO
-        </span>
-
-        <h2>
-            CAMISAS
-        </h2>
-
-    </div>
-
-
-    <div class="products-grid">
-
-
-        <!-- =================================================
-             GLORY
-        ================================================== -->
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    id="gloryImage"
-                    src="Frente.png"
-                    alt="Camisa Glory"
-                >
-
-            </div>
-
-
-            <div class="product-thumbnails">
-
-                <button
-                    class="thumb active"
-                    onclick="trocarImagem('gloryImage','Frente.png',this)"
-                >
-
-                    <img src="Frente.png">
-
-                </button>
-
-
-                <button
-                    class="thumb"
-                    onclick="trocarImagem('gloryImage','Costa.png',this)"
-                >
-
-                    <img src="Costa.png">
-
-                </button>
-
-
-                <button
-                    class="thumb"
-                    onclick="trocarImagem('gloryImage','Chuva.png',this)"
-                >
-
-                    <img src="Chuva.png">
-
-                </button>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <span class="product-number">
-                    001
-                </span>
-
-                <h3>
-                    GLORY
-                </h3>
-
-
-                <p class="description">
-                    “Acredito que, buscando incansavelmente a Deus,
-                    chegaremos à manifestação visível da presença,
-                    do poder e de todas as perfeições — à Glória.”
-                </p>
-
-
-                <div class="price">
-                    R$ 109,90
-                </div>
-
-
-                <label class="label">
-                    ESCOLHA O TAMANHO
-                </label>
-
-
-                <div class="sizes">
-
-                    <button onclick="selecionarTamanho('Glory','PP',this)">
-                        PP
-                    </button>
-
-                    <button onclick="selecionarTamanho('Glory','P',this)">
-                        P
-                    </button>
-
-                    <button onclick="selecionarTamanho('Glory','M',this)">
-                        M
-                    </button>
-
-                    <button onclick="selecionarTamanho('Glory','G',this)">
-                        G
-                    </button>
-
-                    <button onclick="selecionarTamanho('Glory','GG',this)">
-                        GG
-                    </button>
-
-                    <button onclick="selecionarTamanho('Glory','XG',this)">
-                        XG
-                    </button>
-
-                </div>
-
-
-                <button
-                    class="measure-button"
-                    onclick="abrirTabelaMedidas()"
-                >
-                    TABELA DE MEDIDAS →
-                </button>
-
-
-                <div
-                    id="GlorySelectedSize"
-                    class="stock"
-                >
-                    Selecione um tamanho
-                </div>
-
-
-                <label class="label">
-                    QUANTIDADE
-                </label>
-
-
-                <div class="quantity">
-
-                    <button onclick="alterarQuantidade('Glory',-1)">
-                        −
-                    </button>
-
-                    <span id="GloryQuantity">
-                        1
-                    </span>
-
-                    <button onclick="alterarQuantidade('Glory',1)">
-                        +
-                    </button>
-
-                </div>
-
-
-                <button
-                    class="add-button"
-                    onclick="adicionarProduto('Glory','Frente.png')"
-                >
-                    ADICIONAR AO CARRINHO →
-                </button>
-
-            </div>
-
-        </div>
-
-
-        <!-- =================================================
-             FRASSATI
-        ================================================== -->
-
-        <div class="product">
-
-            <div class="product-image">
-
-                <img
-                    id="frassatiImage"
-                    src="Frente2.png"
-                    alt="Camisa Frassati"
-                >
-
-            </div>
-
-
-            <div class="product-thumbnails">
-
-                <button
-                    class="thumb active"
-                    onclick="trocarImagem('frassatiImage','Frente2.png',this)"
-                >
-
-                    <img src="Frente2.png">
-
-                </button>
-
-
-                <button
-                    class="thumb"
-                    onclick="trocarImagem('frassatiImage','Trás2.png',this)"
-                >
-
-                    <img src="Trás2.png">
-
-                </button>
-
-
-                <button
-                    class="thumb"
-                    onclick="trocarImagem('frassatiImage','Chuva2.png',this)"
-                >
-
-                    <img src="Chuva2.png">
-
-                </button>
-
-            </div>
-
-
-            <div class="product-info">
-
-                <span class="product-number">
-                    002
-                </span>
-
-                <h3>
-                    FRASSATI
-                </h3>
-
-
-                <p class="description">
-                    “Subir sempre mais alto, não apenas pelas montanhas,
-                    mas em direção a Deus, onde encontramos a verdadeira
-                    felicidade.”
-                </p>
-
-
-                <div class="price">
-                    R$ 109,90
-                </div>
-
-
-                <label class="label">
-                    ESCOLHA O TAMANHO
-                </label>
-
-
-                <div class="sizes">
-
-                    <button onclick="selecionarTamanho('Frassati','PP',this)">
-                        PP
-                    </button>
-
-                    <button onclick="selecionarTamanho('Frassati','P',this)">
-                        P
-                    </button>
-
-                    <button onclick="selecionarTamanho('Frassati','M',this)">
-                        M
-                    </button>
-
-                    <button onclick="selecionarTamanho('Frassati','G',this)">
-                        G
-                    </button>
-
-                    <button onclick="selecionarTamanho('Frassati','GG',this)">
-                        GG
-                    </button>
-
-                    <button onclick="selecionarTamanho('Frassati','XG',this)">
-                        XG
-                    </button>
-
-                </div>
-
-
-                <button
-                    class="measure-button"
-                    onclick="abrirTabelaMedidas()"
-                >
-                    TABELA DE MEDIDAS →
-                </button>
-
-
-                <div
-                    id="FrassatiSelectedSize"
-                    class="stock"
-                >
-                    Selecione um tamanho
-                </div>
-
-
-                <label class="label">
-                    QUANTIDADE
-                </label>
-
-
-                <div class="quantity">
-
-                    <button onclick="alterarQuantidade('Frassati',-1)">
-                        −
-                    </button>
-
-                    <span id="FrassatiQuantity">
-                        1
-                    </span>
-
-                    <button onclick="alterarQuantidade('Frassati',1)">
-                        +
-                    </button>
-
-                </div>
-
-
-                <button
-                    class="add-button"
-                    onclick="adicionarProduto('Frassati','Frente2.png')"
-                >
-                    ADICIONAR AO CARRINHO →
-                </button>
-
-            </div>
-
-        </div>
-
-    </div>
-
-</section>
-
-
-<section class="images-section">
-
-    <div>
-
-        <img
-            src="Obrigado.png"
-            alt="Holiness"
-        >
-
-    </div>
-
-
-    <div>
-
-        <img
-            src="fig.png"
-            alt="Coleção Holiness"
-        >
-
-    </div>
-
-</section>
-
-
-<footer>
-
-    <div class="footer-logo">
-        HOLINESS
-    </div>
-
-    <p>
-        Ao contemplarmos a presença de Deus,
-        somos transformados progressivamente
-        à imagem de Cristo pelo Espírito Santo.
-    </p>
-
-</footer>
-
-
-<!-- =====================================================
-     CARRINHO
-===================================================== -->
-
-<div
-    id="cartOverlay"
-    class="cart-overlay"
-    onclick="fecharCarrinhoFora(event)"
->
-
-    <div
-        class="cart"
-        onclick="event.stopPropagation()"
-    >
-
-        <div class="cart-header">
-
-            <h2>
-                CARRINHO
-            </h2>
-
-            <button onclick="fecharCarrinho()">
-                ×
-            </button>
-
-        </div>
-
-
-        <div id="cartItems"></div>
-
-
-        <div class="cart-coupon">
-
-            <label>
-                CUPOM DE DESCONTO
-            </label>
-
-
-            <div class="cart-coupon-input">
-
-                <input
-                    type="text"
-                    id="couponInput"
-                    placeholder="DIGITE SEU CUPOM"
-                >
-
-
-                <button onclick="aplicarCupom()">
-                    APLICAR
-                </button>
-
-            </div>
-
-
-            <div
-                id="couponMessage"
-                class="coupon-message"
-            ></div>
-
-        </div>
-
-
-        <div class="cart-total">
-
-            <span>
-                TOTAL
-            </span>
-
-            <strong id="cartTotal">
-                R$ 0,00
-            </strong>
-
-        </div>
-
-
-        <div class="payment-title">
-            MÉTODO DE PAGAMENTO
-        </div>
-
-
-        <div class="payments">
-
-            <button onclick="selecionarPagamento('PIX',this)">
-                PIX
-            </button>
-
-            <button onclick="selecionarPagamento('Cartão',this)">
-                CARTÃO
-            </button>
-
-            <button onclick="selecionarPagamento('Dinheiro',this)">
-                DINHEIRO
-            </button>
-
-        </div>
-
-
-        <div
-            id="cartError"
-            class="cart-error"
-        ></div>
-
-
-        <button
-            class="checkout"
-            onclick="finalizarCompra()"
-        >
-            FINALIZAR PEDIDO → WHATSAPP
-        </button>
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     MODAL
-===================================================== -->
-
-<div
-    id="measureOverlay"
-    class="measure-overlay"
-    onclick="fecharTabelaFora(event)"
->
-
-    <div
-        class="measure-modal"
-        onclick="event.stopPropagation()"
-    >
-
-        <button
-            class="close-measure"
-            onclick="fecharTabelaMedidas()"
-        >
-            ×
-        </button>
-
-
-        <img
-            src="medida.png"
-            alt="Tabela de medidas"
-            class="measure-image"
-        >
-
-    </div>
-
-</div>
-
-
-<!-- =====================================================
-     FIREBASE + JAVASCRIPT
-===================================================== -->
-
 <script type="module">
 
 import {
@@ -1706,7 +11,6 @@ import {
     doc,
     getDoc,
     onSnapshot,
-    collection,
     setDoc,
     runTransaction,
     serverTimestamp
@@ -1744,12 +48,9 @@ const firebaseConfig = {
 };
 
 
-const app =
-    initializeApp(firebaseConfig);
+const app = initializeApp(firebaseConfig);
 
-
-const db =
-    getFirestore(app);
+const db = getFirestore(app);
 
 
 /* =====================================================
@@ -1841,7 +142,7 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
-        valor
+        Number(valor)
             .toFixed(2)
             .replace(".", ",");
 
@@ -1849,7 +150,7 @@ function dinheiro(valor) {
 
 
 /* =====================================================
-   CARREGAR ESTOQUE FIREBASE
+   CARREGAR ESTOQUE
 ===================================================== */
 
 async function carregarEstoque() {
@@ -1859,14 +160,12 @@ async function carregarEstoque() {
         const gloryRef =
             doc(db, "estoque", "Glory");
 
-
         const frassatiRef =
             doc(db, "estoque", "Frassati");
 
 
         const glorySnap =
             await getDoc(gloryRef);
-
 
         const frassatiSnap =
             await getDoc(frassatiRef);
@@ -1875,7 +174,10 @@ async function carregarEstoque() {
         if (glorySnap.exists()) {
 
             estoque.Glory =
-                glorySnap.data();
+                {
+                    ...estoque.Glory,
+                    ...glorySnap.data()
+                };
 
         }
 
@@ -1883,7 +185,10 @@ async function carregarEstoque() {
         if (frassatiSnap.exists()) {
 
             estoque.Frassati =
-                frassatiSnap.data();
+                {
+                    ...estoque.Frassati,
+                    ...frassatiSnap.data()
+                };
 
         }
 
@@ -1909,6 +214,7 @@ async function carregarEstoque() {
 
 function observarEstoque() {
 
+
     onSnapshot(
 
         doc(
@@ -1922,7 +228,10 @@ function observarEstoque() {
             if (snapshot.exists()) {
 
                 estoque.Glory =
-                    snapshot.data();
+                    {
+                        ...estoque.Glory,
+                        ...snapshot.data()
+                    };
 
                 atualizarTamanhosDisponiveis();
 
@@ -1955,7 +264,10 @@ function observarEstoque() {
             if (snapshot.exists()) {
 
                 estoque.Frassati =
-                    snapshot.data();
+                    {
+                        ...estoque.Frassati,
+                        ...snapshot.data()
+                    };
 
                 atualizarTamanhosDisponiveis();
 
@@ -2758,18 +1070,20 @@ function selecionarPagamento(
 
 
 /* =====================================================
-   GERAR NÚMERO PROGRESSIVO DO PEDIDO
+   GERAR NÚMERO DO PEDIDO
 =====================================================
 
-   Estrutura criada automaticamente:
+   O contador fica em:
 
    contador
        └── pedidos
-             proximoNumero: 2
+             └── proximoNumero
+
+   Pedidos:
 
    pedidos
-       └── #001
-       └── #002
+       ├── #001
+       ├── #002
        └── #003
 
 ===================================================== */
@@ -2784,7 +1098,7 @@ async function gerarNumeroPedido() {
         );
 
 
-    const numeroPedido =
+    const numero =
         await runTransaction(
             db,
             async function(transaction) {
@@ -2806,13 +1120,21 @@ async function gerarNumeroPedido() {
                         contadorSnap.data();
 
 
+                    const numeroSalvo =
+                        Number(
+                            dados.proximoNumero
+                        );
+
+
                     if (
-                        typeof dados.proximoNumero ===
-                        "number"
+                        Number.isInteger(
+                            numeroSalvo
+                        ) &&
+                        numeroSalvo >= 1
                     ) {
 
                         proximoNumero =
-                            dados.proximoNumero;
+                            numeroSalvo;
 
                     }
 
@@ -2822,8 +1144,16 @@ async function gerarNumeroPedido() {
                 transaction.set(
                     contadorRef,
                     {
+
                         proximoNumero:
-                            proximoNumero + 1
+                            proximoNumero + 1,
+
+                        atualizadoEm:
+                            serverTimestamp()
+
+                    },
+                    {
+                        merge: true
                     }
                 );
 
@@ -2835,17 +1165,33 @@ async function gerarNumeroPedido() {
 
 
     return "#" +
-        String(numeroPedido)
+        String(numero)
             .padStart(3, "0");
 
 }
 
 
 /* =====================================================
-   SALVAR PEDIDO NO FIREBASE
+   SALVAR PEDIDO
 ===================================================== */
 
 async function salvarPedidoFirebase() {
+
+    if (
+        carrinho.length === 0
+    ) {
+
+        throw new Error(
+            "Carrinho vazio."
+        );
+
+    }
+
+
+    /*
+     * Primeiro montamos todos os dados
+     * do pedido.
+     */
 
     const subtotal =
         calcularSubtotal();
@@ -2868,14 +1214,22 @@ async function salvarPedidoFirebase() {
                         item.tamanho,
 
                     quantidade:
-                        item.quantidade,
+                        Number(
+                            item.quantidade
+                        ),
 
                     precoUnitario:
-                        item.preco,
+                        Number(
+                            item.preco
+                        ),
 
                     subtotal:
-                        item.preco *
-                        item.quantidade
+                        Number(
+                            (
+                                item.preco *
+                                item.quantidade
+                            ).toFixed(2)
+                        )
 
                 };
 
@@ -2884,12 +1238,7 @@ async function salvarPedidoFirebase() {
 
 
     /*
-     * Gera o número:
-     *
-     * #001
-     * #002
-     * #003
-     *
+     * Geramos o número progressivo.
      */
 
     const numeroPedido =
@@ -2897,8 +1246,8 @@ async function salvarPedidoFirebase() {
 
 
     /*
-     * O próprio número progressivo
-     * será o ID do documento.
+     * O próprio número é o ID
+     * do documento.
      */
 
     const pedidoRef =
@@ -2918,16 +1267,22 @@ async function salvarPedidoFirebase() {
             itens,
 
         subtotal:
-            subtotal,
+            Number(
+                subtotal.toFixed(2)
+            ),
 
         desconto:
-            descontoAtual,
+            Number(
+                descontoAtual
+            ),
 
         cupom:
             cupomAtual || null,
 
         total:
-            total,
+            Number(
+                total.toFixed(2)
+            ),
 
         pagamento:
             pagamentoSelecionado,
@@ -2941,6 +1296,10 @@ async function salvarPedidoFirebase() {
     };
 
 
+    /*
+     * Salva o pedido.
+     */
+
     await setDoc(
         pedidoRef,
         pedido
@@ -2948,7 +1307,7 @@ async function salvarPedidoFirebase() {
 
 
     console.log(
-        "Pedido salvo:",
+        "PEDIDO REGISTRADO:",
         numeroPedido
     );
 
@@ -2973,13 +1332,12 @@ async function finalizarCompra() {
     erro.style.color =
         "#777";
 
-
     erro.innerText =
         "";
 
 
     /* =================================================
-       VERIFICAÇÕES
+       VALIDAÇÕES
     ================================================= */
 
     if (
@@ -3012,16 +1370,43 @@ async function finalizarCompra() {
     }
 
 
-    const total =
-        calcularTotal();
+    /*
+     * Evita clique duplo.
+     */
+
+    const botaoCheckout =
+        document.querySelector(
+            ".checkout"
+        );
 
 
-    let pedidoId;
+    if (
+        botaoCheckout.disabled
+    ) {
+
+        return;
+
+    }
+
+
+    botaoCheckout.disabled =
+        true;
+
+
+    const textoOriginal =
+        botaoCheckout.innerText;
+
+
+    botaoCheckout.innerText =
+        "REGISTRANDO PEDIDO...";
 
 
     /* =================================================
        SALVAR NO FIREBASE
     ================================================= */
+
+    let pedidoId;
+
 
     try {
 
@@ -3037,7 +1422,7 @@ async function finalizarCompra() {
 
 
         console.log(
-            "Pedido registrado com sucesso:",
+            "Pedido registrado:",
             pedidoId
         );
 
@@ -3045,17 +1430,54 @@ async function finalizarCompra() {
     } catch (firebaseErro) {
 
         console.error(
-            "ERRO COMPLETO AO SALVAR PEDIDO:",
+            "ERRO AO REGISTRAR PEDIDO:",
             firebaseErro
         );
+
+
+        botaoCheckout.disabled =
+            false;
+
+
+        botaoCheckout.innerText =
+            textoOriginal;
 
 
         erro.style.color =
             "#b00000";
 
 
-        erro.innerText =
-            "Não foi possível registrar seu pedido. Verifique sua conexão e tente novamente.";
+        /*
+         * Mostra uma mensagem mais útil
+         * no console.
+         */
+
+        if (
+            firebaseErro.code ===
+            "permission-denied"
+        ) {
+
+            erro.innerText =
+                "O Firebase recusou o registro do pedido. Verifique as regras do Firestore.";
+
+        }
+
+        else if (
+            firebaseErro.code ===
+            "unavailable"
+        ) {
+
+            erro.innerText =
+                "O Firebase está temporariamente indisponível. Tente novamente.";
+
+        }
+
+        else {
+
+            erro.innerText =
+                "Não foi possível registrar seu pedido. Verifique sua conexão e tente novamente.";
+
+        }
 
 
         return;
@@ -3064,11 +1486,15 @@ async function finalizarCompra() {
 
 
     /* =================================================
-       MENSAGEM DO WHATSAPP
+       WHATSAPP
        
-       IMPORTANTE:
-       O pedidoId NÃO é colocado aqui.
+       O número do pedido NÃO é colocado
+       na mensagem.
     ================================================= */
+
+    const total =
+        calcularTotal();
+
 
     let mensagem =
         "Olá! 👋" +
@@ -3142,7 +1568,7 @@ async function finalizarCompra() {
 
 
     /* =================================================
-       URL WHATSAPP
+       WHATSAPP
     ================================================= */
 
     const url =
@@ -3163,10 +1589,8 @@ async function finalizarCompra() {
 
 
     /*
-     * Usamos location.href em vez de window.open().
-     *
-     * Isso evita que o navegador bloqueie
-     * a abertura do WhatsApp como pop-up.
+     * O número #001/#002 etc NÃO está
+     * dentro da mensagem.
      */
 
     window.location.href =
@@ -3176,7 +1600,7 @@ async function finalizarCompra() {
 
 
 /* =====================================================
-   TABELA
+   TABELA DE MEDIDAS
 ===================================================== */
 
 function abrirTabelaMedidas() {
@@ -3242,7 +1666,7 @@ document.addEventListener(
 
 
 /* =====================================================
-   DISPONIBILIZA FUNÇÕES PARA O HTML
+   DISPONIBILIZAR FUNÇÕES
 ===================================================== */
 
 window.trocarImagem =
@@ -3299,8 +1723,3 @@ observarEstoque();
 atualizarCarrinho();
 
 </script>
-
-
-</body>
-
-</html>
