@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -793,10 +792,18 @@ footer p {
 
 <body>
 
+<!-- =====================================================
+     BANNER DO CUPOM
+===================================================== -->
+
 <div class="topbar">
     PRIMEIRA COMPRA?
     USE O CUPOM <strong>GLORY10</strong>
 </div>
+
+<!-- =====================================================
+     HEADER
+===================================================== -->
 
 <header>
 
@@ -814,6 +821,10 @@ footer p {
 
 </header>
 
+<!-- =====================================================
+     BANNER
+===================================================== -->
+
 <section class="collection-banner">
 
     <img
@@ -822,6 +833,10 @@ footer p {
     >
 
 </section>
+
+<!-- =====================================================
+     PRODUTOS
+===================================================== -->
 
 <section class="products">
 
@@ -1115,6 +1130,10 @@ footer p {
 
 </section>
 
+<!-- =====================================================
+     IMAGENS FINAIS
+===================================================== -->
+
 <section class="images-section">
 
     <div>
@@ -1132,6 +1151,10 @@ footer p {
     </div>
 
 </section>
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
 
 <footer>
 
@@ -1405,6 +1428,10 @@ let cupomAtual = "";
 let pagamentoSelecionado = "";
 
 
+/* =====================================================
+   FORMATAÇÃO DE DINHEIRO
+===================================================== */
+
 function dinheiro(valor) {
 
     return "R$ " +
@@ -1414,6 +1441,10 @@ function dinheiro(valor) {
 
 }
 
+
+/* =====================================================
+   CARREGAR ESTOQUE
+===================================================== */
 
 async function carregarEstoque() {
 
@@ -1464,6 +1495,10 @@ async function carregarEstoque() {
 
 }
 
+
+/* =====================================================
+   OBSERVAR ESTOQUE EM TEMPO REAL
+===================================================== */
 
 function observarEstoque() {
 
@@ -1531,6 +1566,10 @@ function observarEstoque() {
 }
 
 
+/* =====================================================
+   TROCAR IMAGEM
+===================================================== */
+
 function trocarImagem(
     idImagem,
     arquivo,
@@ -1566,6 +1605,10 @@ function trocarImagem(
 
 }
 
+
+/* =====================================================
+   SELECIONAR TAMANHO
+===================================================== */
 
 function selecionarTamanho(
     produto,
@@ -1647,6 +1690,10 @@ function selecionarTamanho(
 
 }
 
+
+/* =====================================================
+   ATUALIZAR TAMANHOS DISPONÍVEIS
+===================================================== */
 
 function atualizarTamanhosDisponiveis() {
 
@@ -1741,6 +1788,10 @@ function atualizarTamanhosDisponiveis() {
 }
 
 
+/* =====================================================
+   ALTERAR QUANTIDADE
+===================================================== */
+
 function alterarQuantidade(
     produto,
     valor
@@ -1812,6 +1863,10 @@ function alterarQuantidade(
 
 }
 
+
+/* =====================================================
+   ADICIONAR AO CARRINHO
+===================================================== */
 
 function adicionarProduto(
     nome,
@@ -1921,6 +1976,10 @@ function adicionarProduto(
 }
 
 
+/* =====================================================
+   SUBTOTAL
+===================================================== */
+
 function calcularSubtotal() {
 
     let subtotal = 0;
@@ -1940,6 +1999,10 @@ function calcularSubtotal() {
 }
 
 
+/* =====================================================
+   TOTAL
+===================================================== */
+
 function calcularTotal() {
 
     const subtotal =
@@ -1955,6 +2018,10 @@ function calcularTotal() {
 
 }
 
+
+/* =====================================================
+   APLICAR CUPOM
+===================================================== */
 
 function aplicarCupom() {
 
@@ -2037,6 +2104,10 @@ function aplicarCupom() {
 
 }
 
+
+/* =====================================================
+   ATUALIZAR CARRINHO
+===================================================== */
 
 function atualizarCarrinho() {
 
@@ -2199,6 +2270,10 @@ function atualizarCarrinho() {
 }
 
 
+/* =====================================================
+   REMOVER PRODUTO
+===================================================== */
+
 function removerProduto(index) {
 
     carrinho.splice(
@@ -2212,6 +2287,10 @@ function removerProduto(index) {
 }
 
 
+/* =====================================================
+   ABRIR CARRINHO
+===================================================== */
+
 function abrirCarrinho() {
 
     document
@@ -2224,6 +2303,10 @@ function abrirCarrinho() {
 }
 
 
+/* =====================================================
+   FECHAR CARRINHO
+===================================================== */
+
 function fecharCarrinho() {
 
     document
@@ -2232,6 +2315,10 @@ function fecharCarrinho() {
 
 }
 
+
+/* =====================================================
+   FECHAR CARRINHO CLICANDO FORA
+===================================================== */
 
 function fecharCarrinhoFora(event) {
 
@@ -2246,6 +2333,10 @@ function fecharCarrinhoFora(event) {
 
 }
 
+
+/* =====================================================
+   PAGAMENTO
+===================================================== */
 
 function selecionarPagamento(
     pagamento,
@@ -2274,6 +2365,10 @@ function selecionarPagamento(
 
 }
 
+
+/* =====================================================
+   GERAR NÚMERO DO PEDIDO
+===================================================== */
 
 async function gerarNumeroPedido() {
 
@@ -2357,6 +2452,10 @@ async function gerarNumeroPedido() {
 
 }
 
+
+/* =====================================================
+   SALVAR PEDIDO NO FIREBASE
+===================================================== */
 
 async function salvarPedidoFirebase() {
 
@@ -2629,44 +2728,19 @@ async function finalizarCompra() {
 
 
     /*
-       Emojis em Unicode para impedir
-       que apareçam como � no WhatsApp.
+    =====================================================
+    MENSAGEM DO WHATSAPP
+
+    OS EMOJIS SÃO INSERIDOS ATRAVÉS DE UNICODE.
+    ISSO EVITA O CARACTERE "�".
+    =====================================================
     */
-
-    const emojiOla =
-        "\u{1F44B}";
-
-    const emojiFogo =
-        "\u{1F525}";
-
-    const emojiCamisa =
-        "\u{1F455}";
-
-    const emojiTamanho =
-        "\u{1F4CF}";
-
-    const emojiQuantidade =
-        "\u{1F522}";
-
-    const emojiDinheiro =
-        "\u{1F4B0}";
-
-    const emojiPagamento =
-        "\u{1F4B3}";
-
-    const emojiCupom =
-        "\u{1F3AB}";
-
-    const emojiFinal =
-        "\u{1F64C}";
 
 
     let mensagem =
-        "Olá! " +
-        emojiOla +
+        "Ol\u00E1! \uD83D\uDC4B" +
         "\n" +
-        "Quero fazer meu pedido da HOLINESS! " +
-        emojiFogo +
+        "Quero fazer meu pedido da HOLINESS! \uD83D\uDD25" +
         "\n\n";
 
 
@@ -2674,23 +2748,19 @@ async function finalizarCompra() {
 
         mensagem +=
 
-            emojiCamisa +
-            " " +
+            "\uD83D\uDC55 " +
             item.nome +
             "\n" +
 
-            emojiTamanho +
-            " Tamanho: " +
+            "\uD83D\uDCCF Tamanho: " +
             item.tamanho +
             "\n" +
 
-            emojiQuantidade +
-            " Quantidade: " +
+            "\uD83D\uDD22 Quantidade: " +
             item.quantidade +
             "\n" +
 
-            emojiDinheiro +
-            " " +
+            "\uD83D\uDCB0 " +
             dinheiro(
                 item.preco *
                 item.quantidade
@@ -2702,23 +2772,20 @@ async function finalizarCompra() {
 
 
     mensagem +=
-        emojiPagamento +
-        " Pagamento: " +
+        "\uD83D\uDCB3 Pagamento: " +
         pagamentoSelecionado;
 
 
     mensagem +=
-        "\n" +
-        emojiDinheiro +
-        " Total: " +
+        "\n\uD83D\uDCB0 Total: " +
         dinheiro(total);
 
 
     /*
-       Aqui NÃO mostramos mais
-       "Desconto: 10%".
-       
-       Mostramos somente o cupom.
+    =====================================================
+    MOSTRA SOMENTE O CUPOM
+    NÃO MOSTRA "DESCONTO: 10%"
+    =====================================================
     */
 
     if (
@@ -2726,18 +2793,21 @@ async function finalizarCompra() {
     ) {
 
         mensagem +=
-            "\n" +
-            emojiCupom +
-            " Cupom: " +
+            "\n\uD83C\uDF9F\uFE0F Cupom: " +
             cupomAtual;
 
     }
 
 
     mensagem +=
-        "\n\nQuero finalizar meu pedido! " +
-        emojiFinal;
+        "\n\nQuero finalizar meu pedido! \uD83D\uDE4C";
 
+
+    /*
+    =====================================================
+    CRIAR LINK DO WHATSAPP
+    =====================================================
+    */
 
     const url =
         "https://wa.me/" +
@@ -2754,8 +2824,33 @@ async function finalizarCompra() {
         "Pedido registrado! Abrindo o WhatsApp...";
 
 
-    window.location.href =
-        url;
+    /*
+    =====================================================
+    ABRIR WHATSAPP
+    =====================================================
+    */
+
+    window.open(
+        url,
+        "_blank"
+    );
+
+
+    /*
+    =====================================================
+    LIBERAR BOTÃO NOVAMENTE
+    =====================================================
+    */
+
+    setTimeout(function() {
+
+        botaoCheckout.disabled =
+            false;
+
+        botaoCheckout.innerText =
+            textoOriginal;
+
+    }, 1500);
 
 }
 
@@ -2795,6 +2890,10 @@ function fecharTabelaFora(event) {
 
 }
 
+
+/* =====================================================
+   ESC
+===================================================== */
 
 document.addEventListener(
     "keydown",
@@ -2875,4 +2974,3 @@ observarEstoque();
 
 </body>
 </html>
-```
