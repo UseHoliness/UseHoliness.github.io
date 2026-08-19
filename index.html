@@ -128,6 +128,25 @@ header {
 }
 
 /* =====================================================
+   BANNER 2
+===================================================== */
+
+.collection-banner {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    line-height: 0;
+}
+
+.collection-banner img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+}
+
+/* =====================================================
    PRODUTOS
 ===================================================== */
 
@@ -887,6 +906,19 @@ footer p {
 </section>
 
 <!-- =====================================================
+     BANNER 2
+===================================================== -->
+
+<section class="collection-banner">
+
+    <img
+        src="banner2.png"
+        alt="Nova coleção HOLINESS"
+    >
+
+</section>
+
+<!-- =====================================================
      PRODUTOS
 ===================================================== -->
 
@@ -1330,7 +1362,7 @@ footer p {
                             )
                         "
                     >
-                        +
+                    +
                     </button>
 
                 </div>
@@ -1571,10 +1603,6 @@ footer p {
 
 <script>
 
-/* =====================================================
-   FIREBASE
-===================================================== */
-
 const firebaseConfig = {
 
     apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
@@ -1601,17 +1629,9 @@ if (!firebase.apps.length) {
 
 const db = firebase.firestore();
 
-/* =====================================================
-   CONFIGURAÇÕES
-===================================================== */
-
 const PRECO = 109.90;
 
 const WHATSAPP = "5533998019698";
-
-/* =====================================================
-   ESTOQUE
-===================================================== */
 
 const estoque = {
 
@@ -1639,10 +1659,6 @@ const estoque = {
 
 };
 
-/* =====================================================
-   CUPONS
-===================================================== */
-
 const cupons = {
 
     GLORY10: 10,
@@ -1650,10 +1666,6 @@ const cupons = {
     ALTAR20: 20
 
 };
-
-/* =====================================================
-   VARIÁVEIS
-===================================================== */
 
 let carrinho = [];
 
@@ -1679,10 +1691,6 @@ let cupomAtual = "";
 
 let pagamentoSelecionado = "";
 
-/* =====================================================
-   DINHEIRO
-===================================================== */
-
 function dinheiro(valor) {
 
     return "R$ " +
@@ -1691,10 +1699,6 @@ function dinheiro(valor) {
             .replace(".", ",");
 
 }
-
-/* =====================================================
-   TROCAR IMAGEM
-===================================================== */
 
 function trocarImagem(
     idImagem,
@@ -1720,10 +1724,6 @@ function trocarImagem(
     botao.classList.add("active");
 
 }
-
-/* =====================================================
-   SELECIONAR TAMANHO
-===================================================== */
 
 function selecionarTamanho(
     produto,
@@ -1777,10 +1777,6 @@ function selecionarTamanho(
         " disponíveis";
 
 }
-
-/* =====================================================
-   ATUALIZAR TAMANHOS
-===================================================== */
 
 function atualizarTamanhosDisponiveis() {
 
@@ -1853,10 +1849,6 @@ function atualizarTamanhosDisponiveis() {
 
 }
 
-/* =====================================================
-   QUANTIDADE
-===================================================== */
-
 function alterarQuantidade(
     produto,
     valor
@@ -1914,10 +1906,6 @@ function alterarQuantidade(
         novaQuantidade;
 
 }
-
-/* =====================================================
-   ADICIONAR PRODUTO
-===================================================== */
 
 function adicionarProduto(
     nome,
@@ -2011,10 +1999,6 @@ function adicionarProduto(
 
 }
 
-/* =====================================================
-   SUBTOTAL
-===================================================== */
-
 function calcularSubtotal() {
 
     let subtotal = 0;
@@ -2031,10 +2015,6 @@ function calcularSubtotal() {
 
 }
 
-/* =====================================================
-   TOTAL
-===================================================== */
-
 function calcularTotal() {
 
     const subtotal =
@@ -2048,10 +2028,6 @@ function calcularTotal() {
         );
 
 }
-
-/* =====================================================
-   CUPOM
-===================================================== */
 
 function aplicarCupom() {
 
@@ -2119,10 +2095,6 @@ function aplicarCupom() {
     }
 
 }
-
-/* =====================================================
-   ATUALIZAR CARRINHO
-===================================================== */
 
 function atualizarCarrinho() {
 
@@ -2254,10 +2226,6 @@ function atualizarCarrinho() {
 
 }
 
-/* =====================================================
-   REMOVER
-===================================================== */
-
 function removerProduto(index) {
 
     carrinho.splice(
@@ -2269,10 +2237,6 @@ function removerProduto(index) {
 
 }
 
-/* =====================================================
-   ABRIR CARRINHO
-===================================================== */
-
 function abrirCarrinho() {
 
     document
@@ -2282,10 +2246,6 @@ function abrirCarrinho() {
     atualizarCarrinho();
 
 }
-
-/* =====================================================
-   FECHAR
-===================================================== */
 
 function fecharCarrinho() {
 
@@ -2307,10 +2267,6 @@ function fecharCarrinhoFora(event) {
     }
 
 }
-
-/* =====================================================
-   PAGAMENTO
-===================================================== */
 
 function selecionarPagamento(
     pagamento,
@@ -2335,10 +2291,6 @@ function selecionarPagamento(
     ).innerText = "";
 
 }
-
-/* =====================================================
-   GERAR NÚMERO SEQUENCIAL
-===================================================== */
 
 async function gerarNumeroPedido() {
 
@@ -2391,10 +2343,6 @@ async function gerarNumeroPedido() {
             .padStart(3, "0");
 
 }
-
-/* =====================================================
-   FINALIZAR COMPRA
-===================================================== */
 
 async function finalizarCompra() {
 
@@ -2468,10 +2416,6 @@ async function finalizarCompra() {
 
     try {
 
-        /* =================================================
-           REGISTRA NO FIREBASE
-        ================================================== */
-
         const numeroPedido =
             await gerarNumeroPedido();
 
@@ -2517,23 +2461,11 @@ async function finalizarCompra() {
 
             });
 
-
-        /* =================================================
-           MENSAGEM WHATSAPP
-
-           IMPORTANTE:
-           NÃO ENVIA:
-           - NÚMERO DO PEDIDO
-           - CUPOM
-           - DESCONTO
-        ================================================== */
-
         let mensagem =
             "Olá! 👋" +
             "\n\n" +
             "Quero fazer meu pedido da HOLINESS! 🔥" +
             "\n\n";
-
 
         carrinho.forEach(function(item) {
 
@@ -2552,7 +2484,6 @@ async function finalizarCompra() {
 
         });
 
-
         mensagem +=
             "💰 Total: " +
             dinheiro(total) +
@@ -2566,20 +2497,13 @@ async function finalizarCompra() {
 
             "Quero finalizar meu pedido! 🙌";
 
-
-        /* =================================================
-           ABRIR WHATSAPP
-        ================================================== */
-
         const url =
             "https://wa.me/" +
             WHATSAPP +
             "?text=" +
             encodeURIComponent(mensagem);
 
-
         window.location.href = url;
-
 
     }
 
@@ -2606,10 +2530,6 @@ async function finalizarCompra() {
     }
 
 }
-
-/* =====================================================
-   TABELA DE MEDIDAS
-===================================================== */
 
 function abrirTabelaMedidas() {
 
@@ -2644,10 +2564,6 @@ function fecharTabelaFora(event) {
 
 }
 
-/* =====================================================
-   ESC
-===================================================== */
-
 document.addEventListener(
     "keydown",
     function(event) {
@@ -2662,10 +2578,6 @@ document.addEventListener(
 
     }
 );
-
-/* =====================================================
-   INICIALIZAÇÃO
-===================================================== */
 
 atualizarTamanhosDisponiveis();
 
