@@ -2,7 +2,9 @@
 <html lang="pt-BR">
 
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>HOLINESS</title>
@@ -14,6 +16,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
 
 <style>
 
@@ -134,7 +137,7 @@ header {
 
 
 /* =====================================================
-   BANNER RESPONSIVO
+   BANNER
 ===================================================== */
 
 .hero {
@@ -221,7 +224,7 @@ header {
 
 
 /* =====================================================
-   IMAGEM PRINCIPAL
+   IMAGEM
 ===================================================== */
 
 .product-image {
@@ -543,7 +546,7 @@ header {
 
 
 /* =====================================================
-   BOTÃO ADICIONAR
+   ADICIONAR
 ===================================================== */
 
 .add-button {
@@ -725,7 +728,7 @@ footer p {
 
 
 /* =====================================================
-   ITEM CARRINHO
+   ITEM
 ===================================================== */
 
 .cart-item {
@@ -960,7 +963,7 @@ footer p {
 
 
 /* =====================================================
-   MODAL TABELA
+   MODAL
 ===================================================== */
 
 .measure-overlay {
@@ -1135,10 +1138,6 @@ footer p {
 <body>
 
 
-<!-- =====================================================
-     TOPO
-===================================================== -->
-
 <div class="topbar">
 
     PRIMEIRA COMPRA?
@@ -1146,10 +1145,6 @@ footer p {
 
 </div>
 
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
@@ -1171,10 +1166,6 @@ footer p {
 </header>
 
 
-<!-- =====================================================
-     HERO
-===================================================== -->
-
 <section class="hero">
 
     <picture class="hero-picture">
@@ -1195,10 +1186,6 @@ footer p {
 </section>
 
 
-<!-- =====================================================
-     PRODUTOS
-===================================================== -->
-
 <section class="products">
 
     <div class="section-title">
@@ -1217,9 +1204,7 @@ footer p {
     <div class="products-grid">
 
 
-        <!-- =================================================
-             GLORY
-        ================================================== -->
+        <!-- GLORY -->
 
         <div class="product">
 
@@ -1324,7 +1309,6 @@ footer p {
                         PP
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1336,7 +1320,6 @@ footer p {
                     >
                         P
                     </button>
-
 
                     <button
                         onclick="
@@ -1350,7 +1333,6 @@ footer p {
                         M
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1363,7 +1345,6 @@ footer p {
                         G
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1375,7 +1356,6 @@ footer p {
                     >
                         GG
                     </button>
-
 
                     <button
                         onclick="
@@ -1463,9 +1443,7 @@ footer p {
         </div>
 
 
-        <!-- =================================================
-             FRASSATI
-        ================================================== -->
+        <!-- FRASSATI -->
 
         <div class="product">
 
@@ -1569,7 +1547,6 @@ footer p {
                         PP
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1581,7 +1558,6 @@ footer p {
                     >
                         P
                     </button>
-
 
                     <button
                         onclick="
@@ -1595,7 +1571,6 @@ footer p {
                         M
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1608,7 +1583,6 @@ footer p {
                         G
                     </button>
 
-
                     <button
                         onclick="
                             selecionarTamanho(
@@ -1620,7 +1594,6 @@ footer p {
                     >
                         GG
                     </button>
-
 
                     <button
                         onclick="
@@ -1712,33 +1685,29 @@ footer p {
 </section>
 
 
-<!-- =====================================================
-     IMAGENS INFERIORES
-===================================================== -->
-
 <section class="images-section">
 
     <div>
+
         <img
             src="Obrigado.png"
             alt="Holiness"
         >
+
     </div>
 
 
     <div>
+
         <img
             src="fig.png"
             alt="Coleção Holiness"
         >
+
     </div>
 
 </section>
 
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -1788,8 +1757,6 @@ footer p {
         <div id="cartItems"></div>
 
 
-        <!-- CUPOM -->
-
         <div class="cart-coupon">
 
             <label>
@@ -1823,8 +1790,6 @@ footer p {
         </div>
 
 
-        <!-- TOTAL -->
-
         <div class="cart-total">
 
             <span>
@@ -1837,8 +1802,6 @@ footer p {
 
         </div>
 
-
-        <!-- PAGAMENTO -->
 
         <div class="payment-title">
             MÉTODO DE PAGAMENTO
@@ -1938,7 +1901,9 @@ footer p {
 
 
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-app-compat.js"></script>
+
 <script src="https://www.gstatic.com/firebasejs/12.1.0/firebase-firestore-compat.js"></script>
+
 
 <script>
 
@@ -1948,19 +1913,26 @@ footer p {
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
+    apiKey:
+        "AIzaSyADRjI5WbLWECkPk9AKDkpnzJQD82fLjFg",
 
-    authDomain: "holiness-e6ec3.firebaseapp.com",
+    authDomain:
+        "holiness-e6ec3.firebaseapp.com",
 
-    projectId: "holiness-e6ec3",
+    projectId:
+        "holiness-e6ec3",
 
-    storageBucket: "holiness-e6ec3.firebasestorage.app",
+    storageBucket:
+        "holiness-e6ec3.firebasestorage.app",
 
-    messagingSenderId: "842822716544",
+    messagingSenderId:
+        "842822716544",
 
-    appId: "1:842822716544:web:d24b1835fa9f4289ce2a65",
+    appId:
+        "1:842822716544:web:d24b1835fa9f4289ce2a65",
 
-    measurementId: "G-ZTL2W77QFT"
+    measurementId:
+        "G-ZTL2W77QFT"
 
 };
 
@@ -1984,7 +1956,8 @@ const db =
 
 const PRECO = 109.90;
 
-const WHATSAPP = "5533998019698";
+const WHATSAPP =
+    "5533998019698";
 
 
 /* =====================================================
@@ -2068,7 +2041,8 @@ let pagamentoSelecionado = "";
 function dinheiro(valor) {
 
     return "R$ " +
-        valor
+
+        Number(valor)
             .toFixed(2)
             .replace(".", ",");
 
@@ -2171,7 +2145,8 @@ function selecionarTamanho(
         );
 
 
-    texto.style.color = "#777";
+    texto.style.color =
+        "#777";
 
 
     texto.innerHTML =
@@ -2185,7 +2160,7 @@ function selecionarTamanho(
 
 
 /* =====================================================
-   ATUALIZAR TAMANHOS DISPONÍVEIS
+   ATUALIZAR TAMANHOS
 ===================================================== */
 
 function atualizarTamanhosDisponiveis() {
@@ -2415,7 +2390,6 @@ function adicionarProduto(
 
     if (existente) {
 
-
         if (
             existente.quantidade +
             quantidade >
@@ -2441,15 +2415,20 @@ function adicionarProduto(
 
         carrinho.push({
 
-            nome: nome,
+            nome:
+                nome,
 
-            imagem: imagem,
+            imagem:
+                imagem,
 
-            tamanho: tamanho,
+            tamanho:
+                tamanho,
 
-            quantidade: quantidade,
+            quantidade:
+                quantidade,
 
-            preco: PRECO
+            preco:
+                PRECO
 
         });
 
@@ -2457,7 +2436,6 @@ function adicionarProduto(
 
 
     atualizarCarrinho();
-
 
     abrirCarrinho();
 
@@ -2490,7 +2468,7 @@ function calcularSubtotal() {
 
 
 /* =====================================================
-   TOTAL COM DESCONTO
+   TOTAL
 ===================================================== */
 
 function calcularTotal() {
@@ -2649,7 +2627,6 @@ function atualizarCarrinho() {
         total.innerText =
             dinheiro(0);
 
-
         return;
 
     }
@@ -2660,7 +2637,6 @@ function atualizarCarrinho() {
 
     carrinho.forEach(
         function(item, index) {
-
 
             const div =
                 document.createElement(
@@ -2761,7 +2737,7 @@ function atualizarCarrinho() {
 
 
 /* =====================================================
-   REMOVER PRODUTO
+   REMOVER
 ===================================================== */
 
 function removerProduto(index) {
@@ -2869,7 +2845,7 @@ function selecionarPagamento(
 
 
 /* =====================================================
-   GERAR NÚMERO SEQUENCIAL DO PEDIDO
+   GERAR NÚMERO DO PEDIDO
 ===================================================== */
 
 async function gerarNumeroPedido() {
@@ -2935,7 +2911,7 @@ async function gerarNumeroPedido() {
 
 
 /* =====================================================
-   FINALIZAR PELO WHATSAPP
+   FINALIZAR COMPRA
 ===================================================== */
 
 async function finalizarCompra() {
@@ -2966,6 +2942,40 @@ async function finalizarCompra() {
             "Selecione um método de pagamento.";
 
         return;
+
+    }
+
+
+    /*
+       ==================================================
+       CORREÇÃO PARA CELULAR
+
+       A ABA DO WHATSAPP É ABERTA IMEDIATAMENTE
+       NO CLIQUE DO USUÁRIO.
+
+       ASSIM O NAVEGADOR NÃO BLOQUEIA A NOVA ABA
+       ENQUANTO O FIREBASE ESTÁ REGISTRANDO O PEDIDO.
+       ==================================================
+    */
+
+    let abaWhatsApp = null;
+
+    try {
+
+        abaWhatsApp =
+            window.open(
+                "about:blank",
+                "_blank"
+            );
+
+    }
+
+    catch (e) {
+
+        console.log(
+            "Não foi possível abrir nova aba:",
+            e
+        );
 
     }
 
@@ -3030,35 +3040,17 @@ async function finalizarCompra() {
 
     try {
 
-
         /* =================================================
-           GERA O PRÓXIMO NÚMERO
-
-           #001
-           #002
-           #003
-           #004...
-        ================================================== */
+           GERA NÚMERO
+        ================================================= */
 
         const numeroPedido =
             await gerarNumeroPedido();
 
 
         /* =================================================
-           SALVA O PEDIDO NO FIREBASE
-
-           IMPORTANTE:
-           O ID DO DOCUMENTO AGORA SERÁ O PRÓPRIO
-           NÚMERO DO PEDIDO.
-
-           Exemplo:
-
-           pedidos
-           ├── #001
-           ├── #002
-           ├── #003
-           └── #004
-        ================================================== */
+           SALVA NO FIREBASE
+        ================================================= */
 
         await db
             .collection("pedidos")
@@ -3105,12 +3097,13 @@ async function finalizarCompra() {
 
         /* =================================================
            MENSAGEM WHATSAPP
-        ================================================== */
+        ================================================= */
 
         let mensagem =
 
             "Olá! 👋" +
             "\n" +
+
             "Quero fazer meu pedido da HOLINESS! 🔥" +
             "\n\n" +
 
@@ -3134,6 +3127,14 @@ async function finalizarCompra() {
 
                     "🔢 Quantidade: " +
                     item.quantidade +
+                    "\n" +
+
+                    "💰 " +
+                    dinheiro(
+                        item.preco *
+                        item.quantidade
+                    ) +
+
                     "\n\n";
 
             }
@@ -3141,6 +3142,7 @@ async function finalizarCompra() {
 
 
         mensagem +=
+
             "💰 Total: " +
             dinheiro(total);
 
@@ -3181,10 +3183,34 @@ async function finalizarCompra() {
             );
 
 
-        window.open(
-            url,
-            "_blank"
-        );
+        /*
+           =================================================
+           MANDA A ABA QUE JÁ FOI ABERTA PARA O WHATSAPP
+           =================================================
+        */
+
+        if (
+            abaWhatsApp &&
+            !abaWhatsApp.closed
+        ) {
+
+            abaWhatsApp.location.href =
+                url;
+
+        }
+
+
+        else {
+
+            /*
+               CASO O NAVEGADOR TENHA BLOQUEADO A ABA,
+               TENTA REDIRECIONAR A PRÓPRIA PÁGINA.
+            */
+
+            window.location.href =
+                url;
+
+        }
 
 
         erro.style.color =
@@ -3201,23 +3227,57 @@ async function finalizarCompra() {
     }
 
 
-    catch (
-        firebaseError
-    ) {
+    catch (firebaseError) {
 
         console.error(
-            "Erro ao salvar pedido no Firebase:",
+            "ERRO COMPLETO DO FIREBASE:",
             firebaseError
         );
+
+
+        /*
+           SE O FIREBASE DER ERRO,
+           FECHA A ABA EM BRANCO QUE FOI ABERTA.
+        */
+
+        if (
+            abaWhatsApp &&
+            !abaWhatsApp.closed
+        ) {
+
+            abaWhatsApp.close();
+
+        }
 
 
         erro.style.color =
             "#b00000";
 
 
-        erro.innerText =
+        /*
+           MOSTRA O ERRO REAL NA TELA
+           PARA FICAR MAIS FÁCIL IDENTIFICAR
+           SE FOR REGRA DO FIREBASE.
+        */
 
-            "Não foi possível registrar o pedido. Tente novamente.";
+        let mensagemErro =
+            "Não foi possível registrar o pedido.";
+
+
+        if (
+            firebaseError &&
+            firebaseError.code
+        ) {
+
+            mensagemErro +=
+                " Código: " +
+                firebaseError.code;
+
+        }
+
+
+        erro.innerText =
+            mensagemErro;
 
     }
 
@@ -3279,7 +3339,7 @@ function fecharTabelaFora(event) {
 
 
 /* =====================================================
-   ESC FECHA MODAIS
+   ESC
 ===================================================== */
 
 document.addEventListener(
