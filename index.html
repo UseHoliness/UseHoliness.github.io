@@ -1,3 +1,4 @@
+```html
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -792,18 +793,10 @@ footer p {
 
 <body>
 
-<!-- =====================================================
-     BANNER DO CUPOM
-===================================================== -->
-
 <div class="topbar">
     PRIMEIRA COMPRA?
     USE O CUPOM <strong>GLORY10</strong>
 </div>
-
-<!-- =====================================================
-     HEADER
-===================================================== -->
 
 <header>
 
@@ -821,10 +814,6 @@ footer p {
 
 </header>
 
-<!-- =====================================================
-     BANNER
-===================================================== -->
-
 <section class="collection-banner">
 
     <img
@@ -833,10 +822,6 @@ footer p {
     >
 
 </section>
-
-<!-- =====================================================
-     PRODUTOS
-===================================================== -->
 
 <section class="products">
 
@@ -1130,10 +1115,6 @@ footer p {
 
 </section>
 
-<!-- =====================================================
-     IMAGENS FINAIS
-===================================================== -->
-
 <section class="images-section">
 
     <div>
@@ -1151,10 +1132,6 @@ footer p {
     </div>
 
 </section>
-
-<!-- =====================================================
-     FOOTER
-===================================================== -->
 
 <footer>
 
@@ -2503,6 +2480,10 @@ async function salvarPedidoFirebase() {
 }
 
 
+/* =====================================================
+   FINALIZAR COMPRA
+===================================================== */
+
 async function finalizarCompra() {
 
     const erro =
@@ -2648,34 +2629,68 @@ async function finalizarCompra() {
 
 
     /*
-       MENSAGEM DO WHATSAPP
-
-       Os emojis estão diretamente no código
-       e encodeURIComponent() faz a codificação
-       correta para a URL do WhatsApp.
+       Emojis em Unicode para impedir
+       que apareçam como � no WhatsApp.
     */
 
+    const emojiOla =
+        "\u{1F44B}";
+
+    const emojiFogo =
+        "\u{1F525}";
+
+    const emojiCamisa =
+        "\u{1F455}";
+
+    const emojiTamanho =
+        "\u{1F4CF}";
+
+    const emojiQuantidade =
+        "\u{1F522}";
+
+    const emojiDinheiro =
+        "\u{1F4B0}";
+
+    const emojiPagamento =
+        "\u{1F4B3}";
+
+    const emojiCupom =
+        "\u{1F3AB}";
+
+    const emojiFinal =
+        "\u{1F64C}";
+
+
     let mensagem =
-        "Olá! 👋\n" +
-        "Quero fazer meu pedido da HOLINESS! 🔥\n\n";
+        "Olá! " +
+        emojiOla +
+        "\n" +
+        "Quero fazer meu pedido da HOLINESS! " +
+        emojiFogo +
+        "\n\n";
 
 
     carrinho.forEach(function(item) {
 
         mensagem +=
-            "👕 " +
+
+            emojiCamisa +
+            " " +
             item.nome +
             "\n" +
 
-            "📏 Tamanho: " +
+            emojiTamanho +
+            " Tamanho: " +
             item.tamanho +
             "\n" +
 
-            "🔢 Quantidade: " +
+            emojiQuantidade +
+            " Quantidade: " +
             item.quantidade +
             "\n" +
 
-            "💰 " +
+            emojiDinheiro +
+            " " +
             dinheiro(
                 item.preco *
                 item.quantidade
@@ -2687,19 +2702,23 @@ async function finalizarCompra() {
 
 
     mensagem +=
-        "💳 Pagamento: " +
-        pagamentoSelecionado +
-        "\n";
+        emojiPagamento +
+        " Pagamento: " +
+        pagamentoSelecionado;
 
 
     mensagem +=
-        "💰 Total: " +
+        "\n" +
+        emojiDinheiro +
+        " Total: " +
         dinheiro(total);
 
 
     /*
-       SOMENTE O CUPOM É MOSTRADO.
-       A frase "Desconto: 10%" foi removida.
+       Aqui NÃO mostramos mais
+       "Desconto: 10%".
+       
+       Mostramos somente o cupom.
     */
 
     if (
@@ -2707,14 +2726,17 @@ async function finalizarCompra() {
     ) {
 
         mensagem +=
-            "\n🎟️ Cupom: " +
+            "\n" +
+            emojiCupom +
+            " Cupom: " +
             cupomAtual;
 
     }
 
 
     mensagem +=
-        "\n\nQuero finalizar meu pedido! 🙌";
+        "\n\nQuero finalizar meu pedido! " +
+        emojiFinal;
 
 
     const url =
@@ -2737,6 +2759,10 @@ async function finalizarCompra() {
 
 }
 
+
+/* =====================================================
+   TABELA DE MEDIDAS
+===================================================== */
 
 function abrirTabelaMedidas() {
 
@@ -2788,6 +2814,10 @@ document.addEventListener(
 );
 
 
+/* =====================================================
+   DISPONIBILIZAR FUNÇÕES PARA O HTML
+===================================================== */
+
 window.trocarImagem =
     trocarImagem;
 
@@ -2831,6 +2861,10 @@ window.fecharTabelaFora =
     fecharTabelaFora;
 
 
+/* =====================================================
+   INICIALIZAÇÃO
+===================================================== */
+
 atualizarCarrinho();
 
 carregarEstoque();
@@ -2841,3 +2875,4 @@ observarEstoque();
 
 </body>
 </html>
+```
